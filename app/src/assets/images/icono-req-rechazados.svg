@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="33px" height="33px" viewBox="0 0 33 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 12</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Asilinks_Ciente_Dashboard_Sin-Requerimientos_Tablet-Copy" transform="translate(-398.000000, -572.000000)">
+            <g id="Group-12" transform="translate(398.000000, 572.000000)">
+                <path d="M16.4996628,2.02317454 C8.51689044,2.02317454 2.02317454,8.51756483 2.02317454,16.4996628 C2.02317454,24.4824352 8.51689044,30.9768255 16.4996628,30.9768255 C24.4824352,30.9768255 30.9768255,24.4824352 30.9768255,16.4996628 C30.9768255,8.51756483 24.4824352,2.02317454 16.4996628,2.02317454 M16.4996628,33 C7.40144688,33 0,25.5985531 0,16.4996628 C0,7.40212127 7.40144688,0 16.4996628,0 C25.5978787,0 33,7.40212127 33,16.4996628 C33,25.5985531 25.5978787,33 16.4996628,33" id="Fill-3" fill="#555464"></path>
+                <path d="M24,10 L10,24" id="Line-2" stroke="#555464" stroke-width="1.98" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M10,10 L24,24" id="Line-2" stroke="#555464" stroke-width="1.98" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </g>
+    </g>
+</svg>

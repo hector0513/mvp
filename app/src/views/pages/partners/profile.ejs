@@ -1,0 +1,781 @@
+<%- include('../Client/partials/header'); -%>
+
+<head>
+  <style>
+  * {
+    box-sizing: border-box;
+  }
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+.tag {
+  border-radius: 12px;
+  font-size: 12px;
+  margin:8px;
+}
+.pointer{
+  cursor: pointer;
+}
+</style>
+  <link rel="stylesheet" type="text/css" href="/assets/styles/loading-bar.css"/>
+  <link href="/assets/styles/Client/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="../../../assets/styles/maincopia.css" />
+  <link rel="stylesheet" href="/assets/styles/partnercopia.css">
+
+</head>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <%- include('./partials/nav'); -%>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <div class="row mb-3">
+            <div class="col-12 small-title red-text">
+              <a class="fas fa-arrow-left" href="/partner" style="width: auto !important;">
+                <div class="d-inline-block" style="font-family: Quicksand;">
+                  &nbsp&nbsp Volver al inicio
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col-12 col-md-3 center-hor">
+              <img src="<%= user.photo %>" class="profile-image" alt="Card image cap">
+            </div>
+            <div class="col-12 col-md-9">
+              <div class="row mb-4">
+                <div class="col-12 bigger-title red-text">
+                  <b><%=user.firstname%></b>
+                </div>
+                <div class="col-12 bigger-title red-text">
+                  <b><%=user.lastname%></b>
+                </div>
+                <!--<div class="col-12">
+                Miembro desde el (fecha)
+              </div>-->
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-4 mb-3">
+                <div class="card border-35 asilinks-card white-bg black-shadow h-100">
+                  <div class="card-body small-title">
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="row">
+                          <div class="col-12 red-text">
+                            <b>Clientes</b>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            Siempre serán tuyos❤️
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-3 center-vert px-1">
+                        <div class="row">
+                          <div class="col-12 red-text pl-1">
+                            <b class="border-half pink-bg p-2">0</b>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="card border-35 asilinks-card white-bg black-shadow h-100">
+                  <div class="card-body small-title">
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="row">
+                          <div class="col-12 red-text">
+                            <b>Referidos</b>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            Clientes y socios
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-3 center-vert px-1">
+                        <div class="row">
+                          <div class="col-12 red-text pl-1">
+                            <b class="border-half pink-bg p-2">0</b>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 mb-3">
+                <div class="card border-35 asilinks-card white-bg black-shadow h-100">
+                  <div class="card-body small-title">
+                    <div class="row">
+                      <div class="col-9">
+                        <div class="row">
+                          <div class="col-12 red-text">
+                            <b>Oportunidades</b>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            Activos y finalizados
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-3 center-vert px-1">
+                        <div class="row">
+                          <div class="col-12 red-text pl-1">
+                            <b class="border-half pink-bg p-2">0</b>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mb-4" id="information">
+          <div class="col-12 col-md-3 gray-text">
+            <div class="row mb-3">
+              <!--<div class="col-3 center-hor">
+              <div class="small-icon orange-bg p-1">
+              <img src="/assets/favicon/diamond.svg">
+            </div>
+          </div>-->
+          <div class="col-12 info-option active" data-target="#personal">
+            Información personal
+          </div>
+        </div>
+        <div class="row mb-3">
+          <!--<div class="col-3 center-hor">
+          <div class="small-icon orange-bg p-1">
+          <img src="/assets/favicon/diamond.svg">
+        </div>
+      </div>-->
+      <div class="col-12 info-option" data-target="#academic">
+        Información académica
+      </div>
+    </div>
+    <div class="row mb-3">
+      <!--<div class="col-3 center-hor">
+      <div class="small-icon orange-bg p-1">
+      <img src="/assets/favicon/diamond.svg">
+    </div>
+  </div>-->
+  <div class="col-12 info-option" data-target="#work">
+    Información laboral
+  </div>
+</div>
+<button type="button" id="submitBtn" class="asilinks-btn orange-btn mb-3" id="saveChanges">
+  Guardar cambios
+</button>
+</div>
+<div class="col-12 col-md-9">
+  <form enctype='multipart/form-data' id="updateForm" action="/partner/updateInfo" method="post">
+    <div class="row">
+      <div class="col-12 col-md-12 personal-info" id="personal">
+        <div class="card asilinks-card white-bg black-shadow">
+          <div class="card-body small-title">
+            <div class="row mx-2">
+              <div class="col-12 col-md-6 mb-4">
+                <label class="my-0" for="firstname">NOMBRE</label><br>
+                <input type="text" class="form-input mt-2" name="firstname" id="firstname" value="<%=user.firstname%>">
+              </div>
+              <div class="col-12 col-md-6 mb-4">
+                <label class="my-0" for="lastname">APELLIDO</label><br>
+                <input type="text" class="form-input mt-2" name="lastname" id="lastname" value="<%=user.lastname%>">
+              </div>
+              <div class="col-12 col-md-6 mb-4">
+                <label class="my-0" for="firstname">DOCUMENTO DE IDENTIDAD</label><br>
+                <input type="text" class="form-input mt-2" name="userId" id="userId" value="<%=user.userId%>">
+              </div>
+              <div class="col-12 col-md-6 mb-4">
+                <label class="my-0" for="dob">FECHA DE NACIMIENTO</label><br>
+                <input type="date" class="form-input mt-2" name="dob" id="dob" value="<%=birthday%>" title="Debes ser mayor de 13 años para registrarte">
+              </div>
+              <div class="col-12 col-md-6 mb-4 as-select">
+                <label class="my-0" for="bornCountry">PAÍS DE NACIMIENTO</label><br>
+                <select name="bornCountry" id="bornCountry" class="form-input mt-2">
+                  <% countries.forEach(function(country){ %>
+                    <option value="<%= country %>"><%= country %></option>
+                    <% }); %>
+                  </select>
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                  <label class="my-0" for="lastname">CIUDAD DE RESIDENCIA</label><br>
+                  <input type="text" class="form-input mt-2" name="livingCity" id="livingCity" value="<%=user.city%>">
+                </div>
+                <div class="col-12 col-md-6 mb-4">
+                  <label>FOTO DE PERFIL</label><br>
+                  <span>
+                    <input type="file" accept=".jpg,.jpeg,.png" name="profPic" id="profPic" class="inputfile form-input" style="padding:0.25rem;">
+                    <label for="profPic" class="label_style" id="profile_file"><span>Adjuntar foto &nbsp</span><i class="fa fa-paperclip" aria-hidden="true"></i></label>
+                  </span>
+                  <br>
+                  <label>Tu foto de perfil no puede pesar más de 1 MB</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-12 personal-info d-none" id="academic">
+          <div class="card asilinks-card white-bg black-shadow">
+            <div class="card-body small-title">
+              <div class="row mx-2">
+                <div class="col-12 col-md-6 mb-4 as-select">
+                  <label class="my-0" for="studyCountry">PAÍS DE ESTUDIO</label><br>
+                  <select name="studyCountry" id="studyCountry" class="form-input mt-2">
+                    <% countries.forEach(function(country){ %>
+                      <option value="<%= country %>"> <%= country %></option>
+                      <% }); %>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                  </div>
+                  <div class="col-12 col-md-6 mb-4 as-select">
+                    <label class="my-0" for="firstname">INSTITUCIÓN</label><br>
+                    <select name="institution" id="institution" class="form-input mt-2" onchange="loadCareers()">
+                    </select>
+                  </div>
+                  <div class="col-md-6 small-title">
+                    ¿No encuentras tu institución? <a href="#" class="add-info">¡Agrégala aquí!</a>
+                  </div>
+                  <div class="col-12 col-md-6 mb-4 as-select">
+                    <label class="my-0" for="firstname">CARRERA</label><br>
+                    <select name="career" id="career" class="form-input mt-2">
+                    </select>
+                  </div>
+                  <div class="col-md-6 small-title">
+                    ¿No encuentras tu carrera? <a href="#" class="add-info">¡Agrégala aquí!</a>
+                  </div>
+                  <div class="col-12 col-md-6 mb-4">
+                    <label class="my-0" for="lastname">ESPECIALIDAD</label><br>
+                    <input type="text" class="form-input mt-2" name="specialty" id="specialty" value="<%=user.studyInfo.specialty%>">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 personal-info d-none" id="work">
+            <div class="card asilinks-card white-bg black-shadow">
+              <div class="card-body small-title">
+                <div class="row mx-2">
+                  <div class="col-12 col-md-6 mb-4 as-select">
+                    <label class="my-0" for="firstname">AÑOS DE EXPERIENCIA</label><br>
+                    <select name="yearsExp" id="yearsExp" class="form-input mt-2">
+                      <option value="0-5" selected>0-5</option>
+                      <option value="5-10">5-10</option>
+                      <option value="10-15">10-15</option>
+                      <option value="15-20">15-20</option>
+                      <option value="20+">20+</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6 small-title">
+                  </div>
+                  <div class="col-12 col-md-6 mb-4">
+                    <label for="resume">RESUMEN CURRICULAR</label><br>
+                    <span>
+                      <input type="file" accept=".doc,.docx,.pdf" name="resume" id="resume" class="inputfile form-input" style="padding:0.25rem;">
+                      <label for="resume" class="label_style" id="resume_file">
+                        <% if(!user.workInfo.fileOfName) { %>
+                          <span>Adjuntar archivo(s) &nbsp;</span>
+                          <i class="fa fa-paperclip" aria-hidden="true"></i>
+                          <% } else { %>
+                            <span><%=user.workInfo.fileOfName %></span>
+                            <% } %>
+                          </label>
+                        </span>
+                      </div>
+                      <div class="col-md-6 small-title">
+                      </div>
+                      <div class="col-12 col-md-6 mb-4 as-select">
+                        <label class="my-0" for="firstname">CATEGORÍA LABORAL</label><br>
+
+                        <div class="autocomplete" style="width:100%;">
+                          <input class="form-input mt-2" id="categorySearch" type="text" autocomplete="off" placeholder="Escribe una categoría o subcategoría" style="width:100%;"/>
+                        </div>
+
+                        <br>
+                        <div id="tags" class="row">
+                          <%if (user.workInfo && user.workInfo.categories) {%>
+                          <% user.workInfo.categories.forEach((item, i) => { %>
+                            <div class="col pink-bg p-2 tag" id="<%= item.categoryID %>">
+                              <label class="red-text"><%= item.workCategory %> | <%= item.workSub %><span class="fa fa-times pointer" onclick="removeTag('<%= item.categoryID %>')"></span></label>
+                            </div>
+                          <% }); %>
+                          <%}%>
+                        </div>
+
+
+                        <!-- <select name="workCategory" id="workCategory" class="form-input mt-2" onchange="loadCategories()">
+                          <% category.forEach(function(cat){ %>
+
+                            <option value="<%= cat %>"
+                              <% if (user.workInfo.workCategory == cat) { %>
+                                selected
+                                <% } %>> <%= cat %> </option>
+                                <% }); %>
+                              </select> -->
+                            </div>
+                            <div class="col-md-6 small-title">
+                              ¿No encuentras tu categoría? <a href="#" class="add-info">¡Agrégala aquí!</a>
+                            </div>
+                            <!-- <div class="col-12 col-md-6 mb-4 as-select">
+                              <label class="my-0" for="dob">SUBCATEGORÍA LABORAL</label><br>
+                              <select name="workSub" id="workSub" class="form-input mt-2">
+                              </select>
+                            </div>
+                            <div class="col-md-6 small-title">
+                              ¿No la encuentras? <a href="#" class="add-info">¡Agrégala aquí!</a>
+                            </div> -->
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+
+          </div>
+          <!-- /.container-fluid -->
+
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <%- include('./partials/footer'); -%>
+        <%- include('../../partials/sub-footer'); -%>
+        <%- include('../../partials/modals/add_university'); -%>
+        <!-- End of Footer -->
+      </div>
+      <!-- End of Content Wrapper -->
+
+      <%- include('./partials/sidebar'); -%>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+
+    $("#studyCountry").change(function() {
+
+      $('#institution').empty()
+      loadUni();
+      $('#career').empty()
+      loadCareers();
+
+    })
+
+    function checkSingleDigit(info){
+
+      if(info < 10){
+        info = '0' + info;
+      }
+
+      return info;
+
+    }
+
+    function loadCategories() {
+
+      var category = $("#workCategory").val()
+
+      $.get("/client/getSubcategories/" + category)
+      .done( function(data){
+
+        console.log('subcategorias cargadas con exito!');
+        $('#workSub').empty()
+
+        if (Array.isArray(data) && data.length){
+
+          data.forEach((sub) =>{
+
+            $('#workSub').append($('<option>', {
+              value: sub.sub_category,
+              text: sub.sub_category
+            }));
+
+          })
+
+        }
+
+        var workSub = '<%= user.workInfo.workSub %>';
+        console.log(workSub)
+        $('#workSub').find("option[value='" + workSub +"']").attr('selected', true);
+
+
+      })
+      .fail( function(xhr, textStatus, errorThrown){
+
+        console.log(errorThrown)
+        alert('Error en la carga de Universidades');
+
+      });
+
+    }
+
+    function loadUni() {
+
+      var studyCountry = $("#studyCountry").val()
+
+      var userUni = '<%= user.studyInfo.institution %>';
+
+      $.get("/partner/getUniversities/" + studyCountry)
+      .done( function(data){
+
+        console.log('universidades cargadas con exito!');
+
+        if (Array.isArray(data) && data.length){
+
+          data.forEach((uni) =>{
+
+            $('#institution').append($('<option>', {
+              value: uni.name,
+              text: uni.name
+            }));
+
+          })
+
+          $('#institution').find("option[value='" + userUni +"']").attr('selected', true);
+
+          loadCareers();
+
+        }
+
+      })
+      .fail( function(xhr, textStatus, errorThrown){
+
+        console.log(errorThrown)
+        alert('Error en la carga de Universidades');
+
+      });
+
+    }
+
+    function loadCareers() {
+
+      var userUni = $("#institution").val()
+
+      var userCareer = '<%= user.studyInfo.career %>';
+
+      $.get("/partner/getCareers/" + userUni)
+      .done( function(data){
+
+        console.log('carreras cargadas con exito!');
+        $('#career').empty()
+
+        if (Array.isArray(data) && data.length){
+
+          data.forEach((car) =>{
+
+            $('#career').append($('<option>', {
+              value: car.career,
+              text: car.career
+            }));
+
+          })
+
+          $('#career').find("option[value='" + userCareer +"']").attr('selected', true);
+        }
+
+      })
+      .fail( function(xhr, textStatus, errorThrown){
+
+        console.log(errorThrown)
+        alert('Error en la carga de carreras');
+
+      });
+
+    }
+
+    // Actualiza los selects al cargar la pagina para que tenga seleccioanda las opciones del usuario
+    function updateSelects(){
+
+      var userUni = '<%= user.workInfo.yearsExp %>';
+      var workCategory = '<%= user.workInfo.workCategory %>';
+      var bornCountry = '<%= user.country %>';
+      var studyCountry = '<%= user.studyInfo.studyCountry %>';
+
+      $('#yearsExp').find("option[value='" + userUni +"']").attr('selected', true);
+      $('#workCategory').find("option[value='" + workCategory +"']").attr('selected', true);
+      $('#bornCountry').find("option[value='" + bornCountry +"']").attr('selected', true);
+      $('#studyCountry').find("option[value='" + studyCountry +"']").attr('selected', true);
+
+    }
+
+    $(document).ready(function(){
+
+
+      updateSelects();
+
+      $("#studyCountry").change();
+      $("#workCategory").change();
+
+      $(".info-option").on("click", function(){
+
+        $(".personal-info").addClass("d-none");
+        var toCollapse = $(this).data( "target" );
+
+        $(toCollapse).removeClass("d-none");
+
+        $(".info-option.active").not($(this)).removeClass("active");
+        $(this).addClass("active");
+
+      });
+
+      $(".form-input").on("change", function(){
+
+        $("#saveChanges").prop('disabled', false)
+
+      });
+
+      $("#resume").on("change", function(){
+
+        $("#saveChanges").prop('disabled', false)
+
+      });
+
+      $("#resume").change(function() {
+
+        if (!this.files[0])
+        return $("#resume_file").html("<span>Adjuntar archivo &nbsp</span><i class='fa fa-paperclip' aria-hidden='true'></i>")
+
+        $("#resume_file").text(this.files[0].name)
+
+      });
+
+      $("#profPic").change(function() {
+
+        if (!this.files[0]) {
+          return $("#profile_file").html("<span>Adjuntar foto &nbsp</span><i class='fa fa-paperclip' aria-hidden='true'></i>")
+        } else {
+          if (this.files[0].size > 1048576) {
+            alert("Tu foto de perfil no puede pesar más de 1 MB");
+            return $("#profile_file").html("<span>Adjuntar foto &nbsp</span><i class='fa fa-paperclip' aria-hidden='true'></i>")
+          } else {
+            $("#profile_file").text(this.files[0].name)
+          }
+        }
+      });
+
+      $(".add-info").click(function() {
+
+        $("#addUni").modal("show");
+
+      });
+
+      var today = new Date();
+      // Minimo de 13 años para crearse una cuenta
+      var year = today.getFullYear() - 13
+      var month = today.getMonth() + 1
+      var day = today.getDate()
+
+      day = checkSingleDigit(day);
+      month = checkSingleDigit(month);
+
+      year = year.toString();
+      month = month.toString();
+      day = day.toString();
+
+      var fullDate = year +'-'+ month +'-'+ day
+      console.log(fullDate)
+
+      // Pone el limite al calendario
+      document.getElementById("dob").setAttribute("max", fullDate);
+
+    });
+
+  </script>
+
+  <script>
+
+    var categoriesAsTags = <%- JSON.stringify(user.workInfo.categories) %> || [];
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].category.substr(0, val.length).toUpperCase() == val.toUpperCase()
+        || arr[i].sub_category.substr(0, val.length).toUpperCase() == val.toUpperCase()
+        || (arr[i].sub_category.split(" ")[1] && arr[i].sub_category.split(" ")[1].substr(0, val.length).toUpperCase() == val.toUpperCase())
+        || (arr[i].sub_category.split(" ")[2] && arr[i].sub_category.split(" ")[2].substr(0, val.length).toUpperCase() == val.toUpperCase())) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = arr[i].category +"<br>"+"<strong>" + arr[i].sub_category.substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].sub_category.substr(val.length);
+
+          var params = "'"+arr[i].category+"','"+arr[i].sub_category+"','"+arr[i]._id+"'";
+          var functionParam = `addTag(${params});`;
+
+          b.setAttribute("data-cat", arr[i].category);
+          b.setAttribute("data-sub", arr[i].sub_category);
+          b.setAttribute("data-id", arr[i]._id);
+
+          b.addEventListener("click", function(e) {
+              addTag(this.getAttribute("data-cat"),this.getAttribute("data-sub"),this.getAttribute("data-id"));
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+
+  function addTag(cat,sub,id) {
+    var isFound = categoriesAsTags.find(c => c.categoryID == id);
+    if (!isFound) {
+
+    categoriesAsTags.push({"workCategory":cat, "workSub":sub, "categoryID":id});
+    $("#categorySearch").val("");
+    var tags = $("#tags");
+    var div_col = $("<div>").attr("class","col pink-bg p-2 tag").attr("id",id).appendTo(tags);
+    var label = $("<label>").attr("class","red-text").append(cat+" | "+sub).appendTo(div_col);
+    var times = $("<span>").attr("class","fa fa-times pointer").attr("onclick","removeTag('"+id+"');").appendTo(label)
+    }
+    closeAllLists();
+  }
+
+}
+
+function removeTag(id){
+  categoriesAsTags = categoriesAsTags.filter(c => c.categoryID != id);
+  $("#"+id).remove();
+}
+
+
+// var countries = [{"category":"Venezuela","sub_category":"Caracas"},{"category":"Venezuela","sub_category":"Cost"}];
+
+var all_categories =  <%- JSON.stringify(categories) %>;
+/*initiate the autocomplete function on the "categorySearch" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("categorySearch"), all_categories);
+
+$("#submitBtn").click(function(){
+
+  $.post("/partner/updateCategories",
+      {categories: categoriesAsTags},
+      function (data, status) {
+          console.log(data)
+          console.log(status);
+          if (data=="ok")
+            $("#updateForm").submit();
+        });
+})
+
+</script>

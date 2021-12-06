@@ -1,0 +1,82 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="extension">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:0;">
+        <h5 class="modal-title">Prórroga</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+        </button>
+      </div>
+      <form enctype='application/json' method="post">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <label for="extension_time">TIEMPO EXTRA NECESITADO</label><br>
+                <div class="row">
+                  <div class="col-3">
+                    <input type="number" class="form-input" name="extension_time" id="extension_time" placeholder="1" min="1" max="10" required>
+                  </div>
+                  <div class="col-9">
+                    <select name="extension_type" id="extension_type" class="form-input" style="padding:0.35rem;" required>
+                      <option value="Día(s)">Día(s)</option>
+                      <option value="Semana(s)">Semana(s)</option>
+                      <option value="Mes(es)">Mes(es)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label for="extension_reason">MOTIVO</label><br>
+                <input type="text" class="form-input" name="extension_reason" id="extension_reason" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top:0;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <button id="extendOpportunity" type="submit" class="asilinks-btn orange-btn">Enviar prórroga</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="/assets/scripts/helpers.js"></script>
+
+<script type="text/javascript">
+
+  $("#extendOpportunity").click(function(){
+
+    var extensionInfo = getFormInfo();
+    console.log(extensionInfo)
+    // EL POST ESTA EN WALLET ROUTES PORQUE NO SE DONDE PONERLO. OBVIO NO VA AHI
+    $.post("/opportunity/extension",
+      extensionInfo
+    )
+    .done( function(data){
+
+      alert("Prórroga exitosa")
+      //$('#checkout').modal("hide")
+
+    })
+    .fail( function(xhr, textStatus, errorThrown){
+
+        console.log(xhr.responseText)
+        alert("Error creando el requerimiento! " + xhr.responseText)
+
+    });
+
+    return false;
+
+  })
+
+</script>

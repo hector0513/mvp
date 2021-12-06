@@ -1,0 +1,532 @@
+<%- include('../../partials/header-alt'); -%>
+
+<head>
+  <title>Oportunidad</title>
+  <link rel="stylesheet" href="/assets/styles/partner.css" />
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-12">
+        <div class="row">
+          <div class="col-12 px-0">
+            <%- include('../../partials/search-header.ejs'); -%>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-12 small-title red-text">
+            <a class="fas fa-arrow-left" href="/partner" style="width: auto !important;">
+              <div class="d-inline-block" style="font-family: Quicksand;">
+                &nbsp&nbsp Volver al inicio
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="row mb-4" id="walletGraph">
+          <div class="col-12 mb-3">
+            <div class="card asilinks-card white-bg black-shadow">
+              <div class="card-body small-title">
+                <div class="row mb-3">
+                  <div class="col-12 col-md-4 left-hor mb-3">
+                    <div class="row">
+                      <div class="col-6 col-md-12 mid-title red-text">
+                        <b>Mi Wallet</b>
+                      </div>
+                      <div class="col-6 col-md-12 text-36">
+                        <b>$<%= user.wallet %>.00</b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-6 col-md-4">
+                    <button class="asilinks-btn orange-btn" id="askCheckout">
+                      Solicitar Retiro<i class="fas fa-arrow-up" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="col-6 col-md-4">
+                    <button class="asilinks-btn blue-btn" id="askTopup">
+                      Recargar Wallet<i class="fas fa-arrow-down" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <canvas id="myWalletPartner" height="150"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-4" id="walletMovements">
+          <div class="col-12 mb-3">
+            <div class="card asilinks-card white-bg black-shadow">
+              <div class="card-body small-title">
+                <div class="row mb-1">
+                  <div class="col-12 col-md-4 left-hor">
+                    <div class="row">
+                      <div class="col-6 col-md-12 mid-title red-text">
+                        <b>Últimos movimientos</b>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="table-responsive">
+                    <table class="table asilinks-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">FECHA</th>
+                          <th scope="col">TIPO</th>
+                          <th scope="col">DESCRIPCIÓN</th>
+                          <th scope="col">MONTO</th>
+                          <th scope="col">SALDO</th>
+                          <th scope="col">RECIBO</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <% wallet.forEach(function(wal) { %> <% if (wal.status
+                        == "Aprobada") { %> <% if (wal.rechargeWallet.amount) {
+                        %>
+                        <tr id="wallet_<%=wal._id%>">
+                          <td id="date_<%=wal._id%>" scope="row">
+                            <%=
+                            moment(wal.timeStampCreate).format("DD/MM/YYYY")%>
+                          </td>
+                          <td id="type_<%=wal._id%>" class="green-text">
+                            <span>Ingreso &nbsp;</span><i class="fas fa-arrow-down" aria-hidden="true"></i>
+                          </td>
+                          <td>¡Ingreso del wallet!</td>
+                          <td id="change_<%=wal._id%>">
+                            +$<%= wal.rechargeWallet.amount %>
+                          </td>
+                          <td id="amount_<%=wal._id%>">
+                            $<%= wal.historyWallet %>
+                          </td>
+                          <td class="download-wallet-btn">
+                            <button class="asilinks-btn orange-btn" type="button" style="height: 35px;"
+                              onclick="saveTransaction('<%=wal._id%>')">
+                              <span>Descargar</span>
+                            </button>
+                          </td>
+                        </tr>
+                        <% } %> <% if (wal.retirementWallet.amount =
+                        wal.retirementWallet.amount) { %>
+                        <tr id="wallet_<%=wal._id%>">
+                          <td id="date_<%=wal._id%>">
+                            <%=moment(wal.timeStampCreate).format("DD/MM/YYYY")%>
+                          </td>
+                          <td id="type_<%=wal._id%>" class="red-text">
+                            <span>Egreso &nbsp;</span><i class="fas fa-arrow-up" aria-hidden="true"></i>
+                          </td>
+                          <td>¡Egreso del wallet!</td>
+                          <td id="change_<%=wal._id%>">
+                            -$<%= wal.retirementWallet.amount %>
+                          </td>
+                          <td id="amount_<%=wal._id%>">
+                            $<%= wal.historyWallet %>
+                          </td>
+                          <td class="download-wallet-btn">
+                            <button class="asilinks-btn orange-btn" type="button" style="height: 35px;"
+                              onclick="saveTransaction('<%=wal._id%>')">
+                              <span>Descargar</span>
+                            </button>
+                          </td>
+                        </tr>
+                        <% } %> myWalletPartner <% } %> <% }) %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hack pass variable backend to frontend dinamically -->
+  <span id="variableWalletGraphic" hidden>
+    <%- JSON.stringify(wallet) %>
+  </span>
+</body>
+
+<%- include('../../partials/sub-footer-alt'); -%> <%-
+include('../../partials/modals/wallet_checkout'); -%> <%-
+include('../../partials/modals/wallet_topup'); -%>
+
+<script type="text/javascript" src="/assets/scripts/helpers.js"></script>
+<script type="text/javascript" src="/assets/scripts/chart/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+  integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"
+  integrity="sha256-5oApc/wMda1ntIEK4qoWJ4YItnV4fBHMwywunj8gPqc=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+  $("#askCheckout").click(function () {
+    $("#checkout").modal("show");
+  });
+
+  $("#askTopup").click(function () {
+    $("#topup").modal("show");
+  });
+
+  function saveTransaction(wal_id) {
+    var doc = new jsPDF();
+    var elementHandler = {
+      ".download-wallet-btn": function (element, renderer) {
+        return true;
+      },
+    };
+
+    var source = "<b>Fecha:</b> " + $("#date_" + wal_id).text() + "<br>";
+    source += "<b>Tipo:</b> " + $("#type_" + wal_id).text() + "<br>";
+    source +=
+      "<b>Ingreso/Egreso:</b> " + $("#change_" + wal_id).text() + "<br>";
+    source +=
+      "<b>Monto al momento:</b> " + $("#amount_" + wal_id).text() + "<br>";
+
+    doc.fromHTML(source, 15, 15, {
+      width: 180,
+      elementHandlers: elementHandler,
+    });
+
+    doc.save("transaccionWalletAsilinks.pdf");
+  }
+</script>
+
+<script type="text/javascript">
+  // Agrega los meses si 5 meses hacia atras es negativo
+  function previousYear(lastMonths, allMonths, minusX) {
+    var reverseMonths = allMonths.reverse();
+    var count = 0;
+
+    // Si se quiere cambiar el limite de meses se cambia la condicion del length y el minusX mas abajo
+    while (minusX != 0 && lastMonths.length < 5) {
+      lastMonths.push(allMonths[count]);
+      count++;
+      minusX++;
+    }
+
+    return lastMonths;
+  }
+
+  // Selecciona los ultimos meses para mostrar en la grafica
+  function lastMonths() {
+    var allMonths = [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre",
+    ];
+
+    var date = new Date();
+    var lastMonths = [];
+
+    var month = date.getMonth();
+
+    // Si se quiere cambiar el limite de meses se cambia la condicion del length y el minusX mas abajo
+    while (month >= 0 && lastMonths.length < 12) {
+      lastMonths.push(allMonths[month]);
+      month--;
+    }
+
+    // Para ver si se necesitan agregar meses del año pasado.
+    // Como se incluye el mismo mes, es (meses al pasado + 1), ej. 5 meses es  (mes actual) - 4
+    var minusX = month - 4;
+    if (minusX < 0) lastMonths = previousYear(lastMonths, allMonths, minusX);
+
+    console.log(lastMonths);
+    return lastMonths;
+  }
+
+  var wallet = JSON.parse(
+    document.getElementById("variableWalletGraphic").innerText
+  );
+  var resEne = 0;
+  var sumEne = 0;
+  var sumFeb = 0;
+  var resFeb = 0;
+  var sumMar = 0;
+  var resMar = 0;
+  var sumAbr = 0;
+  var resAbr = 0;
+  var sumMay = 0;
+  var resMay = 0;
+  var sumJun = 0;
+  var resJun = 0;
+  var sumJul = 0;
+  var resJul = 0;
+  var sumAgo = 0;
+  var resAgo = 0;
+  var sumSep = 0;
+  var resSep = 0;
+  var sumOct = 0;
+  var resOct = 0;
+  var sumNov = 0;
+  var resNov = 0;
+  var sumDic = 0;
+  var resDic = 0;
+
+  for (x in wallet) {
+    if (wallet[x].status == "Aprobada") {
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 01
+      ) {
+        resEne += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 01
+      ) {
+        sumEne += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 02
+      ) {
+        resFeb += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 02
+      ) {
+        sumFeb += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 03
+      ) {
+        resMar += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 03
+      ) {
+        sumMar += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 04
+      ) {
+        resAbr += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 04
+      ) {
+        sumAbr += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 05
+      ) {
+        resMay += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 05
+      ) {
+        sumMay += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 06
+      ) {
+        resJun += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 06
+      ) {
+        sumJun += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 07
+      ) {
+        resJul += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 07
+      ) {
+        sumJul += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 08
+      ) {
+        resAgo += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 08
+      ) {
+        sumAgo += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 09
+      ) {
+        resSep += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 09
+      ) {
+        sumSep += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 10
+      ) {
+        resOct += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 10
+      ) {
+        sumOct += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 11
+      ) {
+        resNov += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 11
+      ) {
+        sumNov += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+      if (
+        wallet[x].retirementWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 12
+      ) {
+        resDic += parseFloat(wallet[x].retirementWallet.amount);
+      } else if (
+        wallet[x].rechargeWallet &&
+        moment(wallet[x].timeStampCreate).format("MM") == 12
+      ) {
+        sumDic += parseFloat(wallet[x].rechargeWallet.amount);
+      }
+    }
+  }
+
+  var Enero = sumEne - resEne;
+  var Febrero = sumFeb - resFeb;
+  var Marzo = sumMar - resMar;
+  var Abril = sumAbr - resAbr;
+  var Mayo = sumMay - resMay;
+  var Junio = sumJun - resJun;
+  var Julio = sumJul - resJul;
+  var Agosto = sumAgo - resAgo;
+  var Septiembre = sumSep - resSep;
+  var Octubre = sumOct - resOct;
+  var Noviembre = sumNov - resNov;
+  var Diciembre = sumDic - resDic;
+
+  var lastMonths = lastMonths().reverse();
+
+  var ctx = document.getElementById("myWalletPartner").getContext("2d");
+  var myChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: lastMonths,
+      datasets: [
+        {
+          label: "Ingresos",
+          data: [
+            Enero,
+            Febrero,
+            Marzo,
+            Abril,
+            Mayo,
+            Junio,
+            Julio,
+            Agosto,
+            Septiembre,
+            Octubre,
+            Noviembre,
+            Diciembre,
+          ],
+          backgroundColor: "rgba(255, 239, 239, 0.8)",
+          borderColor: "rgba(231, 66, 102, 0.8)",
+          borderWidth: 5,
+          fill: true,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      title: {
+        display: false,
+        text: "Ingresos por mes",
+      },
+      tooltips: {
+        mode: "index",
+        intersect: false,
+      },
+      hover: {
+        mode: "nearest",
+        intersect: true,
+      },
+      scales: {
+        xAxes: [
+          {
+            display: true,
+            scaleLabel: {
+              display: false,
+              labelString: "Mes",
+            },
+
+            ticks: {
+              maxTicksLimit: 7,
+            },
+          },
+        ],
+        yAxes: [
+          {
+            display: true,
+            scaleLabel: {
+              display: false,
+              labelString: "Ingresos",
+            },
+            ticks: {
+              maxTicksLimit: 5,
+              padding: 10,
+              // Include a dollar sign in the ticks
+              callback: function (value, index, values) {
+                return value + "$";
+              },
+              suggestedMin: 0,
+            },
+          },
+        ],
+      },
+      tooltips: {
+        mode: "index",
+        intersect: false,
+        yPadding: 10,
+        xPadding: 10,
+        caretSize: 8,
+        backgroundColor: "white",
+        titleFontColor: "black",
+        bodyFontColor: "black",
+        borderColor: "rgba(240, 241, 242,1)",
+        borderWidth: 2,
+        callbacks: {
+          label: function (tooltipItem, data) {
+            var label = data.datasets[tooltipItem.datasetIndex].label || "";
+            label += ": " + tooltipItem.yLabel + "$";
+            return label;
+          },
+        },
+      },
+      legend: {
+        display: false,
+      },
+    },
+  });
+</script>

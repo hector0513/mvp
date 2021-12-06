@@ -1,0 +1,241 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.seccion {
+  margin: 0 auto;
+}
+
+.pink-bg {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  /*text-align: center;*/
+  color: #fe5d60;
+}
+
+.primary-bg {
+  display: block;
+}
+
+.secondary-bg {
+  display: none;
+}
+
+.coding {
+  height: 40%;
+}
+
+@media screen and (max-width: 1200px) {
+  .coding {
+    height: 30%;
+  }
+}
+
+@media screen and (max-width: 882px) {
+  .coding {
+    height: 27%;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .primary-bg {
+    display: none;
+  }
+
+  .secondary-bg {
+    display: flex;
+  }
+
+  .girl,
+  .bike,
+  .coding {
+    height: 25%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .pink-bg {
+    font-size: 40px;
+  }
+}
+
+/* cosas del toggle */
+span.switcher {
+  position: relative;
+  width: 208px;
+  height: 57px;
+  border-radius: 25px;
+  /* margin: 20px 0; */
+}
+span.switcher input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #1e1e1e;
+  outline: none;
+  font-family: "Oswald", sans-serif;
+}
+span.switcher input:before,
+span.switcher input:after {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #ffffff;
+}
+span.switcher input:before {
+  content: "Clientes";
+  left: 20px;
+}
+span.switcher input:after {
+  content: "Socios";
+  right: 20px;
+}
+span.switcher label {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  bottom: -1px;
+  border-radius: 30px;
+}
+span.switcher.switcher-1 input {
+  -webkit-transition: 0.25s -0.1s;
+  transition: 0.25s -0.1s;
+}
+span.switcher.switcher-1 input:checked {
+  background-color: #fae3e8;
+}
+span.switcher.switcher-1 input:checked:before {
+  color: #ffffff;
+  -webkit-transition: color 0.5s 0.2s;
+  transition: color 0.5s 0.2s;
+}
+span.switcher.switcher-1 input:checked:after {
+  color: #f74267;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+span.switcher.switcher-1 input:checked + label {
+  left: 1px;
+  right: 100px;
+  background: #f74267;
+  -webkit-transition: left 0.5s, right 0.4s 0.2s;
+  transition: left 0.5s, right 0.4s 0.2s;
+}
+span.switcher.switcher-1 input:not(:checked) {
+  background: #fae3e8;
+  -webkit-transition: background 0.5s -0.1s;
+  transition: background 0.5s -0.1s;
+}
+span.switcher.switcher-1 input:not(:checked):before {
+  color: #f74267;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+span.switcher.switcher-1 input:not(:checked):after {
+  color: #fff;
+  -webkit-transition: color 0.5s 0.2s;
+  transition: color 0.5s 0.2s;
+}
+span.switcher.switcher-1 input:not(:checked) + label {
+  left: 100px;
+  right: 8px;
+  background: #f74267;
+  -webkit-transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
+  transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
+}
+/* 
+.btn-primary {
+  background-color: #f74267;
+  color: #ffffff;
+  border-color: #f74267;
+}
+
+.btn-primary:hover {
+  background-color: #f74267;
+  color: #ffffff;
+  border-color: #f74267;
+}
+
+.btn-light {
+  background-color: #feeeef;
+  color: #f74267;
+}
+
+.btn-light:hover {
+  background-color: #feeeef;
+  color: #f74267;
+}
+
+.toggle.ios,
+.toggle-on.ios,
+.toggle-off.ios {
+  border-radius: 20rem;
+} */
+
+/* .toggle.ios .toggle-handle {
+  border-radius: 20rem;
+} */
+
+/* .toggle-btn {
+  padding: 15px 30px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  outline: none;
+  position: relative;
+  color: #ffffff;
+} */
+/* .button-box {
+  width: 220px;
+  margin: 35px auto;
+  position: relative;
+  box-shadow: 0 0 20px 9px #ff61241f;
+  border-radius: 30px;
+  background-color: #fae3e8;
+} */
+
+/* #btn {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 140px;
+  height: 100%;
+  background: linear-gradient(to right, #f74267, #f74267);
+  border-radius: 30px;
+  transition: 0.5s;
+} */
+
+/* fin cosas del toggle */
+
+#welcome {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2a2a35;
+}
+
+#welcomeText {
+  font-size: 14px;
+  color: #2a2a35;
+}
+
+#rememberLabel,
+#termsLabel {
+  color: #2a2a35;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 770px) and (min-width: 768px) {
+  #welcome {
+    font-size: 30px;
+  }
+}

@@ -1,0 +1,511 @@
+[
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Administración y Contaduría"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Ciencias Sociales"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Comunicación Social"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Derecho"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Economía"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Educación"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Filosofía"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Ingeniería Civil"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Ingeniería Industrial"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Ingeniería en Informática"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Ingeniería de Telecomunicaciones"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Letras"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Psicología"
+    },
+    {
+        "university":"Universidad Católica Andrés Bello",
+        "career": "Teología"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Agronomía"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Arquitectura"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Biología"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Física"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Computación"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Geoquímica"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Química"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Matemática"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Administración y Contaduría"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Antropología"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Economía"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Estadísticas"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Ciencias Actuariales"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Estudios Internacionales"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Sociología"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Trabajo Social"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Derecho"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Ciencias Políticas y Administrativas"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Ciencias Veterinarias"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Farmacia"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Artes"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Bibliotecología y Archivología"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Comunicación Social"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Filosofía"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Geografía"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Historia"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Idiomas Modernos"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Letras"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Psicología"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Medicina"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Nutrición y Dietética"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Bioanálisis"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Enfermería"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Salud Pública"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Ingeniería Civil"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Ingeniería Eléctrica"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Ingeniería Mecánica"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Ingeniería Geología, minas y geofísica"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Ingeniería Metalúrgica y Ciencia de la Materia"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Ingeniería Química"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Ingeniería de Petróleo"
+    },
+    {
+        "university":"Universidad Central de Venezuela",
+        "career": "Odontología"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Ingeniería Eléctrica"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Ingeniería Mecánica"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Ingeniería Química"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Ingeniería Electrónica"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Ingeniería de Materiales"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Ingeniería de la Computación"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Ingeniería Geofísica"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Ingeniería de Producción"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Ingeniería de Mantenimiento"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Ingeniería de Telecomunicaciones"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Química"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Matemática"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Física"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Biología"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Arquitectura"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Urbanismo"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Comercio Internacional"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Gestión de la Hospitalidad"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Economía"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Artes Liberales"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Tecnología Eléctrica"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Tecnología Electrónica"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Tecnología Mecánica"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Mantenimiento Aeronáutico"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Administración del Turismo"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Administración Hotelera"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Administración del Transporte"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Organización Empresarial"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Administración Aduanera"
+    },
+    {
+        "university":"Universidad Simón Bolívar",
+        "career": "Comercio Exterior"
+    },
+    {
+        "university":"Universidad Monteávila",
+        "career": "Derecho"
+    },
+    {
+        "university":"Universidad Monteávila",
+        "career": "Educación"
+    },
+    {
+        "university":"Universidad Monteávila",
+        "career": "Ciencias Administrativas"
+    },
+    {
+        "university":"Universidad Monteávila",
+        "career": "Comunicación Social"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Ingeniería de Sistemas"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Ingeniería Civil"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Ingeniería de Telecomunicaciones"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Ingeniería Industrial"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Arquitectura"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Comunicación Social"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Administración"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Economía"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Contaduría Pública"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Derecho"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Estudios Internacionales"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Farmacia"
+    },
+    {
+        "university":"Universidad Santa María",
+        "career": "Odontología"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Ingeniería Civil"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Ingeniería Eléctrica"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Mecánica"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Química"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Ingeniería de Producción"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Internacionales de Sistemas"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Ciencias Administrativas"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Economía Empresarial"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Contaduría Pública"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Educación"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Idiomas Modernos"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Psicología"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Matemáticas Industriales"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Estudios Liberales"
+    },
+    {
+        "university":"Universidad Metropolitana",
+        "career": "Derecho"
+    },
+    {
+        "university":"Universidad Alejandro de Humboldt",
+        "career": "Administración de Empresas Turísticas"
+    },
+    {
+        "university":"Universidad Alejandro de Humboldt",
+        "career": "Administración de Empresas"
+    },
+    {
+        "university":"Universidad Alejandro de Humboldt",
+        "career": "Contaduría Pública"
+    },
+    {
+        "university":"Universidad Alejandro de Humboldt",
+        "career": "Comercio Internacional"
+    },
+    {
+        "university":"Universidad Alejandro de Humboldt",
+        "career": "Economía"
+    },
+    {
+        "university":"Universidad Alejandro de Humboldt",
+        "career": "Educación mención Inglés"
+    },
+    {
+        "university":"Universidad Alejandro de Humboldt",
+        "career": "Publicidad"
+    },
+    {
+        "university":"Universidad Alejandro de Humboldt",
+        "career": "Ingeniería en Informática"
+    },
+    {
+        "university":"Universidad Alejandro de Humboldt",
+        "career": "Ingeniería en Mantenimiento de Obras"
+    }
+
+]

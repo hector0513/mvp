@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+
+    <meta
+      name="description"
+      content="Compartiendo en nuestro sistema se gana"
+    />
+    <title>Asilinks</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!--favicon-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="mask-icon"
+      href="/assets/favicon/safari-pinned-tab.svg"
+      color="#ff0000"
+    />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+
+    <link rel="stylesheet" href="../../assets/styles/style2(principal).css" />
+  </head>
+  <body>
+    <header class="header-detalle-1">
+      <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="/">
+            <img
+            src="../../assets/images/asilinks-logo-footer.png"
+            alt="logo"
+            class="imagen-footer"
+          />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="bx bx-menu-alt-right color_asilinks"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto text-center text-md-left">
+              <li class="nav-item">
+                <a class="nav-link" href="/info"
+                  >¿Cómo funciona?
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/benefits">Beneficios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/FAQ">FAQ </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto" id="contact-link">Contáctanos</a>
+              </li>
+            </ul>
+            <form class="form-inline navegacion">
+              <ul class="navbar-nav">
+                <li class="nav-item pr-3 active">
+                  <a
+                    class="nav-link"
+                    href="/login"
+                    [routerLinkActive]="['active-header']"
+                    >Iniciar sesión</a
+                  >
+                </li>
+              </ul>
+              <a
+                class="btn btn-primary px-5 py-4"
+                *ngIf="!username"
+                href="/login/register"
+                role="button"
+                >Registrarme</a
+              >
+            </form>
+          </div>
+        </nav>
+      </div>
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-md-6 col-sm-12">
+            <h1>Comunicaciones</h1>
+            <p class="ml-4 ml-md-0">12 categorías disponibles</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 text-center text-md-left ">
+              <img
+                src="../../assets/images/group-13.png"
+                alt="imagen"
+                class="img-fluid group-13"
+              />
+            </div>
+
+              <div class="col-md-6">
+                <h2 class="text-center text-md-left">Detalles</h2>
+
+               <p>Se refiere a la acción consciente de intercambiar información entre dos o más participantes con el fin de transmitir o recibir significados a través de un sistema compartido de signos y normas semánticas. los pasos básicos de la comunicación son la formación de una intención de comunicar, la composición del mensaje, la codificación del mensaje, la transmisión de la señal, la recepción de la señal, la decodificación del mensaje y finalmente, la interpretación del mensaje por parte de un receptor.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section detalles">
+        <div class="container">
+
+          <div class="widget py-md-5 py-0 ">
+                  <h2>Categorías</h2>
+                  <nav class="nav flex-column">
+                      <a href="#" class="nav-link" style="cursor: default;">• Relaciones Institucionales/Publicas</a>
+                      <a href="#" class="nav-link" style="cursor: default;">• Comunicaciones Internas </a>
+                      <a href="#" class="nav-link" style="cursor: default;">• Comunicaciones Externas</a>
+                      <a href="#" class="nav-link" style="cursor: default;">• Responsabilidad Social</a>
+
+                  </nav>
+          </div>
+          <div class="widget py-md-5 py-0  espaciado-list">
+                  <nav class="nav flex-column  ">
+                      <a href="#" class="nav-link" style="cursor: default;">• Periodismo</a>
+                      <a href="#" class="nav-link" style="cursor: default;">• Redacción</a>
+                      <a href="#" class="nav-link" style="cursor: default;">• Redacción de contenido Web</a>
+                      <a href="#" class="nav-link" style="cursor: default;">• Comunicación digital</a>
+
+                  </nav>
+          </div>
+          <div class="widget py-md-5 py-0 espaciado-list">
+
+                  <nav class="nav flex-column ">
+                      <a href="#" class="nav-link" style="cursor: default;">• Información estratégica</a>
+                      <a href="#" class="nav-link" style="cursor: default;">• Corrector de contenido</a>
+                      <a href="#" class="nav-link" style="cursor: default;">• Monitoreo de medios</a>
+                      <a href="#" class="nav-link" style="cursor: default;">• Otras</a>
+
+                  </nav>
+          </div>
+      </div>
+      </section>
+
+      <section class="section"  id="contacto">
+        <div class="container">
+          <div class="row d-flex reverse">
+            <div class="col-md-6 mt-5 mt-md-0">
+              <h2 class="text-center p-0 text-md-left">Contáctanos</h2>
+
+              <p class="texto-contacto text-center text-md-left py-5">
+                Tienes alguna duda, algún comentario, queja, inquietud o
+                simplemente quieres hablar con nosotros, no dudes en dejarnos tu
+                mensaje por acá.
+              </p>
+
+              <form id="contact" enctype="application/form-data" method="post">
+                <fieldset>
+                  <div class="col-md-12 mb-5">
+                    <label>CORREO</label><br />
+                    <input
+                      type="email"
+                      class="form-input"
+                      id="email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-12 mb-5">
+                    <label>ASUNTO</label><br />
+                    <input
+                      id="subject"
+                      name="subject"
+                      type="text"
+                      class="form-input"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-12 mb-5">
+                    <label>COMENTARIO</label><br />
+                    <textarea id="comment" name="comment"></textarea>
+                  </div>
+
+                  <div class="col-md-12 text-center text-md-left">
+                    <button
+                      type="button"
+                      id="send"
+                      class="btn btn-primary btn-lg px-4 py-4"
+                      *ngIf="!username"
+                      onclick="postContact();"
+                    >
+                      Enviar
+                    </button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+
+            <div class="col-md-6 text-center text-md-right">
+              <img
+                src="../../assets/images/group-5.png"
+                alt="imagen"
+                class="img-fluid group-5"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('../partials/landing-footer'); -%>
+  </body>
+</html>

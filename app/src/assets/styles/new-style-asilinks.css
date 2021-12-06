@@ -1,0 +1,520 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+html,
+body {
+  font-family: "Quicksand" !important;
+  height: 100%;
+}
+/* GLOBALES */
+
+.asilinks-enlace-pink,
+.asilinks-enlace-pink:visited {
+  color: #fe5d60;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.asilinks-enlace-pink:hover,
+.asilinks-enlace-pink:visited:hover {
+  color: #ba1c1f;
+}
+
+.focus {
+  color: #fe5d60;
+}
+
+.w-45 {
+  width: 45%;
+}
+
+.contain-image {
+  object-fit: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.border-half {
+  border-radius: 50% !important;
+}
+
+.border-42 {
+  border-radius: 42px !important;
+}
+
+.border-35 {
+  border-radius: 35px !important;
+}
+
+.border-21 {
+  border-radius: 21px !important;
+}
+
+.border-18 {
+  border-radius: 18px !important;
+}
+
+.border-10 {
+  border-radius: 10px !important;
+}
+
+.border-7 {
+  border-radius: 7px !important;
+}
+
+.text-36 {
+  font-size: 36px !important;
+}
+
+.text-28 {
+  font-size: 28px !important;
+}
+
+.text-18 {
+  font-size: 18px !important;
+}
+
+.text-14 {
+  font-size: 14px !important;
+}
+
+.full-height {
+  height: 100%;
+}
+.center-vert {
+  display: flex;
+  align-items: center;
+}
+
+/*BACKGROUNDS*/
+
+.pink-bg {
+  background-color: #feeeef;
+}
+
+.white-bg {
+  background-color: #ffffff;
+}
+
+.black-shadow {
+  box-shadow: 0 4px 13px 0 rgba(42, 42, 53, 0.13);
+}
+
+/*CARDS*/
+.asilinks-card {
+  border-radius: 42px !important;
+}
+
+/*BOTONES*/
+
+.blue-btn {
+  padding: 10px !important;
+  width: 170px;
+  border-radius: 6px !important;
+  background-color: transparent;
+  border: 1px solid #5d60ff;
+  font-size: 16px !important;
+  transition: all 0.5s;
+  color: #5d60ff;
+  font-weight: bold;
+}
+
+.blue-btn:hover {
+  background-color: #5d60ff !important;
+  border: 1px solid #5d60ff;
+  color: #fff;
+}
+
+.btnColor {
+  background: #e74267;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#e74267),
+    color-stop(66%, #ff5d60)
+  );
+  background: linear-gradient(90deg, #e74267 0%, #ff5d60 66%);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.8em 1.3em;
+}
+
+.btnColor:hover {
+  background: transparent;
+  color: #fe5d60;
+  border-color: #ff5d60;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.btnCustom {
+  border: none;
+  background-color: #feeeef;
+  border-radius: 50px;
+  padding: 0.7em 2.3em;
+  color: #fe5d60;
+  margin: 1.4em 3.4em;
+  display: block;
+  -webkit-transition: all ease 0.4s;
+  transition: all ease 0.4s;
+  font-weight: 700;
+}
+
+.btnCustom:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.btnWhite {
+  background: #ffffff;
+  color: #000;
+  border: none;
+  font-weight: 700;
+  border-radius: 8px;
+  padding: 0.8em 1.3em;
+}
+.btnWhite:hover {
+  color: #e74267;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.asilinks-btn {
+  border-radius: 6px;
+  font-family: Quicksand;
+  font-weight: bold;
+  border: 0 none;
+  height: 52px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.orange-btn,
+.trans-btn:hover {
+  background-color: #fe5d60;
+  border-style: solid;
+  border-width: 1px;
+  color: #f2f5f8;
+}
+
+.trans-btn,
+.orange-btn:hover {
+  /* asilinks says trans rights */
+  background-color: transparent;
+  border-style: solid;
+  color: #fe5d60;
+  border-width: 1px;
+  border-image-slice: 1;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  white-space: normal;
+  /*padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 0px;
+    padding-top: 5px;*/
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  white-space: normal;
+  /*padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 0px;
+    padding-top: 5px;*/
+}
+
+.checkout-active {
+  box-shadow: 0 4px 8px 0 rgba(68, 68, 255, 0.2);
+  border: solid 2px #4444ff;
+  color: #4444ff;
+}
+
+.checkout-inactive {
+  border: solid 2px #b5c7d3;
+  color: #b5c7d3;
+}
+
+/*INPUTS*/
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #bcbcca;
+}
+
+.form-input {
+  background-color: #fafafa;
+  /*background-color: #000000;*/
+  font-weight: bold;
+  margin: 0 auto;
+  border-radius: 0;
+  border: none;
+  height: 52px;
+  font-size: 14px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: red;
+}
+
+.inputfile + label {
+  cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+  pointer-events: none;
+}
+
+.label_style {
+  padding: 10px !important;
+  width: 225px !important;
+  border-radius: 6px !important;
+  background-color: #5d60ff !important;
+  border: 1px solid #5d60ff;
+  font-size: 16px !important;
+  transition: all 0.5s;
+}
+
+.label_style:hover {
+  background-color: #fff !important;
+  border: 1px solid #5d60ff;
+  color: #000;
+}
+
+/*SELECTS*/
+
+/*MODALES*/
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  outline: 0;
+  padding: 35px;
+}
+
+/* COMIENZO DE LA SECCION DEL LOGIN DE ASILINKS*/
+
+.seccion {
+  margin: 0 auto;
+}
+
+.login-texto-pink {
+  font-size: 48px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  /*text-align: center;*/
+  color: #fe5d60;
+}
+
+.primary-bg {
+  display: block;
+}
+
+.secondary-bg {
+  display: none;
+}
+
+.coding {
+  height: 40%;
+}
+
+@media (max-width: 1200px) {
+  .coding {
+    height: 30%;
+  }
+}
+
+@media (max-width: 882px) {
+  .coding {
+    height: 27%;
+  }
+}
+
+@media (max-width: 770px) {
+  .login-texto-pink {
+    display: none;
+  }
+
+  .secondary-bg {
+    display: flex;
+  }
+
+  .girl,
+  .bike,
+  .coding {
+    height: 25%;
+  }
+}
+
+@media (max-width: 576px) {
+  .login-texto-pink {
+    font-size: 40px;
+  }
+}
+
+/* cosas del toggle */
+span.switcher {
+  position: relative;
+  width: 208px;
+  height: 57px;
+  border-radius: 25px;
+  /* margin: 20px 0; */
+}
+span.switcher input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  width: 200px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: #1e1e1e;
+  outline: none;
+  font-family: "Oswald", sans-serif;
+}
+span.switcher input:before,
+span.switcher input:after {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #ffffff;
+}
+span.switcher input:before {
+  content: "Clientes";
+  left: 20px;
+}
+span.switcher input:after {
+  content: "Socios";
+  right: 20px;
+}
+span.switcher label {
+  z-index: 1;
+  position: absolute;
+  top: 0px;
+  bottom: -1px;
+  border-radius: 30px;
+}
+span.switcher.switcher-1 input {
+  -webkit-transition: 0.25s -0.1s;
+  transition: 0.25s -0.1s;
+}
+span.switcher.switcher-1 input:checked {
+  background-color: #fae3e8;
+}
+span.switcher.switcher-1 input:checked:before {
+  color: #ffffff;
+  -webkit-transition: color 0.5s 0.2s;
+  transition: color 0.5s 0.2s;
+}
+span.switcher.switcher-1 input:checked:after {
+  color: #f74267;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+span.switcher.switcher-1 input:checked + label {
+  left: 1px;
+  right: 100px;
+  background: #f74267;
+  -webkit-transition: left 0.5s, right 0.4s 0.2s;
+  transition: left 0.5s, right 0.4s 0.2s;
+}
+span.switcher.switcher-1 input:not(:checked) {
+  background: #fae3e8;
+  -webkit-transition: background 0.5s -0.1s;
+  transition: background 0.5s -0.1s;
+}
+span.switcher.switcher-1 input:not(:checked):before {
+  color: #f74267;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+}
+span.switcher.switcher-1 input:not(:checked):after {
+  color: #fff;
+  -webkit-transition: color 0.5s 0.2s;
+  transition: color 0.5s 0.2s;
+}
+span.switcher.switcher-1 input:not(:checked) + label {
+  left: 100px;
+  right: 8px;
+  background: #f74267;
+  -webkit-transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
+  transition: left 0.4s 0.2s, right 0.5s, background 0.35s -0.1s;
+}
+
+/* fin cosas del toggle */
+
+#welcome {
+  font-size: 36px;
+  font-weight: bold;
+  color: #2a2a35;
+}
+
+#welcomeText {
+  font-size: 14px;
+  color: #2a2a35;
+}
+
+#rememberLabel,
+#termsLabel {
+  color: #2a2a35;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+@media (max-width: 770px) and (min-width: 768px) {
+  #welcome {
+    font-size: 30px;
+  }
+}
+
+/* FINAL DE LA SECCION DEL LOGIN DE ASILINKS*/
+
+/* LOS ESTILOS  DE LA SECCION DEL REGISTRO DE ASILINKS TAMBIEN SON LOS MISMOS DE LOGIN*/
+
+/* LOS ESTILOS  DE LA SECCION DEL FORGOT PASS DE ASILINKS TAMBIEN SON LOS MISMOS DE LOGIN*/
+
+/* COMIENZO DE LA SECCION LANDING, OJO ESTO SERA RESTRUCTURADO POR KEVIN BLANCO*/

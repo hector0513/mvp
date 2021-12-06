@@ -1,0 +1,37 @@
+[
+    {
+        "name":"Universidad Católica Andrés Bello",
+        "shortname":"UCAB",
+        "country":"Venezuela"
+    },
+    {
+        "name":"Universidad Central de Venezuela",
+        "shortname":"UCV",
+        "country":"Venezuela"
+    },
+    {
+        "name":"Universidad Simón Bolívar",
+        "shortname":"USB",
+        "country":"Venezuela"
+    },
+    {
+        "name":"Universidad Monteávila",
+        "shortname":"UMA",
+        "country":"Venezuela"
+    },
+    {
+        "name":"Universidad Santa María",
+        "shortname":"USM",
+        "country":"Venezuela"
+    },
+    {
+        "name":"Universidad Metropolitana",
+        "shortname":"UniMet",
+        "country":"Venezuela"
+    },
+    {
+        "name":"Universidad Alejandro de Humboldt",
+        "shortname":"UAH",
+        "country":"Venezuela"
+    }
+]

@@ -1,0 +1,555 @@
+<%- include('../../partials/header'); -%>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/loading-bar.css"/>
+    <link rel="stylesheet" href="/assets/styles/main.css">
+    <link rel="stylesheet" href="/assets/styles/partner.css">
+
+
+    <!-- Custom fonts for this template-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="/assets/styles/Client/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <div class="row">
+                    <div class="col-12 px-0">
+                        <%- include('../../partials/search-header.ejs'); -%>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 small-title red-text">
+                        <a class="fas fa-arrow-left" href="/partner" style="width: auto !important;">
+                        	<div class="d-inline-block" style="font-family: Quicksand;">
+                        		&nbsp&nbsp Volver al inicio
+                        	</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                	<div class="col-12 col-md-3 center-hor">
+                		<img src="<%= user.photo %>" class="profile-image" alt="Card image cap">
+                	</div>
+                	<div class="col-12 col-md-9">
+                		<div class="row mb-4">
+                			<div class="col-12 bigger-title red-text">
+                				<b><%=user.firstname%></b>
+                			</div>
+                			<div class="col-12 bigger-title red-text">
+                				<b><%=user.lastname%></b>
+                			</div>
+                			<!--<div class="col-12">
+                				Miembro desde el (fecha)
+                			</div>-->
+                		</div>
+                		<div class="row">
+                			<div class="col-12 col-md-4 mb-3">
+		                        <div class="card border-35 asilinks-card white-bg black-shadow h-100">
+		                            <div class="card-body small-title">
+										<div class="row">
+											<div class="col-9">
+												<div class="row">
+													<div class="col-12 red-text">
+														<b>Clientes</b>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-12">
+														Siempre serán tuyos❤️
+													</div>
+												</div>
+											</div>
+											<div class="col-3 center-vert px-1">
+												<div class="row">
+													<div class="col-12 red-text pl-1">
+														<b class="border-half pink-bg p-2">0</b>
+													</div>
+												</div>
+											</div>
+										</div>
+		                            </div>
+		                        </div>
+                			</div>
+                			<div class="col-12 col-md-4 mb-3">
+		                        <div class="card border-35 asilinks-card white-bg black-shadow h-100">
+		                            <div class="card-body small-title">
+										<div class="row">
+											<div class="col-9">
+												<div class="row">
+													<div class="col-12 red-text">
+														<b>Referidos</b>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-12">
+														Clientes y socios
+													</div>
+												</div>
+											</div>
+											<div class="col-3 center-vert px-1">
+												<div class="row">
+													<div class="col-12 red-text pl-1">
+														<b class="border-half pink-bg p-2">0</b>
+													</div>
+												</div>
+											</div>
+										</div>
+		                            </div>
+		                        </div>
+                			</div>
+                			<div class="col-12 col-md-4 mb-3">
+		                        <div class="card border-35 asilinks-card white-bg black-shadow h-100">
+		                            <div class="card-body small-title">
+										<div class="row">
+											<div class="col-9">
+												<div class="row">
+													<div class="col-12 red-text">
+														<b>Oportunidades</b>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-12">
+														Activos y finalizados
+													</div>
+												</div>
+											</div>
+											<div class="col-3 center-vert px-1">
+												<div class="row">
+													<div class="col-12 red-text pl-1">
+														<b class="border-half pink-bg p-2">0</b>
+													</div>
+												</div>
+											</div>
+										</div>
+		                            </div>
+		                        </div>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+                <div class="row mb-4" id="information">
+                	<div class="col-12 col-md-3 gray-text">
+                		<div class="row mb-3">
+	                        <!--<div class="col-3 center-hor">
+	                            <div class="small-icon orange-bg p-1">
+	                                <img src="/assets/favicon/diamond.svg">
+	                            </div>
+	                        </div>-->
+                			<div class="col-12 info-option active" data-target="#personal">
+                				Información personal
+                			</div>
+                		</div>
+                		<div class="row mb-3">
+	                        <!--<div class="col-3 center-hor">
+	                            <div class="small-icon orange-bg p-1">
+	                                <img src="/assets/favicon/diamond.svg">
+	                            </div>
+	                        </div>-->
+                			<div class="col-12 info-option" data-target="#academic">
+                				Información académica
+                			</div>
+                		</div>
+                		<div class="row mb-3">
+	                        <!--<div class="col-3 center-hor">
+	                            <div class="small-icon orange-bg p-1">
+	                                <img src="/assets/favicon/diamond.svg">
+	                            </div>
+	                        </div>-->
+                			<div class="col-12 info-option" data-target="#work">
+                				Información laboral
+                			</div>
+                		</div>
+                		<button type="submit" form="updateForm" class="asilinks-btn orange-btn mb-3" id="saveChanges" disabled>
+                			Guardar cambios
+                		</button>
+                	</div>
+                	<div class="col-12 col-md-9">
+	                	<form enctype='multipart/form-data' id="updateForm" action="/partner/updateInfo" method="post">
+	                		<div class="row">
+			                    <div class="col-12 col-md-12 personal-info" id="personal">
+			                        <div class="card asilinks-card white-bg black-shadow">
+			                            <div class="card-body small-title">
+											<div class="row mx-2">
+												<div class="col-12 col-md-6 mb-4">
+													<label class="my-0" for="firstname">NOMBRE</label><br>
+													<input type="text" class="form-input mt-2" name="firstname" id="firstname" value="<%=user.firstname%>">
+												</div>
+												<div class="col-12 col-md-6 mb-4">
+													<label class="my-0" for="lastname">APELLIDO</label><br>
+													<input type="text" class="form-input mt-2" name="lastname" id="lastname" value="<%=user.lastname%>">
+												</div>
+												<div class="col-12 col-md-6 mb-4">
+													<label class="my-0" for="firstname">DOCUMENTO DE IDENTIDAD</label><br>
+													<input type="text" class="form-input mt-2" name="userId" id="userId" value="<%=user.userId%>">
+												</div>
+												<div class="col-12 col-md-6 mb-4">
+													<label class="my-0" for="dob">FECHA DE NACIMIENTO</label><br>
+													<input type="date" class="form-input mt-2" name="dob" id="dob" value="<%=birthday%>" title="Debes ser mayor de 13 años para registrarte">
+												</div>
+												<div class="col-12 col-md-6 mb-4 as-select">
+													<label class="my-0" for="bornCountry">PAÍS DE NACIMIENTO</label><br>
+													<select name="bornCountry" id="bornCountry" class="form-input mt-2">
+														<% countries.forEach(function(country){ %>
+														<option value="<%= country %>"><%= country %></option>
+														<% }); %>
+													</select>
+												</div>
+												<div class="col-12 col-md-6 mb-4">
+													<label class="my-0" for="lastname">CIUDAD DE RESIDENCIA</label><br>
+													<input type="text" class="form-input mt-2" name="livingCity" id="livingCity" value="<%=user.city%>">
+												</div>
+												<div class="col-12 col-md-6 mb-4">
+									                <label>FOTO DE PERFIL</label><br>
+									                <span>
+									                  <input type="file" accept=".jpg,.jpeg,.png" name="profPic" id="profPic" class="inputfile form-input" style="padding:0.25rem;">
+									                  <label for="profPic" class="label_style" id="profile_file"><span>Adjuntar foto &nbsp</span><i class="fa fa-paperclip" aria-hidden="true"></i></label>
+									                </span>
+                                  <br>
+                                  <label>Tu foto de perfil no puede pesar más de 1 MB</label>
+												</div>
+											</div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="col-12 col-md-12 personal-info d-none" id="academic">
+			                        <div class="card asilinks-card white-bg black-shadow">
+			                            <div class="card-body small-title">
+											<div class="row mx-2">
+												<div class="col-12 col-md-6 mb-4 as-select">
+													<label class="my-0" for="studyCountry">PAÍS DE ESTUDIO</label><br>
+													<select name="studyCountry" id="studyCountry" class="form-input mt-2">
+														<% countries.forEach(function(country){ %>
+															<option value="<%= country %>"> <%= country %></option>
+														<% }); %>
+													</select>
+												</div>
+												<div class="col-md-6">
+												</div>
+												<div class="col-12 col-md-6 mb-4 as-select">
+													<label class="my-0" for="firstname">INSTITUCIÓN</label><br>
+													<select name="institution" id="institution" class="form-input mt-2" onchange="loadCareers()">
+													</select>
+												</div>
+												<div class="col-md-6 small-title">
+													¿No encuentras tu institución? <a href="#" class="add-info">¡Agrégala aquí!</a>
+												</div>
+												<div class="col-12 col-md-6 mb-4 as-select">
+													<label class="my-0" for="firstname">CARRERA</label><br>
+													<select name="career" id="career" class="form-input mt-2">
+													</select>
+												</div>
+												<div class="col-md-6 small-title">
+													¿No encuentras tu carrera? <a href="#" class="add-info">¡Agrégala aquí!</a>
+												</div>
+												<div class="col-12 col-md-6 mb-4">
+													<label class="my-0" for="lastname">ESPECIALIDAD</label><br>
+													<input type="text" class="form-input mt-2" name="specialty" id="specialty" value="<%=user.studyInfo.specialty%>">
+												</div>
+											</div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    <div class="col-12 col-md-12 personal-info d-none" id="work">
+			                        <div class="card asilinks-card white-bg black-shadow">
+			                            <div class="card-body small-title">
+											<div class="row mx-2">
+												<div class="col-12 col-md-6 mb-4 as-select">
+													<label class="my-0" for="firstname">AÑOS DE EXPERIENCIA</label><br>
+													<select name="yearsExp" id="yearsExp" class="form-input mt-2">
+														<option value="0-5" selected>0-5</option>
+														<option value="5-10">5-10</option>
+														<option value="10-15">10-15</option>
+														<option value="15-20">15-20</option>
+														<option value="20+">20+</option>
+													</select>
+												</div>
+												<div class="col-md-6 small-title">
+												</div>
+												<div class="col-12 col-md-6 mb-4">
+									                <label for="resume">RESUMEN CURRICULAR</label><br>
+									                <span>
+									                  <input type="file" accept=".doc,.docx,.pdf" name="resume" id="resume" class="inputfile form-input" style="padding:0.25rem;">
+									                  <label for="resume" class="label_style" id="resume_file">
+														<% if(!user.workInfo.fileOfName) { %>
+															<span>Adjuntar archivo(s) &nbsp;</span>
+															<i class="fa fa-paperclip" aria-hidden="true"></i>
+															<% } else { %>
+															  <span><%=user.workInfo.fileOfName %></span>
+															<% } %>
+														</label>
+									                </span>
+												</div>
+												<div class="col-md-6 small-title">
+												</div>
+												<div class="col-12 col-md-6 mb-4 as-select">
+													<label class="my-0" for="firstname">CATEGORÍA LABORAL</label><br>
+													<select name="workCategory" id="workCategory" class="form-input mt-2" onchange="loadCategories()">
+							                            <% category.forEach(function(cat){ %>
+
+							                              	<option value="<%= cat %>"
+															<% if (user.workInfo.workCategory == cat) { %>
+																selected
+															<% } %>> <%= cat %> </option>
+							                            <% }); %>
+													</select>
+												</div>
+												<div class="col-md-6 small-title">
+													¿No encuentras tu categoría? <a href="#" class="add-info">¡Agrégala aquí!</a>
+												</div>
+												<div class="col-12 col-md-6 mb-4 as-select">
+													<label class="my-0" for="dob">SUBCATEGORÍA LABORAL</label><br>
+													<select name="workSub" id="workSub" class="form-input mt-2">
+													</select>
+												</div>
+												<div class="col-md-6 small-title">
+													¿No la encuentras? <a href="#" class="add-info">¡Agrégala aquí!</a>
+												</div>
+											</div>
+			                            </div>
+			                        </div>
+			                    </div>
+			                </div>
+	                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<%- include('../../partials/sub-footer'); -%>
+<%- include('../../partials/modals/add_university'); -%>
+
+<script type="text/javascript">
+
+	$("#studyCountry").change(function() {
+
+		$('#institution').empty()
+		loadUni();
+		$('#career').empty()
+		loadCareers();
+
+	})
+
+	function checkSingleDigit(info){
+
+	 	if(info < 10){
+	        info = '0' + info;
+	    }
+
+	    return info;
+
+	}
+
+	function loadCategories() {
+
+		var category = $("#workCategory").val()
+
+		$.get("/client/getSubcategories/" + category)
+		  	.done( function(data){
+
+		      	console.log('subcategorias cargadas con exito!');
+		      	$('#workSub').empty()
+
+		      	if (Array.isArray(data) && data.length){
+
+		        	data.forEach((sub) =>{
+
+			          	$('#workSub').append($('<option>', {
+				            value: sub.sub_category,
+				            text: sub.sub_category
+			          	}));
+
+		        	})
+
+		      	}
+
+				var workSub = '<%= user.workInfo.workSub %>';
+				console.log(workSub)
+				$('#workSub').find("option[value='" + workSub +"']").attr('selected', true);
+
+		  })
+		  .fail( function(xhr, textStatus, errorThrown){
+
+		    console.log(errorThrown)
+		    alert('Error en la carga de Universidades');
+
+		  });
+
+	}
+
+	function loadUni() {
+
+		var studyCountry = $("#studyCountry").val()
+
+		var userUni = '<%= user.studyInfo.institution %>';
+
+		$.get("/partner/getUniversities/" + studyCountry)
+	        .done( function(data){
+
+	          	console.log('universidades cargadas con exito!');
+
+	          	if (Array.isArray(data) && data.length){
+
+					data.forEach((uni) =>{
+
+						$('#institution').append($('<option>', {
+							value: uni.name,
+							text: uni.name
+						}));
+
+					})
+
+				$('#institution').find("option[value='" + userUni +"']").attr('selected', true);
+
+				loadCareers();
+
+	          }
+
+	        })
+	        .fail( function(xhr, textStatus, errorThrown){
+
+	          console.log(errorThrown)
+	          alert('Error en la carga de Universidades');
+
+	        });
+
+	}
+
+	function loadCareers() {
+
+		var userUni = $("#institution").val()
+
+		var userCareer = '<%= user.studyInfo.career %>';
+
+		$.get("/partner/getCareers/" + userUni)
+	        .done( function(data){
+
+	          	console.log('carreras cargadas con exito!');
+				$('#career').empty()
+
+	          	if (Array.isArray(data) && data.length){
+
+					data.forEach((car) =>{
+
+						$('#career').append($('<option>', {
+							value: car.career,
+							text: car.career
+						}));
+
+					})
+
+				$('#career').find("option[value='" + userCareer +"']").attr('selected', true);
+
+	          }
+
+	        })
+	        .fail( function(xhr, textStatus, errorThrown){
+
+	          console.log(errorThrown)
+	          alert('Error en la carga de carreras');
+
+	        });
+
+	}
+
+	// Actualiza los selects al cargar la pagina para que tenga seleccioanda las opciones del usuario
+	function updateSelects(){
+
+		var userUni = '<%= user.workInfo.yearsExp %>';
+		var workCategory = '<%= user.workInfo.workCategory %>';
+		var bornCountry = '<%= user.country %>';
+		var studyCountry = '<%= user.studyInfo.studyCountry %>';
+
+		$('#yearsExp').find("option[value='" + userUni +"']").attr('selected', true);
+		$('#workCategory').find("option[value='" + workCategory +"']").attr('selected', true);
+		$('#bornCountry').find("option[value='" + bornCountry +"']").attr('selected', true);
+		$('#studyCountry').find("option[value='" + studyCountry +"']").attr('selected', true);
+
+	}
+
+ 	$(document).ready(function(){
+
+
+ 		updateSelects();
+
+ 		$("#studyCountry").change();
+		$("#workCategory").change();
+
+	    $(".info-option").on("click", function(){
+
+	        $(".personal-info").addClass("d-none");
+        	var toCollapse = $(this).data( "target" );
+
+        	$(toCollapse).removeClass("d-none");
+
+	        $(".info-option.active").not($(this)).removeClass("active");
+	        $(this).addClass("active");
+
+	    });
+
+	    $(".form-input").on("change", function(){
+
+	        $("#saveChanges").prop('disabled', false)
+
+	    });
+
+	    $("#resume").on("change", function(){
+
+	        $("#saveChanges").prop('disabled', false)
+
+	    });
+
+		$("#resume").change(function() {
+
+			if (!this.files[0])
+				return $("#resume_file").html("<span>Adjuntar archivo &nbsp</span><i class='fa fa-paperclip' aria-hidden='true'></i>")
+
+			$("#resume_file").text(this.files[0].name)
+
+		});
+
+    $("#profPic").change(function() {
+
+			if (!this.files[0]) {
+        return $("#profile_file").html("<span>Adjuntar foto &nbsp</span><i class='fa fa-paperclip' aria-hidden='true'></i>")
+      } else {
+        if (this.files[0].size > 1048576) {
+          alert("Tu foto de perfil no puede pesar más de 1 MB");
+          return $("#profile_file").html("<span>Adjuntar foto &nbsp</span><i class='fa fa-paperclip' aria-hidden='true'></i>")
+        } else {
+          $("#profile_file").text(this.files[0].name)
+        }
+      }
+		});
+
+		$(".add-info").click(function() {
+
+			$("#addUni").modal("show");
+
+		});
+
+		var today = new Date();
+		// Minimo de 13 años para crearse una cuenta
+		var year = today.getFullYear() - 13
+		var month = today.getMonth() + 1
+		var day = today.getDate()
+
+	    day = checkSingleDigit(day);
+	    month = checkSingleDigit(month);
+
+	    year = year.toString();
+		month = month.toString();
+		day = day.toString();
+
+		var fullDate = year +'-'+ month +'-'+ day
+		console.log(fullDate)
+
+		// Pone el limite al calendario
+		document.getElementById("dob").setAttribute("max", fullDate);
+
+    });
+
+</script>

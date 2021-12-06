@@ -1,0 +1,988 @@
+<%- include('partials/header'); -%>
+<style>
+  .unselectable {
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  color: #cc0000;
+  }
+  html.modal-open {
+      /* All of this stops the page from scrolling in the background, especially important on mobile devices. */
+      -ms-overflow-style: scrollbar;
+      overflow: hidden;
+      height: 100%;
+  }
+
+  body.modal-open {
+    /* This is the crucial rule to get rid of the page shift when opening a modal */
+    overflow: auto !important;
+    /* You may want to explore toggling this, depending on your circumstances (page length and/or presence of page scroll bars) */
+    height: 100%;
+  }
+</style>
+<body id="page-top" onload="loadChat();">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <%- include('./partials/nav'); -%>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin: 50px 0 0px 0;">
+                <a class="fas fa-arrow-left" style="width: auto !important;" href="/client"><p style="font-family: Quicksand; display: inline-block;">&nbsp&nbsp Volver a inicio </p></a></div>
+
+              <!-- modal for wallet -->
+              <div
+              class="modal fade"
+              id="Modal-wallet"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="basicModal"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog  modal-dialog-centered">
+                <div class="modal-content class">
+                  <button
+                    style="text-align: end; outline: 0;"
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true" class="px-2" id="modalClose-blue"
+                      >&times;</span
+                    >
+                  </button>
+                  <div
+                    class="modal-header"
+                    style="margin: 0 auto; padding: 0 0 20px 0;"
+                  >
+                    <h4
+                      class="modal-title"
+                      id="myModalLabel"
+                      style="font-weight: bold; color: #4444ff;"
+                    >
+                      Pago del requerimiento
+                    </h4>
+                  </div>
+                  <div class="row">
+                    <div class="col-8 mt-3">
+                      Servicios Profesionales
+                    </div>
+                    <div
+                      class="col-4 text-right bold text-dark mt-3"
+                      id="payment"
+                    ></div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-8 mt-3">
+                      Total
+                    </div>
+                    <div class="col-4 text-right text-dark mt-3" id="total"></div>
+                  </div>
+                  <br />
+                  <div class="row" align="center" style="padding:20px;">
+
+                      <button
+                        align="left"
+                        onclick="acceptWallet('<%= requirement.proposal._id %>')"
+                        class="modal-title col-md-5"
+                        id="wallet"
+                        style="
+                          font-weight: bold;
+                          color: #4444ff;
+                          font-size: 14px;
+                          height: 126px;
+                          border-radius: 10px;
+                          box-shadow: 0 4px 8px 0 rgba(68, 68, 255, 0.2);
+                          border: solid 2px #4444ff;
+                          background-color: #ffffff;
+                        "
+                      >
+                        <i
+                          class="fa fa-credit-card"
+                          aria-hidden="true"
+                          style="font-size: 35px; width: auto !important;"
+                        ></i
+                        ><br />Wallet Asilinks<br />
+                        <label
+                          style="
+                            font-family: Quicksand;
+                            font-size: 16px;
+                            font-weight: normal;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: 1.43;
+                            letter-spacing: normal;
+                            text-align: center;
+                          "
+                        >
+                          $<%= (user.wallet).toFixed(2) %>
+                        </label>
+                      </button>
+                      <div class="col-2"></div>
+                      <button
+                        align="right"
+                        class="modal-title col-md-5"
+                        id="tdc"
+                        style="
+                          font-weight: bold;
+                          color: #4444ff;
+                          font-size: 14px;
+
+                          height: 126px;
+                          border-radius: 10px;
+                          box-shadow: 0 4px 8px 0 rgba(68, 68, 255, 0.2);
+                          border: solid 2px #4444ff;
+                          background-color: #ffffff;
+                        "
+                      >
+                        <i
+                          class="fa fa-credit-card"
+                          aria-hidden="true"
+                          style="font-size: 35px; width: auto !important;"
+                        ></i
+                        ><br />Tarjeta de crédito<br />
+                        <label
+                          style="
+                            font-family: Quicksand;
+                            font-size: 16px;
+                            font-weight: normal;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: 1.43;
+                            letter-spacing: normal;
+                            text-align: center;
+                          "
+                        >
+
+                        </label>
+                      </button>
+
+                  </div>
+                  <div class="modal-body">
+                    <div class="card-body">
+                      <form enctype="multipart/form-data">
+                        <fieldset>
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label
+                                for="title"
+                                style="
+                                  font-family: Quicksand;
+                                  font-weight: bold;
+                                  color: #bcbcca;
+                                "
+                                >CORREO</label
+                              >
+                              <input
+                                type="text"
+                                class="form-input"
+                                id="email"
+                                placeholder=""
+                                style="color: #2a2a35;"
+                                required="true"
+                              />
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-12">
+                              <label
+                                for="title"
+                                style="
+                                  font-family: Quicksand;
+                                  font-weight: bold;
+                                  color: #bcbcca;
+                                "
+                                >NUMERO DE TARJETA</label
+                              >
+                              <input
+                                type="text"
+                                class="form-input"
+                                id="card_number"
+                                placeholder="xxxx xxxx xxxx xxxx"
+                                style="color: #2a2a35;"
+                                required
+                              />
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-6 delete_after">
+                              <label for="category" style="
+                                  font-family: Quicksand;
+                                  font-weight: bold;
+                                  color: #bcbcca;
+                                ">MES VENCIMIENTO</label>
+                              <span class="expiration">
+                                <input type="tel" class="form-input" style="color: #2a2a35;" id="expiration_month"
+                                  name="month" pattern="\d*" placeholder="MM" minlength="2" maxlength="2" required />
+                            </div>
+
+                            <div class="col-6 delete_after">
+                              <label for="category" style="
+                                    font-family: Quicksand;
+                                    font-weight: bold;
+                                    color: #bcbcca;
+                                  ">AÑO VENCIMIENTO</label>
+
+                              <input type="tel" class="form-input" style="color: #2a2a35;" id="expiration_year" name="year"
+                                pattern="\d*" placeholder="YYYY" minlength="4" maxlength="4" required />
+                            </div>
+
+                            <div class="col-6 delete_after">
+                              <label for="subcategory" style="
+                                  font-family: Quicksand;
+                                  font-weight: bold;
+                                  color: #bcbcca;
+                                ">CVV</label>
+                              <input type="text" class="form-input" id="cvv" placeholder="" style="color: #2a2a35;"
+                                pattern="\d*" maxlength="4" placeholder="xxx" required />
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-12">
+                              <label for="description" style="
+                                  font-family: Quicksand;
+                                  font-weight: bold;
+                                  color: #bcbcca;
+                                ">NOMBRE DE LA TARJETA</label>
+                              <input type="text" class="form-input" id="nameCard" style="color: #2a2a35;" required />
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="description" style="
+                                  font-family: Quicksand;
+                                  font-weight: bold;
+                                  color: #bcbcca;
+                                ">PAIS O REGIÓN</label>
+                              <select class="form-input" id="country" style="color: #2a2a35; padding: 0.35rem;" required>
+                                <option value="Venezuela">Venezuela</option>
+                                <option value="Estados Unidos">Estados Unidos</option>
+
+                              </select>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </form>
+                      <div class="row">
+                        <div class="col-6">
+                          <button
+                            id="go_back"
+                            class="btn btn-block btn-primary px-4 blue-btn"
+                            style="
+                              font-weight: normal;
+                              width: 100%;
+                              margin-top: 50px;
+                              border-image-source: linear-gradient(
+                                to right,
+                                #1d1dff,
+                                #5757ff
+                              );
+                              border-image-slice: 1;
+                            "
+                            data-dismiss="modal"
+                          >
+                            Volver
+                          </button>
+                        </div>
+                        <div class="col-6">
+                          <button
+                            id="pay"
+                            class="btn btn-block btn-primary px-4 label_style2"
+                            style="
+                              font-weight: normal;
+                              width: 100%;
+                              margin-top: 50px;
+                            "
+                            onclick="accept();"
+                          >
+                            Pagar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+                <!-- end of modal -->
+
+
+                <!-- modal for receipt -->
+                <div class="modal fade" id="Modal-receipt" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                  <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div
+                      class="modal-content"
+                      style="border-radius: 21px; padding: 35px;"
+                    >
+                    <button
+                      style="text-align: end; outline: 0;"
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true" class="px-2" id="modalClose-blue"
+                        >&times;</span
+                      >
+                    </button>
+                          <div class="modal-header" style="margin: 0 auto;">
+                            <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#4444ff">
+                              Recibo de pago</h4>
+                          </div>
+
+                          <br/>
+
+                          <div class="modal-body">
+                        <div class="card-body">
+
+                          <p><br></p>
+                          <div class="row" >
+                            <div id="html_services"class="col-12" style="
+                            border-radius: 10px;
+                            border: solid 1px #bcbcca;">
+                            </div>
+                          </div>
+                          <br/>
+                          <div class="row" align="right">
+                            <div class="col-6"></div>
+                            <div class="col-6" align="right">
+                              <button id="pdfService" onclick="download('services');" class="btn btn-block btn-primary px-4 label_style2" style="border-radius: 10px;
+                              background-image: linear-gradient(to right, #1d1dff, #5757ff);
+                              font-family: Quicksand;
+                              font-weight: bold;
+                              font-stretch: normal;
+                              font-style: normal;
+                              color: #ffffff;
+                              ">
+                                Descargar PDF
+                              </button>
+                            </div>
+                          </div>
+                      </div>
+                      </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- end of modal -->
+
+              <!-- modal for preview -->
+              <div class="modal fade" id="Modal-preview" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+                      <button
+                  style="text-align: end; outline: 0;"
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true" class="px-2" id="modalClose-blue"
+                    >&times;</span
+                  >
+                </button>
+                      <div class="modal-header" style="margin: 0 auto;">
+                        <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#4444ff">Preview</h4>
+                      </div>
+
+                      <embed src="<%= requirement.file %>" class="unselectable" type="application/pdf" frameborder="0" width="100%" />
+
+                      <br>
+                        <div class="modal-body">
+                      <div class="card-body">
+                        <div class="row">
+                          <div class="col-6">
+                          </div>
+                          <div class="col-6">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6">
+                            <button id="reject" onclick="reject('<%= requirement._id %>');"  data-toggle="modal" data-target="#Modal-reject"  class="btn btn-block btn-primary px-4 blue-btn" style="font-weight: normal; margin-top: 50px; ">
+                              Rechazar
+                            </button>
+                          </div>
+                          <div class="col-6">
+                            <% if(requirement.paymentDone) { %>
+
+                              <button id="files_att" onclick="downloadAll();" class="btn btn-block  px-4 label_style2" style="font-weight: normal; width: 105%; margin-top: 50px; ">
+                                Descargar Archivos
+                              </button>
+
+                              <% } else { %>
+                            <button id="pay" onclick="updateModal('<%=requirement.proposal.price %>','<%=user.wallet %>');" data-dismiss="modal" data-toggle="modal" data-target="#Modal-wallet"
+                            class="btn btn-block btn-primary px-4 label_style2" style="font-weight: normal; width: 105%; margin-top: 50px; ">
+                              Descargar Archivos
+                            </button>
+
+                            <% } %>
+                          </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- end of modal -->
+
+
+                <!-- modal for reject -->
+                <div class="modal fade" id="Modal-reject" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+                        <div class="modal-header" style="margin: 0 auto;">
+                          <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#4444ff">Rechazar Entrega</h4>
+                        </div>
+
+                          <div class="modal-body">
+                        <div class="card-body">
+                          <div class="row">
+                            <div class="col-12 text-center">
+                              <h6> ¿Deseas rechazar esta entrega?</h6>
+                            </div>
+                          </div>
+
+                          <% if (!requirement.proposal.extension.requested) { %>
+                          <div class="row">
+                            <div class="col-6">
+                              <button id="rejectWork" onclick="rejectWork('<%= requirement._id %>');" class="btn btn-block btn-primary px-4 blue-btn" style="font-weight: normal; width: 105%; margin-top: 50px; ">
+                                Rechazar
+                              </button>
+                            </div>
+                            <div class="col-6">
+                              <button id="extend" onclick="extendWork('<%= requirement._id %>');" class="btn btn-block btn-primary px-4 label_style2" style="font-weight: normal; width: 105%; margin-top: 50px; ">
+                                Extender la entrega
+                              </button>
+                            </div>
+                          </div>
+
+                          <%} else {%>
+
+                            <div class="row">
+                              <div class="col-12">
+                                <button onclick="rejectWork('<%= requirement._id %>');" class="btn btn-block btn-primary px-4 label_style2" style="font-weight: normal; width: 100%; margin-top: 50px; ">
+                                  Rechazar
+                                </button>
+                              </div>
+                            </div>
+                          <%}%>
+                      </div>
+                      </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- end of modal -->
+
+
+
+                              <!-- modal for rate -->
+                              <div class="modal fade" id="Modal-ratePartner" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                  <div class="modal-dialog modal-xl modal-dialog-centered">
+                                    <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+                                      <div class="modal-header" style="margin: 0 auto;">
+                                        <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#4444ff">Felicidades!</h4>
+                                      </div>
+
+                                          <br>
+                                        <div class="modal-body">
+                                      <div class="card-body">
+                                        <div class="row">
+                                          <div id="desc"class="col-12">
+                                              <p>
+                                                Hemos recibido tu pago con éxito. <br><br>Ya puedes pasar a descargar los entregables de <%= partner.firstname %> y antes quisieramos pedirte un último favor de que comentes cómo fue tu experiencia trabajando con <%= partner.firstname %>. Siempre en pro de mejorar y seguirte brindando la mejor experiencia.
+                                                <br><br>¡Para nosotros es muy valiosa tu opinión! ¡Muchas gracias!
+                                                <br>
+                                                <br>
+
+                                                <a href="/partner/profile"><img class="img-profile rounded-circle" src="<%= partner.photo %>" style="width: 60px; height: 60px; object-fit: cover;"></a>
+                                              <a href="/partner/profile" style="font-family: Quicksand; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.33; color: #2a2a35; margin-right: 10px; text-decoration: none; margin-top: -20px;"><%= partner.firstname %> <%= partner.lastname %></a>
+                                            </p>
+                                          </div>
+                                        </div>
+                                        <form action="/client/ratePartner/<%= partner._id%>" enctype="application/form-data" method="post" >
+                                        <div class="row">
+                                          <div class="col-12">
+
+                                            <section
+                                              class="radio_requeriments2"
+                                              id="tabs3-3"
+                                              style=""
+                                            >
+                                              <label>
+                                                <input
+                                                  type="radio"
+                                                  name="rate"
+                                                  value="Muy Deficiente"
+                                                  id="radio000"
+                                                />
+                                                <div class="btn_nav3 btn-sik3">
+                                                  <span>Muy Deficiente</span>
+                                                </div>
+                                              </label>
+                                              <label>
+                                                <input
+                                                  type="radio"
+                                                  name="rate"
+                                                  value="Deficiente"
+                                                  id="radio111"
+                                                />
+                                                <div class="btn_nav3 btn-sik3">
+                                                  <span>Deficiente</span>
+                                                </div>
+                                              </label>
+                                              <label>
+                                                <input
+                                                  type="radio"
+                                                  name="rate"
+                                                  value="Normal"
+                                                  id="radio222"
+                                                />
+                                                <div class="btn_nav3 btn-sik3">
+                                                  <span>Normal</span>
+                                                </div>
+                                              </label>
+                                              <label>
+                                                <input
+                                                  type="radio"
+                                                  name="rate"
+                                                  value="Buena"
+                                                  id="radio333"
+                                                />
+                                                <div class="btn_nav3 btn-sik3">
+                                                  <span>Buena</span>
+                                                </div>
+                                              </label>
+                                              <label>
+                                                <input
+                                                  type="radio"
+                                                  name="rate"
+                                                  value="Muy Buena"
+                                                  id="radio444"
+                                                />
+                                                <div class="btn_nav3 btn-sik3">
+                                                  <span>Muy Buena</span>
+                                                </div>
+                                              </label>
+                                            </section>
+
+                                              <input type="text" name="requirement" value="<%= requirement._id%>" hidden/>
+                                              <br>
+                                              <p> COMENTARIO </p>
+
+                                              <textarea  type="text" class="form-control" name="comment" style="border:0;" ></textarea>
+                                            <button type="submit" class="btn btn-block btn-primary px-4 label_style2" style="font-weight: normal; width: 100%; margin-top: 50px; ">
+                                              Enviar calificación
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </form>
+                                    </div>
+                                    </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+
+
+
+            <!-- Content Row -->
+            <div class="row">
+                <div class="col-xl col-lg">
+                    <div class="card shadow mb-4">
+                      <!-- Card Body -->
+                      <div class="card-body">
+                        <div class="row no-gutters">
+                          <div class="">
+                            <img src="https://picsum.photos/500.webp" class="card-img rounded2" alt="..." style=" width: 110px;
+                            height: 110px;
+                            border-radius: 21px;">
+                          </div>
+                          <div class="col-md-8 col-8 col-sm-8">
+                            <div class="card-body" style="padding: 1.25rem !important;">
+                              <h5 class="card-title breakpoint_font" style="font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #2a2a35;"><%= requirement.name %></h5>
+                              <p class="card-text" style="font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: normal; color: #2a2a35;">Por <%= user.firstname %> <%= user.lastname %></p>
+                              <a href="" class="btn btn-outline-primary style_btn mb-2 mb-md-0" style="font-size: 10px;"><%= requirement.category_name %></a>
+                              <a href="" class="btn btn-outline-primary style_btn" style="font-size: 10px;"><%= requirement.subcategory_name %></a>
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                        <br>
+                        <h6 class="col" style="font-weight: bold; color: #2a2a35;">Descripión</h6>
+                        <p class="col"><%= requirement.description %></p>
+                        <ul id="progressbar" style="margin: 0; padding: 0; list-style:none;" class="col">
+
+
+                            <li style="margin: 20px 0;"><a class="fas fa-check user_style" style="display: inline;"><p style="font-family: Quicksand; display: inline-block; color: #2a2a35;">&nbsp;Propuesta aceptada el: </p><p style="font-family: Quicksand; display: inline-block; color: #2a2a35; font-weight: normal;">&nbsp;<%= moment(requirement.proposal.acceptedTime).format("DD/MM/YYYY") %></p></a></li>
+
+                            <li style="margin: 20px 0;"><a class="fas fa-briefcase user_style" style="display: inline;"><p style="font-family: Quicksand; display: inline-block; color: #2a2a35;">&nbsp;Tiempo de trabajo: </p><p style="font-family: Quicksand; display: inline-block; color: #2a2a35; font-weight: normal;">&nbsp;<%= requirement.proposal.estimatedTime %> <%= requirement.proposal.estimatedUnit %></p></a></li>
+
+                            <li style="margin: 20px 0; "><a class="fas fa-calendar-alt user_style-calendar" style="display: inline;"><p style="font-family: Quicksand; display: inline-block; color: #2a2a35;">&nbsp;Fecha de entrega estimada: </p><p style="font-family: Quicksand; display: inline-block; color: #2a2a35; font-weight: normal;">&nbsp;<%= moment(requirement.proposal.deadline).format("DD/MM/YYYY") %> </p></a></li>
+
+                            <li style="margin: 20px 0; "><a class="fas fa-money-bill-wave user_style-money" style="display: inline;"><p style="font-family: Quicksand; display: inline-block; color: #2a2a35;">&nbsp;Precio: </p><p style="font-family: Quicksand; display: inline-block; color: #2a2a35; font-weight: normal;">&nbsp;$<%= requirement.proposal.price %> </p></a></li>
+
+                          </ul>
+                          <% if (requirement.file) {%>
+                              <h6 class="col" style="font-weight: bold; color: #2a2a35;">Adjuntos</h6>
+
+                              <% if (requirement.paymentDone) {%>
+                                <a href='<%= requirement.file %>' class="col file" style="" download='<%= requirement.fileName %>'><%= requirement.fileName %></a><br>
+                                <% for (var f=0; f<requirement.otherFiles.length; f++) {%>
+                                  <a href='<%= requirement.otherFiles[f].filePath %>' class="col file"  style="" download='<%= requirement.otherFiles[f].fileName %>'><%= requirement.otherFiles[f].fileName %></a><br>
+                                <% } %>
+                              <% } else { %>
+                                <a href="" class="col"style=""><%= requirement.fileName %></a>
+                              <% } %>
+                                <h6 class="col" style="font-weight: bold; color: #2a2a35;">Comentario</h6>
+                                <p class="col" style="color: #2a2a35;"><%= requirement.fileComment %></p>
+
+                          <% } %>
+                        <button data-toggle="modal" data-target="#Modal-preview" class="btn btn-block btn-primary px-4 label_style2" style="font-weight: normal; width: 100%; margin-top: 50px; ">Ver entregable</button>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="col-xl col-lg">
+                    <div class="card shadow mb-4" style="padding: 0;">
+                      <!-- Card Body -->
+                      <div class="card-body" style="padding: 0;">
+                        <div class="col" style="padding: 0;">
+                            <div class="settings-tray">
+                                <div class="friend-drawer no-gutters friend-drawer--grey">
+                                <img class="profile-image" src="<%= partner.photo %>" onerror = 'this.src="https://st4.depositphotos.com/1000507/24026/v/450/depositphotos_240260608-stock-illustration-robocop-simple-abstract-vector-illustration.jpg"' alt="">
+                                <div class="text">
+                                  <h6><%= partner.firstname %> <%= partner.lastname%></h6>
+                                  <p id="lastLogin" class="text-muted">
+                                    <% if (partner.lastLogin){ %>
+                                        <%= moment(partner.lastLogin).local().format("DD/MM/YYYY hh:mm a") %>
+                                    <%} else {%>
+                                        Offline
+                                    <%}%>
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                            <hr style="margin: 0 auto;">
+                            <div class="text-center">
+                            <!-- <button class="btn btn-info" style="  border-radius: 18px; background-color: #f4f4ff; border: #f4f4ff; color: #000; font-weight: lighter;">AYER</button> -->
+                            </div>
+                            <div class="chat-panel" style="max-height: 50vh;overflow-y: scroll;" id="chat_panel">
+                            </div>
+                            <div class="row">
+                              <div class="col-12">
+                                <div class="chat-box-tray">
+                                  <% if (!requirement.paymentDone) { %>
+                                  <!-- <i class="fas fa-paperclip"></i> -->
+                                  <i class="fa">&nbsp;</i>
+
+                                  <input id="chat_message" type="text" placeholder="Escribe tu mensaje…"  />
+                                  <i id="send_message" class="fas fa-paper-plane" onclick="sendMessage()"></i>
+                                  <% } %>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+
+    </div>
+        <!-- /.container-fluid -->
+
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <%- include('./partials/footer'); -%>
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+<%- include('./partials/sidebar'); -%>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript">
+    $("#workerBtn2").click(function() {
+
+        // EL POST ESTA EN WALLET ROUTES PORQUE NO SE DONDE PONERLO. OBVIO NO VA AHI
+        $.post("/api/users/changeWork")
+        .done( function(data){
+
+            location.reload();
+
+        })
+        .fail( function(xhr, textStatus, errorThrown){
+
+            console.log(xhr.responseText)
+            alert("Error guardando al usuario! " + xhr.responseText)
+
+        });
+
+
+    });
+    var proposal;
+
+    function updateModal(price, wallet, modal){
+
+      var fee = price * 0.1 // 10% fee
+      var partner_payment = price*0.4 // 60% to partner
+      var ammount = partner_payment;
+      $("#payment").html(partner_payment.toFixed(2));
+      $("#fee").html(fee.toFixed(2));
+      $("#total").html(ammount.toFixed(2));
+      if (wallet<ammount){
+        $("#wallet").prop('disabled', true);
+      } else {
+        $("#wallet").prop('disabled', false);
+      }
+    }
+
+    function reject(requirement){
+      $('#Modal-preview').modal('hide');
+    }
+    function rejectWork(requirement){
+
+      var reqInfo = {
+        requirement
+      }
+
+      $.post("/opportunity/rejectWork",
+        reqInfo,
+        function(data,status){
+            console.log(data)
+            console.log(status);
+            if (data=="ok") window.location.reload();
+        });
+    }
+    function extendWork(requirement){
+
+      var reqInfo = {
+        requirement
+      }
+
+      $.post("/opportunity/extendWork",
+        reqInfo,
+        function(data,status){
+            console.log(data)
+            console.log(status);
+            if (data=="ok") window.location.reload();
+            else alert(data)
+        });
+    }
+
+    function accept(proposal){
+
+      var reqInfo = {
+        creditCardNumber: $("#card_number").val(),
+        expiration_month: $("#expiration_month").val(),
+        expiration_year: $("#expiration_year").val(),
+        cvv: $("#cvv").val(),
+        nameCard: $("#nameCard").val(),
+        country: $("#country").val(),
+        proposal
+      }
+
+      $.post("/opportunity/inProgress/cardPayment",
+        reqInfo,
+        function(data,status){
+          if (status=="success"){
+            $('#Modal-wallet').modal('hide');
+            $('#Modal-receipt').modal('show');
+            $("#html_fee").html(data.html_fee);
+            $("#html_services").html(data.html_services);
+            html_fee=data.html_fee;
+            html_services=data.html_services;
+          } else {
+            alert("Error at payment");
+          }
+        });
+    }
+
+    function acceptWallet(proposal){
+
+      var reqInfo = {
+        proposal
+      }
+
+      $.post("/opportunity/inProgress/walletPayment",
+        reqInfo,
+        function(data,status){
+            console.log(data)
+            console.log(status);
+            if (status=="success"){
+              $('#Modal-wallet').modal('hide');
+              $('#Modal-receipt').modal('show');
+              $("#html_fee").html(data.html_fee);
+              $("#html_services").html(data.html_services);
+              html_fee=data.html_fee;
+              html_services=data.html_services;
+              // hideModal('Modal-wallet');
+              // $("#ratePartner").click()
+            } else {
+              alert("Error at payment");
+            }
+        });
+    }
+
+    function download(type){
+      var receipt = $("#html_services").html();
+
+    var doc = new jsPDF();
+    var elementHandler = {
+      "#imgCheck": function (element, renderer) {
+        return true;
+      },
+      "#imgchecksrc": function (element, renderer) {
+        return true;
+      },
+    };
+
+    doc.fromHTML(receipt, 15, 15, {
+      width: 180,
+      elementHandlers: elementHandler,
+    },function(d){doc.save("receipt_" + type + ".pdf");});
+
+
+    }
+    $('#Modal-receipt').on('hidden.bs.modal', function () {
+       $('#Modal-ratePartner').modal('show');
+    })
+
+
+  function hideModal(modal){
+    $('#'+modal).modal('hide');
+  }
+
+  const socket = io()
+
+  socket.on('private-message', (data) => {
+       if (data.message != ""){
+       var div_row = $("<div>").attr("class","row no-gutters").appendTo('#chat_panel');
+         if (data.me){
+           var div_col = $("<div>").attr("class","col-md offset-md-3 offset-sm-3 offset-3").appendTo(div_row);
+           var div_chat = $("<div>").attr("class","chat-bubble chat-bubble--right").append(data.message).appendTo(div_col);
+             var p_text = $("<p>").attr("style","float: right; font-size: 10px; margin-top: 15px; color: #8f8f8f;").append(data.time).appendTo(div_chat);
+         } else {
+           var div_col = $("<div>").attr("class","col-md-9 col-sm-9 col-9").appendTo(div_row);
+           var div_chat = $("<div>").attr("class","chat-bubble chat-bubble--left").append(data.message).appendTo(div_col);
+            var p_text = $("<p>").attr("style","float: right; font-size: 10px; margin-top: 15px; color: #4444ff;").append(data.time).appendTo(div_chat);
+         }
+         $("#lastLogin").html(data.lastLogin);
+       }
+       scrollSmoothToBottom()
+  })
+
+  socket.on('chat_disconnect', (data) => {
+    $("#lastLogin").html(moment().format("DD/MM/YYYY hh:mm a"));
+  })
+
+
+
+  // Execute a function when the user releases a key on the keyboard
+  $('#chat_message').on("keyup", function(event) {
+    // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      $("#send_message").click();
+    }
+  });
+
+  function sendMessage(){
+    var message = $('#chat_message').val();
+    var data = {
+      message,
+      id: socket.id,
+      user: <%- JSON.stringify(user._id) %>,
+      requirement: <%- JSON.stringify(requirement._id) %>
+    }
+    socket.emit('private-message', data, (error) => {
+       if (error) {
+         console.log(error);
+       }
+    })
+    $('#chat_message').val('');
+    scrollSmoothToBottom()
+  }
+
+  function identifyUser(){
+
+    var data = {
+      message:"",
+      id: socket.id,
+      user: <%- JSON.stringify(user._id) %>,
+      requirement: <%- JSON.stringify(requirement._id) %>
+    }
+    socket.emit('private-message', data, (error) => {
+       if (error) {
+         console.log(error);
+       }
+    })
+
+  }
+
+  function loadChat(){
+      identifyUser();
+      var talk =  <%- JSON.stringify(chat) %>;
+      var client = <%- JSON.stringify(user) %>;
+
+      talk.forEach(function(c){
+
+        var div_row = $("<div>").attr("class","row no-gutters").appendTo('#chat_panel');
+          if (String(c.user) == String(client._id)){
+            var div_col = $("<div>").attr("class","col-md offset-md-3 offset-sm-3 offset-3").appendTo(div_row);
+            var div_chat = $("<div>").attr("class","chat-bubble chat-bubble--right").append(c.message).appendTo(div_col);
+          } else {
+            var div_col = $("<div>").attr("class","col-md-9 col-sm-9 col-9").appendTo(div_row);
+            var div_chat = $("<div>").attr("class","chat-bubble chat-bubble--left").append(c.message).appendTo(div_col);
+          }
+        var p_text = $("<p>").attr("style","float: right; font-size: 10px; margin-top: 15px; color: #e97676;").append(c.time).appendTo(div_chat);
+      })
+      scrollSmoothToBottom()
+  }
+
+  function scrollSmoothToBottom () {
+     var div = document.getElementById("chat_panel");
+     $('#chat_panel').animate({
+        scrollTop: div.scrollHeight - div.clientHeight
+     }, 500);
+  }
+  function downloadAll() {
+    var all = $("a.file").map(function() {
+      return window.open(this.href);
+    }).get();
+  };
+  $('.modal').on('show.bs.modal', function (e) {
+      $('html').addClass('modal-open');
+  })
+
+  $('.modal').on('hide.bs.modal', function (e) {
+      $('html').removeClass('modal-open');
+  })
+
+  </script>
+</body>

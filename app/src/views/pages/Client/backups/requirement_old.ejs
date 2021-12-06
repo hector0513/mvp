@@ -1,0 +1,1540 @@
+<%- include('partials/requirement/header'); -%>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <!-- Topbar(width>1440px) -->
+        <nav
+          class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow breakpoint_navbar"
+        >
+          <!-- Sidebar Toggle (Topbar) -->
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <img
+              class="img-profile"
+              src="/assets/images/logocolorartboard-2.svg"
+              style="width: 15%;"
+            />
+          </ul>
+
+          <!-- Topbar Search -->
+
+          <div
+            class="dropdown no-arrow rounded-circle mr-3 breakpoint_dropdown"
+          >
+            <a
+              class="dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLinkNav"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-right shadow animated--fade-in flag"
+              aria-labelledby="dropdownMenuLinkNav"
+              x-placement="bottom-end"
+              style="
+                position: absolute;
+                transform: translate3d(-152px, 18px, 0px);
+                top: 0px;
+                left: 0px;
+                will-change: transform;
+              "
+            >
+              <div
+                class="sidebar-brand d-flex align-items-center justify-content-center"
+                style="padding: 50px 0 50px 0;"
+              >
+                <div
+                  style="
+                    background-color: blue;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 42px;
+                    margin-right: 12px;
+                  "
+                >
+                  <div class="col-md-2">
+                    <img
+                      src="/assets/images/Client/notification.svg"
+                      class="card-img"
+                      alt="..."
+                      style="
+                        width: auto;
+                        background-color: blue;
+                        height: auto;
+                        position: relative;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        margin-left: -1px;
+                        margin-top: 8px;
+                        border-radius: 15px;
+                      "
+                    />
+                  </div>
+                </div>
+                <div
+                  style="
+                    background-color: blue;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 42px;
+                    margin-right: 40px;
+                  "
+                >
+                  <div class="col-md-2">
+                    <img
+                      src="/assets/images/Client/settings.svg"
+                      class="card-img"
+                      alt="..."
+                      style="
+                        width: auto;
+                        background-color: blue;
+                        height: auto;
+                        position: relative;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        margin-left: -3px;
+                        margin-top: 8px;
+                        border-radius: 15px;
+                      "
+                      data-toggle="modal"
+                      data-target="#smallModal"
+                      type="button"
+                    />
+                  </div>
+                </div>
+                <a
+                  href="/client/profile"
+                  style="
+                    font-family: Quicksand;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.33;
+                    color: #2a2a35;
+                    margin-right: 10px;
+                    text-decoration: none;
+                    margin-top: -20px;
+                  "
+                  ><%= user.firstname %> <%= user.lastname %></a
+                >
+                <a href="/client/profile"
+                  ><img
+                    class="img-profile rounded-circle"
+                    src="<%= user.photo %>"
+                    style="width: 60px; height: 60px; object-fit: cover;"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- small modal for settings -->
+        <div
+          class="modal fade"
+          id="smallModal"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="basicModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Configuración</h4>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <a
+                  class="btn btn-block btn-primary px-4 label_style2 steps1"
+                  data-dismiss=""
+                  style="width: auto;"
+                  href="/client/profile"
+                  >Ver perfil</a
+                >
+                <a
+                  class="btn btn-block btn-primary px-4 label_style2 steps1"
+                  data-dismiss=""
+                  style="width: auto;"
+                  href="/login/logout"
+                  >Cerrar sesión</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- End of Topbar -->
+
+        <!-- Topbar(width<1440px) -->
+        <nav
+          class="navbar navbar-expand navbar-light bg-white topbar mb-4 fixed-top shadow breakpoint_navbar2"
+        >
+          <!-- Sidebar Toggle (Topbar) -->
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+            <img
+              class="img-profile"
+              src="/assets/images/logocolorartboard-2.svg"
+              style="width: 15%;"
+            />
+          </ul>
+
+          <!-- Topbar Search -->
+
+          <div
+            class="dropdown no-arrow rounded-circle mr-3 breakpoint_dropdown position-static"
+          >
+            <a
+              class="dropdown-toggle"
+              href="#"
+              role="button"
+              id="dropdownMenuLinkNav"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+            </a>
+            <div
+              class="dropdown-menu dropdown-menu-right shadow animated--fade-in flag w-100 text-center"
+              aria-labelledby="dropdownMenuLinkNav"
+              x-placement="bottom-end"
+              style="
+                position: absolute;
+                transform: translate3d(-152px, 18px, 0px);
+                top: 0px;
+                left: 0px;
+                will-change: transform;
+              "
+            >
+              <div
+                class="sidebar-brand d-flex align-items-center justify-content-center"
+                style="padding: 25px 0 15px 0;"
+              >
+                <div
+                  style="
+                    background-color: blue;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 42px;
+                    margin-right: 12px;
+                  "
+                >
+                  <div class="col-md-2">
+                    <img
+                      src="/assets/images/Client/notification.svg"
+                      class="card-img"
+                      alt="..."
+                      style="
+                        width: auto;
+                        background-color: blue;
+                        height: auto;
+                        position: relative;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        margin-left: -1px;
+                        margin-top: 8px;
+                        border-radius: 15px;
+                      "
+                    />
+                  </div>
+                </div>
+                <div
+                  style="
+                    background-color: blue;
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 42px;
+                    margin-right: 40px;
+                  "
+                >
+                  <div class="col-md-2">
+                    <img
+                      src="/assets/images/Client/settings.svg"
+                      class="card-img"
+                      alt="..."
+                      style="
+                        width: auto;
+                        background-color: blue;
+                        height: auto;
+                        position: relative;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        margin-left: -3px;
+                        margin-top: 8px;
+                        border-radius: 15px;
+                      "
+                      data-toggle="modal"
+                      data-target="#smallModal"
+                      type="button"
+                    />
+                  </div>
+                </div>
+                <a
+                  href="/client/profile"
+                  style="
+                    font-family: Quicksand;
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.33;
+                    color: #2a2a35;
+                    margin-right: 10px;
+                    text-decoration: none;
+                    margin-top: -20px;
+                  "
+                  ><%= user.firstname %> <%= user.lastname %></a
+                >
+                <a href="/client/profile"
+                  ><img
+                    class="img-profile rounded-circle"
+                    src="<%= user.photo %>"
+                    style="width: 60px; height: 60px; object-fit: cover;"
+                /></a>
+              </div>
+              <div class="dropdown-divider"></div>
+              <li
+                class="nav-item active d-flex align-items-center justify-content-center"
+              >
+                <button
+                  class="btn btn-outline-primary style_btn"
+                  style="border-radius: 10px;"
+                  id="workerBtn1"
+                >
+                  Ir a Perfil de Socio
+                </button>
+              </li>
+              <div class="dropdown-divider"></div>
+              <div class="h5 mb-0" style="color: black;">
+                Información
+              </div>
+              <div class="dropdown-divider"></div>
+              <div
+                class="card mb-3 style_border"
+                style="max-width: 335px; margin: 0 auto; padding: 0;"
+              >
+                <div class="row no-gutters">
+                  <div class="col-md-2">
+                    <img
+                      src="/assets/images/Client/diamond.svg"
+                      class="card-img"
+                      alt="..."
+                      style="
+                        width: 51%;
+                        background-color: blue;
+                        height: 70%;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        border-radius: 15px;
+                      "
+                    />
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body" style="padding: 15px 0 5px 0;">
+                      <h5
+                        class="card-title text-center"
+                        style="
+                          font-weight: bold;
+                          font-stretch: normal;
+                          font-style: normal;
+                          line-height: normal;
+                          letter-spacing: normal;
+                          color: #2a2a35;
+                          font-size: 14px;
+                        "
+                      >
+                        Tienes 0 pagos pendientes
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div
+                class="card mb-3 style_border"
+                style="max-width: 335px; margin: 0 auto; padding: 0;"
+              >
+                <div class="row no-gutters">
+                  <div class="col-md-2">
+                    <img
+                      src="/assets/images/Client/growth.svg"
+                      class="card-img"
+                      alt="..."
+                      style="
+                        width: 51%;
+                        background-color: blue;
+                        height: 70%;
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        margin: auto;
+                        border-radius: 15px;
+                      "
+                    />
+                  </div>
+                  <div class="col-md-10">
+                    <div class="card-body" style="padding: 15px 0 5px 0;">
+                      <h5
+                        class="card-title text-center"
+                        style="
+                          font-weight: bold;
+                          font-stretch: normal;
+                          font-style: normal;
+                          line-height: normal;
+                          letter-spacing: normal;
+                          color: #2a2a35;
+                          font-size: 14px;
+                        "
+                      >
+                        Desempeño de referidos: 0/10
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div
+                class="card shadow mb-4"
+                style="margin: 0 auto; max-width: 335px; display: none;"
+              >
+                <!-- Card Header - Dropdown -->
+                <div
+                  class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                >
+                  <h6
+                    class="m-0 font-weight-bold text-primary"
+                    style="font-size: 14px; color: #2a2a35 !important;"
+                  >
+                    Tu socio favorito
+                  </h6>
+                  <div class="dropdown no-arrow">
+                    <a
+                      class="dropdown-toggle"
+                      href="#"
+                      role="button"
+                      id="dropdownMenuLinkpartner"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i
+                        class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"
+                      ></i>
+                    </a>
+                    <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                    <div class="dropdown-header">Reportar:</div>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div> -->
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div
+                  class="card mb-3"
+                  style="
+                    max-width: 450px;
+                    padding: 0;
+                    box-shadow: none !important;
+                  "
+                >
+                  <div class="row no-gutters" style="margin-top: 10px;">
+                    <div class="col-md-4">
+                      <img
+                        src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+                        class="card-img"
+                        alt="..."
+                        style="
+                          width: auto;
+                          height: auto;
+                          position: relative;
+                          top: 0;
+                          bottom: 0;
+                          margin: auto;
+                        "
+                      />
+                    </div>
+                    <div class="col-md-8">
+                      <div class="card-body" style="padding: 15px 0 5px 0;">
+                        <h5
+                          class="card-title text-center"
+                          style="
+                            font-weight: bold;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: normal;
+                            letter-spacing: normal;
+                            color: #2a2a35;
+                            font-size: 14px;
+                          "
+                        >
+                          Eduardo Florez
+                        </h5>
+                        <p
+                          class="card-text text-center"
+                          style="
+                            font-weight: normal;
+                            font-stretch: normal;
+                            font-style: normal;
+                            line-height: normal;
+                            letter-spacing: normal;
+                            color: #2a2a35;
+                            font-size: 14px;
+                          "
+                        >
+                          4 requerimientos completados
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown-divider"></div>
+              <div
+                class="card shadow mb-4"
+                style="
+                  margin: 85px auto 0 auto;
+                  background-color: #f4f4ff;
+                  box-shadow: -10px -10px 20px 0 #e0e0ff,
+                    10px 10px 20px 0 #ffffff;
+                  max-width: 335px;
+                "
+              >
+                <!-- Card Header - Dropdown -->
+                <div
+                  class="card-header py-3 d-flex flex-row align-items-center justify-content-center"
+                  style="background-color: transparent;"
+                >
+                  <img
+                    src="/assets/images/Client/group-8.svg"
+                    alt="..."
+                    style="margin-top: -120px;"
+                  />
+                </div>
+                <!-- Card Body -->
+                <div class="card-body text-center">
+                  <h6
+                    class="m-0 font-weight-bold text-primary text-center"
+                    style="
+                      margin-top: 50px !important;
+                      color: #2a2a35 !important;
+                    "
+                  >
+                    Mi calificación
+                  </h6>
+                  <p
+                    class="card-text text-center"
+                    style="
+                      font-weight: lighter;
+                      font-stretch: normal;
+                      font-style: normal;
+                      line-height: 1.14;
+                      letter-spacing: normal;
+                      color: #2a2a35;
+                      margin-top: 10px;
+                    "
+                  >
+                    Desempeño como cliente
+                  </p>
+                  <h6
+                    class="m-0 font-weight-bold text-primary text-center"
+                    style="
+                      font-weight: bold;
+                      font-stretch: normal;
+                      font-style: normal;
+                      line-height: 1.14;
+                      letter-spacing: normal;
+                      color: #009270 !important;
+                      margin-top: 50px !important;
+                      font-size: 25px;
+                    "
+                  >
+                    0 de 5
+                  </h6>
+                  <a href="/">Ver calificaciones</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+
+        <!-- End of Topbar -->
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <div
+            class="d-sm-flex align-items-center justify-content-between mb-4"
+            style="margin: 50px 0 0px 0;"
+          >
+            <a
+              class="fas fa-arrow-left"
+              style="width: auto !important;"
+              href="/client"
+              ><p style="font-family: Quicksand; display: inline-block;">
+                &nbsp&nbsp Volver a inicio
+              </p></a
+            >
+          </div>
+          <div
+            class="d-sm-flex align-items-center justify-content-between mb-4"
+            style="margin: 0px 0 50px 0;"
+          >
+            <h1 class="mb-0 text-center" id="Welcome-requeriments-refers">
+              Nuevo requerimiento
+            </h1>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row">
+            <!-- Requeriment steps -->
+            <div class="col-xl-3 col-lg-7">
+              <div class="card mb-4" style="box-shadow: none; padding: 0;">
+                <!-- Card Body -->
+                <div class="card-body">
+                  <ul
+                    id="progressbar"
+                    style="margin: 0; padding: 0; list-style: none;"
+                  >
+                    <li>
+                      <a
+                        class="fas fa-user user_style"
+                        style="width: auto !important; margin: 20px 0;"
+                        ><p
+                          style="
+                            font-family: Quicksand;
+                            display: inline-block;
+                            color: #4444ff;
+                          "
+                        >
+                          &nbsp&nbsp Sobre mi requerimiento
+                        </p></a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="fas fa-book-open user_style_disallow"
+                        style="width: auto !important; margin: 20px 0;"
+                        ><p
+                          style="
+                            font-family: Quicksand;
+                            display: inline-block;
+                            color: #d8d8d8;
+                          "
+                        >
+                          &nbsp&nbsp Prospecto buscado
+                        </p></a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="fas fa-laptop user_style_disallow"
+                        style="width: auto !important; margin: 20px 0;"
+                        ><p
+                          style="
+                            font-family: Quicksand;
+                            display: inline-block;
+                            color: #d8d8d8;
+                          "
+                        >
+                          &nbsp&nbsp Información avanzada
+                        </p></a
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body text-center">
+                  <button
+                    type="submit"
+                    class="btn public publishBtn"
+                    style="font-size: 20px;"
+                    form="steps_process"
+                    id="publishBtn"
+                    value="Upload"
+                  >
+                    Publicar
+                  </button>
+                  <br />
+                  <button
+                    type="button"
+                    class="btn save_eraser"
+                    style="margin-top: 20px; font-size: 20px; display: none;"
+                  >
+                    Guardar borrador
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Form -->
+            <div class="col-xl-8 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Body -->
+                <div class="card-body">
+                  <form
+                    id="steps_process"
+                    enctype="multipart/form-data"
+                    action="/client/newRequirement"
+                    method="post"
+                  >
+                    <fieldset form="steps_process">
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <label
+                            for="title"
+                            style="
+                              font-family: Quicksand;
+                              font-weight: bold;
+                              color: #bcbcca;
+                            "
+                            >NOMBRE O TÍTULO</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="name"
+                            placeholder=""
+                            style="color: #2a2a35;"
+                            required
+                          />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <label
+                            for="category"
+                            style="
+                              font-family: Quicksand;
+                              font-weight: bold;
+                              color: #bcbcca;
+                            "
+                            >CATEGORÍA</label
+                          >
+                          <select
+                            class="form-control"
+                            id="category"
+                            name="category"
+                            onchange="loadCategories()"
+                            style="color: #2a2a35;"
+                          >
+                            <% category.forEach(function(cat){ %>
+                            <option value="<%= cat %>"> <%= cat %> </option>
+                            <% }); %>
+                          </select>
+                        </div>
+                        <div class="col-sm-6">
+                          <label
+                            for="subcategory"
+                            style="
+                              font-family: Quicksand;
+                              font-weight: bold;
+                              color: #bcbcca;
+                            "
+                            >SUBCATEGORÍA</label
+                          >
+                          <select
+                            class="form-control"
+                            id="subcategory"
+                            name="subcategory"
+                            style="color: #2a2a35;"
+                          >
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <label
+                            for="description"
+                            style="
+                              font-family: Quicksand;
+                              font-weight: bold;
+                              color: #bcbcca;
+                            "
+                            >DESCRIPCIÓN</label
+                          >
+                          <textarea
+                            type="text"
+                            class="form-control"
+                            id="description"
+                            name="description"
+                            placeholder=""
+                            style="color: #2a2a35; height: 180px;"
+                            required
+                          ></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row" style="margin-bottom: 0;">
+                        <div class="col-sm-3">
+                          <span>
+                            <input
+                              type="file"
+                              name="upload"
+                              id="file"
+                              class="inputfile"
+                              data-multiple-caption="{count} archivos seleccionados"
+                              multiple
+                            />
+                            <label for="file" class="label_style"
+                              ><span>Adjuntar archivo(s) &nbsp</span
+                              ><i class="fa fa-paperclip" aria-hidden="true"></i
+                            ></label>
+                          </span>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-3">
+                          <p
+                            class="mb-0 text-center"
+                            style="font-weight: normal; white-space: nowrap;"
+                          >
+                            — Este archivo es opcional —
+                          </p>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn btn-primary px-4 float-right label_style steps1"
+                        style="font-weight: bold;"
+                      >
+                        Siguiente
+                      </button>
+                    </fieldset>
+                    <fieldset form="steps_process">
+                      <div class="form-group row">
+                        <div class="col-sm-6">
+                          <label
+                            for="level_english"
+                            style="
+                              font-family: Quicksand;
+                              font-weight: bold;
+                              color: #bcbcca;
+                            "
+                            >NIVEL DE INGLÉS</label
+                          >
+                          <select
+                            class="form-control"
+                            name="english_level"
+                            id="english_level"
+                            style="color: #2a2a35;"
+                          >
+                            <option>Básico</option>
+                            <option>Medio</option>
+                            <option>Bueno</option>
+                            <option>Avanzado</option>
+                          </select>
+                        </div>
+                        <div class="col-sm-6">
+                          <label
+                            for="subcategory"
+                            style="
+                              font-family: Quicksand;
+                              font-weight: bold;
+                              color: #bcbcca;
+                            "
+                            >UBICACIÓN DEL SOCIO</label
+                          >
+                          <select
+                            class="form-control"
+                            id="partner_country"
+                            name="partner_country"
+                            style="color: #2a2a35;"
+                          >
+                            <% countries.forEach(function(country){ %>
+                            <option value="<%= country %>"
+                              ><%= country %></option
+                            >
+                            <% }); %>
+                          </select>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        class="btn btn-primary px-4 float-right label_style steps1"
+                        style="font-weight: bold;"
+                      >
+                        Siguiente
+                      </button>
+                    </fieldset>
+                    <fieldset form="steps_process">
+                      <div class="form-group row">
+                        <div class="col-sm-12 text-center text-md-left p-2">
+                          <label
+                            for="title"
+                            style="
+                              font-family: Quicksand;
+                              font-weight: bold;
+                              color: #bcbcca;
+                            "
+                            >¿Qué tan avanzado estás?</label
+                          >
+                          <p>
+                            Se refiere a qué tan claro tienes tu requerimiento,
+                            si no lo tienes claro, recuerda que una vez que
+                            ubiques categoría, subcategoría y las habilidades
+                            específicas, al enviar tu requerimiento 12
+                            profesionales estarán dispuestos a elaborar
+                            preguntas y respuestas para determinar el alcance
+                            del requerimiento.
+                          </p>
+                          <section
+                            class="radio_requeriments2"
+                            id="tabs3-2"
+                            style=""
+                          >
+                            <label>
+                              <input
+                                type="radio"
+                                name="radio2"
+                                value="Tengo una idea"
+                                id="radio00"
+                              />
+                              <div class="btn_nav3 btn-sik3">
+                                <span>Tengo una idea</span>
+                              </div>
+                            </label>
+                            <label>
+                              <input
+                                type="radio"
+                                name="radio2"
+                                value="Tengo una página"
+                                id="radio11"
+                              />
+                              <div class="btn_nav3 btn-sik3">
+                                <span>Tengo una página</span>
+                              </div>
+                            </label>
+                            <label>
+                              <input
+                                type="radio"
+                                name="radio2"
+                                value="No sé qué quiero"
+                                id="radio22"
+                              />
+                              <div class="btn_nav3 btn-sik3">
+                                <span>No sé qué quiero</span>
+                              </div>
+                            </label>
+                          </section>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12 text-center text-md-left p-2">
+                          <label
+                            for="title"
+                            style="
+                              font-family: Quicksand;
+                              font-weight: bold;
+                              color: #bcbcca;
+                            "
+                            >¿Cuánto esperas que dure tu requerimiento?</label
+                          >
+                          <p>
+                            De acuerdo con tus necesidades de respuesta
+                            oportuna, puedes indicar cuáles son tus aspiraciones
+                            temporales para satisfacer tu requerimiento, no
+                            obstante, recuerda que todo depende del alcance del
+                            mismo y la disponibilidad del socio escogido.
+                          </p>
+                          <section
+                            class="radio_requeriments2"
+                            id="tabs3-3"
+                            style=""
+                          >
+                            <label>
+                              <input
+                                type="radio"
+                                name="radio22"
+                                value="1 semana"
+                                id="radio000"
+                              />
+                              <div class="btn_nav3 btn-sik3">
+                                <span>1 semana</span>
+                              </div>
+                            </label>
+                            <label>
+                              <input
+                                type="radio"
+                                name="radio22"
+                                value="2 - 3 semanas"
+                                id="radio111"
+                              />
+                              <div class="btn_nav3 btn-sik3">
+                                <span>2 - 3 semanas</span>
+                              </div>
+                            </label>
+                            <label>
+                              <input
+                                type="radio"
+                                name="radio22"
+                                value="1 mes"
+                                id="radio222"
+                              />
+                              <div class="btn_nav3 btn-sik3">
+                                <span>1 mes</span>
+                              </div>
+                            </label>
+                            <label>
+                              <input
+                                type="radio"
+                                name="radio22"
+                                value="2 - 6 meses"
+                                id="radio333"
+                              />
+                              <div class="btn_nav3 btn-sik3">
+                                <span>2 - 6 meses</span>
+                              </div>
+                            </label>
+                            <label>
+                              <input
+                                type="radio"
+                                name="radio22"
+                                value="6 - 12 meses"
+                                id="radio444"
+                              />
+                              <div class="btn_nav3 btn-sik3">
+                                <span>6 - 12 meses</span>
+                              </div>
+                            </label>
+                            <label>
+                              <input
+                                type="radio"
+                                name="radio22"
+                                value="No sé"
+                                id="radio555"
+                              />
+                              <div class="btn_nav3 btn-sik3">
+                                <span>No sé</span>
+                              </div>
+                            </label>
+                          </section>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="card-body text-center d-block d-sm-block d-md-none d-lg-none d-xl-none"
+            >
+              <button
+                type="submit"
+                class="btn public publishBtn"
+                style="font-size: 20px;"
+                form="steps_process"
+                id="publishBtn"
+                value="Upload"
+              >
+                Publicar
+              </button>
+              <br />
+              <button
+                type="button"
+                class="btn save_eraser"
+                style="margin-top: 20px; font-size: 20px; display: none;"
+              >
+                Guardar borrador
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Asilinks 2020</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+    <!-- Sidebar -->
+    <ul
+      class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion style_sidebar"
+      id="accordionSidebar"
+    >
+      <!-- Sidebar - Brand -->
+      <div
+        class="sidebar-brand d-flex align-items-center justify-content-center"
+        style="padding: 50px 0 50px 0;"
+      >
+        <div
+          style="
+            background-color: blue;
+            width: 35px;
+            height: 35px;
+            border-radius: 42px;
+            margin-right: 12px;
+          "
+        >
+          <div class="col-md-2">
+            <img
+              src="/assets/images/Client/notification.svg"
+              class="card-img"
+              alt="..."
+              style="
+                width: auto;
+                background-color: blue;
+                height: auto;
+                position: relative;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                margin-left: -1px;
+                margin-top: 8px;
+                border-radius: 15px;
+              "
+            />
+          </div>
+        </div>
+        <div
+          style="
+            background-color: blue;
+            width: 35px;
+            height: 35px;
+            border-radius: 42px;
+            margin-right: 40px;
+          "
+        >
+          <div class="col-md-2">
+            <img
+              src="/assets/images/Client/settings.svg"
+              class="card-img"
+              alt="..."
+              style="
+                width: auto;
+                background-color: blue;
+                height: auto;
+                position: relative;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                margin-left: -3px;
+                margin-top: 8px;
+                border-radius: 15px;
+              "
+              data-toggle="modal"
+              data-target="#smallModal"
+              type="button"
+            />
+          </div>
+        </div>
+        <a
+          href="/client/profile"
+          style="
+            font-family: Quicksand;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.33;
+            color: #2a2a35;
+            margin-right: 10px;
+            text-decoration: none;
+            margin-top: -20px;
+          "
+          ><%= user.firstname %> <%= user.lastname %></a
+        >
+        <a href="/client/profile"
+          ><img
+            class="img-profile rounded-circle"
+            src="<%= user.photo %>"
+            style="width: 60px; height: 60px; object-fit: cover;"
+        /></a>
+      </div>
+
+      <!-- Nav Item - Dashboard -->
+      <li
+        class="nav-item active d-flex align-items-center justify-content-center"
+      >
+        <button
+          class="btn btn-outline-primary style_btn"
+          style="border-radius: 10px;"
+          id="workerBtn2"
+        >
+          Ir a Perfil de Socio
+        </button>
+      </li>
+
+      <!-- Divider -->
+      <hr />
+
+      <!-- Heading -->
+      <div class="h5 mb-0" style="margin-left: 20px; color: black;">
+        Información
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <div
+          class="card mb-3 style_border"
+          style="max-width: 450px; margin: 40px 40px 10px 40px; padding: 0;"
+        >
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/assets/images/Client/diamond.svg"
+                class="card-img"
+                alt="..."
+                style="
+                  width: 51%;
+                  background-color: blue;
+                  height: 70%;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  margin: auto;
+                  margin-left: 10px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body" style="padding: 15px 0 5px 0;">
+                <h5
+                  class="card-title text-center"
+                  style="
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    color: #2a2a35;
+                    font-size: 14px;
+                  "
+                >
+                  Tienes 0 pagos pendientes
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <div
+          class="card mb-3 style_border"
+          style="max-width: 450px; margin: 10px 40px 10px 40px; padding: 0;"
+        >
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img
+                src="/assets/images/Client/growth.svg"
+                class="card-img"
+                alt="..."
+                style="
+                  width: 51%;
+                  background-color: blue;
+                  height: 70%;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  margin: auto;
+                  margin-left: 10px;
+                  border-radius: 15px;
+                "
+              />
+            </div>
+            <div class="col-md-8">
+              <div class="card-body" style="padding: 15px 0 5px 0;">
+                <h5
+                  class="card-title text-center"
+                  style="
+                    font-weight: bold;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: normal;
+                    letter-spacing: normal;
+                    color: #2a2a35;
+                    font-size: 14px;
+                  "
+                >
+                  Desempeño de referidos 0/10
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <div
+          class="card shadow mb-4"
+          style="margin: 10px 40px 10px 40px; display: none;"
+        >
+          <!-- Card Header - Dropdown -->
+          <div
+            class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+          >
+            <h6
+              class="m-0 font-weight-bold text-primary"
+              style="font-size: 14px; color: #2a2a35 !important;"
+            >
+              Tu socio favorito
+            </h6>
+            <div class="dropdown no-arrow">
+              <a
+                class="dropdown-toggle"
+                href="#"
+                role="button"
+                id="dropdownMenuLinkpartner"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+              </a>
+              <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                    <div class="dropdown-header">Reportar:</div>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div> -->
+            </div>
+          </div>
+          <!-- Card Body -->
+          <div
+            class="card mb-3"
+            style="max-width: 450px; padding: 0; box-shadow: none !important;"
+          >
+            <div class="row no-gutters" style="margin-top: 10px;">
+              <div class="col-md-4">
+                <img
+                  src="https://source.unsplash.com/QAB-WJcbgJk/60x60"
+                  class="card-img"
+                  alt="..."
+                  style="
+                    width: auto;
+                    height: auto;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                  "
+                />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body" style="padding: 15px 0 5px 0;">
+                  <h5
+                    class="card-title text-left"
+                    style="
+                      font-weight: bold;
+                      font-stretch: normal;
+                      font-style: normal;
+                      line-height: normal;
+                      letter-spacing: normal;
+                      color: #2a2a35;
+                      font-size: 14px;
+                    "
+                  >
+                    Eduardo Florez
+                  </h5>
+                  <p
+                    class="card-text text-left"
+                    style="
+                      font-weight: normal;
+                      font-stretch: normal;
+                      font-style: normal;
+                      line-height: normal;
+                      letter-spacing: normal;
+                      color: #2a2a35;
+                      font-size: 14px;
+                    "
+                  >
+                    4 requerimientos completados
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <div
+          class="card shadow mb-4"
+          style="
+            margin: 100px 40px 10px 40px;
+            background-color: #f4f4ff;
+            box-shadow: -10px -10px 20px 0 #e0e0ff, 10px 10px 20px 0 #ffffff;
+          "
+        >
+          <!-- Card Header - Dropdown -->
+          <div
+            class="card-header py-3 d-flex flex-row align-items-center justify-content-center"
+            style="background-color: transparent;"
+          >
+            <img
+              src="/assets/images/Client/group-8.svg"
+              alt="..."
+              style="margin-top: -120px;"
+            />
+          </div>
+          <!-- Card Body -->
+          <div class="card-body text-center">
+            <h6
+              class="m-0 font-weight-bold text-primary text-center"
+              style="margin-top: 50px !important; color: #2a2a35 !important;"
+            >
+              Mi calificación
+            </h6>
+            <p
+              class="card-text text-center"
+              style="
+                font-weight: lighter;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.14;
+                letter-spacing: normal;
+                color: #2a2a35;
+                margin-top: 10px;
+              "
+            >
+              Desempeño como cliente
+            </p>
+            <h6
+              class="m-0 font-weight-bold text-primary text-center"
+              style="
+                font-weight: bold;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.14;
+                letter-spacing: normal;
+                color: #009270 !important;
+                margin-top: 50px !important;
+                font-size: 25px;
+              "
+            >
+              0 de 5
+            </h6>
+            <a href="/">Ver calificaciones</a>
+          </div>
+        </div>
+      </li>
+
+      <%- include('partials/requirement/sub-footer'); -%>
+
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $("#category").change();
+        });
+
+        function loadCategories() {
+          var category = $("#category").val();
+
+          $.get("/client/getSubcategories/" + category)
+            .done(function (data) {
+              console.log("subcategorias cargadas con exito!");
+              $("#subcategory").empty();
+
+              if (Array.isArray(data) && data.length) {
+                data.forEach((sub) => {
+                  $("#subcategory").append(
+                    $("<option>", {
+                      value: sub.sub_category,
+                      text: sub.sub_category,
+                    })
+                  );
+                });
+              }
+            })
+            .fail(function (xhr, textStatus, errorThrown) {
+              console.log(errorThrown);
+              alert("Error en la carga de Universidades");
+            });
+        }
+
+        function getAllInfo() {
+          var test = new FormData();
+
+          $.each($("#file")[0].files, function (i, file) {
+            test.append("file-" + i, file);
+          });
+
+          var reqInfo = {
+            name: $("#name").val(),
+            category: $("#category").val(),
+            subcategory: $("#subcategory").val(),
+            description: $("#description").val(),
+            file: $("#file").val(),
+            partner_title: $("#partner_title").val(),
+            english_level: $("#english_level").val(),
+            partner_country: $("#partner_country").val(),
+            knowledge: $("input[name=radio2]:checked").val(),
+            development_time: $("input[name=radio22]:checked").val(),
+          };
+
+          return reqInfo;
+        }
+
+        $(".btn_nav3").on("click", function () {
+          $(".publishBtn").removeClass("public").addClass("save_eraser");
+        });
+        /*
+  $("#publishBtn").on("click", function(){
+
+    console.log("posted");
+    var reqInfo = getAllInfo();
+    console.log(reqInfo)
+    $.post("/client/newRequirement/",
+      reqInfo)
+      .done( function(data){
+
+        console.log('added', data);
+        alert("Requerimiento creado con éxito!")
+        window.location.replace("/client");
+
+      })
+      .fail( function(xhr, textStatus, errorThrown){
+
+        console.log(xhr)
+        console.log(textStatus)
+        console.log(errorThrown)
+        alert("Error creando el requerimiento!", textStatus, errorThrown)
+
+      });
+
+    $(this).removeClass("save_eraser").addClass("public")
+
+  });*/
+      </script>
+    </ul>
+  </div>
+</body>

@@ -1,0 +1,231 @@
+<%- include('partials/header'); -%>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <%- include('./partials/nav'); -%>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <div
+            class="d-sm-flex align-items-center justify-content-between mb-4"
+            style="margin: 50px 0 0px 0;"
+          >
+            <a
+              class="fas fa-arrow-left"
+              style="width: auto !important;"
+              href="/client"
+              ><p style="font-family: Quicksand; display: inline-block;">
+                &nbsp&nbsp Volver a inicio
+              </p></a
+            >
+          </div>
+          <div
+            class="d-sm-flex align-items-center justify-content-between mb-4"
+            style="margin: 0px 0 50px 0;"
+          >
+            <h1 class="h3 mb-0 text-center" id="Welcome-requeriments-refers">
+              Contabilidad y finanzas
+            </h1>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row" id="finance_daily">
+            <!-- Area Chart -->
+            <div class="col-xl-4 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div
+                  class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                >
+                  <h6 class="m-0 font-weight-bold text-primary">
+                    Mis finanzas
+                  </h6>
+                  <div class="dropdown no-arrow">
+                    <a
+                      class="dropdown-toggle"
+                      href="#"
+                      role="button"
+                      id="dropdownMenuLink"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i
+                        class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"
+                      ></i>
+                    </a>
+                    <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                          <div class="dropdown-header">Mis datos metricos:</div>
+                          <a class="dropdown-item" href="/client/graphics">Contabilidad y finanzas</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Recargar mi wallet</a>
+                        </div> -->
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <!-- <h6 class="finance_text">$1,450.00</h6> -->
+                  <div class="chart-area">
+                    <div class="chartjs-size-monitor">
+                      <div class="chartjs-size-monitor-expand">
+                        <div class=""></div>
+                      </div>
+                      <div class="chartjs-size-monitor-shrink">
+                        <div class=""></div>
+                      </div>
+                    </div>
+                    <canvas
+                      id="myAreaChart"
+                      style="display: block; width: 750px; height: 320px;"
+                      width="750"
+                      height="320"
+                      class="chartjs-render-monitor"
+                    ></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div
+                  class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                >
+                  <h6 class="m-0 font-weight-bold text-primary">
+                    Mi rendimiento
+                  </h6>
+                  <div class="dropdown no-arrow">
+                    <a
+                      class="dropdown-toggle"
+                      href="#"
+                      role="button"
+                      id="dropdownMenuLink"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i
+                        class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"
+                      ></i>
+                    </a>
+                    <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">Mis datos metricos:</div>
+                            <a class="dropdown-item" href="/client/graphics">Contabilidad y finanzas</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Recargar mi wallet</a>
+                          </div> -->
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <!-- <h6 class="finance_text">8.3 de 10</h6> -->
+                  <div class="chart-area">
+                    <div class="chartjs-size-monitor">
+                      <div class="chartjs-size-monitor-expand">
+                        <div class=""></div>
+                      </div>
+                      <div class="chartjs-size-monitor-shrink">
+                        <div class=""></div>
+                      </div>
+                    </div>
+                    <canvas
+                      id="myPieChart"
+                      style="display: block; width: 750px; height: 320px;"
+                      width="750"
+                      height="320"
+                      class="chartjs-render-monitor"
+                    ></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- bar Chart -->
+            <div class="col-xl-4 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div
+                  class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+                >
+                  <h6 class="m-0 font-weight-bold text-primary">
+                    Mis transacciones
+                  </h6>
+                  <div class="dropdown no-arrow">
+                    <a
+                      class="dropdown-toggle"
+                      href="#"
+                      role="button"
+                      id="dropdownMenuLink"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      <i
+                        class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"
+                      ></i>
+                    </a>
+                    <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                            <div class="dropdown-header">Mis datos metricos:</div>
+                            <a class="dropdown-item" href="/client/graphics">Contabilidad y finanzas</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Recargar mi wallet</a>
+                          </div> -->
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <!-- <h6 class="finance_text">$1,450.00</h6> -->
+                  <div class="chart-area">
+                    <div class="chartjs-size-monitor">
+                      <div class="chartjs-size-monitor-expand">
+                        <div class=""></div>
+                      </div>
+                      <div class="chartjs-size-monitor-shrink">
+                        <div class=""></div>
+                      </div>
+                    </div>
+                    <canvas
+                      id="myBarChart"
+                      style="display: block; width: 750px; height: 320px;"
+                      width="750"
+                      height="320"
+                      class="chartjs-render-monitor"
+                    ></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Hack pass variable backend to frontend dinamically -->
+        <span id="variableWalletGraphic" hidden>
+          <%- JSON.stringify(wallet) %>
+        </span>
+
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <%- include('./partials/footer'); -%>
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+<%- include('./partials/sidebar'); -%>
+  </div>
+  <%- include('./partials/sub-footer'); -%>
+</body>

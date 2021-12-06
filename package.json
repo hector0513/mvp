@@ -1,0 +1,21 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "app",
+    "server",
+    "truffle"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && node my-tests.js",
+    "start": "npm run dev --workspace=app"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "standard": "^16.0.4"
+  }
+}

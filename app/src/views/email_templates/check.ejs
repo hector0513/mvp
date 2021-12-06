@@ -1,0 +1,82 @@
+<style scoped>
+  .receipt_title {
+    font-family: Quicksand;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #bcbcca;
+  }
+
+  .receipt_text {
+    font-family: Quicksand;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    color: #2a2a35;
+  }
+</style>
+<div id="imgCheck"class="col-12" align="center" style="z-index: 2;     position: relative;
+bottom: 30px;">
+  <img id="imgchecksrc"
+    src="/assets/images/check.png"
+    style="z-index: 2; width: 60px; height: 60px;"
+  />
+</div>
+<div class="row">
+  <div class="col-12">
+    </div>
+</div>
+<p></p>
+<div class="row">
+  <div class="col-12 text-center">
+    <h4 class="receipt_text"><b>¡Gracias!</b></h4>
+    <p>Tu pago ha sido recibido con éxito</p>
+  </div>
+</div>
+<p></p>
+<div class="row">
+  <div class="col-6">
+    <p>
+      <label class="receipt_title pl-3">Fecha</label>
+      <br>
+      <label class="receipt_text pl-3"><%= date %></label>
+    </p>
+  </div>
+  <div class="col-6 text-right">
+    <p>
+      <label class="receipt_title pr-3">Hora</label>
+      <br>
+      <label class="receipt_text pr-3"><%= time %></label>
+    </p>
+  </div>
+</div>
+<div class="row" align="left">
+  <div class="col-12" align="left">
+    <p style="text-align: left !important;">
+      <label class="receipt_title pl-3">Para</label>
+      <br>
+      <label class="receipt_text pl-3"><%= to %></label>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-6" align="left">
+    <p>
+      <label class="receipt_title pl-3">Monto</label>
+      <br>
+      <label class="receipt_text pl-3">$<%= amount %></label>
+    </p>
+  </div>
+  <div class="col-6" align="right">
+    <p>
+      <label class="receipt_title pr-3">Forma de Pago</label>
+      <br>
+      <label class="receipt_text pr-3"><%= paymentType %></label>
+    </p>
+  </div>
+</div>

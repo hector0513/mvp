@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('Client/partials/requirement/header'); -%>
+  <head>
+    <link rel="stylesheet" href="../../assets/styles/partnercopia.css" />
+    <link rel="stylesheet" href="../../assets/styles/maincopia.css" />
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+
+    <meta
+      name="description"
+      content="Compartiendo en nuestro sistema se gana"
+    />
+    <title>Asilinks</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/styles/owl.carousel-home.css" />
+    <link rel="stylesheet" href="../../assets/styles/style.css" />
+
+    <style>
+      .contact {
+        font-family: Quicksand;
+        font-size: 48px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.21;
+        letter-spacing: -1px;
+        color: #2a2a35;
+      }
+      .contact_text {
+        font-family: Quicksand;
+        font-size: 18px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.56;
+        letter-spacing: normal;
+        color: #2a2a35;
+      }
+
+      .input_label {
+        font-family: Quicksand;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #bcbcca;
+      }
+      .input_value {
+        font-family: Quicksand;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #2a2a35;
+        background-color: #fafafa;
+        border: 0;
+      }
+
+      .button_send {
+        font-family: Quicksand;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, #e74267, #ff5d60);
+      }
+    </style>
+  </head>
+
+  <body class="scrollable">
+    <header class="site-header">
+      <nav>
+        <div class="logo">
+          <img
+            src="../../assets/images/asilinks-logo-footer.png"
+            alt="logo"
+            class="imagen-footer"
+          />
+        </div>
+        <div class="wrapper">
+          <div class="enlaces">
+            <a href="/info">&iquest;Cómo funciona?</a>
+            <a href="/benefits">Beneficios</a>
+            <a href="/FAQ">FAQ</a>
+            <!-- <a href="#">Blog</a> -->
+            <!-- <a href="/contact">Contáctanos</a> -->
+            <a href="/login" id="loginbtn" class="btnWhite"
+              ><label style="color: #fe5d60;">Iniciar Session</label></a
+            >
+            <a href="/login/register" id="signupbtn" class="btnColor"
+              >Registrarse</a
+            >
+          </div>
+
+          <div class="buttons">
+            <button *ngIf="!username" class="btnWhite">
+              <a
+                href="/login"
+                class="btnWhite"
+                [routerLinkActive]="['active-header']"
+              >
+                Iniciar sesión</a
+              >
+            </button>
+
+            <button class="btnColor" *ngIf="!username">
+              <a href="/login/register">Registrarme</a>
+            </button>
+          </div>
+          <div class="menu-hamburguesa">
+            <i class="bx bx-menu-alt-right color_asilinks"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="row contenedor">
+      <div class="col-md-6 text-light text-center text-md-left switch">
+        <h4 class="contact">Contáctanos</h4>
+        <br />
+        <p class="contact_text">
+          Tienes alguna duda, algún comentario, queja, inquietud o simplemente
+          quieres hablar con nosotros, no dudes en dejarnos tu mensaje por acá.
+        </p>
+        <br />
+        <form id="contact" enctype="application/form-data" method="post">
+          <fieldset>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label for="title" class="input_label">Correo</label>
+                <input
+                  type="email"
+                  class="form-control input_value"
+                  id="email"
+                  placeholder="correo"
+                  name="email"
+                  required="true"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label for="title" class="input_label">Asunto</label>
+                <input
+                  type="text"
+                  class="form-control input_value"
+                  id="subject"
+                  name="subject"
+                  placeholder="Asunto"
+                  required="true"
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label for="title" class="input_label">Comentario</label>
+                <textarea
+                  class="form-control input_value"
+                  id="comment"
+                  name="comment"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-4">
+                <button
+                  type="button"
+                  id="send"
+                  class="btn btn-block label_style2 button_send"
+                  onclick="postContact();"
+                >
+                  Enviar
+                </button>
+              </div>
+              <div class="col-8"></div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="col-md-6" align="center">
+        <div class="row">
+          <div class="col-12">
+            <p><br /></p>
+            <img src="../../assets/images/group-5.svg" class="Group-5" />
+            <p><br /></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script type="text/javascript">
+      function postContact() {
+        var email = $("#email").val();
+        var suject = $("#subject").val();
+        var comment = $("#comment").val();
+
+        if (email && subject && comment) {
+          var formData = {
+            email,
+            subject,
+            comment,
+          };
+          $.post("/contact/", formData, function (data, status) {
+            console.log(data);
+            console.log(status);
+            alert(data.message);
+            $("#email").val("");
+            $("#subject").val("");
+            $("#comment").val("");
+          });
+        } else {
+          alert(
+            "Debes introducir tu correo, el asunto y el comentario que deseas enviar"
+          );
+        }
+      }
+    </script>
+  </body>
+</html>

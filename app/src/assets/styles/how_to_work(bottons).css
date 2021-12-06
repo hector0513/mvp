@@ -1,0 +1,65 @@
+.switch-field {
+    padding: 1em;
+    overflow: hidden;
+    font-family: Barlow,sans-serif;
+    font-size: 1.2rem;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2em;
+  }
+  
+  .switch-title {
+    margin-bottom: 0.5em;
+  }
+  
+  .switch-field input {
+    display: none;
+  }
+  
+  .switch-field label {
+    float: left;
+  }
+  
+  .switch-field label {
+    display: inline-block;
+    background-color: #ff5d60;
+    color: #fff;
+    font-size: 1em;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: none;
+    padding: 0.5em 1em;
+    border: 0.05em solid rgba(0, 0, 0, 0.15);
+    border-bottom: 2px solid #ff5d60;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition:    all 0.1s ease-in-out;
+    -ms-transition:     all 0.1s ease-in-out;
+    -o-transition:      all 0.1s ease-in-out;
+    transition:         all 0.1s ease-in-out;
+  }
+  
+  .switch-field label:hover {
+      cursor: pointer;
+  }
+  
+  .switch-field input:checked + label {
+    background-color: #eee;
+      color: #555464;
+      border-bottom: 2px solid #ff5d60;
+  }
+  
+  .switch-field label:first-of-type {
+    border-radius: 3px 0 0 3px;
+  }
+  
+  .switch-field label:last-of-type {
+    border-radius: 0 3px 3px 0;
+  }
+
+  #partner{
+    display: none;
+    transition: all 0.5s;
+}

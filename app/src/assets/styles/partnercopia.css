@@ -1,0 +1,352 @@
+button {
+
+  margin: 0 auto;
+  display: block;
+
+}
+
+hr {
+
+	border: 0;
+	clear:both;
+	display:block;
+	width: 100%;
+	background-color:#FEEEEF;
+	height: 1px;
+
+}
+
+.orange-circle {
+
+	height: 30px;
+	width: 30px;
+	border-radius: 50% !important;
+
+}
+
+.text-24 {
+
+	font-size: 24px;
+
+}
+
+.btn {
+
+	margin: 0;
+
+}
+
+.profile-image {
+
+	width: 100%;
+	height: 240px;
+	object-fit: contain;
+
+}
+
+@media screen and (max-width: 600px) {
+
+
+	.profile-image {
+
+		width: 60%;
+
+	}
+
+}
+
+.bigger-title {
+
+	font-size: 36px;
+
+}
+
+.big-title {
+
+	font-size: 21px;
+
+}
+
+.mid-title {
+
+	font-size: 18px;
+
+}
+
+.small-title, .nav-item {
+
+	font-size: 14px;
+
+}
+
+.small-icon {
+
+	border-radius: 8px;
+
+}
+
+.card-header {
+
+	border-radius: 42px 42px 0 0 !important;
+	background-color: #FFFFFF;
+
+}
+
+.card-footer {
+
+	border-radius: 0 0 42px 42px !important;
+	background-color: #FEEEEF;
+
+}
+
+.card-decoration {
+
+	border-radius: 18px 0 0 18px;
+
+}
+
+.card.card-decoration {
+
+	border-radius: 18px;
+
+}
+
+.decorative-square {
+
+	height: 110px;
+	width: 100%;
+
+}
+
+.card-img-top {
+
+	height: 200px;
+	border-radius: 30px !important;
+  	object-fit: none;
+
+}
+
+.task-tag {
+
+  	border: 1px solid #E74267;
+  	color: #FF5D60;
+	border-radius: 12px;
+
+}
+
+.client-tag {
+
+  	background-color: #5D60FE;
+  	color: #FFFFFF;
+	border-radius: 12px;
+
+}
+
+.partner-tag {
+
+  	background-color: #E74267;
+  	color: #FFFFFF;
+	border-radius: 12px;
+
+}
+
+.two-btn-group {
+
+	display: none;
+
+}
+
+@media screen and (max-width: 485px) {
+
+	.hor-btn-group {
+
+		display: none;
+
+	}
+
+	.two-btn-group {
+
+		display: flex;
+
+	}
+
+}
+
+/* Fin cosas del mini navbar */
+
+.info-option {
+
+  cursor: pointer;
+  font-weight: bold;
+
+}
+
+.info-option.active {
+
+  color: #E74267;
+
+}
+
+.add-info {
+
+  color: #2A2A35;
+
+}
+
+/* Cosas del modal */
+
+h5.modal-title {
+
+	font-size: 24px;
+	color: #FE5D60;
+	font-weight: bold;
+  	text-align: center;
+
+}
+
+#modalClose {
+
+	background-color: #FEEEEF;
+	border-radius: 50%;
+	color: #FE5D60;
+
+}
+
+.rating-active {
+
+ 	background-image: linear-gradient(to right, #E74267, #FF5D60);
+  	color: #FFFFFF;
+
+}
+
+/* Fin de cosas del modal */
+/* Cosas del table */
+
+table.asilinks-table thead th {
+
+	border-bottom: 1px solid #FEEEEF;
+	border-top: 0;
+
+}
+
+table.asilinks-table td {
+
+	border-top: 1px solid #FEEEEF;
+
+}
+
+.asilinks-table th {
+
+	font-size: 16px;
+	color: #B5C7D3;
+
+}
+
+.asilinks-table td {
+
+	font-size: 14px;
+	font-weight: bold;
+
+}
+
+.border-half {
+  border-radius: 50% !important;
+}
+
+.border-42 {
+  border-radius: 42px !important;
+}
+
+.border-35 {
+  border-radius: 35px !important;
+}
+
+.border-21 {
+  border-radius: 21px !important;
+}
+
+.border-18 {
+  border-radius: 18px !important;
+}
+
+.border-10 {
+  border-radius: 10px !important;
+}
+
+.border-7 {
+  border-radius: 7px !important;
+}
+
+.checkout-active {
+  box-shadow: 0 4px 8px 0 rgba(68, 68, 255, 0.2);
+  border: solid 2px #4444ff;
+  color: #4444ff;
+}
+
+.checkout-inactive {
+  border: solid 2px #b5c7d3;
+  color: #b5c7d3;
+}
+
+/*INPUTS*/
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #bcbcca;
+}
+
+.form-input {
+  background-color: #fafafa;
+  /*background-color: #000000;*/
+  font-weight: bold;
+  margin: 0 auto;
+  border-radius: 0;
+  border: none;
+  height: 52px;
+  font-size: 14px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: red;
+}
+
+.inputfile + label {
+  cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+  pointer-events: none;
+}
+
+.text-36 {
+  font-size: 36px !important;
+}
+
+/* Fin de cosas del table */

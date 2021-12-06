@@ -1,0 +1,95 @@
+<div class="modal fade bd-example-modal-lg" aria-labelledby="ratingModalLabel" tabindex="-1" role="dialog" id="rating">
+  <div class="modal-dialog modal-lg w-50" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:0;">
+        <h5 class="modal-title">¡Felicidades!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+        </button>
+      </div>
+      <form enctype='application/json' method="post" action="/opportunity/rating">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <p>Has completado exitosamente tu oportunidad de trabajo con Fernando Del Río, esperemos que todo haya culminado de la mejor manera y puedan trabajar juntos de nuevo, por eso nos gustaría saber cómo fue tu experiencia.<br><br>
+                ¡Para nosotros es muy valiosa tu opinión! ¡Muchas gracias! </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col border-10 checkout-option checkout-inactive center-hor mx-1">
+                Muy deficiente
+              </div>
+              <div class="col border-10 checkout-option checkout-inactive center-hor mx-1">
+                Deficiente
+              </div>
+              <div class="col border-10 checkout-option rating-active center-hor mx-1">
+                Normal
+              </div>
+              <div class="col border-10 checkout-option checkout-inactive center-hor mx-1">
+                Buena
+              </div>
+              <div class="col border-10 checkout-option checkout-inactive center-hor mx-1">
+                ¡Muy buena!
+              </div>
+              <div class="col-12">
+                <label for="rating_comment">COMENTARIO</label><br>
+                <input type="text" class="form-input" name="rating_comment" id="rating_comment" required>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top:0;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <button id="submitRating" type="button" class="asilinks-btn orange-btn">Enviar calificación</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="/assets/scripts/helpers.js"></script>
+
+<script type="text/javascript">
+
+  $(".checkout-option").click(function(){
+
+    $(".checkout-option").removeClass("rating-active").addClass("checkout-inactive")
+    $(this).removeClass("checkout-inactive").addClass("rating-active")
+
+  })
+
+  $("#submitRating").click(function(){
+
+    var ratingInfo = getFormInfo();
+    ratingInfo.rating = $(".rating-active").text().toLowerCase().trim();
+
+    $.post("/opportunity/rating",
+      ratingInfo
+    )
+    .done( function(data){
+
+      alert("Checkout exitoso")
+      //$('#checkout').modal("hide")
+
+    })
+    .fail( function(xhr, textStatus, errorThrown){
+
+      console.log(xhr.responseText)
+      alert("Error creando el requerimiento! " + xhr.responseText)
+
+    });
+    
+    return false;
+
+  })
+
+</script>

@@ -1,0 +1,11 @@
+image: ubuntu
+deploy_qa:
+  stage: deploy
+  before_script:
+    - echo "checking ssh"
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+    - 'which sshpass || (apt-get install sshpass -y )'
+  script:
+    - sshpass -p "$SSH_PASSWORD" ssh -o StrictHostKeyChecking=no "$SSH_USER@$SSH_URL" "cd /root/newasilinks/ && git pull origin development && pm2 restart src/index.js"
+  only:
+    - development

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <!-- load bootstrap css -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="/assets/styles/new-style-asilinks.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+  <body>
+    <div class="container-fluid full-height">
+      <div class="row full-height">
+        <div class="col-md-8 login-texto-pink pink-bg center-vert primary-bg">
+          <div class="m-4">
+            <img
+              class="d-block mb-3"
+              src="/assets/images/logocolorartboard-2.svg"
+              alt=" "
+              title="logo_asilinks"
+              style="height: 1.5rem;"
+            />
+          </div>
+          <div style="height: 15%;"></div>
+          <div class="m-4 center-hor">
+            El mundo acaba de cambiar a ser 100% freelancer
+          </div>
+          <img src="/assets/images/landing-bike.svg" class="bottom-left bike" />
+          <img
+            src="/assets/images/landing-girl.svg"
+            class="bottom-right girl"
+          />
+        </div>
+        <div class="col-md-4">
+          <div class="row my-4 mx-2">
+            <div class="col-md-12" id="welcome">
+              ¡Bienvenido!
+            </div>
+            <div class="col-md-12" id="welcomeText">
+              Sigue brindando excelentes servicios para que nuestra comunidad
+              sea confiable y con resultados garantizados
+            </div>
+          </div>
+          <form action="/login" enctype="application/json" method="post">
+            <div class="row">
+              <% if (message) { %>
+              <div class="col-md-12 center-hor mb-4">
+                <div class="alert alert-danger" role="alert">
+                  <%= message %>
+                </div>
+              </div>
+              <% } %>
+
+              <span class="mb-4 seccion switcher switcher-1">
+                <!-- Clientes: On, true. Socios: Off, false -->
+                <input
+                  type="checkbox"
+                  data-on="Clientes"
+                  data-off="Socios"
+                  name="worker"
+                  id="worker"
+                />
+                <label for="switcher-1"></label>
+              </span>
+
+              <div class="col-md-12 mb-3">
+                <label for="email">CORREO</label><br />
+                <input
+                  type="text"
+                  class="form-input"
+                  name="email"
+                  id="email"
+                  required
+                />
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="password">CONTRASEÑA</label><br />
+                <input
+                  type="password"
+                  class="form-input"
+                  name="password"
+                  id="password"
+                  required
+                />
+              </div>
+              <div class="col-md-10 mb-3 custom-control custom-checkbox mx-3">
+                <input
+                  type="checkbox"
+                  class="custom-control-input pointer"
+                  name="rememberMe"
+                  id="rememberMe"
+                />
+                <label
+                  for="rememberMe"
+                  class="custom-control-label pointer"
+                  id="rememberLabel"
+                  >Recordarme</label
+                >
+              </div>
+              <div class="col-md-12">
+                <button type="submit" class="asilinks-btn orange-btn">
+                  Iniciar sesión
+                </button>
+              </div>
+            </div>
+          </form>
+          <div class="row mt-3 mx-2">
+            <div class="col-md-12 text-center" id="forgotPassword">
+              <a href="/login/forgotPassword" class="asilinks-enlace-pink">
+                Olvidé mi contraseña
+              </a>
+            </div>
+          </div>
+          <div class="row mt-3 mx-2">
+            <div class="col-md-12 text-center" id="welcomeText">
+              ¿Quieres formar parte de Asilinks?<a
+                href="/login/register"
+                class="asilinks-enlace-pink"
+              >
+                Regístrate aquí
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-8 login-texto-pink center-vert secondary-bg mt-5">
+          El mundo acaba de cambiar a ser 100% freelancer
+          <img src="/assets/images/landing-bike.svg" class="bottom-left bike" />
+          <img
+            src="/assets/images/landing-girl.svg"
+            class="bottom-right girl"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#toggle-password").click(function () {
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $("#inputPassword");
+        if (input.attr("type") === "password") {
+          input.attr("type", "text");
+        } else {
+          input.attr("type", "password");
+        }
+      });
+    });
+  </script>
+
+  <script>
+    let x = document.getElementById("btn");
+
+    function register() {
+      x.style.left = "125px";
+    }
+
+    function login() {
+      x.style.left = "0px";
+    }
+  </script>
+</html>

@@ -1,0 +1,359 @@
+/*UTILIDADES*/
+.red-text {
+  color: #fe5d60;
+}
+
+.green-text {
+  color: #009270;
+}
+
+.pink-bg {
+  background-color: #feeeef;
+}
+
+/*GLOBALES*/
+a {
+  color: #fe5d60;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+a:hover,
+a:visited:hover {
+  text-decoration: underline;
+  color: #ba1c1f;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 40px;
+}
+
+.btn_nav:hover {
+  cursor: pointer !important;
+  background-color: #feeeef;
+  border-radius: 42px;
+}
+
+input[type="radio"]:checked + div {
+  background-color: #feeeef;
+  border-radius: 42px;
+}
+input[type="radio"]:checked + div > span {
+  color: #fe5d60;
+}
+
+.label_style2 {
+  padding: 10px !important;
+  border-radius: 6px !important;
+  background-color: #fe5d60 !important;
+  border: 1px solid #fe5d60;
+  font-size: 16px !important;
+  transition: all 0.5s;
+}
+
+.label_style2:hover {
+  background-color: #fff !important;
+  border: 1px solid #fe5d60;
+  color: #000;
+}
+
+.label_style-blue {
+  padding: 10px !important;
+  border-radius: 6px !important;
+  background-color: #4444ff !important;
+  border: 1px solid #4444ff;
+  font-size: 16px !important;
+  transition: all 0.5s;
+}
+
+.label_style-blue:hover {
+  background-color: #fff !important;
+  border: 1px solid #4444ff;
+  color: #4444ff;
+}
+
+.btn_nav2:hover {
+  cursor: pointer !important;
+  background-color: #f8d6d7;
+  border-radius: 42px;
+}
+
+.btn-sik2 {
+  transition: all 0.2s ease;
+  background-color: transparent;
+  min-width: 150px;
+  border-radius: 0;
+  font-family: Quicksand;
+  color: #f3b3b5;
+}
+
+.radio_requeriments input[type="radio"]:checked + div {
+  background-color: #fe5d60;
+  border-radius: 42px;
+}
+
+/**Aqui Termina el Nuevo Home Socio, Este es la Copia de cliente con modificaciones en cuando a stylos**/
+
+/** Estilos Globales del SideBar **/
+
+.flag {
+  right: 0.75rem !important;
+  transform: translate3d(-385px, 50px, 0px) !important;
+  left: 0px !important;
+  width: initial !important;
+  min-width: 23rem !important;
+  overflow-y: auto !important;
+  height: 1000% !important;
+  margin-left: 100%;
+  margin-right: inherit;
+}
+
+.style_btn {
+  border-radius: 42px;
+  border-color: #fe5d60;
+  color: #fe5d60;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+}
+
+.style_btn:hover {
+  color: #fff !important ;
+  border-radius: 42px;
+  border-color: #fe5d60;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  background-color: #fe5d60;
+}
+
+.dropdown-divider {
+  height: 0;
+  margin: 0.5rem 0;
+  overflow: hidden;
+  border-top: 1px solid #feeeef;
+}
+
+.orange-circle {
+  border-radius: 50%;
+  background-image: linear-gradient(to right, #e74267, #ff5d60);
+}
+
+.asilinks-btn {
+  border-radius: 6px;
+  font-family: Quicksand;
+  font-weight: bold;
+  border: 0 none;
+  height: 52px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.blue-btn {
+  background-color: #1d1dff;
+  color: #ffffff;
+}
+
+.blue-btn:hover {
+  background-color: transparent;
+  border-style: solid;
+  color: #1d1dff;
+  border-width: 1px;
+  border-image-slice: 1;
+}
+
+.orange-btn,
+.trans-btn:hover {
+  background-color: #fe5d60;
+  border-style: solid;
+  border-width: 1px;
+  color: #f2f5f8;
+}
+
+input[type="file"] {
+  display: block;
+}
+
+.orange-btn:disabled,
+.orange-btn[disabled] {
+  background-color: #ff8789;
+  cursor: not-allowed;
+  color: #f2f5f8;
+}
+
+.trans-btn,
+.orange-btn:hover {
+  /* asilinks says trans rights */
+  background-color: transparent;
+  border-style: solid;
+  color: #fe5d60;
+  border-width: 1px;
+  border-image-slice: 1;
+}
+
+/**Break point de 1440 x 900 cambiando colores nuevamente**/
+
+.style_sidebar {
+  background-color: #feeeef;
+  background-image: none;
+}
+
+.btn-outline-primary:not(:disabled):not(.disabled):active,
+.btn-outline-primary:not(:disabled):not(.disabled).active,
+.show > .btn-outline-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #fe5d60;
+  border-color: #fe5d60;
+}
+
+/**Oportunity/ InProgress*/
+
+.user_style::before {
+  background-color: #fe5d60;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.user_style-money::before {
+  background-color: #fe5d60;
+  padding: 11px 9px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+}
+
+.user_style-calendar::before {
+  background-color: #fe5d60;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+}
+
+.offset-md-3 .chat-bubble {
+  background: #feeeef;
+  color: #352a2a;
+}
+
+.offset-md-3 .chat-bubble {
+  background: #feeeef;
+  color: #2a2a35;
+}
+
+.chat-box-tray {
+  background: #feeeef;
+  display: flex;
+  align-items: baseline;
+  padding: 15px 15px;
+  align-items: center;
+  margin-top: 19px;
+  bottom: 0;
+  border-radius: 0px 0px 30px 30px;
+}
+.chat-box-tray input {
+  margin: 0 10px;
+  padding: 10px 20px;
+}
+.chat-box-tray i {
+  color: #fe5d60;
+  font-size: 20px;
+  vertical-align: middle;
+}
+.chat-box-tray i:last-of-type {
+  margin-left: 25px;
+}
+
+/*Modal*/
+.close {
+  margin-left: auto;
+  float: right;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fe5d60;
+  text-shadow: 0 1px 0 #fff;
+  opacity: 0.5;
+}
+
+.close:hover {
+  color: #fe5d60;
+  text-decoration: none;
+}
+
+.label_style {
+  padding: 10px !important;
+  width: 225px !important;
+  border-radius: 6px !important;
+  background-color: #fe5d60 !important;
+  border: 1px solid #fe5d60;
+  font-size: 16px !important;
+  transition: all 0.5s;
+  color: #fff;
+  font-weight: bold;
+}
+
+.label_style:hover {
+  background-color: #fff !important;
+  border: 1px solid #fe5d60;
+  color: #fe5d60;
+}
+
+textarea {
+  resize: none;
+}
+
+.form-input {
+  background-color: #fafafa;
+  /*background-color: #000000;*/
+  font-weight: bold;
+  margin: 0 auto;
+  border-radius: 0;
+  border: none;
+  height: 52px;
+  font-size: 14px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.form-input-number {
+  background-color: #fafafa;
+  /*background-color: #000000;*/
+  font-weight: bold;
+  margin: 0 auto;
+  border-radius: 0;
+  border: none;
+  height: 52px;
+  font-size: 14px;
+  width: 20%;
+  text-align: center;
+  padding: 1rem;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #858796;
+  opacity: 1;
+}
+
+.form-control::-moz-placeholder {
+  color: #858796;
+  opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #858796;
+  opacity: 1;
+}
+
+.form-control::-ms-input-placeholder {
+  color: #858796;
+  opacity: 1;
+}
+
+.form-control::placeholder {
+  color: #858796;
+  opacity: 1;
+}

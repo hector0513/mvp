@@ -1,0 +1,238 @@
+
+<style>
+
+    .dropdown-settings {
+
+        position: relative;
+        display: inline-block;
+
+    }
+
+    .dropdown-content {
+
+        display: none;
+        position: absolute;
+        background-color: #F9F9F9;
+        border-radius: 20px;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+
+    }
+
+    .dropdown-content a {
+
+        padding: 12px 16px;
+        display: block;
+
+    }
+
+    .dropdown-content a:hover {
+
+        background-color: #F1F1F1;
+        border-radius: 20px;
+
+    }
+
+    .dropdown-settings:hover .dropdown-content, .wallet-dropdown-settings:hover .dropdown-content {
+
+        display: block;
+
+    }
+
+</style>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/assets/styles/loading-bar.css"/>
+</head>
+
+<div class="user-container my-4" id="userInfo">
+    <div class="row">
+        <div class="col-2 col-md-2 center-hor pr-0">
+            <button class="asilinks-btn orange-circle pb-1" id="notification">
+                <img src="/assets/favicon/notification.svg">
+            </button>
+        </div>
+        <div class="col-2 col-md-2 center-hor dropdown-settings pr-0" data-toggle="settingsDropdown">
+            <button class="asilinks-btn orange-circle pb-1" id="settings">
+                <img src="/assets/favicon/settings.svg">
+            </button>
+            <div class="dropdown-content" id="settingsDropdown">
+                <a href="/partner/profile">Ver perfil</a>
+                <a href="/login/logout">Cerrar sesión</a>
+            </div>
+        </div>
+        <div class="col-6 col-md-6 right-hor pl-0">
+            <div class="row">
+                <div class="col-12 col-md-12 mid-title clickable" onclick="location.href='/partner/profile'">
+                    <b><%= user.firstname %> <%= user.lastname %></b>
+                </div>
+                <div class="col-12 col-md-12 small-title">
+                    Socio <%= user.rank %>
+                </div>
+            </div>
+        </div>
+        <div class="col-2 col-md-2 pl-0">
+            <img class="clickable" height="50" width="50" style="float:right;" src="<%= user.photo %>" onclick="location.href='/partner/profile'">
+        </div>
+    </div>
+</div>
+<div class="user-container my-4" id="clientProfile">
+    <div class="row">
+        <div class="col-md-12">
+            <button class="asilinks-btn trans-btn" id="workerBtn">
+                Ir a perfil de Cliente
+            </button>
+        </div>
+    </div>
+</div>
+<div class="user-container my-4" id="stats">
+    <div class="row">
+        <div class="col-md-12 mb-2">
+            <b>Estadísticas</b>
+        </div>
+        <div class="col-md-12 mb-3">
+            <div class="card asilinks-card white-bg black-shadow">
+                <div class="card-body small-title">
+                    <div class="row">
+                        <div class="col-2 col-md-2 center-hor">
+                            <div class="small-icon orange-bg p-1">
+                                <img src="/assets/favicon/diamond.svg">
+                            </div>
+                        </div>
+                        <div class="col-7 col-md-7 left-hor small-title">
+                            <b>Calidad del trabajo</b>
+                        </div>
+                        <div class="col-3 col-md-3 right-hor small-title">
+                            <b>10/10</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 mb-3">
+            <div class="card asilinks-card white-bg black-shadow">
+                <div class="card-body small-title">
+                    <div class="row">
+                        <div class="col-2 col-md-2 center-hor">
+                            <div class="small-icon orange-bg p-1">
+                                <img src="/assets/favicon/clock.svg">
+                            </div>
+                        </div>
+                        <div class="col-7 col-md-7 left-hor small-title">
+                            <b>Tiempos de entrega</b>
+                        </div>
+                        <div class="col-3 col-md-3 right-hor small-title">
+                            <b>10/10</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 mb-3">
+            <div class="card asilinks-card white-bg black-shadow">
+                <div class="card-body small-title">
+                    <div class="row">
+                        <div class="col-2 col-md-2 center-hor">
+                            <div class="small-icon orange-bg p-1">
+                                <img src="/assets/favicon/growth.svg">
+                            </div>
+                        </div>
+                        <div class="col-7 col-md-7 left-hor small-title">
+                            <b>Desempeño de referidos</b>
+                        </div>
+                        <div class="col-3 col-md-3 right-hor small-title">
+                            <b>10/10</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="user-container my-4" id="ranking">
+    <div class="row">
+        <div class="col-md-12 mb-3">
+            <div class="card asilinks-card pink-card">
+                <div class="card-body small-title">
+                    <div class="row">
+                        <div class="col-md-12 center-hor big-title mb-2">
+                            <b>Ascenso a Plata</b>
+                        </div>
+                        <div class="col-md-12 mb-4">
+                            <button class="asilinks-btn orange-btn w-100">
+                                ¡Subir a plata!
+                            </button>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <div class="row">
+                                <div class="col-8">
+                                    <div class="row mb-3">
+                                        <div class="col-md-12 small-title">
+                                            <b>Experiencia asilinker</b>
+                                        </div>
+                                        <div class="col-md-12 small-title green-text">
+                                            100/100<img src="/assets/favicon/tick.svg" style="padding-bottom:5px;padding-left:5px;">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12 small-title">
+                                            <b>Calificación</b>
+                                        </div>
+                                        <div class="col-md-12 small-title green-text">
+                                            100/100<img src="/assets/favicon/tick.svg" style="padding-bottom:5px;padding-left:5px;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-4 ldBar label-center" data-value="<%= value %>" data-preset="circle">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 center-hor small-title mb-2">
+                            <a href="/login">Ver más información</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="/assets/scripts/loading-bar.js"></script>
+<script type="text/javascript">
+
+    $("#settings").click(function() {
+
+        if (document.getElementById("settingsDropdown").style.display == "block")
+            document.getElementById("settingsDropdown").style.display = "";
+        else
+            document.getElementById("settingsDropdown").style.display = "block"
+
+
+    })
+
+    var workerBtn = document.getElementById("workerBtn")
+
+    $("#workerBtn").click(function() {
+
+        // EL POST ESTA EN WALLET ROUTES PORQUE NO SE DONDE PONERLO. OBVIO NO VA AHI
+        $.post("/api/users/changeWork")
+        .done( function(data){
+
+            location.reload();
+
+        })
+        .fail( function(xhr, textStatus, errorThrown){
+
+            console.log(xhr.responseText)
+            alert("Error cambiando de usuario! " + xhr.responseText)
+
+        });
+
+
+    });
+    
+</script>

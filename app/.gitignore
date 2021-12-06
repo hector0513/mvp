@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log
+package-lock.json
+transaction.log
+transaction.csv
+/src/assets/uploads/requirements/*
+/src/assets/uploads/works/*
+/src/assets/uploads/proposals/*
+/src/assets/uploads/users/*
+

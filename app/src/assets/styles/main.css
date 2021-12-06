@@ -1,0 +1,419 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+html,
+body {
+  font-family: "Quicksand" !important;
+}
+
+/*Listo*/
+a,
+a:visited {
+  color: #fe5d60;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+a:hover,
+a:visited:hover {
+  color: #ba1c1f;
+}
+/*Listo*/
+
+/*Listo*/
+.pink-bg {
+  background-color: #feeeef;
+}
+/*Listo*/
+
+.white-bg {
+  background-color: #ffffff;
+}
+
+.light-gray-bg {
+  background-color: #f2f5f8;
+}
+
+.green-bg {
+  background-color: #00ab84;
+  color: #ffffff;
+}
+
+.red-bg {
+  background-color: #fe5d60;
+  color: #ffffff;
+}
+
+.pinker-bg {
+  background-color: #fda7df;
+  color: #ffffff;
+}
+
+.blue-bg {
+  background-color: #00006b;
+  color: #ffffff;
+}
+
+.orange-bg {
+  background-color: linear-gradient(to right, #e74267, #ff5d60);
+  background-image: linear-gradient(to right, #e74267, #ff5d60);
+  color: #ffffff;
+}
+
+.gray-border {
+  border: solid 1px #bcbcca;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.orange-circle {
+  border-radius: 50%;
+  background-image: linear-gradient(to right, #e74267, #ff5d60);
+}
+
+/*Listo*/
+.center-vert {
+  display: flex;
+  align-items: center;
+}
+
+/*Listo*/
+
+.left-hor {
+  text-align: left;
+}
+
+/*Listo*/
+.contain-image {
+  object-fit: contain;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.border-half {
+  border-radius: 50% !important;
+}
+
+.border-42 {
+  border-radius: 42px !important;
+}
+
+.border-35 {
+  border-radius: 35px !important;
+}
+
+.border-21 {
+  border-radius: 21px !important;
+}
+
+.border-18 {
+  border-radius: 18px !important;
+}
+
+.border-10 {
+  border-radius: 10px !important;
+}
+
+.border-7 {
+  border-radius: 7px !important;
+}
+
+/*Listo*/
+
+/*Listo*/
+.text-36 {
+  font-size: 36px !important;
+}
+/*Listo*/
+
+/*Listo*/
+.text-28 {
+  font-size: 28px !important;
+}
+/*Listo*/
+
+.text-18 {
+  font-size: 18px !important;
+}
+
+.text-14 {
+  font-size: 14px !important;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+/*Listo*/
+.asilinks-card {
+  border-radius: 42px !important;
+}
+/*Listo*/
+
+/*Listo*/
+.pink-card {
+  border-radius: 50px;
+  background-color: #feeeef;
+  box-shadow: -10px -10px 20px 0 #fddbde, 10px 10px 20px 0 #ffffff;
+}
+/*Listo*/
+
+.black-shadow {
+  box-shadow: 0 4px 13px 0 rgba(42, 42, 53, 0.13);
+}
+
+.red-shadow {
+  box-shadow: 0 0 30px 0 rgba(194, 25, 63, 0.5);
+}
+
+.green-text {
+  color: #009270;
+}
+
+.red-text {
+  color: #fe5d60;
+}
+
+.gray-text {
+  color: #b5c7d3;
+}
+
+/*Listo*/
+.asilinks-btn {
+  border-radius: 6px;
+  font-family: Quicksand;
+  font-weight: bold;
+  border: 0 none;
+  height: 52px;
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+}
+/*Listo*/
+
+.blue-btn {
+  background-color: #1d1dff;
+  color: #ffffff;
+}
+
+.blue-btn:hover {
+  background-color: transparent;
+  border-style: solid;
+  color: #1d1dff;
+  border-width: 1px;
+  border-image-slice: 1;
+}
+
+/*Listo*/
+.orange-btn,
+.trans-btn:hover {
+  background-color: #fe5d60;
+  border-style: solid;
+  border-width: 1px;
+  color: #f2f5f8;
+}
+/*Listo*/
+
+input[type="file"] {
+  display: block;
+}
+
+.orange-btn:disabled,
+.orange-btn[disabled] {
+  background-color: #ff8789;
+  cursor: not-allowed;
+  color: #f2f5f8;
+}
+
+/*Listo*/
+.trans-btn,
+.orange-btn:hover {
+  /* asilinks says trans rights */
+  background-color: transparent;
+  border-style: solid;
+  color: #fe5d60;
+  border-width: 1px;
+  border-image-slice: 1;
+}
+/*Listo*/
+.pointer {
+  cursor: pointer;
+}
+
+.checkout-active {
+  box-shadow: 0 4px 8px 0 rgba(68, 68, 255, 0.2);
+  border: solid 2px #4444ff;
+  color: #4444ff;
+}
+
+/*Listo*/
+.checkout-inactive {
+  border: solid 2px #b5c7d3;
+  color: #b5c7d3;
+}
+/*Listo*/
+
+/*Listo*/
+.bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  white-space: normal;
+  /*padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 0px;
+  padding-top: 5px;*/
+}
+/*Listo*/
+
+/*Listo*/
+.bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  white-space: normal;
+  /*padding-right: 5px;
+  padding-left: 5px;
+  padding-bottom: 0px;
+  padding-top: 5px;*/
+}
+/*Listo*/
+/* Cosas del input */
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  color: #bcbcca;
+}
+
+.form-input {
+  background-color: #fafafa;
+  /*background-color: #000000;*/
+  font-weight: bold;
+  margin: 0 auto;
+  border-radius: 0;
+  border: none;
+  height: 52px;
+  font-size: 14px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: red;
+}
+
+.inputfile + label {
+  cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+  pointer-events: none;
+}
+
+.label_style {
+  padding: 10px !important;
+  width: 225px !important;
+  border-radius: 6px !important;
+  background-color: #5d60ff !important;
+  border: 1px solid #5d60ff;
+  font-size: 16px !important;
+  transition: all 0.5s;
+}
+
+.label_style:hover {
+  background-color: #fff !important;
+  border: 1px solid #5d60ff;
+  color: #000;
+}
+
+/* Fin de cosas del input */
+
+/* cosas del select */
+
+/* src https://codepen.io/FrankieDoodie/pen/Pyrqyp */
+.as-select select {
+  background-color: #fafafa;
+  color: #000000;
+  padding: 8px;
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.invalid-input {
+  box-shadow: 0 0 5px 1px red;
+}
+/* fin de cosas del select */
+
+/* Cosas del loader */
+
+.asilinks-loader {
+  border: 3px solid #ff8789;
+  border-radius: 50%;
+  border-top: 3px solid #d93639;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 1s linear infinite; /* Safari */
+  animation: spin 1s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Fin de cosas del loader */
+
+/* Cosas del modal */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Fin de cosas del modal */

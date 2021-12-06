@@ -1,0 +1,1625 @@
+<%- include('../Client/partials/header'); -%>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <link rel="stylesheet" href="/assets/styles/maincopia.css" />
+  <link rel="stylesheet" href="/assets/styles/partnercopia.css" />
+  <link rel="stylesheet" href="/assets/styles/todo.css" />
+  <link href='/assets/styles/fullcalendar.css' rel='stylesheet' />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+  <!-- Entire bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
+  <!-- legacy bundle for older browsers (IE11) -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.legacy.js"></script>
+  <!-- Draggable only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.js"></script>
+  <!-- Sortable only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/sortable.js"></script>
+  <!-- Droppable only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/droppable.js"></script>
+  <!-- Swappable only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/swappable.js"></script>
+  <!-- Plugins only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/plugins.js"></script>
+
+  <style>
+    * {
+    box-sizing: border-box;
+  }
+
+    /*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important;
+  color: #ffffff;
+}
+.tagCategory {
+  border-radius: 12px;
+  font-size: 12px;
+  margin:8px;
+}
+.pointer{
+  cursor: pointer;
+}
+
+#calendar {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+  </style>
+</head>
+
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <%- include('./partials/nav'); -%>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin: 50px 0 50px 0;">
+            <h1 class="h3 mb-0 text-center red-text" id="Welcome-requeriments-refers">
+              ¡Bienvenido <%= user.firstname %>!
+            </h1>
+
+            <!-- Tabs -->
+            <section class="tabs3 faqstyle bg-white text-center" id="tabs3-2">
+              <label>
+                <input type="radio" checked name="radio" id="radio0" />
+                <div class="btn_nav btn-sik red-text"><span>Inicio</span></div>
+              </label>
+              <label>
+                <input type="radio" name="radio" id="radio1" />
+                <div class="btn_nav btn-sik red-text">
+                  <span>Oportunidades</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio" id="radio2" />
+                <div class="btn_nav btn-sik red-text">
+                  <span>Referidos</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio" id="radio3"  <%if (checkTodo) {%> selected <%}%> />
+                <div class="btn_nav btn-sik red-text">
+                  <span>TO DO</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio" id="radio4" <%if (checkNotice) {%> selected <%}%> />
+                <div class="btn_nav btn-sik red-text">
+                  <span>Servicios</span>
+                </div>
+              </label>
+            </section>
+          </div>
+
+
+
+
+          <!-- Content Row -->
+
+          <div class="row" id="finance_daily">
+            <div class="col-12" id="row_calendar" style="display:none;">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold red-text">
+
+                  </h5>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                      aria-labelledby="dropdownMenuLink">
+                      <label onclick="hideCalendar();" class="dropdown-item pointer">Ocultar</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body mb-4" style="padding: 0 0 2em 0;">
+                    <div id='calendar'></div>
+                </div>
+              </div>
+            </div>
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold red-text">
+                    Mis finanzas
+                  </h5>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                      aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Mis datos metricos:</div>
+                      <!-- <a class="dropdown-item" href="/client/graphics">Contabilidad y finanzas</a> -->
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="/partner/wallet">Ver mi wallet</a>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <h6 class="finance_text">$<%=user.wallet %></h6>
+                  <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold red-text">Esta semana</h5>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                      aria-labelledby="dropdownMenuLink">
+                      <div class="dropdown-header">Mi Calendario:</div>
+                      <label onclick="showCalendar();" class="dropdown-item pointer">Ver mi calendario</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                  <section class="package-schedules">
+                    <% calendar.forEach((item, i) => { %>
+                      <div class="row calendar">
+                        <div class="col-md-3">
+                          <span class="day"><%= item.weekday %></span><br/>
+                          <span class="date-header"><%= item.date %></span>
+                        </div>
+                        <% if (item.task) {%>
+                        <div class="col-md-9 Rectangle">
+                          <span class="package-stat"><%= item.task.name %></span>
+                          <br />
+                          <span class="sched-desc color1"><%= item.task.client.firstname %> <%= item.task.client.lastname %></span>
+                        </div>
+                        <%}%>
+                      </div>
+                    <% }); %>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row refereds -->
+
+          <div class="row" id="refereds" style="display: none;">
+            <!-- New refers -->
+            <div class="col-12">
+              <div class="card shadow mb-4" style="
+                  background-image: linear-gradient(to right, #e74267, #ff5d60);
+                ">
+                <!-- Card Body -->
+                <div class="card-body text-center" style="padding: 50px;">
+                  <h6 class="m-0 font-weight-bold text-primary" style="color: #fff !important; font-size: 36px;">
+                    ¿Conoces a alguien perfecto para Asilinks?
+                  </h6>
+                </div>
+                <div class="row" style="padding-bottom: 50px;">
+                  <div class="col-12 center-hor">
+                    <form class="form-inline">
+                      <div class="input-group partner-input" style="margin: auto;">
+                        <input style="
+                            background: transparent;
+                            color: #fff;
+                            border: solid 1px #fff;
+                          " type="email" class="form-control" id="inviteEmail" required="" />
+                        <div class="input-group-append">
+                          <button type="button" class="input-group-text py-1 px-4" style="font-weight: bold; color: #2a2a35;"
+                            id="inviteBtn">
+                            Invitar
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- list refers -->
+            <div class="col-12">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h6 class="m-0 font-weight-bold red-text ">
+                    Mis referidos
+                  </h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body text-center" style="margin: 50px 0 50px 0;">
+                  <div class="d-sm-flex align-items-center mb-4">
+                    <!-- Tabs -->
+                    <section class="radio_requeriments" id="tabs3-l" style="
+                        border-radius: 42px;
+                        height: 48px;
+                        background-color: #f4f4ff;
+                      ">
+                      <label>
+                        <input type="radio" checked="" name="radio4" id="radio000" />
+                        <div class="btn_nav2 btn-sik2"><span>Todos</span></div>
+                      </label>
+                      <label>
+                        <input type="radio" name="radio4" id="radio111" />
+                        <div class="btn_nav2 btn-sik2">
+                          <span>Clientes</span>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="radio" name="radio4" id="radio222" />
+                        <div class="btn_nav2 btn-sik2"><span>Socios</span></div>
+                      </label>
+                    </section>
+                  </div>
+                </div>
+                <!-- Responsive cards refers -->
+                <div class="row d-flex justify-content-around" style="padding: 1.25rem;" id="all_refers">
+                  <% for(var i = 0; i < invitedUsers.length; i++) { %>
+                  <div class="col-md-auto">
+                    <div class="card" style="width: 15rem; padding: 0;">
+                      <img class="img-fluid" src="<%= invitedUsers[i].photo %>" alt="Card image cap"
+                        style="border-radius: 42px;" />
+                      <div class="card-body" style="margin-top: 10px;">
+                        <h5 class="card-title" style="
+                            font-weight: bold;
+                            color: #2a2a35;
+                            font-size: 14px;
+                            margin: 0;
+                          ">
+                          <%= invitedUsers[i].firstname %> <%=
+                          invitedUsers[i].lastname %>
+                        </h5>
+                        <p class="card-text" style="
+                            font-weight: normal;
+                            color: #2a2a35;
+                            font-size: 14px;
+                          ">
+                          Referido el <%= invitedUsers[i].createdAt %>
+                        </p>
+                        <% if (invitedUsers[i].worker == true) { %>
+                        <a href="#" class="btn btn-primary"
+                          style="background-color: #5d60fe; font-size: 0.8rem;">Cliente</a>
+                        <% } else { %>
+                        <a href="#" class="btn btn-primary" style="
+                            background-image: linear-gradient(
+                              to right,
+                              #e74267,
+                              #ff5d60
+                            );
+                            font-size: 0.8rem;
+                          ">Socio</a>
+                        <% } %>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %>
+                </div>
+                <div class="row d-flex justify-content-around" style="padding: 1.25rem; display: none !important;"
+                  id="client_refers">
+                  <% for(var i = 0; i < invitedUsers.length; i++) { %> <% if
+                  (invitedUsers[i].worker == true) { %>
+                  <div class="col-md-auto">
+                    <div class="card" style="width: 15rem; padding: 0;">
+                      <img class="img-fluid" src="<%= invitedUsers[i].photo %>" alt="Card image cap"
+                        style="border-radius: 42px;" />
+                      <div class="card-body" style="margin-top: 10px;">
+                        <h5 class="card-title" style="
+                            font-weight: bold;
+                            color: #2a2a35;
+                            font-size: 14px;
+                            margin: 0;
+                          ">
+                          <%= invitedUsers[i].firstname %> <%=
+                          invitedUsers[i].lastname %>
+                        </h5>
+                        <p class="card-text" style="
+                            font-weight: normal;
+                            color: #2a2a35;
+                            font-size: 14px;
+                          ">
+                          Referido el <%= invitedUsers[i].createdAt %>
+                        </p>
+                        <a href="#" class="btn btn-primary"
+                          style="background-color: #5d60fe; font-size: 0.8rem;">Cliente</a>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %> <% } %>
+                </div>
+                <div class="row d-flex justify-content-around" style="padding: 1.25rem; display: none !important;"
+                  id="partner_refers">
+                  <% for(var i = 0; i < invitedUsers.length; i++) { %> <% if
+                  (invitedUsers[i].worker == false) { %>
+                  <div class="col-md-auto">
+                    <div class="card" style="width: 15rem; padding: 0;">
+                      <img class="img-fluid" src="<%= invitedUsers[i].photo %>" alt="Card image cap"
+                        style="border-radius: 42px;" />
+                      <div class="card-body" style="margin-top: 10px;">
+                        <h5 class="card-title" style="
+                            font-weight: bold;
+                            color: #2a2a35;
+                            font-size: 14px;
+                            margin: 0;
+                          ">
+                          <%= invitedUsers[i].firstname %> <%=
+                          invitedUsers[i].lastname %>
+                        </h5>
+                        <p class="card-text" style="
+                            font-weight: normal;
+                            color: #2a2a35;
+                            font-size: 14px;
+                          ">
+                          Referido el <%= invitedUsers[i].createdAt %>
+                        </p>
+                        <a href="#" class="btn btn-primary" style="
+                            background-image: linear-gradient(
+                              to right,
+                              #e74267,
+                              #ff5d60
+                            );
+                            font-size: 0.8rem;
+                          ">Socio</a>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %> <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row" style="margin-top: 50px;" id="newrequirement">
+            <div class="col">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold red-text">
+                    Mis oportunidades
+                  </h5>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <!-- <i
+                        class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"
+                      ></i> -->
+                    </a>
+                    <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                    <div class="dropdown-header">Reportar:</div>
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div> -->
+                  </div>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body text-center" style="margin: 50px 0 50px 0;">
+                  <div class="d-sm-flex align-items-center justify-content-center mb-4">
+                    <!-- Tabs -->
+                    <section class="radio_requeriments" id="tabs3-l" style="
+                        border-radius: 42px;
+                        height: 48px;
+                        background-color: #feeeef;
+                      ">
+                      <label>
+                        <input type="radio" checked name="radio2" id="radio00" />
+                        <div class="btn_nav2 btn-sik2"><span>Todos</span></div>
+                      </label>
+                      <label>
+                        <input type="radio" name="radio2" id="radio11" />
+                        <div class="btn_nav2 btn-sik2">
+                          <span>Sin iniciar</span>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="radio" name="radio2" id="radio22" />
+                        <div class="btn_nav2 btn-sik2">
+                          <span>En proceso</span>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="radio" name="radio2" id="radio33" />
+                        <div class="btn_nav2 btn-sik2">
+                          <span>Canceladas</span>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="radio" name="radio2" id="radio44" />
+                        <div class="btn_nav2 btn-sik2">
+                          <span>Terminadas</span>
+                        </div>
+                      </label>
+                      <label>
+                        <input type="radio" name="radio2" id="radio55" />
+                        <div class="btn_nav2 btn-sik2">
+                          <span>Borradores</span>
+                        </div>
+                      </label>
+                    </section>
+                  </div>
+                </div>
+                <!-- Responsive cards requeriments -->
+                <div class="card-columns">
+                  <% for(var i = 0; i < opportunities.length; i++) { %>
+                  <div class="card no_padding all" style="max-width: 450px;" id="all">
+                    <a class="stretched-link"
+                      <% if (opportunities[i].status=="Finalizado" || opportunities[i].status=="Iniciado") { %>
+                      href="/partner/opportunity/inProgress/<%=opportunities[i]._id%>" <% } else { %>
+                      href="/partner/opportunity/<%=opportunities[i]._id%>" <% } %>></a>
+
+                    <div class="row no-gutters">
+                      <div class="col-md-2 col col-sm-2">
+                        <img src="https://picsum.photos/500.webp" class="card-img rounded" alt="..." />
+                      </div>
+                      <div class="col-md-9 col-9 col-sm-9">
+                        <div class="card-body" style="padding: 1.25rem !important;">
+                          <h5 class="card-title breakpoint_font" style="
+                              font-weight: bold;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.43;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            <%= opportunities[i].name %>
+                          </h5>
+                          <p class="card-text" style="
+                              font-weight: normal;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.14;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            Por <%= opportunities[i].client.firstname %> <%= opportunities[i].client.lastname %>
+                          </p>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].category_name %></a>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].subcategory_name %></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %> <% for(var i = 0; i < opportunities.length; i++) { %>
+                  <% if (opportunities[i].status == "Sin Iniciar") { %>
+                  <div class="card no_padding process" style="max-width: 450px; display: none;">
+                    <a class="stretched-link" href="/partner/opportunity/<%=opportunities[i]._id%>"></a>
+                    <div class="row no-gutters">
+                      <div class="col-md-2 col col-sm-2">
+                        <img src="https://picsum.photos/499.webp" class="card-img rounded" alt="..." />
+                      </div>
+                      <div class="col-md-9 col-9 col-sm-9">
+                        <div class="card-body" style="padding: 1.25rem !important;">
+                          <h5 class="card-title breakpoint_font" style="
+                              font-weight: bold;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.43;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            <%= opportunities[i].name %>
+                          </h5>
+                          <p class="card-text" style="
+                              font-weight: normal;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.14;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            Por <%= opportunities[i].client.firstname %> <%= opportunities[i].client.lastname %>
+                          </p>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].category_name %></a>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].subcategory_name %></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %> <% } %> <% for(var i = 0; i < opportunities.length;
+                  i++) { %> <% if (opportunities[i].status == "Iniciado") {
+                  %>
+                  <div class="card no_padding not_inicialised" style="max-width: 450px; display: none;">
+                    <a class="stretched-link" href="/partner/opportunity/inProgress/<%=opportunities[i]._id%>"></a>
+                    <div class="row no-gutters">
+                      <div class="col-md-2 col col-sm-2">
+                        <img src="https://picsum.photos/498.webp" class="card-img rounded" alt="..." />
+                      </div>
+                      <div class="col-md-9 col-9 col-sm-9">
+                        <div class="card-body" style="padding: 1.25rem !important;">
+                          <h5 class="card-title breakpoint_font" style="
+                              font-weight: bold;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.43;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            <%= opportunities[i].name %>
+                          </h5>
+                          <p class="card-text" style="
+                              font-weight: normal;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.14;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            Por <%= opportunities[i].client.firstname %> <%= opportunities[i].client.lastname %>
+                          </p>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].category_name %></a>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].subcategory_name %></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %> <% } %> <% for(var i = 0; i < opportunities.length;
+                  i++) { %> <% if (opportunities[i].status == "Cancelado") { %>
+                  <div class="card no_padding cancel" style="max-width: 450px; display: none;">
+                    <a class="stretched-link" href="/partner/opportunity/<%=opportunities[i]._id%>"></a>
+                    <div class="row no-gutters">
+                      <div class="col-md-2 col col-sm-2">
+                        <img src="https://picsum.photos/497.webp" class="card-img rounded" alt="..." />
+                      </div>
+                      <div class="col-md-9 col-9 col-sm-9">
+                        <div class="card-body" style="padding: 1.25rem !important;">
+                          <h5 class="card-title breakpoint_font" style="
+                              font-weight: bold;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.43;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            <%= opportunities[i].name %>
+                          </h5>
+                          <p class="card-text" style="
+                              font-weight: normal;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.14;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            Por <%= opportunities[i].client.firstname %> <%= opportunities[i].client.lastname %>
+                          </p>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].category_name %></a>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].subcategory_name %></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %> <% } %> <% for(var i = 0; i < opportunities.length;
+                  i++) { %> <% if (opportunities[i].status == "Finalizado") { %>
+                  <div class="card no_padding completed" style="max-width: 450px; display: none;">
+                    <a class="stretched-link" href="/partner/opportunity/inProgress/<%=opportunities[i]._id%>"></a>
+                    <div class="row no-gutters">
+                      <div class="col-md-2 col col-sm-2">
+                        <img src="https://picsum.photos/496.webp" class="card-img rounded" alt="..." />
+                      </div>
+                      <div class="col-md-9 col-9 col-sm-9">
+                        <div class="card-body" style="padding: 1.25rem !important;">
+                          <h5 class="card-title breakpoint_font" style="
+                              font-weight: bold;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.43;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            <%= opportunities[i].name %>
+                          </h5>
+                          <p class="card-text" style="
+                              font-weight: normal;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.14;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            Por <%= opportunities[i].client.firstname %> <%= opportunities[i].client.lastname %>
+                          </p>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].category_name %></a>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].subcategory_name %></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %> <% } %> <% for(var i = 0; i < opportunities.length;
+                  i++) { %> <% if (opportunities[i].status == "Borradores") { %>
+                  <div class="card no_padding saver" style="max-width: 450px; display: none;">
+                    <a class="stretched-link" href="/partner/opportunity/<%=opportunities[i]._id%>"></a>
+                    <div class="row no-gutters">
+                      <div class="col-md-2 col col-sm-2">
+                        <img src="https://picsum.photos/495.webp" class="card-img rounded" alt="..." />
+                      </div>
+                      <div class="col-md-9 col-9 col-sm-9">
+                        <div class="card-body" style="padding: 1.25rem !important;">
+                          <h5 class="card-title breakpoint_font" style="
+                              font-weight: bold;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.43;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            <%= opportunities[i].name %>
+                          </h5>
+                          <p class="card-text" style="
+                              font-weight: normal;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: 1.14;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                            ">
+                            Por <%= opportunities[i].client.firstname %> <%= opportunities[i].client.lastname %>
+                          </p>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].category_name %></a>
+                          <a href="" class="btn btn-outline-primary style_btn mb-2 "
+                            style="font-size: 0.7rem;"><%= opportunities[i].subcategory_name %></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %> <% } %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Content Row -->
+
+          <div class="row" id="todo_calendar" style="display: none;">
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold red-text">Esta semana</h5>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+              <section class="package-schedules">
+                <% calendar.forEach((item, i) => { %>
+                  <div class="row calendar">
+                    <div class="col-2">
+                      <span class="day"><%= item.weekday %></span> <br />
+                      <span class="date-header"><%= item.date %></span>
+                    </div>
+                    <% if (item.task) {%>
+                      <div class="col-10 Rectangle">
+                        <span class="package-stat"><%= item.task.name %></span>
+                        <br />
+                        <span class="sched-desc color1"><%= item.task.client.firstname %> <%= item.task.client.lastname %></span>
+                      </div>
+                      <%}%>
+                    </div>
+                    <% }); %>
+                  </section>
+                </div>
+              </div>
+            </div>
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold red-text">
+                    Lista de tareas
+                  </h5>
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="container">
+                    <br>
+                  <div class="row">
+                    <div class="col-8 searchBar">
+                      <span class="vertical" style="margin-left:5px;">
+                      <i class="fa fa-search"></i><input type="text" id="search" name="search" class="searchInput" placeholder="Buscar..."/>
+                      </span>
+                    </div>
+                    <div class="col-4" align="right">
+                      <button id="callAdd" class="btn btn-block buttonAdd buttonText" onclick="addTaskModal();" data-toggle="modal" data-target="#Modal-task">Agregar tarea</button>
+                    </div>
+                  </div>
+                  <br>
+                  <p>
+                    <input id="partnerID" value="<%= user._id%>" hidden>
+                    <input id="checktodo" value="<%= checkTodo %>" hidden>
+                  </p>
+                  <%
+                  showID = function(a) {
+                      a = String(a)
+                      return a.substr(a.length-6)
+                  }
+                  %>
+                  <div id="todoDIV">
+                    <div class="containter" id="todo">
+                      <% todo.forEach((task, i) => { %>
+                        <div class="row draggable" id="<%=task._id%>" >
+
+                          <div class="col-11" onclick="editTaskModal('<%=task._id%>','<%=task.description%>','<%=task.deadline%>','<%=task.requirement%>','<%=task.priority%>','<%=task.tags%>');" >
+                            <p>
+                              <i class="fa fa-circle white"></i>&nbsp;<label class="description"><%=task.description%></label>
+                              <br>
+                              <i class="fa fa-circle priority_<%=task.priority%>"></i>
+                              <% if(task.requirement){%><a class="link-req" href="/partner/opportunity/inProgress/<%=task.requirement%>">Oportunidad #<%= showID(task.requirement) %></a><%}%>&nbsp;
+                              <% task.tags.forEach((tag, t) => { %>
+                                <span class="tag"><label class="tag-label">&nbsp;<%=tag%>&nbsp;</label></span>
+                              <% }) %>
+                              <br>
+                              <i class="fa fa-circle white"></i>&nbsp;<label class="date"><%= moment(task.deadline).format("DD/MM/YYYY")%></label>
+                            </p>
+                            <p class="separator"></p>
+                          </div>
+
+                            <div class="col-1">
+                              <div class="row empty-check vertical" onclick="checkTask('<%= task._id%>')">
+                                <img src="/assets/images/tick.svg" class="tick">
+                              </div>
+                            </div>
+                          </div>
+                        <% }) %>
+                    </div>
+                    <br>
+                    <% if (done.length>0) {%>
+                    <div class="row">
+                      <div class="col-3">
+                        <p class="done-text vertical">Completadas</p>
+                      </div>
+                      <div class="col-9">
+                        <p class="done-separator"><p>
+                      </div>
+                    </div>
+                    <br>
+                    <div class="containter" id="done">
+                    <% done.forEach((task, i) => { %>
+                      <div class="row">
+                        <div class="col-11">
+                          <i class="fa fa-circle white"></i>&nbsp;<label class="description checked line"><%=task.description%></label>
+                          <br>
+                          <p>
+                            <i class="fa fa-circle priority_<%=task.priority%>"></i>
+                              <% if(task.requirement){%><a class="link-req checked" href="/partner/opportunity/inProgress/<%=task.requirement%>">Oportunidad #<%= showID(task.requirement) %></a><%}%>&nbsp;
+                            <% task.tags.forEach((tag, t) => { %>
+                            <span class="tag checked"><label class="tag-label">&nbsp;<%=tag%>&nbsp;</label></span>
+                            <% }) %>
+                            <br>
+                            <i class="fa fa-circle white"></i>&nbsp;<label class="date"><%= moment(task.deadline).format("DD/MM/YYYY")%></label>
+
+                          </p>
+                          <p class="separator"></p>
+                          </div>
+
+                          <div class="col-sm-1">
+                              <div class="row empty-check <% if (task.status=="Expired") { %> red <% } else { %> green <% } %> vertical">
+                                <img src="/assets/images/tick.svg" class="tick">
+                              </div>
+                            <!-- <i class="fa fa-circle-thin vertical" ></i> -->
+                          </div>
+                        </div>
+                        <br>
+                        <% }) %>
+                    </div>
+                    <%}%>
+                  </div>
+                  <div id="searchDIV">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+          <!-- modal for task -->
+          <div class="modal fade" id="Modal-task" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+                <div class="row ml-auto">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-header" style="margin: 0 auto;">
+                  <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#fe5d60">Nueva tarea</h4>
+                </div>
+
+                <div class="modal-body">
+                  <div class="card-body">
+                    <form enctype="multipart/form-data">
+                      <fieldset>
+                        <div class="form-group row">
+                          <div class="col-12">
+                            <label for="description" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Descripción</label>
+                            <br>
+                              <input type="text" class="form-input" style="color: #2a2a35;" id="description" name="description" required>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <label for="requirement" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Requerimiento</label>
+                            <br>
+                              <select type="text" class="form-input" style="color: #2a2a35;" id="requirement"  name="requirement" required>
+                                <option id="opp_undefined" value="undefined">Sin Requerimiento</option>
+                                <% opportunities.forEach((opp, o) => { %>
+                                  <option id="opp_<%=opp._id %>" value="<%=opp._id %>"> #<%=opp._id%> - <%= opp.client.firstname %> <%= opp.client.lastname %></option>
+                                  <% }); %>
+                                </select>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="priority"  style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Prioridad</label>
+                              <br>
+                                <select type="text" class="form-input" style="color: #2a2a35;" id="priority"  name="priority" required>
+                                  <option id="p_2" value=2>Alta </option>
+                                  <option id="p_1" value=1>Media </option>
+                                  <option id="p_0" value=0>Baja </option>
+                                </select>
+
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="deadline" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Fecha de vencimiento</label>
+                              <br>
+                              <input type="date" class="form-input" id="deadline" name="deadline" placeholder="" style="color: #2a2a35" required/>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="tags" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Tags</label>
+                              <br>
+                              <input type="text" class="form-input" style="color: #2a2a35;" id="tags" name="tags" required />
+                            </div>
+                          </div>
+                          <input hidden id="task_id"/>
+                        </fieldset>
+
+                      </form>
+                      <div id="addDiv">
+                        <button class="btn btn-block btn-primary px-4 label_style2 buttonSend buttonText"
+                        data-dismiss="" style="width: 100%; margin-top: 25px;"
+                        id="addTask"
+                        onclick="createTask('<%= user._id %>');">
+                        Añadir Tarea
+                      </button>
+                      </div>
+                      <div id="editDiv" class="row" hidden>
+                        <div class="col-8">
+                        <button class="btn btn-block btn-primary px-4 label_style2 buttonSend buttonText"
+                        data-dismiss="" style="width: 100%; margin-top: 25px;"
+                        id="editButton"
+                        type="button"
+                        onclick="editTask();"
+                        >
+                        Editar Tarea
+                      </button>
+                    </div>
+                    <div class="col-4">
+                      <button class="btn btn-block btn-primary px-4 label_style2 buttonSend buttonText"
+                      data-dismiss="" style="width: 100%; margin-top: 25px;"
+                      id="deleteButton"
+                      type="button"
+                      onclick="deleteTask();"
+                      >
+                      Eliminar
+                    </button>
+                    </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of modal -->
+
+          <!-- Content Row -->
+
+          <div class="row" id="notices" style="display: none;">
+
+            <div class="col">
+            <!-- Card-Buttom Requeriment request (>width: 630px) -->
+            <div class="row" id="requirements_card">
+              <div class="col">
+              <div class="card shadow mb-4" style="background-color: rgb(254, 93, 96);">
+              <div class="card-horizontal">
+              <!-- Card Body -->
+              <div class="card-body text-center">
+              <i class="fas fa-briefcase" style="color: #fff; font-size: 30px; margin-top: 35px;"></i>
+              </div>
+              <div class="card-body">
+              <h6 class="card-title requeriments_steps_text" style="font-weight: bold; font-size: 25px; color: #fff; margin-bottom: 5px;">Crea tu propuesta de servicio</h6>
+              <p class="card-text requeriments_steps_text" style="color: #fff">Con nuestro simple proceso garantizamos resultados satisfactorios</p>
+              </div>
+              <div class="card-body text-center">
+                <% if (canCreateNotice) {%>
+                <button class="button_requeriment-red" onclick="cleanModal();" data-toggle="modal" data-target="#Modal-notice"
+                >Crear propuesta de servicio &nbsp&nbsp<i class="fas fa-arrow-right" style="background: #f2f5f8;padding: 10px;border-radius: 10px !important;/*! margin-right: 10px; */margin: 0;width: auto !important;color: #fe5d60;"></i></button>
+                <% } else { %>
+                  <button class="button_requeriment" disabled>Sube de nivel para crear más propuestas</button>
+                <% }%>
+              </div>
+              </div>
+              </div>
+              </div>
+            </div>
+
+          <!-- Card-Buttom Requeriment request (<width: 630px) -->
+          <div class="row w-100" id="requirements_card_responsive">
+            <div class="col-12">
+            <div class="card shadow mb-4" style="background-color: rgb(254, 93, 96);">
+            <!-- Card Body -->
+            <div class="card-body text-center">
+            <i class="fas fa-briefcase" style="color: #fff; font-size: 30px; margin-top: 15px;"></i>
+            </div>
+            <div class="card-body">
+            <h6 class="card-title requeriments_steps_text" style="font-weight: bold; font-size: 25px; color: #fff; margin-bottom: 5px;">Crea tu propuesta de servicio</h6>
+            <p class="card-text requeriments_steps_text" style="color: #fff">Con nuestro simple proceso garantizamos resultados satisfactorios</p>
+            </div>
+            <div class="card-body text-center">
+              <% if (canCreateNotice) {%>
+              <button class="button_requeriment" onclick="cleanModal();" data-toggle="modal" data-target="#Modal-notice"
+              >Crear propuesta de servicio &nbsp&nbsp<i class="fas fa-arrow-right" style="background: #f2f5f8;padding: 10px;border-radius: 10px !important;/*! margin-right: 10px; */margin: 0;width: auto !important;color: #4444ff;"></i></button>
+              <% } else { %>
+                <button class="button_requeriment" disabled>Sube de nivel para crear más propuestas</button>
+              <% }%>
+            </div>
+            </div>
+            </div>
+          </div>
+
+          <!-- Row requeriments -->
+
+          <div class="row" style="margin-top: 50px;" id="services">
+            <div class="col-12">
+              <div class="card shadow mb-4">
+              <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold red-text" style="font-size: 20px;">Mis propuestas</h6>
+
+                </div>
+                <div class="card-body text-center" style="margin: 10px 0 10px 0;">
+                </div>
+
+                <!-- Card Body -->
+                <!-- Responsive cards requeriments -->
+                <div class="row">
+                    <% for(var i = 0; i < notices.length; i++) { %>
+                    <div class=" col-md-4 mb-3">
+                      <div class="card " style="width: 15rem; padding: 0;">
+                        <div class="card-body py-4">
+                          <h5 class="card-title mb-2 " style="
+                              font-weight: bold;
+                              color: #2a2a35;
+                              font-size: 14px;
+                              margin: 0;
+                            ">
+                            <%= notices[i].name %>
+                          </h5>
+                          <p class="card-text d-none d-md-block" style="
+                              font-weight: normal;
+                              color: #2a2a35;
+                              font-size: 14px;
+                              align-items: center;
+                            ">
+                            · <%= notices[i].chats.length %> chat(s).
+                            <br>
+                            · <%= notices[i].req_per_notice %> requerimientos(s).
+                            <br>
+                            · <%= notices[i].req_accepted_per_notice %> aceptado(s).
+                          </p>
+                          <div class="row">
+                            <div class="col-6 ">
+                            <button  id="editNoticeButton" class="btn btn-block btn-primary px-4 label_style2 buttonSend buttonText d-none d-md-block"
+                            onclick="updateService('<%= notices[i]._id %>','<%= notices[i].name %>','<%= notices[i].description %>','<%= notices[i].price %>','<%= notices[i].estimatedTime %>','<%= notices[i].estimatedUnit %>',<%= JSON.stringify(notices[i].categories) %>, <%= JSON.stringify(notices[i].chats) %>)">
+                            Editar
+                          </button>
+                          <div class="d-flex justify-content-center">
+                            <i id="editNoticeButton"  class="fas fa-pen d-block d-md-none" style="font-size: 24px;
+                          color: #fe5d60;"  onclick="updateService('<%= notices[i]._id %>','<%= notices[i].name %>','<%= notices[i].description %>','<%= notices[i].price %>','<%= notices[i].estimatedTime %>','<%= notices[i].estimatedUnit %>',<%= JSON.stringify(notices[i].categories) %>, <%= JSON.stringify(notices[i].chats) %>)"></i>
+                          </div>
+                          </div>
+                          <div class="col-6">
+                          <button class="btn btn-block btn-primary px-4 label_style2 buttonSend buttonText d-none d-md-block"
+                          id="deleteNoticeButton"
+                          onclick="updateDeleteService('<%= notices[i]._id %>','<%= notices[i].name %>')">
+                          Eliminar
+                          </button>
+                         <div class="d-flex justify-content-center">
+                          <i  id="deleteNoticeButton" class="fas fa-trash-alt d-block d-md-none" style="font-size: 24px;
+                          color: #fe5d60;"  onclick="updateDeleteService('<%= notices[i]._id %>','<%= notices[i].name %>')"></i>
+                         </div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <% } %>
+                  </div>
+                  </div>
+            </div>
+          </div>
+
+          <div class="row" style="margin-top: 50px;" id="services">
+            <div class="col">
+              <div class="card shadow mb-4">
+              <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold red-text" style="font-size: 20px;">Posibles Clientes</h6>
+
+                </div>
+                <div class="card-body text-center" style="margin: 10px 0 10px 0;">
+                </div>
+
+                <!-- Card Body -->
+                <!-- Responsive cards requeriments -->
+                <div class="card-columns">
+                    <% for(var i = 0; i < chats.length; i++) { %>
+                    <div class="col-md-auto" align="center">
+                      <div class="card" style="width: 15rem; padding: 0;">
+                        <img class="img-fluid" src="<%= chats[i].client.photo %>" alt="Card image cap"
+                          style="border-radius: 42px;" />
+                        <div class="card-body" style="margin-top: 10px;">
+                          <h5 class="card-title text-left" style="
+                              font-weight: bold;
+                              color: #2a2a35;
+                              font-size: 14px;
+                              margin: 0;
+                            ">
+                            <%= chats[i].client.firstname %> <%=
+                            chats[i].client.lastname %>
+                          </h5>
+                          <p class="card-text text-left" style="
+                              font-weight: normal;
+                              color: #2a2a35;
+                              font-size: 14px;
+                              align-items: center;
+                            ">
+                            <% if (chats[i].client.gender == "Masculino") {%>
+                              Interesado en: "<%= chats[i].notice.name %>"
+                            <% } else if (chats[i].client.gender == "Femenino") {%>
+                              Interada en: "<%= chats[i].notice.name %>"
+                            <% } else {%>
+                              Con interés en: "<%= chats[i].notice.name %>"
+                            <% } %>
+                          </p>
+                          <a href="/partner/service/<%= chats[i].notice._id %>/<%= chats[i].client._id%>" class="btn label_style2 buttonSend buttonText" >
+                            Ver detalles</a>
+                        </div>
+                      </div>
+                    </div>
+                    <% } %>
+                  </div>
+                  </div>
+            </div>
+          </div>
+
+
+
+
+          </div>
+        </div>
+
+          <!-- modal for notice -->
+          <div class="modal fade" id="Modal-notice" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+                <div class="row ml-auto">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-header" style="margin: 0 auto;">
+                  <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#fe5d60">Nueva propuesta de servicio</h4>
+                </div>
+
+                <div class="modal-body">
+                  <div class="card-body">
+                    <form enctype="multipart/form-data">
+                      <fieldset>
+                        <div class="form-group row">
+                          <div class="col-12">
+                            <label for="name" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Nombre</label>
+                            <br>
+                              <input type="text" class="form-input" style="color: #2a2a35;" id="nameNotice" name="nameNotice">
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-12">
+                            <label for="description" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Descripción</label>
+                            <br>
+                              <textarea rows="8" cols="80" class="form-input" style="color: #2a2a35;" id="descriptionNotice" name="descriptionNotice"></textarea>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <div class="col-12 delete_after">
+                            <label for="expiration"
+                            style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">TIEMPO
+                            ESTIMADO</label>
+                            <span class="expiration">
+                              <br>
+                              <input type="number" name="estimatedTime" class="form-input-number" style="color: #2a2a35"
+                              id="estimatedTime" />
+                              <select type="text" class="form-input" style="color: #2a2a35; width: 70%;" id="estimatedUnit"  name="estimatedUnit">
+                                <option value="Dias">Días</option>
+                                <option value="Semanas">Semanas</option>
+                                <option value="Meses">Meses</option>
+                              </select>
+
+                            </span>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <label for="description" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Precio (USD)</label>
+                            <input type="number" class="form-input"
+                            placeholder="400" id="price" name="price" placeholder="" style="color: #2a2a35" />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <label  style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">CATEGORÍA LABORAL</label>
+                            <div class="autocomplete" style="width:100%;">
+                            <input type="text" class="form-input  mt-2"
+                            autocomplete="off"
+                            id="categorySearch" name="categories" placeholder="Escribe una categoría o subcategoría" style="color: #2a2a35" />
+                          </div>
+                          <div id="tagsCategory" class="row"></div>
+                          </div>
+                        </div>
+                      </fieldset>
+
+                      </form>
+                      <button class="btn btn-block btn-primary px-4 label_style2 buttonSend buttonText"
+                      data-dismiss="" style="width: 100%; margin-top: 25px;"
+                      id="addNotice"
+                      onclick="createNotice('<%= user._id %>');">
+                      Añadir Propuesta de servicio
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of modal -->
+
+          <!-- modal for notice -->
+          <div class="modal fade" id="Modal-delete" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+                <div class="row ml-auto">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-body">
+                  <div class="card-body">
+
+                    <div class="row" align="center">
+                      <h5 class="modal-title" style="font-weight: bold; color:#fe5d60">
+                        ¿Estas seguro que deseas elimina la siguiente propuesta de servicio?
+                      </h5>
+                    </div>
+                    <br>
+                    <div class="row" align="center">
+                      <div class="col-12" align="center">
+                      <h5 id="noticeModalName"></h5>
+                    </div>
+                  </div>
+                  <br>
+                    <div class="row" align="center">
+                      <div class="col-6">
+                      <button class="btn btn-block btn-primary px-4 label_style2 buttonSend buttonText"
+                      data-dismiss="modal" >
+                      No
+                    </button>
+                    </div>
+                    <div class="col-6">
+                    <button class="btn btn-block btn-primary px-4 label_style2 buttonSend buttonText"
+                    data-dismiss=""
+                    id="deleteNoticeModal">
+                    Eliminar
+                  </button>
+                  </div>
+                  </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of modal -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Hack pass variable backend to frontend dinamically -->
+        <span id="variableWalletGraphic" hidden>
+          <%- JSON.stringify(wallet) %>
+        </span>
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <%- include('./partials/footer'); -%>
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+<%- include('./partials/sidebar'); -%>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="/assets/scripts/todo.js"></script>
+
+  <script>
+    var checkNotice = <%- JSON.stringify(checkNotice)%>;
+    var user = <%- JSON.stringify(user._id) %>;
+    if (String(checkNotice)=="true"){
+      $("#radio4").click();
+    }
+
+    var categoriesAsTags = [];
+function autocomplete(inp, arr) {
+  /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+  var currentFocus;
+  /*execute a function when someone writes in the text field:*/
+  inp.addEventListener("input", function(e) {
+      var a, b, i, val = this.value;
+      /*close any already open lists of autocompleted values*/
+      closeAllLists();
+      if (!val) { return false;}
+      currentFocus = -1;
+      /*create a DIV element that will contain the items (values):*/
+      a = document.createElement("DIV");
+      a.setAttribute("id", this.id + "autocomplete-list");
+      a.setAttribute("class", "autocomplete-items");
+      /*append the DIV element as a child of the autocomplete container:*/
+      this.parentNode.appendChild(a);
+      /*for each item in the array...*/
+      for (i = 0; i < arr.length; i++) {
+        /*check if the item starts with the same letters as the text field value:*/
+        if (arr[i].category.substr(0, val.length).toUpperCase() == val.toUpperCase()
+        || arr[i].sub_category.substr(0, val.length).toUpperCase() == val.toUpperCase()
+        || (arr[i].sub_category.split(" ")[1] && arr[i].sub_category.split(" ")[1].substr(0, val.length).toUpperCase() == val.toUpperCase())
+        || (arr[i].sub_category.split(" ")[2] && arr[i].sub_category.split(" ")[2].substr(0, val.length).toUpperCase() == val.toUpperCase())) {
+          /*create a DIV element for each matching element:*/
+          b = document.createElement("DIV");
+          /*make the matching letters bold:*/
+          b.innerHTML = arr[i].category +"<br>"+"<strong>" + arr[i].sub_category.substr(0, val.length) + "</strong>";
+          b.innerHTML += arr[i].sub_category.substr(val.length);
+
+          var params = "'"+arr[i].category+"','"+arr[i].sub_category+"','"+arr[i]._id+"'";
+          var functionParam = `addTag(${params});`;
+
+          b.setAttribute("data-cat", arr[i].category);
+          b.setAttribute("data-sub", arr[i].sub_category);
+          b.setAttribute("data-id", arr[i]._id);
+
+          b.addEventListener("click", function(e) {
+              addTag(this.getAttribute("data-cat"),this.getAttribute("data-sub"),this.getAttribute("data-id"));
+          });
+          a.appendChild(b);
+        }
+      }
+  });
+
+  /*execute a function presses a key on the keyboard:*/
+  inp.addEventListener("keydown", function(e) {
+      var x = document.getElementById(this.id + "autocomplete-list");
+      if (x) x = x.getElementsByTagName("div");
+      if (e.keyCode == 40) {
+        /*If the arrow DOWN key is pressed,
+        increase the currentFocus variable:*/
+        currentFocus++;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 38) { //up
+        /*If the arrow UP key is pressed,
+        decrease the currentFocus variable:*/
+        currentFocus--;
+        /*and and make the current item more visible:*/
+        addActive(x);
+      } else if (e.keyCode == 13) {
+        /*If the ENTER key is pressed, prevent the form from being submitted,*/
+        e.preventDefault();
+        if (currentFocus > -1) {
+          /*and simulate a click on the "active" item:*/
+          if (x) x[currentFocus].click();
+        }
+      }
+  });
+  function addActive(x) {
+    /*a function to classify an item as "active":*/
+    if (!x) return false;
+    /*start by removing the "active" class on all items:*/
+    removeActive(x);
+    if (currentFocus >= x.length) currentFocus = 0;
+    if (currentFocus < 0) currentFocus = (x.length - 1);
+    /*add class "autocomplete-active":*/
+    x[currentFocus].classList.add("autocomplete-active");
+  }
+  function removeActive(x) {
+    /*a function to remove the "active" class from all autocomplete items:*/
+    for (var i = 0; i < x.length; i++) {
+      x[i].classList.remove("autocomplete-active");
+    }
+  }
+  function closeAllLists(elmnt) {
+    /*close all autocomplete lists in the document,
+    except the one passed as an argument:*/
+    var x = document.getElementsByClassName("autocomplete-items");
+    for (var i = 0; i < x.length; i++) {
+      if (elmnt != x[i] && elmnt != inp) {
+        x[i].parentNode.removeChild(x[i]);
+      }
+    }
+  }
+
+  function addTag(cat,sub,id) {
+    var isFound = categoriesAsTags.find(c => c.categoryID == id);
+    if (!isFound) {
+
+    categoriesAsTags.push({"workCategory":cat, "workSub":sub, "categoryID":id});
+    $("#categorySearch").val("");
+    var tags = $("#tagsCategory");
+    var div_col = $("<div>").attr("class","col pink-bg p-2 tagCategory").attr("id",id).appendTo(tags);
+    var label = $("<label>").attr("class","red-text").append(cat+" | "+sub).appendTo(div_col);
+    var times = $("<span>").attr("class","fa fa-times pointer").attr("onclick","removeTag('"+id+"');").appendTo(label)
+    }
+    closeAllLists();
+  }
+
+}
+
+function removeTag(id){
+  categoriesAsTags = categoriesAsTags.filter(c => c.categoryID != id);
+  $("#"+id).remove();
+}
+
+
+// var countries = [{"category":"Venezuela","sub_category":"Caracas"},{"category":"Venezuela","sub_category":"Cost"}];
+
+var all_categories =  <%- JSON.stringify(categories) %>;
+/*initiate the autocomplete function on the "categorySearch" element, and pass along the countries array as possible autocomplete values:*/
+autocomplete(document.getElementById("categorySearch"), all_categories);
+
+    function createNotice(partner){
+      var description= $("#descriptionNotice").val()
+      var name= $("#nameNotice").val()
+      var estimatedTime= $("#estimatedTime").val()
+      var estimatedUnit= $("#estimatedUnit").val()
+      var price= $("#price").val()
+      var reqInfo = {
+          description,
+          name,
+          estimatedTime,
+          estimatedUnit,
+          price,
+          partner,
+          categories:categoriesAsTags
+      }
+      $.post("/partner/notice/create",
+          reqInfo,
+          function (data, status) {
+              console.log(data)
+              console.log(status);
+              $("#Modal-notice").modal("hide");
+             window.location.href="/partner?check=service"
+          });
+    }
+
+
+
+function updateService(id,name,description,price,estimatedTime,estimatedUnit,categories,chats){
+  categoriesAsTags = []
+  $("#tagsCategory").html("");
+  var description= $("#descriptionNotice").val(description)
+  var name= $("#nameNotice").val(name)
+  var estimatedTime= $("#estimatedTime").val(estimatedTime)
+  var estimatedUnit= $("#estimatedUnit").val(estimatedUnit)
+  var price= $("#price").val(price)
+
+  categories.forEach((c, i) => {
+    categoriesAsTags.push(c);
+    $("#categorySearch").val("");
+    var tags = $("#tagsCategory");
+    var div_col = $("<div>").attr("class","col pink-bg p-2 tagCategory").attr("id",c.categoryID).appendTo(tags);
+    var label = $("<label>").attr("class","red-text").append(c.workCategory+" | "+c.workSub).appendTo(div_col);
+    var times = $("<span>").attr("class","fa fa-times pointer").attr("onclick","removeTag('"+c.categoryID+"');").appendTo(label)
+
+  });
+
+  $("#addNotice").html("Editar");
+  $("#addNotice").attr("onclick","editNotice('"+id+"')");
+
+  $("#Modal-notice").modal("show");
+
+}
+
+function updateDeleteService(id,name){
+    $("#deleteNoticeModal").attr("onclick","deleteNotice('"+id+"')")
+    $("#noticeModalName").html(name);
+    $("#Modal-delete").modal("show");
+}
+
+function editNotice(id){
+  var description= $("#descriptionNotice").val()
+  var name= $("#nameNotice").val()
+  var estimatedTime= $("#estimatedTime").val()
+  var estimatedUnit= $("#estimatedUnit").val()
+  var price= $("#price").val()
+  var reqInfo = {
+      description,
+      name,
+      estimatedTime,
+      estimatedUnit,
+      price,
+      id,
+      categories:categoriesAsTags
+  }
+  $.post("/partner/notice/edit",
+      reqInfo,
+      function (data, status) {
+          console.log(data)
+          console.log(status);
+          $("#Modal-notice").modal("hide");
+         window.location.href="/partner?check=service"
+      });
+}
+
+function deleteNotice(id){
+  var reqInfo = {
+      id
+  }
+  $.post("/partner/notice/delete",
+      reqInfo,
+      function (data, status) {
+          console.log(data)
+          console.log(status);
+          $("#Modal-notice").modal("hide");
+         window.location.href="/partner?check=service"
+      });
+}
+
+function cleanModal(){
+  $("#descNotice").attr("hidden",true);
+  var description= $("#descriptionNotice").val("")
+  var name= $("#nameNotice").val("")
+  var estimatedTime= $("#estimatedTime").val("")
+  var price= $("#price").val(0)
+  categoriesAsTags = [];
+  $("#tagsCategory").html("");
+  $("#addNotice").html("Añadir Propuesta de servicio");
+  $("#addNotice").attr("onclick","createNotice('"+user+"')");
+}
+
+
+  </script>
+
+  <script src='/assets/scripts/fullcalendar.js' type="text/javascript"></script>
+  <script>
+
+    function hideCalendar(){
+      $("#row_calendar").attr("style","display:none;");
+    }
+
+    function showCalendar(){
+      $("#row_calendar").attr("style","display:block;");
+        var events_json = <%- JSON.stringify(calendarWidget)%> || [];
+        var calendarEl = document.getElementById('calendar');
+
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+          headerToolbar: {
+            left: 'prev,next',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          },
+          initialDate: moment().format("YYYY-MM-DD"),
+          navLinks: true, // can click day/week names to navigate views
+          nowIndicator: true,
+
+          weekNumbers: true,
+          weekNumberCalculation: 'ISO',
+
+          editable: false,
+          selectable: true,
+          dayMaxEvents: false, // allow "more" link when too many events
+          events: events_json
+        });
+
+        calendar.render();
+    }
+
+  </script>
+
+
+</body>

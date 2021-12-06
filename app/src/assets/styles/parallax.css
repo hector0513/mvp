@@ -1,0 +1,31 @@
+.bg {
+    background: url('http://4.bp.blogspot.com/-RJKvdwIs0uw/Ty20YgKaNwI/AAAAAAAAAHo/YahPOjH1Dm4/s1600/vcsPRAsset_531315_78750_358a6815-f1f0-408f-99b3-581aa865807f_0.jpg') no-repeat center center;
+    position: fixed;
+    width: 100%;
+    height: 550px; /*same height as jumbotron */
+    top:0;
+    left:0;
+    z-index: -1;
+  }
+  
+  .jumbotron {
+    /*height: 550px;*/
+    color: white;
+    text-shadow: #444 0 1px 1px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .display-4{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 2.4rem;
+    max-width: 1140px
+  }
+
+  .lead {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    max-width: 1140px
+}

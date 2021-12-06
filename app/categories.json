@@ -1,0 +1,2299 @@
+[
+    {
+      "cat": "Administración",
+      "desc": "Se refiere a la planificación, organización, coordinación, control y evaluación las actividades industriales, comerciales, financieras y de servicios de cualquier institución, industria o empresa.",
+      "subs": [
+        {
+          "sub": "Investigación de mercados",
+          "desc": "Se refiere a la recopilación y el análisis de información, en lo que respecta al mundo de la empresa y del mercado, realizados de forma sistemática o expresa, para poder tomar decisiones dentro del campo del marketing estratégico y operativo.",
+          "hab": [
+            "Investigación cualitativa",
+            "Investigación cuantitativa",
+            "Investigación de campo",
+            "Investigación de gabinete",
+            "Investigación operativa",
+            "Investigación publicitaria",
+            "Estudio de control",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Comportamiento organizacional",
+          "desc": "Se refiere al campo de estudio en el que se investiga el impacto que individuos, grupos y estructuras tienen en la conducta dentro de las organizaciones, con la finalidad de aplicar estos conocimientos a la mejora de la eficacia de tales organizaciones.",
+          "hab": [
+            "Respuesta a la globalización",
+            "Manejo de la diversidad laboral",
+            "Mejoramiento de la calidad y la productividad",
+            "Mejoramiento del servicio a los clientes",
+            "Facultar al personal",
+            "Enfrentamiento de la “temporalidad”",
+            "Estímulo de la innovación y el cambio",
+            "Mejoramiento de la conducta ética",
+            "Enfoque de recursos humanos",
+            "Enfoque contingente",
+            "Enfoque orientado a resultados",
+            "Enfoque de sistemas",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Desarrollo organizacional",
+          "desc": "Se refiere al desarrollo, funcionamiento y efectividad en las relaciones humanas dentro de una organización con un fin de desarrollar más la empresa y ser más reconocida. También es el trabajo que hace la gerencia para que sus miembros se sientan parte de una causa creíble, sostenible y funcional.",
+          "hab": [
+            "Supuestos básicos del DO.",
+            "Planificación estratégica.",
+            "Teoría general de sistemas.",
+            "Team building.",
+            "Investigación de acción.",
+            "Desarrollo personal.",
+            "Gestión del cambio.",
+            "Cultura organizacional.",
+            "Mejoras del funcionamiento.",
+            "Investigación de empleado.",
+            "Calidad.",
+            "Mejora de procesos.",
+            "Reunión (organización).",
+            "Aprendizaje organizativo.",
+            "Recursos humanos.",
+            "Entrenamiento y desarrollo.",
+            "Facilitación.",
+            "Dirección.",
+            "Psicología industrial y organizacional.",
+            "Comunicación.",
+            "Capacitación.",
+            "Desarrollo competencias.",
+            "Construcción de equipos.",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Gerencia de proyectos",
+          "desc": "Se refiere a la disciplina de organizar y administrar los recursos, de forma tal que un proyecto dado sea terminado completamente dentro de las restricciones de alcance, tiempo y coste planteados a su inicio. Dada la naturaleza única de un proyecto, en contraste con los procesos u operaciones de una organización, administrar un proyecto requiere de una filosofía distinta, así como de habilidades y competencias específicas. De allí la necesidad de la disciplina Gerencia de Proyectos.",
+          "hab": [
+            "Procesos.",
+            "Gerencia operacional.",
+            "Stakeholders.",
+            "Influencias organizacionales.",
+            "Alcance del proyecto.",
+            "El Project Charter.",
+            "Planificación del alcance.",
+            "Front end loading.",
+            "Verificación del alcance.",
+            "Control de los cambios de alcance.",
+            "Gerencia del tiempo del proyecto.",
+            "Definición de las actividades.",
+            "Secuencia de actividades.",
+            "Redes, PERT y CPM.",
+            "Estimación de duración de las actividades.",
+            "Control de la planificación.",
+            "Gerencia del costo del proyecto.",
+            "Planificación de recursos.",
+            "Estimación de costos.",
+            "Clases de estimados.",
+            "Métodos de estimación.",
+            "Presupuesto.",
+            "Control de costos.",
+            "Valor ganado.",
+            "Gerencia del riesgo del proyecto",
+            "Planificación de la gerencia del riesgo.",
+            "Identificación de los riesgos.",
+            "Reconocimiento de los riesgos.",
+            "Cuantificación de los riesgos.",
+            "Preparación de respuestas.",
+            "Monitoreo.",
+            "Control del riesgo.",
+            "Gerencia de los procesos de apoyo.",
+            "Procura.",
+            "Plan de procura.",
+            "Plan de licitación.",
+            "Selección de proveedores.",
+            "Administración de contratos.",
+            "Cierre de contratos.",
+            "Comunicaciones.",
+            "Plan de comunicaciones.",
+            "Distribución de la información.",
+            "Reportes de progreso.",
+            "Cierre administrativo.",
+            "Manejo de los recursos humanos.",
+            "Equipos de proyectos.",
+            "Características y roles de miembros.",
+            "Contexto comunicacional de cooperación.",
+            "Dinámica interpersonal del equipo.",
+            "Percepción de sí mismo.",
+            "La comunicación entre los miembros.",
+            "La escucha efectiva.",
+            "La retroalimentación útil.",
+            "El diálogo.",
+            "Identificación de recursos.",
+            "Limitaciones de los miembros del equipo.",
+            "Influencia de la personalidad.",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Control de gestión",
+          "desc": "Se refiere al proceso administrativo que sirve para evaluar el grado de cumplimiento de los objetivos organizacionales previstos por la dirección o gobierno corporativo.",
+          "hab": [
+            "Plan Estratégico",
+            "Responsable o Controller",
+            "Catálogo de cuentas y centros de costos.",
+            "Sistema de control interno.",
+            "Sistema informático de contabilidad.",
+            "Determinación de riesgos fiscales.",
+            "Técnicas de Benchmarking.",
+            "Sistema de Costos.",
+            "Sistema de detección de riesgos.",
+            "Presupuesto.",
+            "Indicadores de desempeño",
+            "Sistema de compensaciones variables por metas.",
+            "Proceso de cierre mensual.",
+            "Reporte financiero mensual.",
+            "Reporte de Control de Gestión mensual.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Organización y método",
+          "desc": "Se refiere al servicio de asistencia y asesoría al nivel gerencial de las empresas, cuyo objetivo primordial es incrementar la eficiencia administrativa mediante la elaboración de estudios técnico-administrativos que buscan el mejoramiento de los procedimientos, métodos y sistemas de trabajo.",
+          "hab": [
+            "Plan Estratégico",
+            "Responsable o Controller",
+            "Catálogo de cuentas y centros de costos.",
+            "Sistema de control interno.",
+            "Sistema informático para la contabilidad.",
+            "Determinación de riesgos fiscales.",
+            "Técnicas de Benchmarking.",
+            "Sistema de Costos.",
+            "Sistema de detección de riesgos.",
+            "Elaboración de Presupuesto.",
+            "Indicadores de desempeño.",
+            "Sistema de compensaciones",
+            "Proceso de cierre mensual.",
+            "Reporte financiero mensual.",
+            "Reporte de Control de Gestión mensual.",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Organización y procesos",
+          "desc": "Se refiere a la actividad de organizar a la empresa en el marco de una secuencia de actividades lógicas diseñadas para generar un output o salida (resultado del proceso destinado a un cliente) el cual es consecuencia de un conjunto de inputs o entradas (suministros entregados por un proveedor que cumple con características preestablecidas), a los cuales mediante el desarrollo del proceso se les va entregando valor.",
+          "hab": [
+            "Procesos Claves",
+            "Procesos Estratégicos",
+            "Procesos de Apoyo",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Continuidad de Negocios",
+          "desc": "Se refiere a los procesos y procedimientos que una organización pone en marcha para garantizar que las funciones esenciales puedan continuar durante y después de un desastre.",
+          "hab": [
+            "Fase de análisis y evaluación de riesgos",
+            "Selección de estrategias",
+            "Desarrollo del plan",
+            "Pruebas y mantenimiento del plan.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Servicio al cliente",
+          "desc": "Se refiere al conjunto de actividades interrelacionadas que ofrece la empresa con el fin de que el cliente obtenga el producto en el momento y lugar adecuado y se asegure un uso correcto del mismo.",
+          "hab": [
+            "Servicio al Cliente Interno",
+            "Servicio al cliente en agencia de publicidad",
+            "Servicios prestados",
+            "Proyecto UPSS (User Pays Social Service)",
+            "CRM - Customer Relationship Manegement",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Análisis Administrativo",
+          "desc": "Se refiere al examen total de los planos organizativo, dinámico, funcional, estructural y comportamental en una empresa  u organización para detectar situaciones anormales y proponer las soluciones   que sean necesarias Este análisis está conformado por un grupo el mismo que se encuentra a nivel funcional, estructural, organizativo y comportamental.",
+          "hab": [
+            "Plano organizativo",
+            "Plano dinámico",
+            "Plano funcional",
+            "Plano estructural",
+            "Plano comportamental",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Análisis de cuentas por pagar",
+          "desc": "Se refiere al estudio, interpretación y gestión de las en las deudas contraídas por la empresa relacionada directamente con la actividad económica de la misma.",
+          "hab": [
+            "Cuentas por Pagar a Corto Plazo.",
+            "Cuadre contable de las partidas pendientes",
+            "Verificación de los documentos",
+            "Comprobar partidas o saldos deudores",
+            "Análisis por edades determinando",
+            "Verificar los convenios de pagos suscritos.",
+            "Cuentas por Pagar Diversas.",
+            "Analizar las partidas",
+            "Clasificar las  partidas conforme a su contenido",
+            "Verificar los documentos justificantes",
+            "Efectos, Cuentas y Partidas por Pagar a Largo Plazo.",
+            "Verificar el cuadre contable de los saldos y partidas",
+            "Análisis por edades",
+            "Comprobar los documentos en los expedientes",
+            "Comprobar las conciliaciones y confirmaciones con los acreedores.",
+            "Analizar las obligaciones vencidas y pendientes de pago",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Análisis de cuentas por cobrar",
+          "desc": "Se refiere al estudio, interpretación y gestión de los créditos que la empresa concede a sus clientes a través de una cuenta abierta en el curso ordinario de un negocio, como resultado de la entrega de artículos o servicios.",
+          "hab": [
+            "Ventas a Crédito",
+            "Administración de Cuentas por Cobrar",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Servicios y operaciones",
+          "desc": "Se refiere al sistema ágil que proporciona la unión entre la organización y su ambiente externo de negocios en la que los distintos departamentos trabajan mancomunadamente para acelerar los ciclos y mejorar la producción.",
+          "hab": [
+            "Cuantificar y optimizar de productos y procesos.",
+            "Integrar tecnología y excelencia de procesos.",
+            "Flexibilidad a cambios imprevisibles de mercado.",
+            "Aumentar la productividad sin incidir costos",
+            "Gestionar los costos con eficiencia y eficacia.",
+            "Reducir las deficiencias  de la cadena de suministro.",
+            "Reducir la rotación  de cadena de suministro.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Análisis de compras",
+          "desc": "Se refiere al estudio de una serie de actividades que permiten  poder realizar efectivamente la compra de un producto específico o de varios. Habitualmente realizar este procedimiento conlleva  tener en mente varios pasos como una idea del producto que vas a comprar; la selección de la marca o el modelo del artículo que cubrirá la necesidad que posee una empresa o persona, teniendo desde un principio las especificaciones del mismo para que no exista equivocaciones en el momento de la adquisición.",
+          "hab": [
+            "Volumen de compras",
+            "Pedidos anuales",
+            "Entorno industrial",
+            "Entorno de servicios",
+            "Mantener una continuidad en los suministros",
+            "Proporcionar los suministros",
+            "Obtener los productos necesarios bajo costo",
+            "Prevenir de las variaciones de precios",
+            "Búsqueda y evaluación de proveedores",
+            "Archivo actualizado de productos.",
+            "Negociación permanente de precios",
+            "Negociación permanente calidad",
+            "Previsión de compras",
+            "Planificación de pedidos",
+            "Preparación de órdenes de compras",
+            "Lanzamiento de pedidos",
+            "Seguimiento de los pedidos",
+            "Solventar discrepancias en la recepción del producto.",
+            "Analizar variaciones en precios",
+            "Analizar plazos de entrega y calidad",
+            "Búsqueda y evaluación de proveedores",
+            "Archivo actualizado de productos",
+            "Negociación permanente de precios",
+            "Previsión de compras",
+            "Pedidos por artículo y proveedor",
+            "Órdenes de compras",
+            "Discrepancias en la recepción del producto.",
+            "Previsión de compras",
+            "Planificación de pedidos por artículo y proveedor",
+            "Preparación de órdenes de compras",
+            "Discrepancias en la recepción del producto.",
+            "Variaciones en precios, plazos de entrega y calidad",
+            "Índice de compras.",
+            "Índice de coste del departamento de compras.",
+            "Coste de un pedido de compras.",
+            "Índice de concentración de compras.",
+            "Cantidad media de compras por empleado.",
+            "Índice de concentración de proveedores.",
+            "Recoge el número medio de pedidos que se adjudica a cada proveedor.",
+            "Cifra de negocios por proveedor.",
+            "Índice de rotación de stocks de materias primas.",
+            "Índice de rechazos.",
+            "Índice de financiación de las compras por proveedores.",
+            "Rentabilidad de las compras.",
+            "Valor de compras totales / Ventas totales comparadas con el año anterior",
+            "Total de compras/Número de compras.",
+            "Porcentaje de compras rechazadas.",
+            "Porcentaje de paralización de la producción",
+            "Inventario/Ventas.",
+            "Costo promedio de Orden de compra.",
+            "Tiempo promedio de entrega de pedidos.",
+            "Número de orden por mes",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Análisis de riesgo",
+          "desc": "Es el estudio de las causas de las posibles amenazas y probables eventos no deseados y los daños y consecuencias que éstas puedan producir en una organización.",
+          "hab": [
+            "HACCP",
+            "Safety Integrity Level",
+            "Modelo del queso suizo",
+            "Evaluación de riesgo",
+            "Gestión de riesgos",
+            "Costo-beneficio",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Presupuesto",
+          "desc": "Se refiere al cálculo y negociación anticipada de los ingresos y gastos de una actividad económica, sea personal, familiar, empresarial o pública. Contiene los egresos e ingresos correspondientes a un período, por lo general anual. Es un plan de acción dirigido a cumplir un objetivo previsto, expresado en términos financieros, que debe cumplirse en determinado tiempo y en ciertas condiciones.",
+          "hab": [
+            "Según la flexibilidad",
+            "Según el periodo que cubran",
+            "Según el campo de aplicabilidad en la empresa",
+            "Presupuesto de ventas",
+            "Presupuesto de producción",
+            "Presupuesto de gasto de fabricación",
+            "Sustentación",
+            "Presupuesto de costo de producción",
+            "Características",
+            "Presupuesto de materiales de gastos",
+            "Presupuesto financiero",
+            "Presupuesto de tesorería",
+            "Presupuesto de inversiones capitalizables",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Análisis Financiero",
+          "desc": "Se refiere al proceso que comprende la interpretación, comparación y estudio de los estados financieros y datos operacionales de la empresa. Para lograr esto se deben realizar cálculos e interpretar porcentajes, indicadores y demás datos para evaluar  el desempeño financiero y operacional del negocio.",
+          "hab": [
+            "Importancia del flujo de efectivo",
+            "Análisis de la información financiera",
+            "Punto de equilibrio",
+            "Razones financieras",
+            "Uso de las razones financieras",
+            "Análisis de tendencias",
+            "Comparación de unas razones con otras",
+            "Tipos de razón",
+            "Balance general",
+            "Activos",
+            "Clasificación de los activos",
+            "Pasivos",
+            "Clasificación de los pasivos",
+            "Patrimonio",
+            "Clasificación del patrimonio",
+            "Estados de pérdidas y ganancias",
+            "Estructura estados de pérdidas y ganancias",
+            "Indicadores de gestión",
+            "Objetivos de los indicadores logísticos",
+            "Indicadores de gestión",
+            "Clases de indicadores de gestión",
+            "Ratio.",
+            "Balanced scorecard",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Análisis de Caja",
+          "desc": "Se refiere al estudio del proceso que inicia con identificar todos los puntos de ingreso del dinero, sean éstos ventas de productos o servicios, préstamos y/o ventas de activos, en fin, todo lo que genera un ingreso hacia las cuentas de la empresa y luego identificar las salidas de estos ingresos que pueden ser gastos de operación, salarios, compras, préstamos adquiridos y otras obligaciones con las que debemos cumplir para mantener el negocio operando.",
+          "hab": [
+            "Actividades operativas",
+            "Actividades de inversión",
+            "Actividades financieras",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Inventario",
+          "desc": "Se refiere al análisis de los elementos que intervienen en el conjunto de artículos o mercancías que se acumulan en el almacén pendientes de ser utilizados en el proceso productivo o comercializados.",
+          "hab": [
+            "finales",
+            "periódicos",
+            "iniciales",
+            "de liquidación legal y política en su proceso",
+            "inventarios de productos en proceso de fabricación",
+            "de materias primas",
+            "de suministros de fábrica",
+            "de producción en proceso",
+            "de productos terminados",
+            "de materiales y suministros",
+            "puntuales",
+            "forestales",
+            "de gestión",
+            "perpetuo",
+            "físico",
+            "mixto",
+            "en tránsito",
+            "en consignación",
+            "máximo",
+            "mínimo",
+            "disponible",
+            "en línea",
+            "agregado",
+            "en cuarentena",
+            "de previsión",
+            "de mercaderías",
+            "de fluctuación",
+            "de anticipación",
+            "intermitente",
+            "estacional",
+            "permanente",
+            "cíclico",
+            "cero",
+            "de Patrimonio Cultural Inmaterial",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Canales de Distribución",
+          "desc": "Se refiere al estudio y análisis de es el conducto que cada empresa escoge para llevar sus productos al consumidor de la forma más completa, eficiente y económica posible.",
+          "hab": [
+            "Diseño de plan de distribución",
+            "Canal de distribución de bienes de consumo.",
+            "Canal de distribución de los bienes industriales",
+            "Canal de distribución de servicios",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Tesorería",
+          "desc": "Se refiere al análisis y gestión del área de la empresa que se encarga de todas las operaciones monetarias que ocurren en la organización, gestionando y controlando la entrada y salida de dinero.",
+          "hab": [
+            "Gestión de los recursos monetarios",
+            "Toma de medidas en caso de desviaciones",
+            "Diseño de políticas de cobros y pagos",
+            "Control del cumplimiento de previsiones",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Gestión de calidad",
+          "desc": "Se refiere al análisis y la gestión de servicios que ofrecen los distintos sectores (bienes o servicios), y que incluye planear, controlar, y mejorar, aquellos elementos de una organización, que de alguna manera afectan o influyen en la satisfacción del cliente y en el logro de los resultados deseados por la organización.",
+          "hab": [
+            "Planeamiento de la calidad",
+            "Control de la calidad",
+            "Aseguramiento de la calidad",
+            "Mejoras en la calidad.",
+            "Enfoque al Cliente",
+            "Liderazgo y Disciplina",
+            "Personas",
+            "Enfoque hacia procesos",
+            "Enfoque de sistemas para las gerencias",
+            "Mejora continua",
+            "Toma de decisiones",
+            "Relación de mutuo beneficio con proveedores",
+            "Mejoras en Calidad",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Liquidaciones",
+          "desc": "Se refiere al análisis y gestión de los procesos asociados a la conversión de un activo fijo en un activo liquido o también Se refiere al proceso de liquidación en el ámbito laboral."
+        },
+        {
+          "sub": "Otras"
+        }
+      ]
+    },
+    {
+      "cat": "Contabilidad",
+      "desc": "Se refiere a es una rama de la contaduría pública que se encarga de cuantificar, medir y analizar la realidad económica, las operaciones de las organizaciones, con el fin de facilitar la dirección y el control una vez presentada la información, previamente registrada, de manera sistemática y ordenada para las distintas partes interesadas. Dentro de la contabilidad se registran las transacciones, cambios internos o cualquier otro suceso que afecte económicamente a una entidad.",
+      "subs": [
+        {
+          "sub": "Tesorería",
+          "desc": "Se refiere al análisis y gestión del área de la empresa que se encarga de todas las operaciones monetarias que ocurren en la organización, gestionando y controlando la entrada y salida de dinero.",
+          "hab": [
+            "Gestión de los recursos monetarios de la empresa",
+            "Desviaciones / Medidas",
+            "Diseño de políticas de cobros y pagos",
+            "Cumplimiento de previsiones de pago y cobros",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Auditoría interna",
+          "desc": "Se refiere a la actividad independiente y objetiva de supervisión y consultoría diseñada para agregar valor y mejorar las operaciones de una organización. Ayuda a una organización a cumplir sus objetivos aportando un enfoque sistemático y disciplinado para evaluar y mejorar la eficacia de los procesos de gestión de riesgos, control y gobierno.",
+          "hab": [
+            "Cumplimento de los planes y procedimientos",
+            "Controles operativos, contables y financieros.",
+            "Control de inventarios",
+            "Verificar y evaluar la información contable",
+            "Realización de investigaciones especiales",
+            "Preparación de informes de auditoría.",
+            "Recomendaciones informes y auditorías",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Créditos y Cobranzas",
+          "desc": "Se refiere al análisis y gestión de las variables tanto para la obtención de créditos como para su otorgamiento y las gestiones o mecanismos para su cobro efectivo.",
+          "hab": [
+            "Gestión de créditos y cobranzas.",
+            "Administración del riesgo.",
+            "Los estados financieros.",
+            "Decisión de otorgamiento de créditos.",
+            "Análisis no financiero.",
+            "Política de créditos.",
+            "Política de cobranzas.",
+            "Perfiles de clientes morosos",
+            "Estrategias de cobranza.",
+            "La administración y supervisión del crédito.",
+            "Las garantías.",
+            "La refinanciación.",
+            "El proceso de cobranza",
+            "La cobranza como proceso crítico del crédito.",
+            "Factores de motivación para el pago oportuno",
+            "Segmentación de cobranza",
+            "Estrategias de cobro por segmento.",
+            "Herramientas de gestión de cobranza.",
+            "La cobranza preventiva y la cultura de pago.",
+            "Balanced Scorecard",
+            "Indicadores de cobranza.",
+            "Desarrollo del plan de cobranza",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Costos",
+          "desc": "Se refiere al proceso que acumula internamente la información relacionada con los costos y tiene como propósito predeterminar, registrar, acumular, distribuir, controlar, analizar, interpretar e informar de los costos de producción, distribución, administración y financiamiento para el uso interno de los directivos y sirve para evaluar la eficiencia de la gestión que se está realizando y suministrar información financiera y no financiera de forma clara, comparable y útil para el proceso de toma de decisiones.",
+          "hab": [
+            "Contabilidad administrativa",
+            "Contabilidad financiera",
+            "Contabilidad fiscal",
+            "Costo y gasto",
+            "Costos por su identificación",
+            "Costos por la función",
+            "Costos por periodo",
+            "Costos de acuerdo al volumen de producción",
+            "Costo de producción",
+            "Contabilidad de costos industriales",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Control de gestión",
+          "desc": "Se refiere al proceso administrativo que sirve para evaluar el grado de cumplimiento de los objetivos organizacionales previstos por la dirección o gobierno corporativo.",
+          "hab": [
+            "Plan Estratégico",
+            "Responsable o Controller",
+            "Catálogo de cuentas",
+            "Centros de costos.",
+            "Sistema de control interno.",
+            "La determinación de riesgos fiscales.",
+            "Técnicas de Benchmarking.",
+            "El establecimiento de un Sistema de Costos.",
+            "Sistema de detección de riesgos.",
+            "Elaboración de un Presupuesto.",
+            "Determinación de indicadores de desempeño",
+            "Sistema de compensaciones",
+            "Sistema de retribuciones variables",
+            "Proceso de cierre mensual.",
+            "Reporte financiero mensual.",
+            "Determinación del reporte de Control de Gestión mensual.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Finanzas corporativas",
+          "desc": "Se refiere al área de las finanzas que se centra en las decisiones monetarias que hacen las empresas y en las herramientas y análisis utilizados para tomar esas decisiones. El principal objetivo de las finanzas corporativas es maximizar el valor del accionista. Aunque en principio es un campo diferente de la gestión financiera, la cual estudia las decisiones financieras de todas las empresas, y no solo de las corporaciones, los principales conceptos de estudio en las finanzas corporativas son aplicables a los problemas financieros de cualquier tipo de empresa.",
+          "hab": [
+            "Estructura legal de una corporación",
+            "Estructura de capital.",
+            "Modelos financieros y de inversión",
+            "Capital riesgo",
+            "Coste de capital y el apalancamiento financiero (WACC)",
+            "Fusiones y adquisiciones",
+            "Banca de inversión",
+            "Técnicas de emisión de acciones y deuda: política de dividendos",
+            "Reestructuraciones empresariales",
+            "Ética y responsabilidad social corporativa",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Planeamiento económico-financiero",
+          "desc": "Se refiere a todos aquellos estudios que realizamos sobre los ingresos y gastos, así como sobre los cobros y pagos, de un proyecto, para determinar si se puede llevar a cabo, para la cual se tiene que cumplir que genere resultados positivos y suficientes en consonancia con la inversión realizada y con la esperanza de los inversores, que la suponemos por encima del interés normal del mercado, así como que genere liquidez suficiente para que peligre la continuidad de la empresa.",
+          "hab": [
+            "Business Plan",
+            "Punto de equilibrio",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Análisis de riesgo",
+          "desc": "Se refiere al estudio de las causas de las posibles amenazas y probables eventos no deseados y los daños y consecuencias que éstas puedan producir.",
+          "hab": [
+            "HACCP",
+            "Safety Integrity Level",
+            "Modelo del queso suizo",
+            "Evaluación de riesgo",
+            "Gestión de riesgos",
+            "Costo-beneficio",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Evaluación Económica",
+          "desc": "Se refiere al conjunto de técnicas que se utilizan para comparar las opciones abiertas para el decisor, en una situación de elección relacionada con un conjunto de posibles cursos de acción. En la Evaluación Económica se involucran aspectos objetivos, subjetivos y elementos éticos, sociales y políticos. Si se quiere maximizar el bienestar social, hay que tener en cuenta los costos de toda decisión que afectan directa o indirectamente la asignación de recursos. La limitación de recursos y la búsqueda de mayor eficiencia, justifica la utilización de los Métodos de Evaluación Económica en la toma de decisiones."
+        },
+        {
+          "sub": "Finanzas Internacionales",
+          "desc": "Se refiere a la rama de la economía financiera dedicada a las interrelaciones monetarias y macroeconómicas entre dos o más países. Las finanzas internacionales analizan la dinámica del sistema financiero global, sistema monetario internacional, balanza de pagos, tipo de cambio, inversión extranjera directa y cómo estos se relacionan con el comercio internacional. Las finanzas internacionales se componen de cuatro subsistemas: el sistema bancario, el sistema bursátil, la hacienda pública y el sistema mercantil.",
+          "hab": [
+            "Sistema financiero global",
+            "Sistema monetario internacional",
+            "Balanza de pagos",
+            "Tipo de cambio",
+            "Inversión extranjera directa",
+            "Comercio internacional.",
+            "Sistema bancario",
+            "Sistema bursátil",
+            "Hacienda pública",
+            "Sistema mercantil.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Proyectos de Inversión",
+          "desc": "Se refiere a un plan al que se le asigna capital e insumos materiales, humanos y técnicos. Su objetivo es generar un rendimiento económico a un determinado plazo. Para esto, será necesario inmovilizar recursos a largo plazo.",
+          "hab": [
+            "Métodos de retorno esperado.",
+            "Métodos de riesgo de proyectos.",
+            "Métodos de retorno esperado",
+            "Método de riesgo.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Asesoría",
+          "desc": "Se refiere al apoyo mediante consejos a otra persona sobre la realización de una o varias actividades de las que desconoce con certeza cómo realizarla.",
+          "hab": [
+            "Management consulting.",
+            "Estrategia y operaciones",
+            "Estrategia operacional",
+            "Cadena de suministro",
+            "Estrategia de procura",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Análisis de Datos",
+          "desc": "Se refiere al proceso de examinar conjuntos de datos para extraer conclusiones sobre la información que contienen, cada vez más con la ayuda de sistemas y software especializados. Las tecnologías y técnicas de análisis de datos se utilizan ampliamente en las industrias comerciales para permitir que las organizaciones tomen decisiones comerciales más informadas y los científicos e investigadores puedan verificar o refutar los modelos, las teorías y las hipótesis científicas.",
+          "hab": [
+            "Productos y clientes menos rentables",
+            "Optimizar la fuerza de ventas",
+            "Estimar previsiones de producción",
+            "Identificar y anticiparse a los riesgos",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Transformación de negocios",
+          "desc": "Se refiere a los cambios a gran escala de las operaciones medulares de la organización, lo cual normalmente es consecuencia de la necesidad de poner en práctica nuevas estrategias a fin de enfrentar nuevos retos del mercado y el entorno.",
+          "hab": [
+            "Diseño del futuro modelo operativo",
+            "Pasos para lograrlo",
+            "Ejecución e implementación",
+            "Procesos, finanzas, tecnología y gente.",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Consultoría de Riesgo",
+          "desc": "Se refiere a la asesoría sobre el enfoque estructurado para manejar la incertidumbre relativa a una amenaza, a través de una secuencia de actividades humanas que incluyen la identificación, el análisis y la evaluación de riesgo, para luego establecer las estrategias para su tratamiento, utilizando recursos gerenciales. Las estrategias incluyen transferir el riesgo a otra parte, evitar el riesgo (esto es, reducir su probabilidad o impacto a 0), reducir el impacto negativo del riesgo y aceptar algunas o todas las consecuencias de un riesgo particular mediante una decisión informada. Algunas veces, el manejo de riesgos se centra en la contención de riesgo por causas físicas o legales (por ejemplo, desastres naturales o incendios, accidentes, muerte o demandas). Por otra parte, la gestión de riesgo financiero se enfoca en los riesgos que pueden ser manejados usando instrumentos financieros y comerciales.",
+          "hab": [
+            "Auditoría Interna, Riesgo y Cumplimiento",
+            "Cambio Climático y Sostenibilidad",
+            "Auditoría y Monitoreo Continuo",
+            "Cumplimiento de Contratos",
+            "Auditoría Interna",
+            "Gerencia de Riesgo Corporativo",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Asesoría Forense",
+          "desc": "Se refiere área práctica especializada, donde las habilidades de contabilidad, auditoria e investigación se utilizan para analizar la información  que cuantifica los daños en los casos relacionados con el fraude y la malversación de fondos, así como en asuntos relacionados con los seguros, lesiones personales, disputas comerciales, interrupción del negocio, el divorcio y conflictos maritales, la construcción, los daños ambientales, el delito cibernético, responsabilidad de productos, valoración de empresas y más.",
+          "hab": [
+            "Riesgo de Fraude y Conductas Irregulares",
+            "Investigaciones de Fraude",
+            "Investigación Conductas Irregulares",
+            "Cumplimiento Regulatorio",
+            "Línea Ética de Denuncias",
+            "Inteligencia Corporativa",
+            "K-trace: Análisis Proactivo de Datos",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Deal advisory",
+          "desc": "Se refiere a la  asesoría basada en la experiencia en transacciones, reestructuraciones y finanzas corporativas en una variedad de disciplinas y sectores de la industria. El asesor ve las transacciones a través de la 'lente del inversor' y se enfoca en ayudar a los clientes a identificar, evaluar e implementar estrategias de crecimiento y maximizar el retorno de la inversión. ofrece asistencia a lo largo del ciclo de vida de la transacción, incluida la diligencia debida, asesoría contable, asesoría de compra y venta, asesoría de deuda y capital, asesoría de integración y separación, análisis de sinergias y operaciones, y otras iniciativas de transacciones corporativas.",
+          "hab": [
+            "Finanzas Corporativas",
+            "Valoración de empresas",
+            "Valoración intangible",
+            "Asesoría de deuda y operaciones de financiamiento",
+            "Asesoría de adquisiciones",
+            "Optimización de costos",
+            "Servicios de reestructuración",
+            "Servicios de transacciones",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "BPS",
+          "desc": "Se refiere a la erosión de la base imponible y al traslado de beneficios propiciados por la existencia de lagunas o mecanismos no deseados entre los distintos sistemas impositivos nacionales de los que pueden servirse las empresas multinacionales (EMN), con el fi n de hacer “desaparecer” beneficios a efectos fiscales, o bien de trasladar beneficios hacia ubicaciones donde existe escasa o nula actividad real, si bien goza de una débil imposición, derivando en escasa o nula renta sobre sociedades."
+        },
+        {
+          "sub": "FATCA",
+          "desc": "Se refiere a la Ley de Cumplimiento Tributario de Cuentas Extranjeras, el objetivo de esta disposición es el control de la evasión fiscal por el gobierno de Estados Unidos mediante la identificación de los ciudadanos y residentes de ese país que tengan dinero o fondos depositado en instituciones financieras extranjeras. Para ello se requiere obligatoriamente a todas las instituciones financieras de fuera de Estados Unidos para que identifiquen e informen de los ciudadanos y residentes norteamericanos que tienen depósitos e inversiones en esos bancos. Deben poner a disposición del IRS(Internal Revenue Service es la autoridad fiscal de Estados Unidos) información relacionada con cuentas y productos financieros de dichas personas."
+        },
+        {
+          "sub": "Tributos",
+          "desc": "Se refiere al análisis contable de los tributos (Impuestos, tasas y contribuciones especiales y parafiscales) y su impacto en las finanzas de la empresa.",
+          "hab": [
+            "Impuestos corporativos",
+            "Impuestos personales",
+            "Impuestos municipales",
+            "Doble o múltiple imposición internacional",
+            "Doble o múltiple imposición interna",
+            "Servicios ejecutivos internacionales",
+            "Impuestos indirectos",
+            "Impuestos directos",
+            "Comercio electrónico e imposición",
+            "Precios de transferencia",
+            "Riesgos tributarios",
+            "Asesoría externa",
+            "Precios de transferencia.",
+            "Contribuciones especiales.",
+            "Racionalización de carga tributaria",
+            "BEPS",
+            "FATCA",
+            "Fiscalidad Internacional",
+            "Precios de transferencia",
+            "Otras"
+          ]
+        }
+      ]
+    },
+    {
+      "cat": "Finanzas y Negocios",
+      "desc": "Se refiere al estudio del método de formar u obtener dinero a cambio de productos, servicios, o cualquier actividad que se quiera desarrollar.",
+      "subs": [
+        {
+          "sub": "Finanzas corporativas",
+          "desc": "Se refiere al área de las finanzas que se centra en las decisiones monetarias que hacen las empresas y en las herramientas y análisis utilizados para tomar esas decisiones. El principal objetivo de las finanzas corporativas es maximizar el valor del accionista. Aunque en principio es un campo diferente de la gestión financiera, la cual estudia las decisiones financieras de todas las empresas, y no solo de las corporaciones, los principales conceptos de estudio en las finanzas     corporativas son aplicables a los problemas financieros de cualquier tipo de empresa.",
+          "hab": [
+            "Crear valor.",
+            "Uso eficiente de recursos financieros",
+            "Maximizar el valor para los accionistas",
+            "Planeación.",
+            "Maximizar de recursos",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Finanzas bursátiles",
+          "desc": "Se refiere a las acciones que permiten comprar y/o vender acciones de una empresa directamente en la bolsa de valores.",
+          "hab": [
+            "Mercados financieros.",
+            "Oportunidad de inversión.",
+            "Rendimiento sobre intereses.",
+            "Reparto de utilidades a accionistas.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Mercados financieros",
+          "desc": "Se refiere a un espacio (físico o virtual o ambos) en el que se realizan los intercambios de instrumentos financieros y se definen sus precios. En general, cualquier mercado de materias primas podría ser considerado como un mercado financiero si el propósito del comprador no es el consumo inmediato del producto, sino el retraso del consumo en el tiempo. Los mercados financieros están afectados por las fuerzas de oferta y demanda. Los mercados colocan a todos los vendedores en el mismo lugar, haciendo así más fácil encontrar posibles compradores. A la economía que confía ante todo en la interacción entre compradores y vendedores para destinar los recursos se le llama economía de mercado, en contraste con la economía planificada."
+        },
+        {
+          "sub": "Análisis financiero",
+          "desc": "Se refiere al proceso que comprende la interpretación, comparación y estudio de los estados financieros y datos operacionales de la empresa. Para lograr esto se deben realizar cálculos e interpretar porcentajes, indicadores y demás datos para evaluar  el desempeño financiero y operacional del negocio."
+        },
+        {
+          "sub": "Teoría y Política Monetaria",
+          "desc": "La política monetaria es el proceso por el cual el gobierno, el banco central o la autoridad monetaria de un país controla la clasificación de los activos financieros y el agregado Monetario"
+        },
+        {
+          "sub": "Ingeniería de datos",
+          "desc": "Se refiere al conjunto de técnicas que consisten en manejar volúmenes de datos importantes de los cuales se pretende sacar un valor añadido. Manejar significa ser capaces de extraer, almacenar y analizar esos datos."
+        },
+        {
+          "sub": "Otras"
+        }
+      ]
+    },
+    {
+      "cat": "Comercio exterior",
+      "desc": "Se refiere a la compra o venta de bienes y servicios que se realiza fuera de las fronteras geográficas de un país (en el exterior). Esto es, se transan productos en donde las partes interesadas se encuentran ubicadas en distintos países o regiones.",
+      "subs": [
+        {
+          "sub": "Logística Internacional",
+          "desc": "Se refiere al conjunto de actividades asociadas, cuyo objetivo es el flujo de información y materiales a nivel mundial, que inicia con el abastecimiento de materia prima en determinado país, para finalizar con la entrega del producto final al consumidor en el país de destino."
+        },
+        {
+          "sub": "Compras Internacionales/Importación",
+          "desc": "Se refiere a son aquellas que se efectúan entre dos o más países y se rigen por las leyes y estatutos de los involucrados, o bien de los acuerdos, convenios o tratados que se hayan pactado, firmado y estipulado entre países."
+        },
+        {
+          "sub": "Ventas Internacionales/Exportación",
+          "desc": "Se refiere a son aquellas que se efectúan entre dos o más países y se rigen por las leyes y estatutos de los involucrados, o bien de los acuerdos, convenios o tratados que se hayan pactado, firmado y estipulado entre países."
+        },
+        {
+          "sub": "Consultorías Comercio Exterior",
+          "desc": "Se refiere a la compra o venta de bienes y servicios que se realiza fuera de las fronteras geográficas de un país (en el exterior). Esto es, se transan productos en donde las partes interesadas se encuentran ubicadas en distintos países o regiones."
+        },
+        {
+          "sub": "Apoderado Aduanal",
+          "desc": "Se refiere a la unidad de trabajo dedicada a efectuar los procesos de nacionalización y desaduanamiento de las cargas de las diferentes empresas en un territorio determinado."
+        },
+        {
+          "sub": "Negocios internacionales",
+          "desc": "Se refiere a todas las transacciones comerciales (privadas y gubernamentales; ventas; inversiones; logística y transporte) que se llevan a cabo entre dos o más regiones, ciudades y/o naciones dentro de los límites políticos. Usualmente las compañías privadas emprenden dichas transacciones redituables; el gobierno las emprende por lucro o por política. Se refiere a todos los negocios con actividades que involucren transacciones entre fronteras para bienes, servicios entre dos o más naciones, transacciones por recursos económicos, incluido el capital, las habilidades, las personas, etcétera, para producción internacional de bienes físicos y servicios, así como para finanzas, bancos, aseguranzas, construcción y otros."
+        },
+        {
+          "sub": "Tráfico y Aduanas",
+          "desc": "Se refiere a la gestión de controlar el paso de mercancías nacionales o extranjeras que, procedentes del exterior, van hacia otros territorios aduaneros o circulan entre diversos puntos de un mismo ámbito geográfico, también se encarga de la liquidación de los impuestos establecidos por las importaciones y exportaciones de mercancías."
+        },
+        {
+          "sub": "Procura de operaciones",
+          "desc": "Se refiere a los procesos requeridos para adquirir bienes y servicios (productos) desde fuera de la organización ejecutante del proyecto. La Gestión de las Adquisiciones del Proyecto incluye los procesos de gestión del contrato y de control de cambios necesarios para administrar contratos u órdenes de compra emitidas por miembros autorizados del equipo del proyecto, también incluye la administración de cualquier contrato emitido por una organización externa (el comprador) que esté adquiriendo el proyecto a la organización ejecutante (el vendedor), y la administración de las obligaciones contractuales que corresponden al equipo del proyecto en virtud del contrato."
+        },
+        {
+          "sub": "Otras"
+        }
+      ]
+    },
+    {
+      "cat": "Comunicaciones",
+      "desc": "Se refiere a la acción consciente de intercambiar información entre dos o más participantes con el fin de transmitir o recibir significados a través de un sistema compartido de signos y normas semánticas. Los pasos básicos de la comunicación son la formación de una intención de comunicar, la composición del mensaje, la codificación del mensaje, la transmisión de la señal, la recepción de la señal, la decodificación del mensaje y finalmente, la interpretación del mensaje por parte de un receptor.",
+      "subs": [
+        {
+          "sub": "Relaciones Institucionales/Publicas",
+          "desc": "Se refiere a la definición de los  objetivos y desarrollar programas que fortalezcan la relación de la empresa con otras instituciones, empresas u organismos públicos y privados. Establecimiento de los marcos de colaboración y convenios que refuercen los valores y misión de la empresa. Asunción de la normativa protocolaria de la empresa en actos institucionales y eventos. Gestión eventos y actividades en coordinación con el equipo de marketing y comunicación."
+        },
+        {
+          "sub": "Comunicaciones Internas",
+          "desc": "Se refiere a las comunicaciones corporativas circunscritas al proceso intercomunicacional que se realiza al interior de las organizaciones a través de distintas formas y niveles, cuyos contenidos contribuyen al logro de sus objetivos y metas planteados."
+        },
+        {
+          "sub": "Comunicaciones Externas",
+          "desc": "Se refiere a  aquella que ocurre entre la empresa y todos los agentes externos pero relacionados a ella. Por ejemplo, clientes, proveedores, posibles clientes potenciales, público en general interesado en la marca, acreedores, empresas socias, etc. El objetivo es compartir información, ya sean noticias de la propia empresa, así como de sus productos, servicios o comunicados en particular."
+        },
+        {
+          "sub": "Responsabilidad Social",
+          "desc": "Se refiere a la carga, compromiso u obligación, de los miembros de una sociedad ya sea como individuos o como miembros de algún grupo, tanto entre sí como para la sociedad en su conjunto. El concepto introduce una valoración positiva o negativa al impacto que una decisión tiene en la sociedad. Esa valorización puede ser tanto ética como legal, etc. Generalmente se considera que la responsabilidad social se diferencia de la responsabilidad política porque no se limita a la valoración del ejercicio del poder a través de una autoridad estatal."
+        },
+        {
+          "sub": "Periodismo",
+          "desc": "Se refiere a la actividad profesional que, en términos generales, consiste en la captación y tratamiento periódico de la información en cualquiera de sus formas y variedades."
+        },
+        {
+          "sub": "Redacción",
+          "desc": "Se refiere a la actividad al desarrollo de contenido escrito producto de un raciocinio; un escritor, un profesional de este tema, que toma en cuenta todos los requisitos de la escritura y de la composición correcta. En contextos periodos, es una categoría profesional dentro de los medios de comunicación y de difusión.",
+          "hab": [
+            "Redacción de artículos",
+            "Revisión de textos",
+            "Publicaciones para redes sociales",
+            "Subtitulado",
+            "Otros"
+          ]
+        },
+        {
+          "sub": "Redacción de contenido Web",
+          "desc": "Se refiere a la función de informar a los usuarios de Internet con textos de calidad que aporten valor para una misión específica de la empresa o portal web, con conocimientos de uso de páginas web, enlaces internos y externos, colocación de imágenes y videos en la web, conocimientos de plugins SEO, conocimientos de publicación de contenido en Redes Sociales."
+        },
+        {
+          "sub": "Comunicación digital",
+          "desc": "Se refiere al intercambio de información y conocimiento haciendo uso de las herramientas digitales disponibles, puestas a nuestra disposición por la investigación y desarrollo tecnológico."
+        },
+        {
+          "sub": "Información estratégica",
+          "desc": "Se refiere a la producción de conocimiento vital para la supervivencia de la empresa respondiendo a las grandes interrogantes sobre los competidores así como en el ámbito interno, para con las amenazas emergentes o ya conocidas proporcionando insumos para producir Inteligencia: geográfica, psicosocial, económica,  generando así nuevos análisis, decisiones, acciones y resultados para su usuario."
+        },
+        {
+          "sub": "Corrector de contenido",
+          "desc": "Se refiere al profesional de la edición que revisa y corrige los textos en diversas fases del proceso editorial."
+        },
+        {
+          "sub": "Monitoreo de medios",
+          "desc": "Se refiere a una técnica mediante la cual se realiza el seguimiento y archivo de la performance mediática de un tema, una persona, una organización, una campaña publicitaria, una marca, etc., en medios impresos y digitales ya sean estos de alcance regional, nacional o local, para su posterior análisis cuantitativo y cualitativo."
+        },
+        {
+          "sub": "Otras"
+        }
+      ]
+    },
+    {
+      "cat": "Construcción",
+      "subs": [
+        {
+          "sub": "Ingeniería Civil",
+          "desc": "Se refiere a la disciplina de la ingeniería profesional que emplea conocimientos de cálculo, mecánica hidráulica y física para encargarse del diseño, construcción y mantenimiento de las infraestructuras emplazadas en el entorno incluyendo carreteras, ferrocarriles, puentes, canales, presas, puertos, aeropuertos, diques y otras construcciones relacionadas."
+        },
+        {
+          "sub": "Arquitectura",
+          "desc": "Se refiere al arte y la técnica de proyectar, diseñar y construir edificios, modificando hábitat humano y estudiando, la estética, el buen uso y la función de los espacios, ya sean arquitectónicos o urbanos."
+        },
+        {
+          "sub": "Operaciones",
+          "desc": "Se refiere a la planeación y organización desde la cadena de suministros, los requerimientos para una etapa de difusión exitosa hasta las solicitudes de la alta gerencia."
+        },
+        {
+          "sub": "Dirección de Obra",
+          "desc": "Se refiere a formando a la dirección del desarrollo de la obra en los aspectos técnicos, estéticos, urbanísticos y medioambientales, de conformidad con el proyecto que la define, la licencia de edificación y demás autorizaciones preceptivas, y las condiciones del contrato, con el objetivo de asegurar su adecuación al fin propuesto."
+        },
+        {
+          "sub": "Administración de contratos",
+          "desc": "Se refiere a la disciplina que forma parte de la Gestión de Proyectos y  se ocupa de administrar en forma eficiente las obligaciones que dos o más partes han contraído para desarrollar un servicio con éxito."
+        },
+        {
+          "sub": "Estimación de costos",
+          "desc": "Se refiere al desarrollo de una valoración aproximada de los recursos monetarios necesarios para completar las actividades del proyecto."
+        },
+        {
+          "sub": "Control de calidad",
+          "desc": "Se refiere al conjunto de los mecanismos, acciones y herramientas realizadas para detectar la presencia de errores, asegurando que los productos o servicios cumplan con los requisitos mínimos de calidad."
+        },
+        {
+          "sub": "Seguridad Industrial",
+          "desc": "Se refiere al equipo industrial seguro de herramientas que tienen por objetivo la prevención que se ocupa de dar seguridad o directrices generales para el manejo o la gestión de riesgos en el sistema."
+        },
+        {
+          "sub": "Operaciones",
+          "desc": "Se refiere al planeamiento y organización desde la cadena de suministros, los requerimientos para una etapa de difusión exitosa hasta las solicitudes de la alta gerencia."
+        },
+        {
+          "sub": "Infraestructura",
+          "desc": "Se refiere a los servicios de mantenimiento, seguridad y limpieza de las oficinas e infraestructura de la institución fin de garantizar un ambiente de trabajo adecuado y seguro para todo el personal y público en general."
+        },
+        {
+          "sub": "Agua y saneamiento",
+          "desc": "Se refiere al mejoramiento y la preservación de las condiciones sanitarias óptimas de: Fuentes y sistemas de abastecimiento de agua para uso y consumo humano."
+        },
+        {
+          "sub": "Levantamiento Planimétrico",
+          "desc": "Se refiere a la elaboración de todos los trabajos necesarios para certificar, de manera gráfica, la superficie que tiene una edificación ya existente."
+        },
+        {
+          "sub": "Valuaciones inmobiliarias",
+          "desc": "Es determinar el precio valor de diferentes bienes inmobiliarios, esta actividad permite establecer el precio real del bien que se trate."
+        },
+        {
+          "sub": "Otras"
+        }
+      ]
+    },
+    {
+      "cat": "Diseño",
+      "desc": "Se refiere Se refiere a un boceto, bosquejo, esquema que se realiza, ya sea mentalmente o en un soporte material, antes de concretar la producción de algo. El término también se emplea para referirse a la apariencia de ciertos productos en cuanto a sus líneas, forma y funcionalidades.",
+      "subs": [
+        {
+          "sub": "Diseño Gráfico",
+          "desc": "Se refiere a la  profesión cuya actividad consiste en proyectar comunicaciones visuales destinadas a transmitir mensajes específicos a grupos sociales, con objetivos determinados. Esta actividad ayuda a optimizar las comunicaciones gráficas. También se conoce con el nombre de diseño en comunicación visual, diseño de comunicación visual o diseño visual.",
+          "hab": [
+            "Animación",
+            "Creatividad",
+            "Ilustración",
+            "Diseño de Logotipo y Marca",
+            "Fotografía",
+            "Presentaciones",
+            "Producción de vídeo",
+            "4D",
+            "Directorio Activo",
+            "ADO.net",
+            "Adobe Air",
+            "Adobe Captivate",
+            "Adobe Freehand",
+            "Adobe Illustrator",
+            "Adobe Muse",
+            "Adobe Premiere PRO",
+            "Adobe Flash Animate",
+            "Desarrollo ágil",
+            "AJAX",
+            "Alibaba",
+            "Servicios web de Amazon",
+            "AMOP",
+            "Analytics",
+            "SDK de Android Wear",
+            "Angular.js",
+            "Apache",
+            "Apache Ant",
+            "Apache Maven",
+            "Apache Solr",
+            "API",
+            "Desarrollador de aplicaciones",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Diseño Editorial",
+          "desc": "Se refiere a la rama del diseño gráfico dedicada al diseño, maquetación y composición de publicaciones tales como revistas, periódicos, libros o arte de tapa en discos."
+        },
+        {
+          "sub": "Diseño Publicitario",
+          "desc": "Se refiere  a la creación, maquetación y diseño de publicaciones impresas, tales como revistas, periódicos, libros, flyers, trípticos... y también el soporte para otros medios visuales, como la televisión o internet."
+        },
+        {
+          "sub": "Diseño Embalajes o Packing",
+          "desc": "Se refiere a diseño de empaque considerando la practicidad, la facilidad de uso, la ergonomía, la seguridad y la protección del producto todo con el fin de agregar valor a los productos al adecuarlos de forma eficiente a las necesidades y expectativas del consumidor, todo lo anterior contribuye al posicionamiento del producto en el mercado, considerando los valores emocionales y la percepción de la funcionalidad, la identidad, la personalidad y, principalmente, la fidelidad hacia la marca."
+        },
+        {
+          "sub": "Identidad Corporativa",
+          "desc": "(IVC) Se refiere a la manifestación física de la marca, resaltando  los aspectos visuales de la identidad de una organización, incluyendo un logotipo y elementos de soporte, generalmente coordinados por un grupo de líneas maestras que se recogen en un documento denominado manual de identidad corporativa."
+        },
+        {
+          "sub": "Señalética",
+          "desc": "Se refiere  al sistema de comunicación visual sintetizado en un conjunto de señales o símbolos que cumplen la función de guiar, orientar u organizar a una persona o conjunto de personas en aquellos puntos del espacio que planteen dilemas de comportamiento, como por ejemplo dentro de una gran superficie (centros comerciales, fábricas, polígonos industriales, parques tecnológicos, aeropuertos, etcétera)."
+        },
+        {
+          "sub": "Técnico o Didáctico",
+          "desc": "Se refiere a  un proceso de acción, para sistematizar y ordenar el trabajo escolar de un determinado grupo de alumnos, estableciendo objetivos, seleccionando contenidos, adecuando metodologías y verificando los procesos educativos. El diseño didáctico, como planteamiento previo de una actividad en sus diversas en sus diversas fases y componentes, puede ser considerada como una acción que se desarrolla conjuntamente entre profesores y alumnos, para sistematizar y ordenar un trabajo escolar, en definitiva para, para planificar una acción educativa inmediata, en la cual se establecen las orientaciones organizadas y didácticas de la acción del docente en el aula."
+        },
+        {
+          "sub": "Diseño Web / Móvil",
+          "desc": "Se refiere a la actividad que consiste en la planificación, diseño, implementación y mantenimiento de sitios web. No es simplemente la implementación del diseño convencional ya que se abarcan diferentes aspectos como el diseño gráfico web, diseño de interfaz y experiencia de usuario, como la navegabilidad, interactividad, usabilidad, arquitectura de la información; interacción de medios, entre los que podemos mencionar audio, texto, imagen, enlaces, video y la optimización de motores de búsqueda."
+        },
+        {
+          "sub": "Diseño de Interiores / Decoración",
+          "desc": "Se refiere a disciplina proyectual involucrada en el proceso de formar la experiencia del espacio interior, con la manipulación del volumen espacial así como el tratamiento superficial."
+        },
+        {
+          "sub": "Diseño Textil e Indumentaria",
+          "desc": "Se refiere a la disciplina involucrada en la elaboración de productos para la industria textil, tales como fibras, hilos y tejido textil con propiedades y características específicas, con el fin de satisfacer diversas necesidades humanas, como la obtención de insumos para el desarrollo de otros productos en los campos de la confección y decoración. También tiene que ver con los textiles técnicos, área en la que se desarrollan telas especializadas para la medicina, arquitectura, ingeniería, deportes y en ropas, etc."
+        },
+        {
+          "sub": "Diseño Multimedia",
+          "desc": "Se refiere a diseño que combina diversas ramas que engloban texto, fotografías, videos, programación, sonido, animación, manipulada y volcada en un soporte digital."
+        },
+        {
+          "sub": "Diseño Tipográfico",
+          "desc": "Se refiere a la destreza, el oficio y la industria de la elección y el uso de tipos (las letras diseñadas con unidad de estilo) para desarrollar una labor de impresión. Se trata de una actividad que se encarga de todo lo referente a los símbolos, los números y las letras de un contenido que se imprime en soporte físico o digital."
+        },
+        {
+          "sub": "Diseño Industrial",
+          "desc": "Se refiere a es una actividad proyectual de diseño de productos seriados y/o industriales, que podemos diferenciar en dos tipos: bienes de consumo y bienes de capital, con ella se busca mejorar las cualidades de los productos industriales, poniendo énfasis en la forma, función y uso con un enfoque prioritario hacia el usuario, además busca satisfacer las necesidades de los usuarios como principal objetivo."
+        },
+        {
+          "sub": "Otras."
+        }
+      ]
+    },
+    {
+      "cat": "Gerencia",
+      "subs": [
+        {
+          "sub": "Coaching Gerencial",
+          "desc": "Se refiere a una forma de intervención profesional orientado a ayudar a personas (Gerentes y Colaboradores) a desarrollar y/o fortalecer sus competencias (actitudes, conocimientos y habilidades funcionales, comportamentales y conceptuales) para responder exitosamente a los requerimientos de su organización y de su entorno en general."
+        },
+        {
+          "sub": "Mentoring",
+          "desc": "Se refiere a relación de ayuda que existe entre un mentor que gracias a su experiencia es un experto que puede enriquecer al alumno (persona que recibe la ayuda) con sus consejos y orientaciones prácticas."
+        },
+        {
+          "sub": "Balanced Scorecard",
+          "desc": " desempeño financiero, conocimiento del cliente, procesos internos de negocio y aprendizaje y crecimiento."
+        },
+        {
+          "sub": "Just in time",
+          "desc": "Se refiere a un sistema de organización de la producción para las fábricas, de origen japonés. También conocido como método Toyota, permite reducir costos, especialmente de inventario de materia prima, partes para el ensamblaje, y de los productos finales. La esencia de JIT es que los suministros llegan a la fábrica, o los productos al cliente, 'justo a tiempo', eso siendo poco antes de que se usen y solo en las cantidades necesarias."
+        },
+        {
+          "sub": "Reingeniería",
+          "desc": "Se refiere al establecimiento de secuencias en interacciones nuevas en procesos administrativos y regulatorios. Es un análisis y rediseño radical de la economía y de la concepción de los negocios para lograr mejoras significativas en medidas como en costos, calidad, servicio y rapidez."
+        },
+        {
+          "sub": "Downsizing",
+          "desc": "Se refiere a  la reducción de personal y equipos para disminuir el tamaño de las compañías, aumentando así su productividad."
+        },
+        {
+          "sub": "Benchmarking",
+          "desc": "Se refiere a la toma de 'comparadores' o benchmarks a aquellos productos, servicios y procesos de trabajo que pertenezcan a organizaciones que evidencien las mejores prácticas sobre el área de interés, con el propósito de transferir el conocimiento de las mejores prácticas y su aplicación."
+        },
+        {
+          "sub": "6 Sigma",
+          "desc": "Se refiere a es una metodología de mejora de procesos, centrada en la reducción de la variabilidad de los mismos, reforzando y optimizando cada parte de proceso consiguiendo reducir o eliminar los defectos o fallos en la entrega de un producto o servicio al cliente. La meta de 6 Sigma es llegar a un máximo de 3,4 defectos por millón de eventos u oportunidades (DPMO), entendiéndose como defecto cualquier evento en que un producto o servicio no logra cumplir los requisitos del cliente."
+        },
+        {
+          "sub": "Malcolm Baldrige Quality",
+          "desc": "Se refiere al reconocimiento a las organizaciones estadounidenses en todos los sectores de la economía por demostrar la excelencia en el desempeño utilizando la perspectiva de los sistemas y otros conceptos y valores fundamentales del Marco de Excelencia de Baldrige; los aspirantes son evaluados para el premio según los criterios de excelencia en el desempeño."
+        },
+        {
+          "sub": "Brecha en calidad de servicio",
+          "desc": "Se refiere al esquema que permite, a través de la identificación de puntos críticos, determinar los momentos en los que se generan desviaciones que conducen a resultados no esperados por el cliente, afectando de forma negativa la calidad y experiencia del servicio."
+        },
+        {
+          "sub": "Servqual",
+          "desc": " Una calificación global de la calidad del establecimiento, y la compara contra el estándar, lo que desean los consumidores de ese establecimiento (Beneficios Ideales), lo que encuentran los consumidores en ese establecimiento (Beneficios Descriptivos), calcula brechas de insatisfacción específicas, ordena defectos de calidad desde el más grave y urgente hasta el menos grave."
+        },
+        {
+          "sub": "Net Promoter Score (NPS)",
+          "desc": "Se refiere a una herramienta que propone medir la lealtad de los clientes de una empresa basándose en las recomendaciones. s una herramienta que propone medir la lealtad de los clientes de una empresa basándose en las recomendaciones."
+        },
+        {
+          "sub": "ISO",
+          "desc": "Se refiere a la organización para la creación de estándares internacionales compuesta por diversas organizaciones nacionales de estandarización. El uso de estándares facilita la creación de productos y servicios que sean seguros, fiables y de calidad. Los estándares ayudan a los negocios a aumentar la productividad a la vez que minimizan los errores y el gasto. Al permitir comparar directamente productos de diferentes fabricantes, facilita que nuevas compañías puedan entrar en nuevos mercados y ayudar en el desarrollo de un comercio global con bases justas. Los estándares también sirven para proteger a los consumidores y usuarios finales de productos y servicios, asegurando que los productos certificados se ajusten a los mínimos estandarizados internacionalmente."
+        },
+        {
+          "sub": "Customer Operations Performance Centre",
+          "desc": " Además de trabajar sobre la calidad o sobre procesos o formas de hacer las cosas… apunta a mejorar el Servicio, la Calidad y la Satisfacción del Cliente aumentando los Ingresos al mismo tiempo que se reduce el costo de proveer un servicio excelente."
+        },
+        {
+          "sub": "Escala Kasset Intarnational",
+          "desc": "Se refiere a una escala muy expresiva para representar las diferencias entre expectativas y prestación del servicio."
+        },
+        {
+          "sub": "Gerencia de Mercadeo",
+          "desc": "Se refiere a la acción que se desarrolla en un medio social, entre personas o entidades con un fin económico y administrativo, donde ambas partes, mediante un intercambio de intereses, obtienen lo que quieren."
+        },
+        {
+          "sub": "Customer Relationship Management (CRM)",
+          "desc": "Se refiere a una estrategia de negocios dirigida o enfocada a entender, anticipar y responder a las necesidades de los clientes actuales y potenciales de una empresa para hacer que el valor de la relación entre ambas partes crezca."
+        },
+        {
+          "sub": "Gerencia de Operaciones",
+          "desc": "Se refiere a la gerencia de la producción que puede definirse como la administración de los recursos directos necesarios para producir los bienes y/o servicios que ofrece una organización, y que se venderán a los clientes directos y/o empresas."
+        },
+        {
+          "sub": "Gerencia de la Innovación",
+          "desc": "Se refiere a la herramienta más eficaz para quienes de manera frecuente o esporádica participan como ejecutores de tareas, proyectos o servicios requeridos por empresas. También, para estrategas, gerentes o líderes que buscan crecimiento y contribución a sus compañías o ejecutar proyectos de emprendimiento a través de metodologías de gerencia de proyectos."
+        },
+        {
+          "sub": "Gerencia Patrimonial",
+          "desc": "Se refiere a aquella que se da por la propiedad de acciones y/o por vínculos familiares con los socios, los puestos son retenidos por miembros de una familia y muchas de las veces el único “mérito” y/o requisito para ocupar el cargo es el ser propietario o familiar de los propietarios, sin importar si es honesto, si tiene formación académica, experiencia, actitudes, aptitudes y/o capacidades necesarias para ocupar el cargo."
+        },
+        {
+          "sub": "Gerencia Política",
+          "desc": "La gerencia política es menos común y al igual que la dirección patrimonial, sus posibilidades de supervivencia son débiles en las sociedades industrializadas modernas, ella existe cuando la propiedad en altos cargos decisivos y los puestos administrativos claves. Están asignados sobre la base de la afiliación y de las lealtades políticas."
+        },
+        {
+          "sub": "Gerencia por Objetivos",
+          "desc": "Se refiere al punto final (o meta) hacia el cual la gerencia dirige sus esfuerzos. El establecimiento de un objetivo es en efecto, la determinación de un propósito, y cuando se aplica a una organización empresarial, se convierte en el establecimiento de la razón de su existencia."
+        },
+        {
+          "sub": "Gerencia Estratégica",
+          "desc": "Se refiere a una herramienta para administrar y ordenar los cambios, donde se definen los objetivos de la organización y se establecen estrategias para lograrlos y se reconoce la participación basada en el liderazgo de los ejecutivos de la empresa para tomar las decisiones que correspondan a las demandas del ambiente inmediato y futuro."
+        },
+        {
+          "sub": "Gerencia Administrativa",
+          "desc": "Es el órgano de apoyo responsable de dirigir, ejecutar, evaluar y controlar la administración del potencial humano, los recursos económicos, financieros, materiales, y servicios que requieran las diferentes áreas de la empresa."
+        },
+        {
+          "sub": "Gerencia de Servicios",
+          "desc": "Se refiere al enfoque total de la organización que hace que la calidad del servicio, cuando lo recibe el cliente, su principal fuerza motriz, para convertirla en modelo y filosofía diferenciadora."
+        },
+        {
+          "sub": "Gerencia de Ventas",
+          "desc": "Se refiere a aquella función cuyo objetivo principal es mantener y aumentar las ventas mediante la administración eficiente del recurso humano de ventas disponible y del mercado potencial de clientes en un plazo determinado."
+        },
+        {
+          "sub": "Gerencia de procesos y sistemas",
+          "desc": "Se refiere a la gestión de una serie de tareas de valor agregado que se vinculan entre sí para transformar un insumo en un producto (Bien o Servicio) para garantizar el establecimiento, mantenimiento y mejoramiento de los procesos repetitivos de una organización."
+        },
+        {
+          "sub": "Gerencia de Seguridad, prevención y control",
+          "desc": "Se refiere a la gestión de la aplicación globalizadora de la seguridad, en la que se tienen en cuenta los aspectos humanos, legales, sociales, económicos y técnicos de todos los riesgos que pueden afectar a todos los sujetos activos participantes en la actividad de una entidad."
+        },
+        {
+          "sub": "Gerencia de Restaurantes",
+          "desc": "Se refiere a la supervisión del funcionamiento de la cocina, el comedor y el banquete; mantener relaciones positivas con los clientes y crear opciones de menú atractivas; supervisar el inventario y ordenar alimentos, equipos y suministros; y garantizar el mantenimiento y la reparación regular del restaurante."
+        },
+        {
+          "sub": "Gerencia de recursos humanos",
+          "desc": "Se refiere a la gestión y formulación de estrategias, normas y procedimientos de desarrollo de los recursos humanos, a aplicación de las normas y los procedimientos de RR.HH al desarrollo y aplicación de sistemas de información de la gestión, a la contratación y asignación recursos humanos, atraer a los empleados más cualificados y colocarlos en aquellos puestos para los que sean más adecuados, comunicar y facilitar a los empleados actuales y potenciales información sobre normas, cometidos, condiciones de trabajo, salarios, oportunidades de ascenso y prestaciones para los empleados, asesorar y ayudar a los directores con la contratación y formación del personal, desarrollar programas para la igualdad de oportunidades y evitar el acoso sexual; cerciorarse de que la organización cumpla las normas correspondientes, coordinar los programas y prácticas de salud y seguridad profesionales, vigilar y medir los costes de empleo y los niveles de productividad, así como las relaciones laborales y de empleo de todo el personal, planificar los programas de formación para los empleados, formar y asesorar a otros gestores, por ejemplo, en asuntos de personal o de relaciones empresariales."
+        },
+        {
+          "sub": "Gerencia de gestión de tiempo",
+          "desc": "Se refiere a la habilidad directiva consistente en el adecuado reparto de tiempo como recurso para desarrollar tareas y proyectos."
+        },
+        {
+          "sub": "Gerencia de proyectos",
+          "desc": "Se refiere a la disciplina de organizar y administrar los recursos, de forma tal que un proyecto dado sea terminado completamente dentro de las restricciones de alcance, tiempo y coste planteados a su inicio."
+        },
+        {
+          "sub": "Otras"
+        }
+      ]
+    },
+    {
+      "cat": "Ingeniería",
+      "desc": "Se refiere al conjunto de conocimientos científicos y tecnológicos para la innovación, invención, desarrollo y mejora de técnicas y herramientas para satisfacer las necesidades y resolver los problemas de las empresas y la sociedad.",
+      "subs": [
+        {
+          "sub": "Ingeniería Civil",
+          "desc": "Se refiere a la disciplina de la ingeniería profesional que emplea conocimientos de cálculo, mecánica hidráulica y física para encargarse del diseño, construcción y mantenimiento de las infraestructuras emplazadas en el entorno incluyendo carreteras, ferrocarriles, puentes, canales, presas, puertos, aeropuertos, diques y otras construcciones relacionadas.",
+          "hab": [
+            "Diseño de carreteras.",
+            "Ingeniería estructural.",
+            "Construcción obras civiles.",
+            "Control de calidad e inspección de obras.",
+            "Planeamiento y sustentabilidad del diseño urbano.",
+            "Geotécnica.",
+            "Aguas y saneamiento."
+          ]
+        },
+        {
+          "sub": "Ingeniería Industrial",
+          "desc": "Se refiere a la optimización de uso de recursos humanos, técnicos e informativos, así como el manejo y gestión óptimos de los sistemas de transformación de bienes y servicios, evaluación de sistemas integrados aplicados en campos de personal, riqueza, conocimientos, información, equipamiento, energía, materiales y procesos, con la finalidad de obtener productos de alta calidad o servicios útiles que satisfagan a la sociedad y con alta consideración al medio ambiente. Utiliza los principios, métodos del análisis, síntesis de la ingeniería y el diseño para especificar, evaluar, predecir y mejorar los resultados obtenidos de tales sistemas. Emplea conocimientos y métodos de otras ciencias y técnicas para determinar, diseñar, especificar, analizar, implementar y mejorar continuamente los sistemas.",
+          "hab": [
+            "Programas de control y reducción de costos",
+            "Medida de Trabajo, normas, rendimiento",
+            "Métodos de ingeniería",
+            "Diseño de procesos",
+            "Análisis de valor",
+            "Productividad humana",
+            "Planeamiento, diseño,",
+            "Layout de plantas industriales",
+            "Protección ambiental",
+            "Organización, administración",
+            "Ingeniería Económica",
+            "Manejo de Materiales",
+            "Sistemas de información",
+            "Ingeniería de producción, automatización",
+            "Planes de Incentivo",
+            "Seguridad y salud",
+            "Almacenaje, recepción y envío",
+            "Relaciones laborales.",
+            "Evaluación del trabajo",
+            "Convenios colectivos",
+            "Programación de la Producción",
+            "Planificación del control de inventario",
+            "PMO",
+            "SSL",
+            "SHA",
+            "Gestión de calidad",
+            "Logística y almacenaje",
+            "Seguridad",
+            "Higiene",
+            "Ambiente",
+            "Salud laboral",
+            "Diseño",
+            "Operación y control de sistemas de manufactura productividad.",
+            "Logística.",
+            "Seguridad y control ambiental.",
+            "Mejoramiento continuo.",
+            "Formulación y evaluación de proyectos de inversión",
+            "Investigación y desarrollo.",
+            "Aseguramiento y control de la calidad.",
+            "Supervisar procesos de producción.",
+            "Administración de proyectos.",
+            "Implantación de nuevos procesos.",
+            "Administrar y supervisión de los procesos de fabricación.",
+            "Aseguramiento del flujo de materia prima.",
+            "Control y planificación de la producción.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Ingeniería de Sistemas",
+          "desc": "Se refiere al modo de enfoque interdisciplinario que permite estudiar y comprender la realidad, con el propósito de implementar u optimizar sistemas complejos. Puede también verse como la aplicación tecnológica de la teoría de sistemas a los esfuerzos de la ingeniería, adoptando en todo este trabajo el paradigma sistémico. La ingeniería de sistemas integra otras disciplinas y grupos de especialidad en un esfuerzo de equipo, formando un proceso de desarrollo centrado.",
+          "hab": [
+            "Análisis, programación y desarrollo",
+            "Análisis funcional",
+            "Consultoría",
+            "Soporte",
+            "Helpdesk",
+            "QA",
+            "Testing",
+            "Diseño y construcción de redes",
+            "Diseño de soluciones telemáticas",
+            "Diseño Sitio Web",
+            "Mantenimiento Sitio Web",
+            "Construcción Sitios Web.",
+            "Diseño de aplicaciones mobiles.",
+            "Administración de redes.",
+            "Administración de sistemas de información.",
+            "Evaluación y aplicación software y hardware",
+            "Investigación y desarrollo",
+            "Planeación y gerencia de proyectos informáticos",
+            "Administración de base de datos",
+            "Comunicaciones",
+            "Manejo computarizado de información",
+            "Gestión de tecnología",
+            "Modelamiento de sistemas organizacionales",
+            "Seguridad computacional",
+            "Análisis sistemas de información.",
+            "Diseño sistemas de información.",
+            "Implantación de sistemas de información.",
+            "Desarrollo de software de escritorio",
+            "Desarrollo de comercio electrónico",
+            "Desarrollo de juegos",
+            "Desarrollo móvil",
+            "Gestión de producto",
+            "Control de calidad y pruebas",
+            "Scripts y Utilidades",
+            "Desarrollo web",
+            "Diseño web y móvil",
+            "TI y redes",
+            "Todo IT & Networking",
+            "Administración de base de datos",
+            "Software ERP / CRM",
+            "Seguridad de información",
+            "Administración de redes y sistemas",
+            "Otros - IT & Networking",
+            "Ciencia de datos y análisis",
+            "Toda la ciencia de datos y análisis",
+            "Pruebas A / B",
+            "Visualización de datos",
+            "Extracción de datos / ETL",
+            "Minería de Datos y Gestión",
+            "Aprendizaje automático",
+            "Análisis cuantitativo",
+            "Otros - Data Science & Analytics",
+            "Ingeniería y arquitectura",
+            "Toda la ingeniería y arquitectura",
+            "Modelado 3D y CAD",
+            "Arquitectura",
+            "ANDROID",
+            "IOS,",
+            "JAVA",
+            "JAVASCRIPT",
+            "HTML5",
+            "JQUERY",
+            "NODE.JS",
+            "PHP",
+            "CAKEPHP",
+            "SYMFONY",
+            "AJAXMYSQL",
+            "OBJECTIVE-C",
+            "PYTHON",
+            "RUBY ON RAILS",
+            "INTERFAZ DE USUARIO",
+            "PROGRAMACIÓN WEB",
+            "BOOTSTRAP",
+            "ANGULARJS",
+            "CSS3",
+            "SWIFT",
+            "DISEÑO GRÁFICO",
+            "PUBLICIDAD",
+            "ADWORDS DE GOOGLE",
+            "GOOGLE ANALYTICS",
+            "ESTRATEGIA DE MARKETING SEO.",
+            "Cyber Security",
+            "Ethical Hacking",
+            "Auditoría de seguridad",
+            "Continuidad del negocio",
+            "Tecnología forense",
+            "IT Strategy",
+            "IT Attestation",
+            "Auditoría de TI",
+            "ERP Advisory",
+            "Vendor Solution",
+            "IT Project",
+            "Business Intelligence",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Ingeniería en informática",
+          "desc": "Se refiere a la rama de la ingeniería que aplica los fundamentos de la ciencia de la computación, la ingeniería electrónica, la ingeniería de software y la ingeniería de telecomunicaciones, para el desarrollo de soluciones integrales de cómputo y comunicaciones, capaces de procesar información de manera automática.",
+          "hab": [
+            "Análisis, programación y desarrollo",
+            "Análisis funcional",
+            "Consultoría",
+            "Soporte",
+            "Helpdesk",
+            "QA",
+            "Testing",
+            "Diseño y construcción de redes",
+            "Diseño de soluciones telemáticas",
+            "Diseño Sitio Web",
+            "Mantenimiento Sitio Web",
+            "Construcción Sitios Web.",
+            "Diseño de aplicaciones mobiles.",
+            "Administración de redes.",
+            "Administración de sistemas de información.",
+            "Evaluación y aplicación software y hardware",
+            "Investigación y desarrollo",
+            "Planeación y gerencia de proyectos informáticos",
+            "Administración de base de datos",
+            "Comunicaciones",
+            "Manejo computarizado de información",
+            "Gestión de tecnología",
+            "Modelamiento de sistemas organizacionales",
+            "Seguridad computacional",
+            "Análisis sistemas de información.",
+            "Diseño sistemas de información.",
+            "Implantación de sistemas de información.",
+            "Desarrollo de software de escritorio",
+            "Desarrollo de comercio electrónico",
+            "Desarrollo de juegos",
+            "Desarrollo móvil",
+            "Gestión de producto",
+            "Control de calidad y pruebas",
+            "Scripts y Utilidades",
+            "Desarrollo web",
+            "Diseño web y móvil",
+            "TI y redes",
+            "Todo IT & Networking",
+            "Administración de base de datos",
+            "Software ERP / CRM",
+            "Seguridad de información",
+            "Administración de redes y sistemas",
+            "Otros - IT & Networking",
+            "Ciencia de datos y análisis",
+            "Toda la ciencia de datos y análisis",
+            "Pruebas A / B",
+            "Visualización de datos",
+            "Extracción de datos / ETL",
+            "Minería de Datos y Gestión",
+            "Aprendizaje automático",
+            "Análisis cuantitativo",
+            "Otros - Data Science & Analytics",
+            "Ingeniería y arquitectura",
+            "Toda la ingeniería y arquitectura",
+            "Modelado 3D y CAD",
+            "Arquitectura",
+            "ANDROID",
+            "IOS,",
+            "JAVA",
+            "JAVASCRIPT",
+            "HTML5",
+            "JQUERY",
+            "NODE.JS",
+            "PHP",
+            "CAKEPHP",
+            "SYMFONY",
+            "AJAXMYSQL",
+            "OBJECTIVE-C",
+            "PYTHON",
+            "RUBY ON RAILS",
+            "INTERFAZ DE USUARIO",
+            "PROGRAMACIÓN WEB",
+            "BOOTSTRAP",
+            "ANGULARJS",
+            "CSS3",
+            "SWIFT",
+            "DISEÑO GRÁFICO",
+            "PUBLICIDAD",
+            "ADWORDS DE GOOGLE",
+            "GOOGLE ANALYTICS",
+            "ESTRATEGIA DE MARKETING SEO.",
+            "Cyber Security",
+            "Ethical Hacking",
+            "Auditoría de seguridad",
+            "Continuidad del negocio",
+            "Tecnología forense",
+            "IT Strategy",
+            "IT Attestation",
+            "Auditoría de TI",
+            "ERP Advisory",
+            "Vendor Solution",
+            "IT Project",
+            "Business Intelligence",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Ingeniería en Electrónica",
+          "desc": "Se refiere a la resolución de problemas de la ingeniería tales como el control de procesos industriales, sistemas electrónicos de potencia, instrumentación y control, así como la transformación de electricidad para el funcionamiento de diversos aparatos eléctricos. Tiene aplicación en la industria, telecomunicaciones, en el diseño y análisis de instrumentación electrónica y microprocesadores.",
+          "hab": [
+            "Comunicaciones",
+            "Automatización y Control",
+            "Procesamiento Digital de Señales",
+            "Radiodifusión y TV Digital",
+            "Sistemas para Audio y Video",
+            "Ing. Biomédica",
+            "Robótica",
+            "Domótica",
+            "Edificaciones Inteligentes",
+            "Edificaciones Automatizadas",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Ingeniería Mecatrónica",
+          "desc": "Se refiere a la disciplina que sirve para diseñar robots y a los productos que involucren a sistema de control para el diseño de productos o procesos inteligentes, lo cual busca crear maquinaria más compleja para facilitar las actividades del ser humano a través de procesos electrónicos en la industria mecánica, principalmente. Esta disciplina une la ingeniería mecánica, ingeniería electrónica, ingeniería de control e ingeniería informática. Debido a que combina varias ingenierías en una sola, su punto fuerte es la versatilidad.",
+          "hab": [
+            "Robótica",
+            "Automatización Industrial",
+            "Gestión de Emprendimiento",
+            "Microelectrónica",
+            "Tecnología de los sensores",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Ingeniería Mecánica",
+          "desc": "Se refiere a la ingeniería que aplica a los principios de la termodinámica, mecánica, mecánica clásica, mecánica cuántica, mecánica de fluidos, análisis estructural, estática, dinámica, ecuación diferencial,  trigonometría,  ciencia de materiales para el diseño y análisis de diversos elementos usados en la actualidad, tales como maquinaria con diversos fines (térmicos, hidráulicos, transporte, manufactura), así como también de sistemas de ventilación, refrigeración, vehículos motorizados terrestres, aéreos y marítimos, entre otras aplicaciones.",
+          "hab": [
+            "Sistemas mecánicos y térmicos.",
+            "Nuevos procesos y tecnologías.",
+            "Análisis y diseño de estructuras o máquinas.",
+            "Equipos e instalaciones",
+            "Asesoramiento",
+            "Arbitrajes",
+            "Pericias",
+            "Tasaciones.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Ingeniería Eléctrica",
+          "desc": "Se refiere al estudio y la aplicación de la electricidad, la electrónica y el electromagnetismo. Aplica conocimientos de ciencias como la física y las matemáticas para diseñar sistemas y equipos que permiten generar, transportar, distribuir y utilizar la energía eléctrica.",
+          "hab": [
+            "Diseño y construcción de máquinas y equipos",
+            "Sistemas e instalaciones",
+            "Energía eléctrica.",
+            "Sistemas e instalaciones electrotérmicas",
+            "Sistemas e instalaciones electroquímicas",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Ingeniería Automotriz",
+          "desc": "Se refiere a la ingeniería vehicular, que incorpora elementos de mecánica, electricidad, electrónica, software e ingeniería de seguridad aplicándolos al diseño, manufactura y operación de motocicletas, automóviles, autobuses y camiones y sus respectivos subsistemas de ingeniería",
+          "hab": [
+            "Sistemas de automoción.",
+            "Gestión de la movilidad sostenible.",
+            "Generación y transporte de energía eléctrica.",
+            "Sistemas de Transporte.",
+            "Diseño y Desarrollo.",
+            "Ferroviaria.",
+            "Dinámica de vehículos.",
+            "Sistemas de transporte inteligente.",
+            "Electrónica automotriz.",
+            "Automatización industrial.",
+            "Automoción.",
+            "Seguridad.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Ingeniería Agrónoma"
+        },
+        {
+          "sub": "Ingeniería Química",
+          "desc": "Se refiere al  diseño, manutención, evaluación, optimización, simulación, planificación, construcción y operación de todo tipo de elementos en la industria de procesos, que es aquella relacionada con la producción de compuestos y productos cuya elaboración requiere de sofisticadas transformaciones físicas y químicas de la materia. La ingeniería química también se enfoca al diseño de nuevos materiales y tecnologías, es una forma importante de investigación y de desarrollo. Además es líder en el campo ambiental, ya que contribuye al diseño de procesos ambientalmente amigables y procesos para la descontaminación del ambiente",
+          "hab": [
+            "Planificar",
+            "Proyectar",
+            "Dimensionar",
+            "Montar",
+            "Controlar",
+            "Equipos y maquinarias",
+            "Plantas industriales",
+            "Plantas pilotos",
+            "Laboratorios relacionados",
+            "Procesos.",
+            "Dirigir",
+            "Instalar",
+            "Inspeccionar",
+            "Mantenimiento",
+            "Procesos físico-químicos",
+            "Procesos biotecnológicos",
+            "Aspecto funcional Industrias y servicios",
+            "Aprovechamiento",
+            "Industrialización",
+            "Recursos naturales",
+            "Elaboración de nuevos productos",
+            "Planificación",
+            "Programación",
+            "Dirección",
+            "Organización",
+            "Racionalización",
+            "Control",
+            "Optimización",
+            "Procesos industriales",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Ingeniería de Procesos",
+          "hab": [
+            "Integración de gestión.",
+            "Organización y método.",
+            "Calidad.",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Ingeniería en Alimentos",
+          "desc": "Se refiere al campo multidisciplinario que combina microbiología, química, física aplicada e ingeniería. La ingeniería de alimentos incluye, entre otros, la aplicación de principiosde ingeniería química, ingeniería agrícola e ingeniería mecánica a los materiales alimenticios.",
+          "hab": [
+            "Proyectar",
+            "Diseñar",
+            "Construir",
+            "Instalar",
+            "Operar",
+            "Inspeccionar",
+            "Dirigir industrias alimenticias",
+            "Establecimientos comerciales",
+            "Conservación",
+            "Transformación",
+            "Envasamiento",
+            "Productos alimenticios.",
+            "Calcular",
+            "Proyectar",
+            "Equipos, aparatos e instrumentos",
+            "Procesos y operaciones",
+            "Industrias alimenticias.",
+            "Estudiar",
+            "Investigar",
+            "Desarrollar",
+            "Procesos",
+            "Operaciones",
+            "Saneamiento ambiental",
+            "Higiene",
+            "Seguridad",
+            "Técnicas de producción",
+            "Transformación",
+            "Fraccionamiento",
+            "Envasado de alimentos",
+            "Aprovechamiento de los recursos naturales",
+            "Aprovechamiento de materias primas.",
+            "Control de las operaciones",
+            "Control de procesos",
+            "Control de la calidad de las materias primas",
+            "Productos en curso de elaboración",
+            "Elaborados por las industrias alimenticias.",
+            "Ciencia de alimentos",
+            "Diseñar sistemas de calidad",
+            "Aseguramiento del valor nutritivo",
+            "Aseguramiento de la inocuidad de los alimentos",
+            "Asesoramientos",
+            "Arbitrajes",
+            "Pericias y valuaciones",
+            "Instalaciones, maquinarias e instrumentos",
+            "Procesos de fabricación",
+            "Conservación",
+            "Transformación y/o fraccionamiento y envasado",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Ingeniería de petróleo",
+          "desc": "Se refiere a la parte de la ingeniería que combina métodos científicos y prácticos orientados al desarrollo de técnicas para descubrir, explotar, desarrollar, transportar, procesar y tratar los hidrocarburos desde su estado natural, en el yacimiento, hasta los productos finales o derivados.",
+          "hab": [
+            "Ingeniería de Perforación",
+            "Ingeniería de Producción",
+            "Ingeniería de Reservorio",
+            "Ingeniería Petrofísica",
+            "Otras."
+          ]
+        },
+        {
+          "sub": "Ingeniería Metalúrgica",
+          "desc": "Se refiere la rama de la ingeniería que se encarga de tratar los elementos metálicos y no metálicos contenidos en los minerales mediante procesos físicos y químicos, para destinarlos finalmente a la producción de aleaciones utilizando éstos elementos. La extracción, el procesamiento y la fundición de estos materiales para la producción de aleaciones permite obtener materiales para construcción, trabajo en metal o diferentes productos utilizados en la vida cotidiana, además de transformación en productos netamente finales (conformado de metales)."
+        },
+        {
+          "sub": "Ingeniería de Ventas."
+        },
+        {
+          "sub": "Otras"
+        }
+      ]
+    },
+    {
+      "cat": "Legal",
+      "desc": "Se refiere al orden normativo e institucional de la conducta humana en sociedad inspirado en postulados de justicia y certeza jurídica.",
+      "subs": [
+        {
+          "sub": "Derecho civil",
+          "desc": "Se refiere al conjunto de normas jurídicas y principios del derecho que regulan las relaciones personales o patrimoniales, voluntarias o forzosas, entre personas privadas o públicas, tanto físicas como jurídicas, de carácter privado y público, o incluso entre las últimas, siempre que actúen desprovistas de autotutela.",
+          "hab": [
+            "Derecho de familia",
+            "Separaciones",
+            "Divorcios",
+            "Acciones de filiación",
+            "Reclamaciones de alimentos",
+            "Procedimientos de adopción internacional incapacidades.",
+            "Derecho inmobiliario e hipotecario",
+            "Redacción de contratos y minutas",
+            "Acciones de responsabilidad",
+            "Acciones reivindicatorias",
+            "Deslindes y amojonamientos.",
+            "Derecho de la Propiedad Horizontal.",
+            "Usos del edificio",
+            "ivisiones",
+            "Segregaciones",
+            "Agrupaciones",
+            "Constitución y extinción de comunidades",
+            "Adopción e impugnación de acuerdos",
+            "Régimen de administración y gastos.",
+            "Derecho de Seguros y de la Circulación",
+            "Acciones de responsabilidad",
+            "Valoración del daño corporal",
+            "Reclamaciones ante el Consorcio de Compensación",
+            "Mediación con aseguradoras",
+            "Acciones de repetición y subrogación.",
+            "Derecho de los Consumidores y Usuarios:",
+            "Reclamaciones compañías de telefonía",
+            "Reclamaciones de seguros",
+            "Reclamaciones frente a la banca",
+            "Reclamaciones a grandes almacenes",
+            "Derecho de Arrendamientos:",
+            "Acciones de desahucio",
+            "arrendamientos rústicos",
+            "Precarios",
+            "Redacción de contratos de arrendamientos",
+            "Vivienda",
+            "Local de negocio",
+            "Industrial.",
+            "Derecho de Sucesiones:",
+            "Declaración de herederos",
+            "Particiones",
+            "Acciones de impugnación",
+            "Plusvalías",
+            "Gestión del impuesto",
+            "Redacción minutas",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Derecho mercantil",
+          "desc": "Se refiere a aquella rama del Derecho privado que regula el conjunto de normas relativas a los comerciantes en el ejercicio de su profesión, a los actos de comercio legalmente calificados como tales y a las relaciones jurídicas derivadas de la realización de estos.",
+          "hab": [
+            "Asesoría Corporativa Empresarial",
+            "Asistencia en el área documental,",
+            "Concepción de personas jurídicas",
+            "Reingeniería de personas jurídicas",
+            "Funcionamiento de personas jurídicas",
+            "Cumplimiento de obligaciones civiles y",
+            "Cumplimiento de obligaciones mercantiles",
+            "Asambleas",
+            "Reuniones de Junta Directiva",
+            "Manejo y gestión de libros legales",
+            "Relaciones con Registros Mercantiles y Civiles)",
+            "Estructuración accionistas y socios",
+            "Organización accionistas y socios",
+            "Relaciones de propiedad accionistas y socios",
+            "Fusiones y adquisiciones, liquidaciones",
+            "Asesoría Corporativa Consultiva:",
+            "Esquemas de eficiencia corporativa",
+            "Inversión extranjera",
+            "Régimen cambiario",
+            "Importaciones y exportaciones",
+            "Relaciones comerciales con proveedores y clientes",
+            "Proveedores y clientes locales e internacionales",
+            "Asesoría Corporativa en Materias de Derecho Público",
+            "Asesoría  en materia de protección de inversiones,",
+            "Asesoría en marcas y patentes",
+            "Asesoría en competencia",
+            "Asesoría en control de cambio",
+            "Asesoría en aduanas",
+            "Asesoría en leyes especiales",
+            "Redacción o revisión de actas de asambleas",
+            "Redacción de juntas directivas",
+            "Trámites para registro o autenticación.",
+            "Procesos de transformación",
+            "Procesos de fusión de sociedades",
+            "Procesos de reestructuración de empresa.",
+            "Consultas y opiniones legales mercantil",
+            "Consultas y opiniones  de contratos",
+            "Consultas y opiniones en inversiones extranjeras Consultas y opiniones corporativas.",
+            "Consultas y opiniones operaciones comerciales",
+            "Consultas y opiniones financieras",
+            "Consultas y opiniones de organización",
+            "Redacción o revisión de contratos y documentos",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Derecho Laboral",
+          "desc": "Se refiere a la rama del derecho cuyos principios y normas jurídicas tienen por objeto la tutela del trabajo humano realizado en forma libre, por cuenta ajena, en relación de dependencia y a cambio de una contraprestación.",
+          "hab": [
+            "Asesoría laboral corporativa de las empresas",
+            "Asesoría en sus relaciones individuales de trabajo",
+            "Asesoría en colectivas de trabajo",
+            "Consultas vinculadas al área laboral",
+            "Preparación de Contratos de Trabajo",
+            "Contrato indeterminado",
+            "Contrato determinado",
+            "Contrato por obra determinada",
+            "Convenios de asignación de personal",
+            "Convenios de secondment agreements",
+            "Procesos de reducción",
+            "Procesos de cierre",
+            "Procesos de fusiones",
+            "Procesos de adquisiciones",
+            "Procesos de estatizaciones de empresas",
+            "Régimen legal de expatriados o internacionales",
+            "Negociación de transacciones laborales",
+            "Análisis de nuevas formas de producción",
+            "Análisis de planificación de estructuras diversas",
+            "Cooperativas",
+            "Consorcios",
+            "Cumplimiento de beneficios laborales",
+            "Obligaciones laborales",
+            "Seguridad y Salud en el Trabajo",
+            "Seguridad Social",
+            "Asistencia en procedimientos de fiscalización.",
+            "Estudio de empleados de dirección",
+            "Estudio de altos ejecutivos en materia laboral.",
+            "Estabilidad laboral",
+            "Inamovilidad laboral",
+            "Accidentes y enfermedades ocupacionales.",
+            "Sistemas de pensiones y jubilaciones.",
+            "Régimen de contratistas",
+            "Régimen de intermediarios",
+            "Régimen de responsabilidad solidaria",
+            "Régimen de extensión de beneficios",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Derecho Administrativo y Constitucional",
+          "desc": "Se refiere a aquella rama del derecho público que regula la administración pública, la función administrativa y la relación entre los particulares; asimismo, comprende el conjunto de casos reales que regulan la organización, funcionamiento, poderes y deberes de la Administración pública en sus relaciones con otros sujetos. Constitucionalmente incluye el análisis de las leyes fundamentales que definen un Estado su forma de gobierno, derechos fundamentales y la regulación de los poderes públicos, incluidas las relaciones entre los poderes públicos y ciudadanos.",
+          "hab": [
+            "Asesoría y consultas",
+            "Vigencia y aplicación de normas",
+            "Vigencia y aplicación  de decreto",
+            "Vigencia y aplicación de reglamentos",
+            "Vigencia y aplicación de resoluciones",
+            "Aspectos regulatorios económicos",
+            "Régimen de libre competencia.",
+            "Escritos no recursivos (peticiones)",
+            "Expropiaciones, ocupaciones o intervenciones",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Derecho Tributario",
+          "desc": "Es la disciplina parte del derecho financiero que tiene por objeto de estudio el ordenamiento jurídico que regula el establecimiento y aplicación de los tributos.",
+          "hab": [
+            "Impuestos corporativos",
+            "Impuestos personales",
+            "Impuestos indirectos",
+            "Identificación de riesgos tributarios",
+            "Asesoría externa de impuesto",
+            "Precios de transferencia.",
+            "Contribuciones especiales.",
+            "Procesos de fiscalización.",
+            "Procesos administrativos y tributarios.",
+            "Preparación y presentación de solicitudes",
+            "Patentes",
+            "Notificaciones",
+            "Solicitudes de reintegro",
+            "Repetición de pago",
+            "Exoneraciones",
+            "Entes tributarios nacional, estatal y municipal.",
+            "Incorporación y/o actualización de registros.",
+            "Boletines informativos",
+            "Boletines de jurisprudencia",
+            "Boletines de reformas legales",
+            "Boletines de artículos de interés.",
+            "Compra-venta de créditos fiscales",
+            "lanificaciones corporativas",
+            "Racionalización de la carga tributaria.",
+            "BEPS",
+            "FATCA",
+            "Tributario internacional",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Derecho Internacional Privado",
+          "desc": "Se refiere aquella rama del derecho que tiene como objeto los conflictos de competencia internacionales, los conflictos de leyes internacionales, la cooperación procesal y determinar la condición jurídica de los extranjeros.",
+          "hab": [
+            "Aplicación del derecho extranjero",
+            "Clasificaciones",
+            "Cuestión Previa",
+            "Reenvío",
+            "Fraudulencia a la ley",
+            "Contratos internacionales",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Derecho Internacional Público",
+          "desc": "Se refiere a la rama del derecho público exterior que estudia y regula el comportamiento de los Estados y otros sujetos internacionales, en sus competencias propias y relaciones mutuas, sobre la base de ciertos valores comunes, para garantizar la paz y cooperación internacional, mediante normas nacidas de fuentes internacionales específicas",
+          "hab": [
+            "Convenios internacionales",
+            "Las convenciones internacionales",
+            "La costumbre internacional",
+            "Pruebas",
+            "Los principios generales",
+            "Las decisiones judiciales",
+            "Las doctrinas de los publicistas",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Derecho de la propiedad intelectual y derecho de autor",
+          "desc": "Se refiere al derecho que estudia Se refiere a un bien económico que incluye productos intangibles, al igual que productos físicos, reconocido en la mayor parte de legislaciones de los países y sujeto a explotación económica por parte de los poseedores legales de dicha propiedad. En un sentido estrictamente jurídico la propiedad intelectual, es lo protegido por las leyes de propiedad intelectual, y cualquier producción intelectual no explícitamente recogida por la legislación no puede ser considerada propiedad intelectual en sentido jurídico. Así los derechos de propiedad intelectual protegen los intereses de los creadores al ofrecerles prerrogativas en relación con sus creaciones. es un conjunto de normas jurídicas y principios que afirman los derechos morales y patrimoniales que la ley concede a los autores (los derechos de autor), por el simple hecho de la creación de una obra literaria, artística, musical, científica o didáctica, esté publicada o inédita.",
+          "hab": [
+            "Invenciones",
+            "Obras literarias y artísticas",
+            "Símbolos, nombres e imágenes",
+            "Marcas",
+            "Patentes",
+            "Derechos de autor",
+            "Diseños industriales",
+            "Solicitudes al Estado",
+            "Trámites",
+            "Contratos especiales",
+            "Otras"
+          ]
+        },
+        {
+          "sub": "Derecho penal",
+          "desc": "Se refiere a rama del derecho público que regula la potestad punitiva del Estado, asociando a hechos, estrictamente determinados por la ley, como presupuesto, una pena, medida de seguridad o corrección como consecuencia.",
+          "hab": [
+            "Querellas y denuncias",
+            "Delitos societarios",
+            "Administración desleal",
+            "Falseamiento de cuentas",
+            "Acuerdos lesivos o abusivos",
+            "Delitos contra las personas",
+            "Lesiones",
+            "Coacciones",
+            "Amenazas",
+            "Secuestros",
+            "Acoso sexual o laboral",
+            "Delitos patrimoniales",
+            "Robo",
+            "Hurto",
+            "Estafa",
+            "Apropiación indebida",
+            "Delitos contra la intimidad y la propia imagen",
+            "Allanamiento de morada",
+            "Revelación de secretos",
+            "Phising",
+            "Escuchas ilegales",
+            "Delitos contra el honor",
+            "Injurias y calumnias",
+            "Delitos contra la seguridad del tráfico",
+            "Alcoholemia",
+            "Conducción temeraria",
+            "Conducción sin licencia",
+            "Delitos contra los derechos de los trabajadores.",
+            "Delitos fiscales e insolvencias punibles",
+            "Defraudaciones",
+            "Alzamiento de bienes",
+            "Alteración de precios en subastas",
+            "Falsedades documentales",
+            "Delitos medio ambientales",
+            "Ejecución de sentencias penales",
+            "Derecho penitenciario."
+          ]
+        },
+        {
+          "sub": "Derecho Bancario",
+          "desc": "Se refiere a la estructura normativa crea transparencia entre las instituciones bancarias y los individuos y corporaciones con los que hacen negocios, entre otras cosas. Dada la interconexión de la industria bancaria y la dependencia que la economía nacional (y global) tienen en los bancos, es importante para las agencias reguladoras mantener el control sobre las prácticas estandarizadas de estas instituciones.",
+          "hab": [
+            "Entidades de Crédito bancarias",
+            "Entidades de depósito",
+            "Operaciones con el público en general",
+            "Banca oficial y privada",
+            "Cajas de ahorro",
+            "Cooperativas de crédito.",
+            "Banca Publica",
+            "Banca Privada"
+          ]
+        },
+        {
+          "sub": "Derecho de Seguros",
+          "desc": "Se refiere al conjunto de normas que regulan las operaciones de seguro y la actividad aseguradora en todos sus aspectos y manifestaciones.",
+          "hab": [
+            "Empresa de Seguros",
+            "La Actividad Aseguradora",
+            "Los sujetos regulados",
+            "Órgano de supervisión.",
+            "Estatuto de la empresa de seguros.",
+            "Contrato de seguro",
+            "Contrato de reaseguro",
+            "Estatuto de la empresa de reaseguros.",
+            "Intermediación en la Actividad Aseguradora.",
+            "Seguro de personas",
+            "Régimen de protección al asegurado.",
+            "Régimen sancionatorio",
+            "Formación del contrato de seguro",
+            "El riesgo",
+            "Modificación. Extinción y nulidad del contrato.",
+            "El siniestro.",
+            "Los seguros contra los daños.",
+            "Seguro de incendio.",
+            "Seguro contra robos.",
+            "Seguro de transporte terrestre.",
+            "Seguro de caución y el seguro de crédito.",
+            "Seguros de responsabilidad civil.",
+            "Seguros de personas.",
+            "Seguro de asistencia."
+          ]
+        },
+        {
+          "sub": "Derecho petrolero",
+          "desc": "Se refiere al contenido normativo que regula la explotación, exploración, transformación y mercadeo del petróleo y sus derivados."
+        },
+        {
+          "sub": "Derecho marítimo",
+          "desc": "Se refiere al cuerpo normativo que rige los problemas que puedan surgir a raíz de las relaciones entre entidades de Derecho privado dedicadas al tráfico marítimo. El Derecho marítimo ha de ser diferenciado del Derecho del mar, constituido por un cuerpo de normas de Derecho internacional que regula las relaciones jurídicas entre Estados, y no entre particulares."
+        },
+        {
+          "sub": "Derecho aeronáutico",
+          "desc": "Se refiere al conjunto de normas jurídicas que regulan la navegación aérea y el establecimiento y uso de sus infraestructuras, sea con fines civiles (comerciales o no) o militares. Dichas normas pueden ser tanto de origen nacional o interno (esto es, adoptadas unilateralmente por cada Estado), como de origen internacional (esto es, surgidas de acuerdos bilaterales o multilaterales entre varios Estados o de organizaciones constituidas por éstos, como la Organización de Aviación Civil Internacional), siendo este último tipo de normas aeronáuticas muy numerosas y relevantes por el frecuente alcance supranacional de los vuelos."
+        },
+        {
+          "sub": "Derecho aduanero",
+          "desc": "Se refiere puede definirse como el conjunto de normas de Derecho público que tienen, como un elemento de su presupuesto de hecho, la entrada de mercancías a un territorio aduanero, que llamamos importación, o bien la salida de mercancías de un territorio aduanero, que llamamos exportación."
+        },
+        {
+          "sub": "Derechos humanos",
+          "desc": "Se refiere  a las «condiciones instrumentales que le permiten a la persona su realización». En consecuencia subsume aquellas libertades, facultades, instituciones o reivindicaciones relativas a bienes primarios o básicos que incluyen a toda persona, por el simple hecho de su condición humana, para la garantía de una vida digna, «sin distinción alguna de raza, color, sexo, idioma, religión, opinión política o de cualquier otra índole, origen nacional o social, posición económica, nacimiento o cualquier otra condición»"
+        },
+        {
+          "sub": "Derecho ambiental",
+          "desc": "Se refiere está conformado por el conjunto de normas jurídicas que regula las conductas humanas que pueden influir e impactar de forma muy severa y relevante en los sistemas de ambiente y los organismos vivos."
+        }
+      ]
+    },
+    {
+      "cat": "Logística",
+      "desc": "Se refiere a la gestión y la planificación de actividades de los departamentos de compras, producción, transporte, almacenaje, manutención y distribución (gestión de transporte entrante y saliente, de flotas, de proveedores, de servicios logísticos, de materiales, de inventario, almacenamiento, de cumplimiento de pedidos, de planificación de la oferta y la demanda, de diseño de redes logísticas) por medio de la administración logística y de la cadena de suministro para la colocación de los productos adecuados (bienes y servicios) en el lugar adecuado, en el momento preciso y en las condiciones deseadas, contribuyendo lo máximo posible a la rentabilidad.",
+      "subs": [
+        {
+          "sub": "Almacén / Depósito / Expedición",
+          "desc": "Se refiere a la gestión diaria de los almacenes, su organización y la planificación de las entregas, registro de las mercancías a su llegada y salida, y la organización del almacenaje eficaz de mercancías en el almacén.",
+          "hab": [
+            "Análisis de inventario."
+          ]
+        },
+        {
+          "sub": "Compras",
+          "desc": "Se refiere a la adquisición de  todos aquellos bienes que la empresa necesita ya sea para la reventa o para el uso de los mismos por parte de la compañía.",
+          "hab": [
+            "Inteligencia comercial."
+          ]
+        },
+        {
+          "sub": "Distribución",
+          "desc": "Se refiere a la organización de  la recepción, almacenamiento y entrega de bienes a los clientes o puntos de venta. Pueden ser empleados por fabricantes, minoristas o empresas mayoristas que utilizan sus propios medios de transporte."
+        },
+        {
+          "sub": "Transporte",
+          "desc": "Se refieren a las actividades de planificación, organización, dirección, coordinación y control de los departamentos de producción y operaciones en empresas de transporte, almacenamiento y comunicaciones."
+        },
+        {
+          "sub": "Abastecimiento",
+          "desc": "Es la función logística dentro de la empresa mediante la cual la misma se provee de todos los materiales necesarios para su desempeño, planifica y dirige las políticas de licitaciones, compras, contratos y gestión inmobiliaria. Con el fin de garantizar el aprovisionamiento de bienes y/o servicios para las diferentes unidades de la empresa."
+        }
+      ]
+    },
+    {
+      "cat": "Marketing",
+      "desc": "Se refiere a la disciplina dedicada al análisis del comportamiento de los mercados y de los consumidores. El marketing analiza la gestión comercial de las empresas con el objetivo de captar, retener y fidelizar a los clientes a través de la satisfacción de sus necesidades.",
+      "subs": [
+        {
+          "sub": "Marketing digital",
+          "desc": "Se refiere la combinación y utilización de estrategias de comercialización en medios digitales. El Marketing Digital se configura como el marketing que hace uso de dispositivos electrónicos (computadoras) tales como: computadora personal, teléfono inteligente, teléfono celular, tableta, smart TV y consola de videojuegos para involucrar a las partes interesadas. El marketing digital aplica tecnologías o plataformas, tales como sitios web, correo electrónico, aplicaciones web (clásicas y móviles) y redes sociales. También puede darse a través de los canales que no utilizan Internet como la televisión, la radio, los mensajes SMS, etc. Los social media son un componente del marketing digital. Muchas organizaciones usan una combinación de los canales tradicionales y digitales de marketing; sin embargo, el marketing digital se está haciendo más popular entre los mercadólogos ya que permite hacer un seguimiento más preciso de su retorno de inversión (ROI) en comparación con otros canales tradicionales de marketing.",
+          "hab": [
+            "Community managing",
+            "Digital Advertising",
+            "Creación y curación de contenidos",
+            "Estrategia de contenidos",
+            "Redes sociales",
+            "E-mail Marketing",
+            "SEO/SEM",
+            "Desarrollo web",
+            "Display Marketing",
+            "Generación de leads",
+            "Monitoreo y analíticas",
+            "Métricas digitales",
+            "Análisis web",
+            "Mobile",
+            "Marketing Automation",
+            "Video",
+            "Partner Marketing",
+            "Respuesta directa",
+            "Media planning",
+            "Multimedia",
+            "Administración de proyectos"
+          ]
+        },
+        {
+          "sub": "Servicios creativos",
+          "desc": "Se refiere a la elaboración de conceptos que expresan el valor y los beneficios que ofrecen las marcas de los clientes al público meta. En términos simples, el grupo creativo desarrolla el mensaje publicitario. El grupo creativo de una agencia por lo común incluye un director creativo, un director de arte ilustradores y redactores de textos."
+        },
+        {
+          "sub": "Operaciones de marketing",
+          "desc": " Se refiere a una gestión que parte de la voluntad, de las ganas de conquistar mercados tanto a corto como a medio plazo; muy parecido a la típica gestión comercial realizada sobre la base de las cuatro."
+        },
+        {
+          "sub": "Comunicaciones",
+          "desc": "Se refiere a la iniciativa tomada por las organizaciones para hacer que sus productos y servicios sean conocidos entre los usuarios finales. La comunicación de marca abarca todo el camino en la promoción de productos y servicios entre el público objetivo a través de cualquiera de los siguientes medios: Publicidad, Promoción de ventas, Relaciones públicas, Marketing directo, Venta personal, Las redes sociales, etc."
+        },
+        {
+          "sub": "Investigación y análisis",
+          "desc": "Se refiere a la recopilación y el análisis de información, en lo que respecta al mundo de la empresa y del mercado, realizados de forma sistemática o expresa, para poder tomar decisiones dentro del campo del marketing estratégico y operativo."
+        },
+        {
+          "sub": "Relaciones públicas",
+          "desc": "Se refiere a la actividad profesional que se ocupa de promover o prestigiar la imagen pública de una empresa o de una persona mediante el trato personal con diferentes personas o entidades que se dedica a esta actividad o profesión."
+        },
+        {
+          "sub": "Business Intellingence",
+          "desc": "Se refiere a las aplicaciones, la infraestructura y las herramientas, y las mejores prácticas que permiten el acceso y el análisis de la información para mejorar y optimizar las decisiones y rendimiento."
+        },
+        {
+          "sub": "Marketing Tradicional",
+          "desc": "Se refiere a la disciplina dedicada al análisis del comportamiento de los mercados y de los consumidores. El marketing analiza la gestión comercial de las empresas con el objetivo de captar, retener y fidelizar a los clientes a través de la satisfacción de sus necesidades.",
+          "hab": [
+            "Cuentas",
+            "Análisis de campo.",
+            "Trade Marketing.",
+            "Análisis de marca.",
+            "Medios",
+            "Análisis de promociones y eventos.",
+            "Análisis de experiencia de usuario.",
+            "Visual merchandising",
+            "Inteligencia de mercado"
+          ]
+        }
+      ]
+    },
+    {
+      "cat": "Recursos Humanos",
+      "desc": "Se refiere a la selección y contratación del personal idóneo para cada puesto laboral vacante, y también del mantenimiento de un plantel laboral con posibilidades y comodidades, en buenos ambientes, con respeto y tolerancia.",
+      "subs": [
+        {
+          "sub": "Posicionamiento",
+          "desc": "Se refiere a la actividad de darle la posición adecuada al personal dentro de la organización.",
+          "hab": [
+            "Selección",
+            "Reclutamiento",
+            "Pruebas psicométricas",
+            "Entrevistas",
+            "Aplicación de pruebas",
+            "Registro de personas",
+            "Análisis",
+            "Descripción",
+            "Diseño",
+            "Ampliación de puestos",
+            "Promociones y transferencias."
+          ]
+        },
+        {
+          "sub": "Retención de personal",
+          "desc": "Se refiere a la métrica clave que los directivos siguen para determinar si hay brechas críticas entre la capacidad de los equipos de liderazgo para atraer y retener gran talento.",
+          "hab": [
+            "Consejos",
+            "Evaluación del desempeño",
+            "Cálculo de la rotación",
+            "Salud y prevención de accidentes",
+            "Prestaciones y servicios a los trabajadores."
+          ]
+        },
+        {
+          "sub": "Relaciones en el trabajo",
+          "desc": "Se refiere a las relaciones que se establecen entre el trabajo y el capital en el proceso productivo. En esa relación, la persona que aporta el trabajo se denomina trabajador, en tanto que la que aporta el capital se denomina empleador, patronal o empresario.",
+          "hab": [
+            "Relaciones con los empleados",
+            "Relaciones sindicales",
+            "Huelgas",
+            "Negociaciones colectivas",
+            "Contratos colectivos e individuales",
+            "Acuerdos mutuos."
+          ]
+        },
+        {
+          "sub": "Formación y Desarrollo",
+          "desc": "Se refiere al conjunto de actividades cuyo propósito es mejorar su rendimiento presente y futuro aumentando sus capacidades a través del desarrollo de sus conocimientos, habilidades y actitudes.",
+          "hab": [
+            "Capacitación en el puesto",
+            "Formación y desarrollo nómina menor",
+            "Formación y desarrollo nómina intermedia",
+            "Formación y desarrollo nómina superior"
+          ]
+        },
+        {
+          "sub": "Remuneración",
+          "desc": "Se refiere a la gestión y análisis de las actividades relativas al pago de los trabajadores y su relación entre el trabajo y el capital en el proceso productivo. En esa relación, la persona que aporta el trabajo se denomina trabajador, en tanto que la que aporta el capital se denomina empleador, patronal o empresario.",
+          "hab": [
+            "Encuestas salariales",
+            "Planes de incentivos",
+            "Reparto de utilidades",
+            "Adquisición de acciones",
+            "Ascensos y aumentos salariales."
+          ]
+        },
+        {
+          "sub": "Comunicaciones internas",
+          "desc": "Se refiere al uso planeado de acciones de comunicación para influenciar sistemáticamente el conocimiento, las actitudes y los comportamientos de los empleados actuales, fomentando su participación y ayudando a generar cambios.",
+          "hab": [
+            "Revista interna",
+            "Reglamento para empleados",
+            "Control de ruido",
+            "Investigaciones de actitud y clima laboral."
+          ]
+        },
+        {
+          "sub": "Organización",
+          "desc": "Se refiere a la organización que está definida en función de los Ciclos de Operación (o procesos del negocio), los cuales se deben estructurar según los Segmentos de Negocios que a su vez se tienen que definir de acuerdo a los requerimientos de los clientes. En base a estos criterios anteriores se deben establecer los roles y responsabilidades, equipos de trabajo y organigramas de la empresa para comunicar y coordinar con eficacia la ejecución de las actividades asignadas a cada uno de los empleados y colaboradores.",
+          "hab": [
+            "Diseño de la estructura organizacional",
+            "Planeación y evaluación",
+            "Innovación",
+            "Reducción del conflicto",
+            "Superación de las resistencias",
+            "Cambios organizacionales."
+          ]
+        },
+        {
+          "sub": "Administración de RRHH",
+          "desc": "Se refiere a la planeación, organización, desarrollo y coordinación, así como también en el control de técnicas capaces de promover el desempeño eficiente del personal, a la vez que la organización representa el medio que permite a las personas que colaboran en ella alcanzar los objetivos individuales relacionados directa o indirectamente con el trabajo.",
+          "hab": [
+            "Opciones de modelos administrativos",
+            "Autoritario",
+            "Consultivo",
+            "Participativo",
+            "Auto administración",
+            "Asistencia para el cambio."
+          ]
+        },
+        {
+          "sub": "Políticas y planeación de personal",
+          "desc": "Se refiere son una orientación administrativa para impedir que los trabajadores realicen labores que no desean hacer, lo que acarrearía que no se cumplan a cabalidad todas las funciones que ya se han asignado con anterioridad.",
+          "hab": [
+            "Definición de los objetivos de la organización",
+            "Políticas y estrategias",
+            "Identificación",
+            "Cumplimiento de políticas",
+            "Planeación de RH."
+          ]
+        },
+        {
+          "sub": "Auditoría e investigación",
+          "desc": "Se refiere al método integral de revisión de las políticas, los procedimientos, la documentación y los sistemas de recursos humanos, con el fin de identificar las necesidades de mejora y crecimiento de la función de recursos humanos, así como de asegurar el cumplimiento de las siempre cambiantes normas y reglamentos.",
+          "hab": [
+            "Informes administrativos",
+            "Evaluación de políticas y programas",
+            "Estudios de investigación",
+            "Análisis de costos y beneficios."
+          ]
+        }
+      ]
+    },
+    {
+      "cat": "Traducciones",
+      "desc": "Se refiere a la actividad que comprende la interpretación del significado de un texto cualquiera en una lengua (el llamado texto origen) a otro texto equivalente en otra lengua (llamado texto meta).",
+      "subs": [
+        {
+          "sub": "Interprete público",
+          "desc": "Se refiere a la actividad profesional del traductor certificado para traducir documentos oficiales. Existen múltiples documentos que requieren una traducción legal, como pueden ser un expedientes académicos, sumarios penales, certificados de defunción, de matrimonio... y en general cualquier documento a presentar en procesos administrativos o judiciales.",
+          "hab": [
+            "Ingles – Castellano – Inglés",
+            "Francés – Castellano – Francés",
+            "Alemán – Castellano –Alemán",
+            "Italiano – Castellano – Italiano",
+            "Otros",
+            "Legal",
+            "Ciencias",
+            "Noticias",
+            "Académicos"
+          ]
+        },
+        {
+          "sub": "Traducción libre",
+          "desc": "Se refiere a la actividad del traductor para documentos que no requieran de una certificación de autenticidad del contenido.",
+          "hab": [
+            "Ingles -Castellano – Inglés",
+            "Francés – Castellano – Francés",
+            "Alemán – Castellano – Alemán",
+            "Italiano – Castellano – Italiano",
+            "Otros",
+            "Legal",
+            "Ciencias",
+            "Noticias",
+            "Académicos",
+            "Páginas WEB"
+          ]
+        }
+      ]
+    }
+  ]

@@ -1,0 +1,678 @@
+<%- include('../Client/partials/header'); -%>
+
+<head>
+  <link rel="stylesheet" href="../../../assets/styles/maincopia.css" />
+</head>
+
+<body id="page-top" onload="loadChat();">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <%- include('./partials/nav'); -%>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin: 50px 0 0px 0;">
+            <a class="fas fa-arrow-left" style="width: auto !important;" href="/client"><p style="font-family: Quicksand; display: inline-block;">&nbsp&nbsp Volver a inicio </p></a></div>
+
+
+            <!-- modal for receipt -->
+            <div class="modal fade" id="Modal-receipt" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+              <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div
+                  class="modal-content"
+                  style="border-radius: 21px; padding: 35px;"
+                >
+                <button
+                  style="text-align: end; outline: 0;"
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true" class="px-2" id="modalClose-blue"
+                    >&times;</span
+                  >
+                </button>
+                  <div class="modal-header" style="margin: 0 auto;">
+                    <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#fe5d60">Recibos</h4>
+                  </div>
+                  <br>
+                  <div class="modal-body">
+                    <div class="card-body">
+                      <p><br/></p>
+                      <div class="row">
+                          <div class="col-12">
+                              <div id="html_services" class="" style="
+                              border-radius: 10px;
+                              border: solid 1px #bcbcca;">
+                              <%- html_services %>
+                            </div>
+                            <p><br/></p>
+
+                          </div>
+                        </div>
+                    <div class="row" align="right">
+                      <div class="col-6"></div>
+                      <div class="col-6" align="right">
+                        <button id="pdfService" onclick="download('services');" class="btn btn-block btn-primary px-4 label_style2" style="font-weight: normal; width: 100%; margin-top: 50px; ">
+                          Descargar PDF
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- end of modal -->
+
+          <!-- modal for rate -->
+          <div class="modal fade" id="Modal-rateClient" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+              <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+                <div class="modal-header" style="margin: 0 auto;">
+                  <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#4444ff">¡Felicidades!</h4>
+                </div>
+
+                <br>
+                <div class="modal-body">
+                  <div class="card-body">
+                    <div class="row">
+                      <div id="desc"class="col-12">
+
+                        <p>
+                          Has completado exitosamente tu oportunidad de trabajo con <%= cliente.firstname %> <%= cliente.lastname %>, esperemos que todo haya culminado de la mejor manera y puedan trabajar juntos de nuevo, por eso nos gustaría saber cómo fue tu experiencia.
+                          <br><br>
+                          ¡Para nosotros es muy valiosa tu opinión! ¡Muchas gracias!
+                          <br>
+                          <br>
+
+                          <a href="/client/profile"><img class="img-profile rounded-circle" src="<%= cliente.photo %>" style="width: 60px; height: 60px; object-fit: cover;"></a>
+                          <a href="/client/profile" style="font-family: Quicksand; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.33; color: #2a2a35; margin-right: 10px; text-decoration: none; margin-top: -20px;"><%= cliente.firstname %> <%= cliente.lastname %></a>
+                        </p>
+                      </div>
+                    </div>
+                    <form action="/partner/rateClient/<%= cliente._id%>" enctype="application/form-data" method="post" >
+                      <div class="row">
+                        <div class="col-12">
+
+                          <section
+                          class="radio_requeriments3"
+                          id="tabs3-3"
+                          style=""
+                          >
+                          <label>
+                            <input
+                            type="radio"
+                            name="rate"
+                            value="Muy Deficiente"
+                            id="radio000"
+                            />
+                            <div class="btn_nav4 btn-sik4">
+                              <span>Muy Deficiente</span>
+                            </div>
+                          </label>
+                          <label>
+                            <input
+                            type="radio"
+                            name="rate"
+                            value="Deficiente"
+                            id="radio111"
+                            />
+                            <div class="btn_nav4 btn-sik4">
+                              <span>Deficiente</span>
+                            </div>
+                          </label>
+                          <label>
+                            <input
+                            type="radio"
+                            name="rate"
+                            value="Normal"
+                            id="radio222"
+                            />
+                            <div class="btn_nav4 btn-sik4">
+                              <span>Normal</span>
+                            </div>
+                          </label>
+                          <label>
+                            <input
+                            type="radio"
+                            name="rate"
+                            value="Buena"
+                            id="radio333"
+                            />
+                            <div class="btn_nav4 btn-sik4">
+                              <span>Buena</span>
+                            </div>
+                          </label>
+                          <label>
+                            <input
+                            type="radio"
+                            name="rate"
+                            value="Muy Buena"
+                            id="radio444"
+                            />
+                            <div class="btn_nav4 btn-sik4">
+                              <span>Muy Buena</span>
+                            </div>
+                          </label>
+                        </section>
+
+                        <input type="text" name="requirement" value="<%= requirement._id%>" hidden/>
+                        <p> COMENTARIO </p>
+
+                        <textarea  type="text" class="form-control" name="comment" style="border:0;" ></textarea>
+                        <button type="submit" class="btn btn-block btn-primary px-4 label_style2" style="font-weight: normal; width: 100%; margin-top: 50px; ">
+                          Enviar calificación
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- end of modal -->
+
+        <!-- modal for attachment -->
+        <div class="modal fade" id="Modal-attachment" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+              <button
+              type="button"
+              class="close "
+              data-dismiss="modal"
+              aria-label="Close"
+              >
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-header" style="margin: 0 auto;">
+
+              <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#fe5d60">Entregable</h4>
+
+            </div>
+            <br>
+            <div class="modal-body">
+              <div class="card-body">
+
+
+                <form id="postAttachment" enctype="multipart/form-data" action="/opportunity/uploadAttachment/<%= requirement._id%>" method="post">
+                  <fieldset>
+
+                    <div class="col-12 col-md-6 mb-4">
+                      <label style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">PROPUESTA</label><br>
+                      <span>
+                        <input type="file" name="attachment" id="file_attachment" class="inputfile form-input" style="padding:0.25rem;" />
+                        <label for="file_attachment" class="label_style"><span>Adjuntar archivo principal &nbsp</span><i class="fa fa-paperclip" aria-hidden="true"></i></label>
+                      </span>
+                    </div>
+
+                    <div class="col-12 col-md-6 mb-4">
+                      <label style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Otros archivos</label><br>
+                      <span>
+                        <input type="file" name="other_attachment" id="other_attachment" class="inputfile form-input" style="padding:0.25rem;" multiple/>
+                        <label for="other_attachment" class="label_style"><span>Adjuntar otros archivos &nbsp</span><i class="fa fa-paperclip" aria-hidden="true"></i></label>
+                      </span>
+
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-sm-12">
+                        <label for="comment_attachment" style="font-family: Quicksand; font-weight: bold; color: #bcbcca ;">COMENTARIO</label>
+                        <textarea name='comment_attachment' id='comment_attachment' class="form-control" placeholder="Escribe un on comentario (opcional)" style="color: #2a2a35"></textarea>
+                      </div>
+                    </div>
+                    <button id="sendFiles" type="submit" class="asilinks-btn orange-btn">
+                      Enviar Preview                             </button>
+                    </fieldset>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- end of modal -->
+
+
+        <!-- modal for extension -->
+        <div class="modal fade" id="Modal-extension" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+              <div class="row ml-auto">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-header" style="margin: 0 auto;">
+                <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#fe5d60">Prórroga</h4>
+              </div>
+
+              <div class="modal-body">
+                <div class="card-body">
+                  <form enctype="multipart/form-data">
+                    <fieldset>
+                      <div class="form-group row">
+                        <div class="col-12 delete_after">
+                          <label for="expiration" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">TIEMPO EXTRA NECESITADO</label>
+                          <span class="expiration">
+                            <br>
+                            <input type="number" class="form-input-number" style="color: #2a2a35" id="time" name="time" value="<%= newDeadline %>" required="true" readonly>
+                            <input type="text" class="form-input" style="color: #2a2a35; width: 70%;" id="estimated" value="<%= requirement.proposal.estimatedUnit%>" required="true" readonly>
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <label for="title" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Motivo</label>
+                          <textarea rows="8" cols="30" class="form-input" id="comment" placeholder="" style="color: #2a2a35" required="true"></textarea>
+                        </div>
+                      </div>
+                    </fieldset>
+
+                  </form>
+                  <button class="btn btn-block btn-primary px-4 label_style2"
+                  data-dismiss="" style="width: 100%; margin-top: 25px;"
+                  id="sendExtension"
+                  onclick="sendExtension('<%= requirement._id %>');">
+                  Enviar Prórroga
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end of modal -->
+
+      <!-- Content Row -->
+      <div class="row">
+        <div class="col-xl col-lg">
+          <div class="card shadow mb-4">
+            <!-- Card Body -->
+            <div class="card-body">
+              <div class="row no-gutters">
+                <div class="col">
+                  <img src="https://picsum.photos/500.webp" class="card-img rounded2" alt="..." style="width: 100%; height: 100%;">
+                </div>
+                <div class="col-md-8 col-8 col-sm-8">
+                  <div class="card-body" style="padding: 1.25rem !important;">
+                    <h5 class="card-title breakpoint_font" style="font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #2a2a35;"><%= requirement.name %></h5>
+                    <p class="card-text" style="font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: normal; color: #2a2a35;">Por <%= user.firstname %> <%= user.lastname %></p>
+                    <a href="" class="btn btn-outline-primary style_btn mb-2 mb-md-0" style="font-size: .7rem;"><%= requirement.category_name %></a>
+                    <a href="" class="btn btn-outline-primary style_btn" style="font-size: .7rem;"><%= requirement.subcategory_name %></a>
+                  </div>
+                </div>
+              </div>
+              <br><br>
+              <h6 class="col" style="font-weight: bold; color: #2a2a35;">Descripión</h6>
+              <p class="col"><%= requirement.description %></p>
+              <ul id="progressbar" style="margin: 0; padding: 0; list-style:none;" class="col">
+
+                <li style="margin: 20px 0;">
+                  <a class="fas fa-check user_style" style="display: inline;"
+                  ><p style="font-family: Quicksand; display: inline-block; color: #2a2a35;">
+                    &nbsp;&nbsp; Propuesta aceptada el:
+                  </p>
+                  <p
+                  style="
+                  font-family: Quicksand;
+                  display: inline-block;
+                  color: #2a2a35;
+                  font-weight: normal;
+                  "
+                  >
+                  &nbsp;<%= requirement.proposal.acceptedDate %>
+                </p></a
+                >
+              </li>
+              <li style="margin: 20px 0;">
+                <a class="fas fa-briefcase user_style" style="display: inline;"
+                ><p style="font-family: Quicksand; display: inline-block; color: #2a2a35;">
+                  &nbsp;&nbsp; Tiempo de trabajo:
+                </p>
+                <p
+                style="
+                font-family: Quicksand;
+                display: inline-block;
+                color: #2a2a35;
+                font-weight: normal;
+                "
+                >
+                &nbsp;<%= requirement.proposal.estimatedTime %> <%=
+                requirement.proposal.estimatedUnit %>
+              </p></a
+              >
+            </li>
+            <li style="margin: 20px 0;">
+              <a class="fas fa-calendar-alt user_style-calendar" style="display: inline;"
+              ><p style="font-family: Quicksand; display: inline-block; color: #2a2a35;">
+                &nbsp;&nbsp; Fecha de entrega estimada:
+              </p>
+              <p
+              style="
+              font-family: Quicksand;
+              display: inline-block;
+              color: #2a2a35;
+              font-weight: normal;
+              "
+              >
+              &nbsp;<%= moment(requirement.proposal.deadline).format("DD/MM/YYYY") %>
+            </p></a
+            >
+          </li>
+          <li style="margin: 20px 0;">
+            <a class="fas fa-money-bill-wave user_style-money" style="display: inline;"
+            ><p style="font-family: Quicksand; display: inline-block; color: #2a2a35;">
+              &nbsp;&nbsp; Precio:
+            </p>
+            <p
+            style="
+            font-family: Quicksand;
+            display: inline-block;
+            color: #2a2a35;
+            font-weight: normal;
+            "
+            >
+            &nbsp;$<%= requirement.proposal.price %>
+          </p></a
+          >
+        </li>
+
+
+
+      </ul>
+      <% if (requirement.file) {%>
+        <h6 class="col" style="font-weight: bold; color: #2a2a35;">Adjuntos</h6>
+
+        <a href="<%= requirement.file %>" class="col" style=""><%= requirement.fileName %></a><br>
+        <% for (var f=0; f<requirement.otherFiles.length; f++) {%>
+          <a href='<%= requirement.otherFiles[f].filePath %>' class="col file"  style="" download='<%= requirement.otherFiles[f].fileName %>'><%= requirement.otherFiles[f].fileName %></a><br>
+        <% } %>
+
+        <% } %>
+        <% if (done) { %>
+
+          <button
+            class="btn btn-block btn-primary px-4 label_style2"
+
+            <% if (isRated) { %>
+              style="font-weight: normal; width: 100%; margin-top: 50px;  pointer-events: none;"
+              disabled
+            <%}else{%>
+              style="font-weight: normal; width: 100%; margin-top: 50px;"
+              data-toggle="modal" data-target="#Modal-rateClient"
+            <%}%>
+            >
+            <% if (isRated) { %>
+              Cliente calificado
+            <%}else{%>
+              Calificar al cliente
+            <%}%>
+
+          </button>
+
+          <div class="row" align="center"><div class="col-12">
+            <a data-toggle="modal" data-target="#Modal-receipt" style="
+            font-family: Quicksand;
+            text-align: center;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.43;
+            letter-spacing: normal;
+            color: #fe5d60;
+            cursor: pointer;
+            ">Ver recibo de pago</a>
+          </div>
+        </div>
+        <% } else { %>
+          <button data-toggle="modal" data-target="#Modal-attachment" class="btn btn-block btn-primary px-4 label_style2" style="font-weight: normal; width: 100%; margin-top: 50px; ">Adjuntar entregable</button>
+
+          <% }%>
+          <% if (requestExtension && !requirement.paymentDone) {%>
+
+            <div class="row" align="center"><div class="col-12">
+              <a data-toggle="modal" data-target="#Modal-extension" style="
+              font-family: Quicksand;
+              text-align: center;
+              font-weight: bold;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.43;
+              letter-spacing: normal;
+              color: #fe5d60;
+              cursor: pointer;
+              ">Solicitar Prórroga</a>
+            </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="col-xl col-lg">
+      <div class="card shadow mb-4" style="padding: 0;">
+        <!-- Card Body -->
+        <div class="card-body" style="padding: 0;">
+          <div class="col" style="padding: 0;">
+            <div class="settings-tray">
+              <div class="friend-drawer no-gutters friend-drawer--grey">
+                <img class="profile-image" src="<%= cliente.photo %>" onerror = 'this.src="https://st4.depositphotos.com/1000507/24026/v/450/depositphotos_240260608-stock-illustration-robocop-simple-abstract-vector-illustration.jpg"' alt="">
+                <div class="text">
+                  <h6><%= cliente.firstname%> <%= cliente.lastname %></h6>
+                  <p id="lastLogin" class="text-muted">
+                    <% if (cliente.lastLogin){ %>
+                      <%= moment(cliente.lastLogin).local().format("DD/MM/YYYY hh:mm a") %>
+                      <%} else {%>
+                        Offline
+                        <%}%>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <hr style="margin: 0 auto;">
+                <div class="text-center">
+                  <!-- <button class="btn btn-info" style="  border-radius: 18px; background-color: #f4f4ff; border: #f4f4ff; color: #000; font-weight: lighter;">AYER</button> -->
+                </div>
+                <div class="chat-panel" style="max-height: 50vh;overflow-y: scroll;" id="chat_panel">
+
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="chat-box-tray">
+          <!-- <i class="fas fa-paperclip"></i> -->
+          <% if (!requirement.paymentDone) { %>
+          <i class="fa">&nbsp;</i>
+          <input id="chat_message"type="text" placeholder="Escribe tu mensaje…" />
+          <i id="send_message" class="fas fa-paper-plane" onclick="sendMessage()"></i>
+          <%}%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+<!-- /.container-fluid -->
+
+
+</div>
+<!-- End of Main Content -->
+
+<!-- Footer -->
+<%- include('./partials/footer'); -%>
+<!-- End of Footer -->
+</div>
+<!-- End of Content Wrapper -->
+
+<%- include('./partials/sidebar'); -%>
+</div>
+</body>
+
+<%- include('../Client/partials/requirement/sub-footer'); -%>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+
+
+function download(type){
+  var receipt = $("#html_services").html();
+
+var doc = new jsPDF();
+var elementHandler = {
+  "#imgCheck": function (element, renderer) {
+    return true;
+  },
+  "#imgchecksrc": function (element, renderer) {
+    return true;
+  },
+};
+
+doc.fromHTML(receipt, 15, 15, {
+  width: 180,
+  elementHandlers: elementHandler,
+},function(d){doc.save("receipt_" + type + ".pdf");});
+
+}
+
+
+
+const socket = io();
+
+
+
+socket.on('private-message', (data) => {
+
+     if (data.message!=""){
+
+     var div_row = $("<div>").attr("class","row no-gutters").appendTo('#chat_panel');
+       if (data.me){
+         var div_col = $("<div>").attr("class","col-md offset-md-3 offset-sm-3 offset-3").appendTo(div_row);
+         var div_chat = $("<div>").attr("class","chat-bubble chat-bubble--right").append(data.message).appendTo(div_col);
+       } else {
+         var div_col = $("<div>").attr("class","col-md-9 col-sm-9 col-9").appendTo(div_row);
+         var div_chat = $("<div>").attr("class","chat-bubble chat-bubble--left").append(data.message).appendTo(div_col);
+       }
+     var p_text = $("<p>").attr("style","float: right; font-size: 10px; margin-top: 15px; color: #e97676;").append(data.time).appendTo(div_chat);
+     $("#lastLogin").html(data.lastLogin);
+     }
+   scrollSmoothToBottom()
+})
+
+socket.on('chat_disconnect', (data) => {
+  $("#lastLogin").html(moment().format("DD/MM/YYYY hh:mm a"));
+})
+
+// Execute a function when the user releases a key on the keyboard
+$('#chat_message').on("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    $("#send_message").click();
+  }
+});
+
+function sendMessage(){
+  var message = $('#chat_message').val();
+  var data = {
+    message,
+    isPartner: true,
+    id: socket.id,
+    user: <%- JSON.stringify(user._id) %>,
+    requirement: <%- JSON.stringify(requirement._id) %>
+  }
+  socket.emit('private-message', data, (error) => {
+     if (error) {
+       console.log(error);
+     }
+  })
+  $('#chat_message').val('');
+  scrollSmoothToBottom()
+}
+
+
+
+function identifyUser(){
+
+  var data = {
+    message:"",
+    isPartner: true,
+    id: socket.id,
+    user: <%- JSON.stringify(user._id) %>,
+    requirement: <%- JSON.stringify(requirement._id) %>
+  }
+  socket.emit('private-message', data, (error) => {
+     if (error) {
+       console.log(error);
+     }
+  })
+
+}
+
+function loadChat(){
+    identifyUser();
+    var talk =  <%- JSON.stringify(chat) %>;
+    var partner = <%- JSON.stringify(user) %>;
+
+    talk.forEach(function(c){
+
+      var div_row = $("<div>").attr("class","row no-gutters").appendTo('#chat_panel');
+        if (String(c.user) == String(partner._id)){
+          var div_col = $("<div>").attr("class","col-md offset-md-3 offset-sm-3 offset-3").appendTo(div_row);
+          var div_chat = $("<div>").attr("class","chat-bubble chat-bubble--right").append(c.message).appendTo(div_col);
+        } else {
+          var div_col = $("<div>").attr("class","col-md-9 col-sm-9 col-9").appendTo(div_row);
+          var div_chat = $("<div>").attr("class","chat-bubble chat-bubble--left").append(c.message).appendTo(div_col);
+        }
+      var p_text = $("<p>").attr("style","float: right; font-size: 10px; margin-top: 15px; color: #e97676;").append(c.time).appendTo(div_chat);
+    })
+    scrollSmoothToBottom()
+}
+
+function scrollSmoothToBottom() {
+   var div = document.getElementById("chat_panel");
+   $('#chat_panel').animate({
+      scrollTop: div.scrollHeight - div.clientHeight
+   }, 500);
+}
+
+function sendExtension(requirement) {
+
+    console.log("posted");
+    var reqInfo = {
+        comment: $("#comment").val(),
+        requirement
+    }
+
+    $.post("/opportunity/proposal/extension",
+        reqInfo,
+        function (data, status) {
+            console.log(data)
+            console.log(status);
+            if (data == "ok") window.location.reload();
+            else alert(data)
+        });
+}
+
+</script>

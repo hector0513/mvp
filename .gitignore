@@ -1,0 +1,12 @@
+node_modules/
+app/npm-debug.log
+app/package-lock.json
+server/package-lock.json
+truffle/package-lock.json
+app/transaction.log
+app/transaction.csv
+app/src/assets/uploads/requirements/*
+app/src/assets/uploads/works/*
+app/src/assets/uploads/proposals/*
+app/src/assets/uploads/users/*
+truffle/build/

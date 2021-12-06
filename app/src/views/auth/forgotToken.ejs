@@ -1,0 +1,108 @@
+<%- include('../partials/header-alt'); -%>
+
+<head>
+	<title>Recuperar contraseña</title>
+    <link rel="stylesheet" href="/assets/styles/login.css">
+    <link href="/assets/styles/Client/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="container-fluid pink-bg full-height text-28">
+	    <div class="row justify-content-center">
+			<div class="col-12 col-md-6">
+                <div class="card asilinks-card white-bg black-shadow mt-4">
+                    <div class="card-body small-title">
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <b>Introduce tu nueva contraseña</b>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+								<form action="/login/forgotPassword/<%= token %>" enctype='application/json' method="post">
+									<div class="row mx-2">
+										<% if (alert_message) { %>
+										<div class="col-md-2">
+										</div>
+										<div class="col-md-8 center-hor mb-4 text-14">
+											<div class="alert alert-<%= alert_message.type %>" role="alert">
+											  	<%= alert_message.message %>
+											</div>
+										</div>
+										<div class="col-md-2">
+										</div>
+										<% } %>
+										<div class="col-md-12 mb-3 text-left text-14">
+											<label for="email" class="my-0">CONTRASEÑA</label><br>
+											<input type="password" class="form-input" name="password" id="password"data-toggle="tooltip" data-placement="bottom" data-html="true" title="* Contener entre 8-16 caracteres<br>
+* Una mayúscula y una minúscula<br>
+* Un caracter no alfanumérico<br>
+* No debe contener la palabra 'contraseña'<br>
+* No ser vacío" onchange="check()" required>
+										</div>
+										<div class="col-md-2">
+										</div>
+										<div class="col-md-8">
+											<button type="submit" id="newPassword" class="asilinks-btn orange-btn">Envíar</button>
+										</div>
+										<div class="col-md-2">
+										</div>
+									</div>
+								</form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+	    </div>
+    </div>
+</body>
+
+<%- include('../partials/sub-footer-alt'); -%>
+
+<script type="text/javascript">
+
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip()
+
+    	document.getElementById('newPassword').disabled = true;
+	})
+
+	$('#password').focus(function() {
+
+		$('#password').tooltip('show')
+
+	})
+
+	function passwordCheck(id){
+
+    	var passRegex = new RegExp("^(?=.*\\d)(?=.*[\\u0021-\\u002f\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}$");
+
+    	var value = document.getElementById(id).value
+
+    	if ( !passRegex.test(value) )
+    		return false;
+
+    	return true;
+
+	}
+
+    function check() {
+
+    	document.getElementById('newPassword').disabled = true;
+
+    	if ( document.getElementById('password').value && !passwordCheck('password') ){
+
+	            $("#password").addClass("invalid-input")
+	            document.getElementById('newPassword').disabled = true;
+
+    	} else {
+
+	            $("#password").removeClass("invalid-input")
+	            document.getElementById('newPassword').disabled = false;
+
+    	}
+
+    }
+
+</script>

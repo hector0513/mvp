@@ -1,0 +1,98 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="proposal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:0;">
+        <h5 class="modal-title">Crear propuesta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+        </button>
+      </div>
+      <form enctype='multipart/form-data' method="post" action="/opportunity/proposal">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <label for="opportunity_time">TIEMPO ESTIMADO</label><br>
+                <div class="row">
+                  <div class="col-3">
+                    <input type="number" class="form-input" name="opportunity_time" id="opportunity_time" placeholder="1" min="1" max="10" required>
+                  </div>
+                  <div class="col-9">
+                    <select name="opportunity_type" id="opportunity_type" class="form-input" style="padding:0.35rem;" required>
+                      <option value="Día(s)">Día(s)</option>
+                      <option value="Semana(s)">Semana(s)</option>
+                      <option value="Mes(es)">Mes(es)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label for="opportunity_date">FECHA DE ENTREGA</label><br>
+                <input type="date" class="form-input" name="opportunity_date" id="opportunity_date" required>
+              </div>
+              <div class="col-12">
+                <label for="opportunity_price">PRECIO</label><br>
+                <input type="number" class="form-input" name="opportunity_price" id="opportunity_price" required>
+              </div>
+              <div class="col-12">
+                <label for="opportunity_proposal">PROPUESTA</label><br>
+                <span>
+                  <input type="file" name="proposal_file" id="proposal_file" class="inputfile form-input" style="padding:0.25rem;">
+                  <label for="proposal_file" class="label_style" id="file_label"><span>Adjuntar archivo(s) &nbsp</span><i class="fa fa-paperclip" aria-hidden="true"></i></label>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top:0;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <button id="opportunityProposal" type="submit" class="asilinks-btn orange-btn">Enviar propuesta</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="/assets/scripts/helpers.js"></script>
+
+<script type="text/javascript">
+
+  var today = new Date();
+  // Minimo de 13 años para crearse una cuenta
+  var year = today.getFullYear()
+  var month = today.getMonth() + 1
+  var day = today.getDate()
+
+  if(day<10)
+    day='0'+day
+
+  if(month<10)
+    month='0'+month
+
+  year = year.toString();
+  month = month.toString();
+  day = day.toString();
+
+  var fullDate = year +'-'+ month +'-'+ day
+  
+  // Pone el limite al calendario
+  document.getElementById("opportunity_date").setAttribute("min", fullDate);
+
+  $("#proposal_file").change(function() {
+
+    if (!this.files[0])
+      return $("#file_label").html("<span>Adjuntar archivo(s) &nbsp</span><i class='fa fa-paperclip' aria-hidden='true'></i>")
+
+    $("#file_label").text(this.files[0].name)
+
+  });
+
+</script>

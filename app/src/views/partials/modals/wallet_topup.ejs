@@ -1,0 +1,160 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="topup">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0;">
+        <h5 class="modal-title">Recargar wallet</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+        </button>
+      </div>
+      <form enctype="application/json" method="post">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <label for="topup_amount">CANTIDAD</label><br />
+                <input
+                  type="number"
+                  class="form-input"
+                  name="topup_amount"
+                  id="topup_amount"
+                  placeholder="200"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="topup_email">CORREO</label><br />
+                <input
+                  type="email"
+                  class="form-input"
+                  name="topup_email"
+                  id="topup_email"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="topup_card_number">NÚMERO DE TARJETA</label><br />
+                <input
+                  type="tel"
+                  inputmode="numeric"
+                  pattern="[0-9\s]{13,19}"
+                  autocomplete="cc-number"
+                  class="form-input"
+                  name="topup_card_number"
+                  id="topup_card_number"
+                  maxlength="19"
+                  placeholder="xxxx xxxx xxxx xxxx"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="topup_expiry_month">MES VENCIMIENTO</label><br />
+                <input
+                  type="tel"
+                  class="form-input"
+                  name="topup_expiry_month"
+                  id="topup_expiry_month"
+                  pattern="\d*"
+                  placeholder="MM"
+                  minlength="2"
+                  maxlength="2"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="topup_expiry_year">AÑO VENCIMIENTO</label><br />
+                <input
+                  type="tel"
+                  class="form-input"
+                  name="topup_expiry_year"
+                  id="topup_expiry_year"
+                  pattern="\d*"
+                  placeholder="YYYY"
+                  minlength="4"
+                  maxlength="4"
+                  required
+                />
+              </div>
+              <div class="col-6">
+                <label for="topup_cvv">CVV</label><br />
+                <input
+                  type="password"
+                  class="form-input"
+                  name="topup_cvv"
+                  id="topup_cvv"
+                  pattern="\d*"
+                  maxlength="4"
+                  placeholder="xxx"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="topup_card_name">NOMBRE EN TARJETA</label><br />
+                <input
+                  type="text"
+                  class="form-input"
+                  name="topup_card_name"
+                  id="topup_card_name"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <label for="topup_country">PAÍS O REGIÓN</label><br />
+                <select
+                  name="topup_country"
+                  id="topup_country"
+                  class="form-input"
+                  style="padding: 0.35rem;"
+                  required
+                >
+                  <option value="Venezuela">Venezuela</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top: 0;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <button
+                  id="topupWallet"
+                  type="submit"
+                  class="asilinks-btn orange-btn"
+                >
+                  Recargar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="/assets/scripts/helpers.js"></script>
+<script type="text/javascript">
+  $("#topupWallet").click(function () {
+    var cardInfo = getFormInfo();
+
+    $.post("/wallet/topup", cardInfo)
+      .done(function (data) {
+        alert("Topup exitoso");
+        window.location.replace("/partner/wallet");
+        //$('#checkout').modal("hide")
+      })
+      .fail(function (xhr, textStatus, errorThrown) {
+        console.log(xhr.responseText);
+        alert("Error guardando la recarga! " + xhr.responseText);
+      });
+
+    return false;
+  });
+</script>

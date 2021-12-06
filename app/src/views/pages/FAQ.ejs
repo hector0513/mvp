@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta content="utf-8" http-equiv="encoding" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1"
+    />
+
+    <meta
+      name="description"
+      content="Compartiendo en nuestro sistema se gana"
+    />
+    <title>Asilinks</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!--favicon-->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon/favicon-16x16.png"
+    />
+
+    <link
+      rel="mask-icon"
+      href="/assets/favicon/safari-pinned-tab.svg"
+      color="#ff0000"
+    />
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico" />
+
+    <link rel="stylesheet" href="../../assets/styles/style2(principal).css" />
+  </head>
+  <body>
+    <header class="header-faq">
+      <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="/">
+            <img
+            src="../../assets/images/asilinks-logo-footer.png"
+            alt="logo"
+            class="imagen-footer"
+          />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+         <i class="bx bx-menu-alt-right color_asilinks"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto text-center text-md-left">
+              <li class="nav-item">
+                <a class="nav-link" href="/info">¿Cómo funciona? </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/benefits">Beneficios</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="/FAQ"
+                  >FAQ <span class="sr-only">(current)</span></a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#contacto" id="contact-link">Contáctanos</a>
+              </li>
+            </ul>
+            <form class="form-inline navegacion">
+              <ul class="navbar-nav">
+                <li class="nav-item pr-3 active">
+                  <a
+                    class="nav-link"
+                    href="/login"
+                    [routerLinkActive]="['active-header']"
+                    >Iniciar sesión</a
+                  >
+                </li>
+              </ul>
+              <a
+                class="btn btn-primary px-5 py-4"
+                *ngIf="!username"
+                href="/login/register"
+                role="button"
+                >Registrarme</a
+              >
+            </form>
+          </div>
+        </nav>
+      </div>
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-md-6 col-sm-12 ">
+
+            <h1>Preguntas &nbsp; frecuentes</h1>
+
+         </div>
+        </div>
+      </div>
+    </header>
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="row reverse">
+                    <div class="col-md-6">
+                        <h2 class="text-center ">FAQ</h2>
+                        <div class="  text-center">
+                            <label>
+                              <input type="radio" checked name="radio" id="radio0">
+                                <div class="btn_nav btn-sik" id="asilinks"><span>Sobre Asilinks</span></div>
+                              </label>
+                              <label>
+                                <input type="radio" name="radio" id="radio1">
+                                <div class="btn_nav btn-sik" id="client"><span>Sobre clientes</span></div>
+                              </label>
+                              <label>
+                                <input type="radio" name="radio" id="radio2">
+                                <div class="btn_nav btn-sik" id="partner"><span>Sobre socios</span></div>
+                              </label>
+                            </div>
+                    </div>
+                    <div class="col-md-6  text-center">
+                        <img src="../../assets/images/group-13.png" alt="imagen" class="img-fluid group-13">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq  section">
+            <div class="container">
+
+              <ul class="faq-list" id="list">
+                <li data-aos="fade-up" data-aos-delay="100" class="asilinks">
+                  <a data-toggle="collapse" id="faq1_link" class="collapsed py-5" href="#faq1"
+                    >¿Qué es Asilinks?
+                    <i class="fas fa-angle-up"></i>
+                  </a>
+                  <div id="faq1" class="collapse" data-parent=".faq-list">
+                    <p class="py-5 ">
+                        Es una plataforma que organiza una red de profesionales en libre ejercicio y empresas de prestación de servicios de distintas disciplinas, con el fin de interconectarlos para la prestación de servicios cruzados con los clientes (PyMEs) de cada quien. Ello, con el fin de incrementar los volúmenes de servicios para los afiliados a través de la sinergia que AsiLinks provee, aminorando los tiempos para su captación e incrementando significativamente los ingresos, tanto por ejecución del servicio remitido cuanto por la obtención de comisiones por remitirlo a la red.<br><br>
+
+                        Todos para uno, y uno para todos…
+                    </p>
+                  </div>
+                  <hr>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="200" class="asilinks">
+                  <a data-toggle="collapse" href="#faq2" class="collapsed py-5"
+                    >¿En qué se basa Asilinks?  <i class="fas fa-angle-up"></i>
+                  </a>
+                  <div id="faq2" class="collapse" data-parent=".faq-list">
+                    <p class="py-5">
+                        Esta red se contextualiza en el llamado Sharing Economy o Consumo Colaborativo, el cual es el modelo de negocios que se refiere al uso y acceso de recursos físicos, activos o humanos de otras personas para la obtención de beneficios monetarios o no monetarios. El consumo colaborativo o economía colaborativa se define como una interacción entre dos o más sujetos, a través de medios digitalizados o no, que satisface una necesidad real o potencial, a una o más personas.<br><br>
+
+                        Asilinks como plataforma de consumo colaborativo brinda apoyo a los profesionales en libre ejercicio o también llamados freelancers, quienes son personas que se autoemplean para ofrecer servicios generalmente a empresas o a múltiples clientes a la vez. El incremento exacerbado de freenlcers en el mundo ha traído como tendencia el Freelancer Economy la cual gira en torno a la contratación de trabajadores autónomos para realizar trabajos específicos a corto plazo a cambio los honorarios pactados.<br><br>
+
+                        Respecto a los freelancers, son muchos los motivos que les impulsan a escoger éste modelo de subsistencia, tales como Flexibilidad y Libertad, balance entre trabajo y vida personal, tienen más oportunidades de trabajo, perciben más ingresos por cliente, no se sienten empleados y en consecuencia se reduce a cero el riesgo de ser despedido, se trabaja bajo condiciones de stress diferentes y viven bajo sus propias reglas. Todo lo anterior ha hecho proliferar el llamado Freelancer Economy de forma exponencial a nivel mundial.<br><br>
+
+                        Los beneficios inmediatos de ser freelancer son el mayor poder de decisión frente al ejercicio de su actividad, la diversidad de los asuntos que puedan atender, la pertenencia de cada proyecto obtenido, la libertad de expresar profesionalmente su punto de vista profesional sin la línea determinada de un grupo empresarial, como ya se dijo, las ganancias son mayores e inmediatas, tienen el control del tiempo propio en función de su planificación y ejecución de trabajos o proyectos.<br><br>
+
+                        Sin embargo, el Freelancer Economy presenta para sus protagonistas una serie de desventajas tales como: no hay ingresos constantes, no se aprende a trabajar en equipo, el intercambio de conocimiento es limitado, la responsabilidad por la ejecución de los trabajos es total, limitadas son las oportunidades de mejorar sobre la base de falta de supervisión, dificultad para mantener clientes fijos, habida cuenta de la condición de solitario el tiempo para la captación de nuevos clientes es muy limitado y en general, los freelancers no tienen un fondo de retiro o ingresos constantes provenientes de rentas pasivas.<br><br>
+
+                        Por otra parte, la pequeña y mediana empresa tienen las mismas necesidades que una gran empresa desde el punto de vista de los servicios profesionales que ellos demandan pero en escalas más pequeñas, lo que impide tener puestos fijos con profesionales en determinadas áreas de la empresa, por lo que la contratación a destajo o por asignación específica es la regla en este tipo de microeconomías.<br><br>
+
+                        Partiendo de las desventajas de pertenecer al Freelancer Economy, nace Asilinks como una plataforma que brinda a sus miembros cubrir las deficiencias que el ejercicio libre da la profesión presenta. Asumiendo el modelo de economía colaborativa, la plataforma mediante el intercambio de clientes (pequeña y media empresa) genera para cada uno de los miembros la venta cruzada de servicios mediante la unión de necesidades puntuales de éstos con los primeros.<br><br>
+                    </p>
+                  </div>
+                  <hr>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="300" class="asilinks">
+                  <a data-toggle="collapse" href="#faq3" class="collapsed py-5"
+                    >¿Cuál es la filosofía de Asilink? <i class="fas fa-angle-up"></i>
+                  </a>
+                  <div id="faq3" class="collapse" data-parent=".faq-list">
+                    <p class="py-5">
+                        Asilinks nace bajo la idea de compartir para que todos ganen. En un mundo tan individualista, los logros personales suelen ser muy mercenarios, sin embargo, bajo la idea de las economías colaborativas Asilinks crea un espíritu de colaboración, siendo una plataforma que hace algo para los demás e invita a las personas a hacer algo los miembros de su comunidad profesional, permitiendo el recibir más en la medida en que más das. Busca convertirse en un centro de confluencia de voluntades asistenciales y revolucionar la manera de trabajar, bajo esa idea de todos para uno y uno para todos.
+                    </p>
+                  </div>
+                  <hr>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="400" class="asilinks">
+                  <a data-toggle="collapse" href="#faq4" class="collapsed py-5"
+                    >¿Qué significa compartir un cliente y qué implica?
+                    <i class="fas fa-angle-up"></i></a>
+                  <div id="faq4" class="collapse" data-parent=".faq-list">
+                    <p class="py-5">
+                        Es la posibilidad de brindarles a tus clientes una atención profesional integral de 360° en las áreas del saber que tú no manejas, integrando tus servicios propios con los de tu comunidad profesional, lo que va más allá de la satisfacción del cliente pues encuentra respuesta a sus necesidades profesionales en un solo lugar.<br><br>
+
+                        ¿Cómo los compartes? Refiriéndolos a la plataforma; así tu cliente estará asociado a tu código vitaliciamente y de todos los servicios que éste consuma en el Sitio Web de Asilinks a ti te corresponderá una comisión variable en función a tu nivel como referente y el cruce con el nivel de los socios que atienden a sus requerimientos, de este modo el cliente siempre será tuyo y tendrás tu cuota de los honorarios aceptados, es una nueva forma sencilla y segura de hacer networking.
+                    </p>
+                  </div>
+                  <hr>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="500" class="asilinks">
+                  <a data-toggle="collapse" href="#faq5" class="collapsed py-5"
+                    >¿Cuáles son los beneficios Funcionales y Emocionales que ofrece Asilinks a sus usuarios? <i class="fas fa-angle-up"></i></a>
+                  <div id="faq5" class="collapse" data-parent=".faq-list">
+                    <p class="pt-5">
+                      <b> 1. Beneficios Funcionales y Emocionales.</b> <br><br>
+
+                       <b> 1. Funcionales - desde el punto de vista del freelancer.</b><br>
+
+                        Ahorro de tiempo, para la búsqueda de nuevos clientes, y en las gestiones administrativas de cobranza.<br>
+
+                        Ingresos constantes, mediante el proveimiento de nuevos trabajos, y comisiones por intercambio de clientes.<br>
+
+                        Promoción y Marketing directo: la plataforma premia a sus profesionales mediante el ascenso de niveles dentro de la plataforma y la promoción de los mejores en la comunidad de clientes mediante la asignación de más trabajos.<br>
+
+                        Flexibilidad: plataforma digital que permite trabajar en y desde cualquier lugar del mundo.<br>
+
+                        Oportunidad de crecimiento profesional, por la opinión y calificación de clientes, y la posibilidad de ser promovido dentro de la plataforma, así como por AsiUniversity, que brinda sus freelancers la oportunidad de intercambiar conocimientos mediante conferencias on line, documentos de interés.<br>
+
+                        Pago en Dólares de los Estados Unidos de América.
+                        Fondo de jubilación: mediante el aporte de clientes a la plataforma éstos quedan registrados como referidos vitalicios del referidor y todos los trabajos ejecutados para los clientes en el marco de la plataforma generan de por vida las comisiones por venta cruzada de servicios.<br><br>
+
+                       <b> 2. Funcionales - Para PYMES </b><br>
+
+                        Centro único de referencia profesional (centralización de servicios profesionales de distinta índole).<br>
+
+                        Calidad profesional: la plataforma garantiza la mayor competencia profesional de sus miembros mediante su desempeño evaluado, pruebas psicométricas y actividad económica en la plataforma.<br>
+
+                        Ahorro de tiempo: en la búsqueda de profesionales en función de costo – experiencia – estudios y beneficios, ya que la plataforma preselecciona 12 opciones dentro de la lista de proveedores adecuados.<br>
+
+                        Ahorro de dinero: evitación de pasivos laborales, pago por consultas puntuales y servicios profesionales de inmediatez.<br>
+
+                        La plataforma es gratuita en función de la búsqueda del profesional acertado.<br><br>
+
+                       <b>3. Emocionales - para los freelancers</b><br>
+
+                        Se sienten apoyados, tranquiles y seguros por la plataforma al procurarles nuevos clientes y más y mejores ingresos constantemente.<br>
+
+                        Sentimiento de pertenencia a una comunidad de economía colaborativa.<br>
+
+                        Confianza de contar con una comunidad de profesionales de alta calidad para la satisfacción total de sus clientes en áreas que cada uno no presta.<br>
+
+                        Agradecimiento por contar con más tiempo al no tener que invertirlo en la búsqueda de nuevos clientes.<br>
+
+                        Sentido de pertenencia y de control ante sus proyectos en desarrollo, y con libertad de expresar profesionalmente su punto de vista.<br>
+                        <br>
+                        <b>4. Emocionales - Para PYMES</b><br>
+
+                        Se sientes seguros de una plataforma seria en cuanto a calidad profesional de sus afiliados y sistema de gestión de cobros y pagos.<br>
+
+                        Se sienten cómodos por la multiplicidad de disciplinas, opciones de presupuestos y profesionales.
+                    </p>
+                  </div>
+                  <hr>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="600" class="asilinks">
+                  <a data-toggle="collapse" href="#faq6" class="collapsed py-5"
+                    >¿Cuáles son los elementos diferenciadores de Asilinks frente a la competencia existente? <i class="fas fa-angle-up"></i></a>
+                  <div id="faq6" class="collapse" data-parent=".faq-list">
+                    <p class="pt-5">
+                        En el mundo digital de las freelancer Page o Uberización de Servicios existen varios emprendimientos ya en el mercado. Sin entrar en el detalle de cada una, Asilinks para sus afiliados tiene gran cantidad de elementos diferenciadores; como por ejemplo:<br>
+
+                        Funciona bajo un sistema de referencia en ventas cruzadas que genera ganancias extraordinarias a sus afiliados.<br>
+                        Ofrece el servicio de oficina virtual.<br>
+                        Ofrece un método de asignación directa de trabajos mediante la aleatoriedad, lo que permite al cliente siempre tener opciones para escoger profesionales por rango dentro de la plataforma, nivel académico y experticia, o costo del servicio.<br>
+                        Es una plataforma cuyo dinamismo es impulsado desde los requerimientos y no por la búsqueda de un profesional en particular o el ofrecimiento de servicios, no funciona como unas páginas amarillas, es realmente dinámico porque realmente une necesidades con soluciones.<br>
+                        Tiene un conjunto de pruebas psicométricas que filtran a los profesionales con menos competencias transversales, lo que genera mayor confianza.<br>
+                        Maneja un sistema meritocrático de ascensos o descensos en las categorías internas de la plataforma: incentiva la competencia, el ánimo de excelencia, y da confianza.<br>
+                    </p>
+                  </div>
+                  <hr>
+                </li>
+
+                <li data-aos="fade-up" data-aos-delay="600" class="asilinks">
+                    <a data-toggle="collapse" href="#faq7" class="collapsed py-5"
+                      >¿Qué tipo de servicios puedo encontrar en Asilinks? <i class="fas fa-angle-up"></i></a>
+                    <div id="faq7" class="collapse" data-parent=".faq-list">
+                        <p class="pt-5">
+                            Continuamente nos encontramos actualizando nuestro repertorio de servicios para profesionales consultivos que requiere la pequeña y mediana empresa tales como:</p>
+
+
+                           <p><b>1. Categorías:</b></p>
+                            <p class="pl-3"> <b> a. Administración:</b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Administración:</p>
+
+
+                            <p class="pl-5">1. Investigación de mercados. </p>
+                            <p class="pl-5">2. Comportamiento organizacional. </p>
+                            <p class="pl-5">3. Gerencia de proyectos. </p>
+                            <p class="pl-5">4. Contabilidad. </p>
+                            <p class="pl-5">5. Auditoria. </p>
+                            <p class="pl-5">6. Tributos. </p>
+                            <p class="pl-5">7. Control de gestión. </p>
+                            <p class="pl-5">8. Recursos humanos. </p>
+                            <p class="pl-5">9. Relaciones industriales. </p>
+                            <p class="pl-5">10. Organización y método. </p>
+                            <p class="pl-5">11. Consultoría. </p>
+
+                            <p class="pl-3"><b>b. Contabilidad:</b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Contabilidad:</p>
+                            <p class="pl-5">1. Administración. </p>
+                            <p class="pl-5">2. Tesorería.. </p>
+                            <p class="pl-5">3. Auditoría. </p>
+                            <p class="pl-5">4. Créditos y Cobranzas. </p>
+                            <p class="pl-5">5. Tributos. </p>
+                            <p class="pl-5">6. Costos. </p>
+                            <p class="pl-5">7. Facturación. </p>
+                            <p class="pl-5">8. Control de Gestión. </p>
+                            <p class="pl-5">9. Organización y Métodos.. </p>
+                            <p class="pl-5">10. Corporate Finance / Banca Inversión. </p>
+                            <p class="pl-5">11. Planeamiento económico-financiero. </p>
+                            <p class="pl-5">12. Análisis de Riesgos.. </p>
+                            <p class="pl-5">13. Consultoría. </p>
+                            <p class="pl-5">14. Evaluación Económica. </p>
+                            <p class="pl-5">15. Finanzas Internacionales. </p>
+                            <p class="pl-5">16. Inversiones / Proyectos de Inversión. </p>
+                            <p class="pl-5">17. BPS. </p>
+
+
+                            <p class="pl-3"> <b> c. Finanzas y Negocios: </b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Finanzas y Negocios:</p>
+
+                            <p class="pl-5">1. Administración. </p>
+                            <p class="pl-5">2. Contabilidad.. </p>
+                            <p class="pl-5">3. Finanzas corporativas. </p>
+                            <p class="pl-5">4. Finanzas bursátiles. </p>
+                            <p class="pl-5">5. Tesorería. </p>
+                            <p class="pl-5">6. Inversiones. </p>
+                            <p class="pl-5">7. Auditoría. </p>
+                            <p class="pl-5">8. Créditos y Cobranzas. </p>
+                            <p class="pl-5">9. Tributos. </p>
+                            <p class="pl-5">10. Facturación. </p>
+                            <p class="pl-5">11. Control de Gestión. </p>
+                            <p class="pl-5">12. CRM. </p>
+                            <p class="pl-5">13. Organización y Métodos. </p>
+                            <p class="pl-5">14. Corporate Finance / Banca Inversión. </p>
+                            <p class="pl-5">15. Planeamiento económico-financiero. </p>
+                            <p class="pl-5">16. Análisis de Riesgos. </p>
+                            <p class="pl-5">17. Consultoría. </p>
+                            <p class="pl-5">18. Evaluación Económica. </p>
+                            <p class="pl-5">19. Servicios Financieros. </p>
+                            <p class="pl-5">20. Finanzas Internacionales.. </p>
+                            <p class="pl-5">21. Inversiones / Proyectos de Inversión. </p>
+                            <p class="pl-5">22 Mercados financieros. </p>
+                            <p class="pl-5">23. Análisis financiero. </p>
+                            <p class="pl-5">24. Teoría y Política Monetaria. </p>
+                            <p class="pl-5">25. Consultoría. </p>
+
+
+                            <p class="pl-3"><b> d. Comercio exterior:</b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Comercio exterior:</p>
+
+                            <p class="pl-5">1. Logística Internacional.. </p>
+                            <p class="pl-5">2. Compras Internacionales/Importación. </p>
+                            <p class="pl-5">3. Ventas Internacionales/Exportación. </p>
+                            <p class="pl-5">4. Consultorías Comercio Exterior. </p>
+                            <p class="pl-5">5. Apoderado Aduanal. </p>
+
+
+
+
+                            <p class="pl-3"><b> e. Comunicaciones: </b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Comunicaciones:</p>
+
+                            <p class="pl-5">1. Comunicación. </p>
+                            <p class="pl-5">2. Relaciones Institucionales/Publicas. </p>
+                            <p class="pl-5">3. Comunicaciones Internas. </p>
+                            <p class="pl-5">4. Periodismo. </p>
+                            <p class="pl-5">5. Responsabilidad Social. </p>
+                            <p class="pl-5">6. Comunicaciones Externas. </p>
+
+
+
+
+
+                            <p class="pl-3"> <b>f. Construcción: </b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Construcción:</p>
+
+                            <p class="pl-5">1. Ingeniería Civil. </p>
+                            <p class="pl-5">2. Arquitectura. </p>
+                            <p class="pl-5">3. Operaciones. </p>
+                            <p class="pl-5">4. Dirección de Obra. </p>
+
+
+
+
+
+
+
+
+                            <p class="pl-3"> <b>g. Diseño: </b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Diseño:</p>
+
+                            <p class="pl-5">1. Diseño Gráfico. </p>
+                            <p class="pl-5">2. Diseño Editorial. </p>
+                            <p class="pl-5">3. Diseño Publicitario. </p>
+                            <p class="pl-5">4. Diseño Embalajes o Packing. </p>
+                            <p class="pl-5">5. Identidad Corporativa. </p>
+                            <p class="pl-5">6. Señalética. </p>
+                            <p class="pl-5">7. Técnico o Didáctico. </p>
+                            <p class="pl-5">8. Diseño Web / Móvil. </p>
+                            <p class="pl-5">9. Diseño de Interiores / Decoración. </p>
+                            <p class="pl-5">10. Diseño Textil e Indumentaria. </p>
+                            <p class="pl-5">11. Diseño Multimedia. </p>
+                            <p class="pl-5">12. Diseño Tipográfico. </p>
+                            <p class="pl-5">13. Diseño Industrial. </p>
+
+
+
+
+
+                            <p class="pl-3"> <b>h. Gerencia: </b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Gerencia:</p>
+
+                            <p class="pl-5">1. Coaching Gerencial. </p>
+                            <p class="pl-5">2. Balanced Score Card. </p>
+                            <p class="pl-5">3. Just of time. </p>
+                            <p class="pl-5">4. Reingeniería. </p>
+                            <p class="pl-5">5. Downsizing. </p>
+                            <p class="pl-5">6. Benchmarking. </p>
+                            <p class="pl-5">7. 6 Sigma. </p>
+                            <p class="pl-5">8. Malcom Baldrige Quality. </p>
+                            <p class="pl-5">9. Brecha en calidad de servicio. </p>
+                            <p class="pl-5">10. Servqual. </p>
+                            <p class="pl-5">11. Net Promoter Score (NPS). </p>
+                            <p class="pl-5">12. ISO. </p>
+                            <p class="pl-5">13. Customer Operations Performance Centre. </p>
+                            <p class="pl-5">14. Escala Kasset Intarnational. </p>
+                            <p class="pl-5">15. Mercadeo. </p>
+                            <p class="pl-5">16. Customer Relationship Management (CRM). </p>
+                            <p class="pl-5">17. Operaciones. </p>
+                            <p class="pl-5">18. Innovación. </p>
+                            <p class="pl-5">19. Patrimonial. </p>
+                            <p class="pl-5">20. Política. </p>
+                            <p class="pl-5">21. Estratégica. </p>
+                            <p class="pl-5">22. Administrativa. </p>
+                            <p class="pl-5">23. Servicios. </p>
+                            <p class="pl-5">24. Ventas. </p>
+                            <p class="pl-5">25. Procesos y sistemas. </p>
+                            <p class="pl-5">26. Marketing. </p>
+                            <p class="pl-5">27. Recursos Humanos. </p>
+                            <p class="pl-5">28. Seguridad, prevención y contro. </p>
+                            <p class="pl-5">29. Restaurantes.. </p>
+
+
+
+
+
+
+                            <p class="pl-3"><b> i. Legal: </b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Legal:</p>
+
+                            <p class="pl-5">1. Derecho civil. </p>
+                            <p class="pl-5">2. Derecho mercantil. </p>
+                            <p class="pl-5">3. Derecho Laboral. </p>
+                            <p class="pl-5">4. Derecho Administrativo y Constitucional. </p>
+                            <p class="pl-5">5. Derecho Tributario. </p>
+                            <p class="pl-5">6. Derecho Internacional Privado. </p>
+                            <p class="pl-5">7. Derecho Internacional Público. </p>
+                            <p class="pl-5">8. Derecho de la propiedad intelectual, marcas y derechos de autor.</p>
+                            <p class="pl-5">9. Derecho penal. </p>
+                            <p class="pl-5">10. Derecho Bancario. </p>
+                            <p class="pl-5">11. Derecho de Seguros. </p>
+                            <p class="pl-5">12. Derecho petrolero. </p>
+                            <p class="pl-5">13. Derecho marítimo. </p>
+                            <p class="pl-5">14. Derecho aeronáutico. </p>
+                            <p class="pl-5">15. Derecho Aduanero. </p>
+                            <p class="pl-5">16. Derecho humanos. </p>
+                            <p class="pl-5">17. Derecho ambiental. </p>
+
+
+
+
+
+                            <p class="pl-3"><b> j. Logística: </b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Logística:</p>
+                            <p class="pl-5">1. Almacén / Depósito / Expedición. </p>
+                            <p class="pl-5">2. Compras. </p>
+                            <p class="pl-5">3. Distribución </p>
+                            <p class="pl-5">4. Transporte </p>
+                            <p class="pl-5">5. Abastecimiento. </p>
+                            <p class="pl-5">6. Asistente de Tráfico. </p>
+
+
+
+
+
+                            <p class="pl-3"><b> k. Marketing:</b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Marketing:</p>
+
+                            <p class="pl-5">1. Marketing digital. </p>
+                            <p class="pl-5">2. Servicios creativos. </p>
+                            <p class="pl-5">3. Operaciones de marketing. </p>
+                            <p class="pl-5">4. Comunicaciones. </p>
+                            <p class="pl-5">5. Investigación y análisis. </p>
+                            <p class="pl-5">6. Relaciones públicas. </p>
+                            <p class="pl-5">7. Business Intellingence. </p>
+                            <p class="pl-5">8. Mercadotecnia. </p>
+                            <p class="pl-5">9. Marketing de producto. </p>
+                            <p class="pl-5">10. Marketing Tradicional. </p>
+
+
+
+
+                            <p class="pl-3"><b> l. Recursos Humanos:</b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Recursos Humanos:</p>
+
+                            <p class="pl-5">1. Posicionamiento. </p>
+                            <p class="pl-5">2. Retención de personal. </p>
+                            <p class="pl-5">3. Relaciones en el trabajo. </p>
+                            <p class="pl-5">4. Formación y Desarrollo.
+                            </p>
+                            <p class="pl-5">5. Remuneración. </p>
+                            <p class="pl-5">6. Comunicaciones internas. </p>
+                            <p class="pl-5">7. Organización. </p>
+                            <p class="pl-5">8. Administración de RRHH. </p>
+                            <p class="pl-5">9. Políticas y planeación de personal. </p>
+                            <p class="pl-5">10. Auditoría e investigación. </p>
+
+
+
+
+                            <p class="pl-3"><b> m. Redacción y Traducción:</b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Redacción y Traducción:</p>
+                            <p class="pl-5">1. Redacción de artículos. </p>
+                            <p class="pl-5">2. Redacción para sitios web. </p>
+                            <p class="pl-5">3. Revisión de textos. </p>
+                            <p class="pl-5">4. Publicaciones para redes sociales.
+                            </p>
+                            <p class="pl-5">5. Traducción. </p>
+                            <p class="pl-5">6. Subtitulado. </p>
+                            <p class="pl-5">7. Otros. </p>
+
+
+
+
+
+                            <p class="pl-3"><b> n. Tecnología: </b></p>
+                            <p class="pl-5"> i. Subcategorías generales de Tecnología:</p>
+
+                            <p class="pl-5">1. Cyber Security. </p>
+                            <p class="pl-5">2. Ethical Hacking. </p>
+                            <p class="pl-5">3. Auditoría de seguridad. </p>
+                            <p class="pl-5">4. Continuidad del negocio. </p>
+                            <p class="pl-5">5. Tecnología forense. </p>
+                            <p class="pl-5">6. IT Strategy. </p>
+                            <p class="pl-5">7. IT Attestation. </p>
+                            <p class="pl-5">8. Auditoría de TI. </p>
+                            <p class="pl-5">9. ERP Advisory. </p>
+                            <p class="pl-5">10. Vendor Solution. </p>
+                            <p class="pl-5">11. IT Project. </p>
+                            <p class="pl-5">12. Business Intelligence. </p>
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="asilinks">
+                    <a data-toggle="collapse" href="#faq8" class="collapsed py-5"
+                      >¿Es seguro dar mis datos personales?<i class="fas fa-angle-up"></i></a>
+                    <div id="faq8" class="collapse" data-parent=".faq-list">
+                        <p class="pt-5">
+                            Sí, Asilinks cuenta con sistemas de protección de data y cumple con los estándares internacionales y locales de cada región en función de la protección de sus usuarios.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="asilinks">
+                    <a data-toggle="collapse" href="#faq9" class="collapsed py-5"
+                      >¿Qué moneda maneja la plataforma? <i class="fas fa-angle-up"></i></a>
+                    <div id="faq9" class="collapse" data-parent=".faq-list">
+                        <p class="pt-5">
+                            Por ahora, Dólares de los Estados Unidos de América.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="asilinks">
+                    <a data-toggle="collapse" href="#faq10" class="collapsed py-5"
+                      >¿Cómo funciona el sistema de pago? <i class="fas fa-angle-up"></i></a>
+                    <div id="faq10" class="collapse" data-parent=".faq-list">
+                        <p class="pt-5">
+                          Mediante nuestro sistema de Wallets, donde luego podrás hacer retiro del dinero a distintas plataformas y cuentas
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="asilinks">
+                    <a data-toggle="collapse" href="#faq11" class="collapsed py-5"
+                      >¿Cuáles son los medios para retirar dinero de la plataforma? <i class="fas fa-angle-up"></i></a>
+                    <div id="faq11" class="collapse" data-parent=".faq-list">
+                        <p class="pt-5">
+                            Mediante la plataforma de pagos de PayPal
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="asilinks">
+                    <a data-toggle="collapse" href="#faq12" class="collapsed py-5"
+                      > ¿Cómo puedo solicitar un reembolso?<i class="fas fa-angle-up"></i></a>
+                    <div id="faq12" class="collapse" data-parent=".faq-list">
+                        <p class="pt-5">
+                            Los reembolsos los hace automáticamente la plataforma una vez que el cliente declara que no está satisfecho con el producto, o cuando los lapsos de entrega han caducado.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="asilinks">
+                    <a data-toggle="collapse" href="#faq13" class="collapsed py-5"
+                      >¿Cómo garantiza el pago Asilinks? <i class="fas fa-angle-up"></i></a>
+                    <div id="faq13" class="collapse" data-parent=".faq-list">
+                        <p class="pt-5">
+                            Los pagos están garantizados en función de las condiciones dadas, a saber satisfacción del cliente y tiempos oportunos de entrega.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                          <!------ CLIENTS  ----------->
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq1" class="collapsed py-5">¿Cómo encontrar profesionales que cumplan mis requerimientos?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq1" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        En el momento de hacer un requerimiento es importante indicar la categoría y las
+                            subcategorías profesionales que creas necesarias para la satisfacción del mismo.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq2" class="collapsed py-5">¿Qué es un socio?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq2" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Se entiende como un profesional acreditado que ha cumplido con los estándares para ser
+                        un prestador de servicios mediante el Sitio Web de Asilinks.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq3" class="collapsed py-5"> ¿Cómo crear un requerimiento?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq3" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Además seguir los pasos indicados por la plataforma, es importante ser lo más exhaustivo y
+                            descriptivo en el requerimiento para que los profesionales que se postulen como candidatos
+                             puedan saber el alcance de la propuesta y los honorarios.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq4" class="collapsed py-5">¿Qué tipo de solicitudes puedo publicar?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq4" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Necesidades consultivas de tipo profesional.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq5" class="collapsed py-5">He aceptado una propuesta de un socio, ¿Cuál es el próximo paso?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq5" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Se paga el 60 % de lo indicado en la propuesta mediante PayPal y, luego, se abre un canal de comunicación
+                            entre el cliente y el socio que facilita la ejecución del trabajo.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq6" class="collapsed py-5">¿Qué es la oficina virtual?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq6" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Es el espacio virtual dentro del Sitio Web de Asilinks que tanto para clientes y socios les presenta a modo
+                        individual y exclusivo toda la data relacionada con su actividad en la plataforma.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq7" class="collapsed py-5">¿Cómo pago los servicios profesionales?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq7" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Mediante una cuenta de PayPal.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq8" class="collapsed py-5">¿Puedo cancelar un proyecto?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq8" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Sí mientras no se haya aceptado alguna propuesta.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq9" class="collapsed py-5">¿Qué sucede si no estoy satisfecho con el servicio? <i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq9" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Se indica que no se está satisfecho con el servicio y automáticamente se le concede un plazo
+                        de tiempo al socio para que satisfaga el requerimiento, si aun así no se está satisfecho se
+                        le da de baja al requerimiento se hace un reembolso del dinero menos las comisiones por uso
+                        del Sitio Web de Asilinks  y PayPal.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq10" class="collapsed py-5">¿Qué sucede si mi requerimiento no es completado a tiempo?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq10" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        El sistema está diseñado para ejecutar un descuento de hasta el 40% sobre el monto total de la
+                        propuesta por hasta una semana de atraso, culminado este tiempo sin que haya habido cumplimiento
+                        se le da de baja al requerimiento ejecutándose el reembolso de rigor.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq11" class="collapsed py-5">Veo distintos niveles en los perfiles de los socios, ¿Qué significa cada uno?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq11" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Hay dos tipos de niveles, el primero de los socios y el segundo de los referentes que son comunes
+                            para socios y clientes.
+                      </p>
+
+                      <p class="py-5">
+                        Respecto de los niveles de los socios  (Bronce, Plata y Oro) cada uno describe la carrera de ascenso del
+                        cliente en el Sitio Web de Asilinks con base a sus estadísticas y logros. Bronce es el nivel de
+                        principiantes que de acuerdo con las calificaciones y comentarios realizados por los clientes respecto
+                        a los servicios prestados, sus estadísticas (cantidad de trabajos realizados satisfactoriamente, nivel
+                        de facturación, cantidad de requerimientos terminados, cantidad de requerimientos cancelados media de
+                        tiempo de requerimientos terminados, media de puntuación de requerimientos terminados, porcentaje de
+                        requerimientos ofertados, cantidad de registros académicos (curriculum), años de experiencia y media
+                        de tiempo de aceptación, media de precio en propuestas) van ganando puntos que lo habilitan para la
+                        segunda prueba psicométrica y superada esta pasa al nivel Plata. Llegado al nivel Plata se obtienen
+                        mayores beneficios como por ejemplo mayor frecuencia en las rondas, acceso a mayores productos
+                        estadísticos en la oficina virtual y menores costos por uso de la plataforma lo que mejora su
+                        porcentaje de ganancia. Así, se repite el ciclo para llegar al nivel Oro que es el máximo nivel
+                        de socio, en el que la frecuencia en las rondas es la máxima, los costos por uso de la plataforma
+                        son los más económicos y los productos de la oficina virtual son de mayores que las demás categorías.
+                      </p>
+
+                      <p class="py-5">
+                        Respecto a los niveles de los Referentes (“A”, “B” y “C”) es el nivel que se obtiene por referir clientes
+                        a la plataforma y en base a las estadísticas (media del intervalo de tiempo de cliente referido, media
+                        del intervalo de tiempo de socio referido, media de puntuación de clientes referidos, media de puntuación
+                         de socios referidos, cantidad de clientes referidos, cantidad de socios referidos, media del cantidad
+                         de clientes referidos mensuales) de este modo, cada nivel supone mayores ganancias por referir
+                         dependiendo del nivel del socio que ejecute los trabajos de los clientes referidos.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq12" class="collapsed py-5">¿Cómo puedo evaluar el desempeño?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq12" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Al culminar cada requerimiento el sistema propondrá una evaluación y el cliente podrá dar su opinión sobre
+                            el trabajo ejecutado.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq13" class="collapsed py-5">Tips para encontrar el mejor socio<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq13" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        El mejor socio es el que mejor se adecue el requerimiento de acuerdo con los niveles de exigencia, experiencia requerida y
+                        costos asociados al servicio.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="clients">
+                    <a data-toggle="collapse" href="#faq14" class="collapsed py-5">¿Por qué no enviar datos de contacto fuera de la plataforma?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq14" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Se considera una violación a los Términos y Condiciones del Sitio Web de Asilinks y conlleva al cierre de la cuenta.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+
+                   <!------ PATNERS ---------->
+                  <li data-aos="fade-up" data-aos-delay="600" class="patners">
+                    <a data-toggle="collapse" href="#faq1" class="collapsed py-5">¿Qué es una oportunidad?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq1" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Es un requerimiento que un cliente ha hecho a la plataforma y que le ha sido asignado
+                            al socio de modo o bien aleatorio o bien porque el socio está calificado como favorito.
+                            Todo requerimiento del cliente es una oportunidad para el socio.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="patners">
+                    <a data-toggle="collapse" href="#faq2" class="collapsed py-5">He aceptado una oportunidad ¿Cuál es el próximo paso?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq2" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+                        Se abre un canal de comunicación entre tú y el cliente para determinar el alcance de los servicios que
+                        involucra esa oportunidad. Y también puedes ver las preguntas y respuestas de los demás candidatos
+                        sorteados que también han aceptado la oportunidad.!
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="patners">
+                    <a data-toggle="collapse" href="#faq3" class="collapsed py-5">¿Cuánto cuesta usar Asilinks?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq3" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+
+                        El costo por el uso de la plataforma es variable por requerimiento, en función del nivel del referente y
+                        el nivel del socio que atendió el mismo, según la tabla que a continuación se presenta:
+                      </p>
+
+                      <p class="py-5">
+
+                        Nivel Referente <br>
+                        A B C Oro 11,00% 11,25% 11,50% Plata 11,50% 11,75% 12,00% Bronce 12,00% 12,25% 12,50%
+                      </p>
+
+                      <p class="py-5">
+
+                        Si el cliente no ha sido referido por ningún usuario de la plataforma se entiende que se ha inscrito como referido directo de Asilinks cuyo nivel de referente es “A”.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+
+                  <li data-aos="fade-up" data-aos-delay="600" class="patners">
+                    <a data-toggle="collapse" href="#faq4" class="collapsed py-5">¿Cuáles son las comisiones por labores de Marketing Directo del Referente?<i
+                        class="fas fa-angle-up"></i>
+                    </a>
+                    <div id="faq4" class="collapse" data-parent=".faq-list">
+                      <p class="py-5">
+
+                        Las comisiones son variables por cada requerimiento en función del nivel del referente en combinación
+                        con el nivel del socio que prestó el servicio según la tabla que se indica a continuación:
+                      </p>
+                      <p class="py-5">
+
+                        Porcentaje honorario al Referente por mercadeo directo. Nivel Socio <br>
+                        Nivel Referente <br>
+                        A B C Oro 4,00% 3,75% 3,50% Plata 3,50% 2,25% 3,00% Bronce 3,00% 2,75% 2,50%
+                      </p>
+
+                      <p class="py-5">
+
+                        Si el cliente no ha sido referido por ningún usuario de la plataforma se entiende que se ha inscrito como referido directo de Asilinks cuyo nivel de referente es “A”.
+                      </p>
+                    </div>
+                    <hr>
+                  </li>
+              </ul>
+          </section>
+
+          <section class="section"  id="contacto">
+              <div class="container">
+                  <div class="row d-flex reverse">
+                      <div class="col-md-6 mt-5 mt-md-0">
+                        <h2 class="text-center p-0 text-md-left ">Contáctanos</h2>
+
+                        <p class="texto-contacto text-center text-md-left py-5">Tienes alguna duda,  algún comentario, queja, inquietud o simplemente quieres hablar con nosotros, no dudes en dejarnos tu mensaje por acá.</p>
+
+                        <form id="contact" enctype="application/form-data" method="post">
+                          <fieldset>
+                              <div class="col-md-12 mb-5">
+                                <label>CORREO</label><br />
+                                <input
+                                  type="email"
+                                  class="form-input"
+                                  id="email"
+                                  name="email"
+
+                                  required
+                                />
+                              </div>
+                              <div class="col-md-12 mb-5">
+                                <label >ASUNTO</label><br />
+                                <input
+                                id="subject"
+                                name="subject"
+                                  type="text"
+                                  class="form-input"
+
+                                  required
+                                />
+                              </div>
+                              <div class="col-md-12 mb-5">
+                                <label >COMENTARIO</label><br />
+                                <textarea  id="comment" name="comment"></textarea>
+                              </div>
+
+                              <div class="col-md-12 text-center text-md-left">
+                                <button
+                                type="button"
+                                id="send"
+                                class="btn btn-primary btn-lg px-4 py-4"
+                                *ngIf="!username"
+                                onclick="postContact();"
+                                >Enviar</button
+                              >
+                              </div>
+                            </fieldset>
+                        </form>
+                      </div>
+
+                      <div class="col-md-6 text-center text-md-right">
+                        <img src="../../assets/images/group-5.png" alt="imagen" class="img-fluid group-5">
+                      </div>
+                  </div>
+              </div>
+          </section>
+    </main>
+
+    <%- include('../partials/landing-footer'); -%>
+  <script type="text/javascript">
+    function clientRadio(){
+          let as = document.getElementById('list')
+          .querySelectorAll(".asilinks")
+
+          const asArray = Array.from(as)
+
+          asArray.forEach(elem => {
+           elem.style.display = 'none'
+          });
+
+          let p = document.getElementById('list')
+          .querySelectorAll(".patners")
+
+          const pArray = Array.from(p)
+
+          pArray.forEach(elem => {
+           elem.style.display = 'none'
+          });
+
+          let c = document.getElementById('list')
+          .querySelectorAll(".clients")
+
+          const cArray = Array.from(c)
+
+          cArray.forEach(elem => {
+           elem.style.display = 'block'
+          });
+        }
+
+        function patnersRadio(){
+          let as = document.getElementById('list')
+          .querySelectorAll(".asilinks")
+
+          const asArray = Array.from(as)
+
+          asArray.forEach(elem => {
+           elem.style.display = 'none'
+          });
+
+          let c = document.getElementById('list')
+          .querySelectorAll(".clients")
+
+          const cArray = Array.from(c)
+
+          cArray.forEach(elem => {
+           elem.style.display = 'none'
+          });
+
+          let p = document.getElementById('list')
+          .querySelectorAll(".patners")
+
+          const pArray = Array.from(p)
+
+          pArray.forEach(elem => {
+           elem.style.display = 'block'
+          });
+        }
+
+        function asilinkRadio(){
+          let as = document.getElementById('list')
+          .querySelectorAll(".asilinks")
+
+          const asArray = Array.from(as)
+
+          asArray.forEach(elem => {
+           elem.style.display = 'block'
+          });
+
+          let c = document.getElementById('list')
+          .querySelectorAll(".clients")
+
+          const cArray = Array.from(c)
+
+          cArray.forEach(elem => {
+           elem.style.display = 'none'
+          });
+
+          let p = document.getElementById('list')
+          .querySelectorAll(".patners")
+
+          const pArray = Array.from(p)
+
+          pArray.forEach(elem => {
+           elem.style.display = 'none'
+          });
+        }
+
+        let asilinks = document
+          .getElementById("radio0")
+          .addEventListener("click", asilinkRadio);
+        let client = document
+          .getElementById("radio1")
+          .addEventListener("click", clientRadio);
+        let patner = document
+          .getElementById("radio2")
+          .addEventListener("click", patnersRadio);
+
+          document.getElementById("faq1_link").click();
+          document.getElementById("radio0").click();
+  </script>
+  </body>
+</html>

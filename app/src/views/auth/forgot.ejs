@@ -1,0 +1,123 @@
+<%- include('../partials/header-alt'); -%>
+  <body>
+    <div class="container-fluid pink-bg full-height text-28">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6">
+          <div class="card asilinks-card white-bg black-shadow mt-4">
+            <div class="card-body text-center small-title">
+              <div class="row mb-3">
+                <div class="col-12">
+                  <b>Introduce tu correo para recuperar tu contraseña</b>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+                  <form
+                    action="/login/forgotPassword"
+                    enctype="application/json"
+                    method="post"
+                  >
+                    <div class="row mx-2">
+                      <div class="col-md-2"></div>
+                      <div
+                        class="col-md-8 center-hor mb-4 text-14"
+                        id="statusMessage"
+                      ></div>
+                      <div class="col-md-2"></div>
+                      <div class="col-md-12 mb-3 text-left text-14">
+                        <label for="email" class="my-0">CORREO</label><br />
+                        <input
+                          type="text"
+                          class="form-input"
+                          name="email"
+                          id="email"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-2"></div>
+                      <div class="col-md-8" id="sendEmail">
+                        <button type="submit" id="submitForm" class="asilinks-btn orange-btn">
+                          Enviar
+                        </button>
+                      </div>
+                      <div class="col-md-2"></div>
+                    </div>
+                  </form>
+                  <div class="row mx-2">
+                    <div class="col-md-2"></div>
+                  <div class="col-md-8" id="loginButton" hidden>
+                    <button onclick="location.href='/login'"  class="asilinks-btn orange-btn">
+                      Volver al inicio
+                    </button>
+                  </div>
+                  <div class="col-md-2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#sendEmail").click(function () {
+        var email = $("#email").val();
+
+        $(this).empty();
+        $(this).html("<div class='asilinks-loader mx-auto'> </div>");
+
+        $.post("/login/forgotPassword", { email })
+          .done(function (data) {
+            $("#statusMessage").html(
+              "<div class='alert alert-" +
+                data.type +
+                "' role='alert'>" +
+                data.message +
+                "</div>"
+            );
+            if (data.message == "Confirmación enviada. Revise su correo y siga las indicaciones") {
+              window.location.href="/login?password=true"
+            } else {
+              $("#sendEmail").empty();
+              $("#sendEmail").html(
+                "<button type='submit' class='asilinks-btn orange-btn'>Enviar</button>"
+              );
+                window.location.href="/login?password=false"
+            }
+          })
+          .fail(function (data) {
+            $("#statusMessage").html(
+              "<div class='alert alert-danger' role='alert'> Error al completar la petición de recuperación de contraseña</div>"
+            );
+            $("#sendEmail").empty();
+            $("#sendEmail").html(
+              "<button type='submit' class='asilinks-btn orange-btn'>Enviar</button>"
+            );
+            window.location.href="/login?password=error"
+          });
+      });
+    });
+  </script>
+</html>

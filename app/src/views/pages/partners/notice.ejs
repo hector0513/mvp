@@ -1,0 +1,139 @@
+<%- include('../Client/partials/header'); -%>
+
+<head>
+  <link rel="stylesheet" href="../../../assets/styles/maincopia.css" />
+    <link rel="stylesheet" href="/assets/styles/todo.css" />
+</head>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <%- include('./partials/nav'); -%>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+
+          <div class="card-body">
+            <div class="container">
+              <br>
+            <div class="row">
+              <!-- <div class="col-8 searchBar">
+                <span class="vertical" style="margin-left:5px;">
+                <i class="fa fa-search"></i><input type="text" id="search" name="search" class="searchInput" placeholder="Buscar..."/>
+                </span>
+              </div> -->
+              <div class="col-12" align="right">
+                <button id="callAdd" class="btn btn-block buttonAdd buttonText" data-toggle="modal" data-target="#Modal-notice">Agregar Propuesta</button>
+              </div>
+            </div>
+            <br>
+            <p></p>
+
+            <div id="notices">
+              <div class="containter" id="notice">
+                <% notices.forEach((notice, i) => { %>
+                  <div class="row card-body" id="<%=notice._id%>">
+                    <div class="col-12">
+                      <p>
+                        <%=notice.description%>
+                        <a href="" class="p-3" >Ver</a>
+                        <br>
+                        <%= moment(notice.timeStampCreate).format("DD/MM/YYYY hh:mm a") %>
+                      </p>
+                    </div>
+                  </div>
+                <% }) %>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- modal for notice -->
+        <div class="modal fade" id="Modal-notice" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+              <div class="row ml-auto">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+                </button>
+              </div>
+
+              <div class="modal-header" style="margin: 0 auto;">
+                <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#fe5d60">Nueva propuesta de servicio</h4>
+              </div>
+
+              <div class="modal-body">
+                <div class="card-body">
+                  <form enctype="multipart/form-data">
+                    <fieldset>
+                      <div class="form-group row">
+                        <div class="col-12">
+                          <label for="description" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Descripción</label>
+                          <br>
+                            <textarea rows="8" cols="80" class="form-input" style="color: #2a2a35;" id="description" name="description" required></textarea>
+                        </div>
+                      </div>
+                    </fieldset>
+
+                    </form>
+                    <button class="btn btn-block btn-primary px-4 label_style2 buttonSend buttonText"
+                    data-dismiss="" style="width: 100%; margin-top: 25px;"
+                    id="addNotice"
+                    onclick="createNotice('<%= user._id %>');">
+                    Añadir Propuesta de servicio
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end of modal -->
+
+
+
+
+          <!-- put here content -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <%- include('./partials/footer'); -%>
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+<%- include('./partials/sidebar'); -%>
+  </div>
+
+  <script>
+    function createNotice(partner){
+      var description= $("#description").val()
+      var reqInfo = {
+          description,
+          partner
+      }
+      $.post("/partner/notice/create",
+          reqInfo,
+          function (data, status) {
+              console.log(data)
+              console.log(status);
+              $("#Modal-notice").modal("hide");
+              window.location.reload();
+          });
+    }
+
+  </script>
+</body>

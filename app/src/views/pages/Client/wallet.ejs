@@ -1,0 +1,551 @@
+<%- include('partials/header'); -%>
+<head>
+  <link rel="stylesheet" href="../../../assets/styles/partnercopia.css" />
+  <link rel="stylesheet" href="../../../assets/styles/Client/Clientt-admin-copia.css" />
+</head>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <%- include('./partials/nav'); -%>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- modal for wallet -->
+          <div class="modal fade" id="Modal-wallet" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius: 20px; padding: 35px;">
+              <button style="text-align: end; outline: 0;" type="button" class="close" data-dismiss="modal"
+              aria-label="Close">
+              <span aria-hidden="true" class="px-2" id="modalClose-blue">&times;</span>
+            </button>
+            <div class="modal-header" style="margin: 0 auto; padding: 0 0 20px 0;">
+              <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color: #4444ff;">
+                Recargar Wallet
+              </h4>
+            </div>
+
+            <div class="modal-body">
+              <div class="card-body">
+                <form enctype="multipart/form-data">
+                  <fieldset>
+                    <div class="form-group row">
+                      <div class="col-12">
+                        <label for="title" style="
+                        font-family: Quicksand;
+                        font-weight: bold;
+                        color: #bcbcca;
+                        ">CANTIDAD</label>
+                        <input type="number" class="form-input" placeholder="200" id="amount" required />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-12">
+                        <label for="title" style="
+                        font-family: Quicksand;
+                        font-weight: bold;
+                        color: #bcbcca;
+                        ">CORREO</label>
+                        <input type="text" class="form-input" id="email" style="color: #2a2a35;" required />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-12">
+                        <label for="title" style="
+                        font-family: Quicksand;
+                        font-weight: bold;
+                        color: #bcbcca;
+                        ">NUMERO DE TARJETA</label>
+                        <input type="text" class="form-input" id="cart_number" placeholder="xxxx xxxx xxxx xxxx"
+                        style="color: #2a2a35;" required />
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <div class="col-6 delete_after">
+                        <label for="category" style="
+                        font-family: Quicksand;
+                        font-weight: bold;
+                        color: #bcbcca;
+                        ">MES VENCIMIENTO</label>
+                        <span class="expiration">
+                          <input type="tel" class="form-input" style="color: #2a2a35;" id="expiration_month"
+                          name="month" pattern="\d*" placeholder="MM" minlength="2" maxlength="2" required />
+                        </div>
+
+                        <div class="col-6 delete_after">
+                          <label for="category" style="
+                          font-family: Quicksand;
+                          font-weight: bold;
+                          color: #bcbcca;
+                          ">AÑO VENCIMIENTO</label>
+
+                          <input type="tel" class="form-input" style="color: #2a2a35;" id="expiration_year" name="year"
+                          pattern="\d*" placeholder="YYYY" minlength="4" maxlength="4" required />
+                        </div>
+
+                        <div class="col-6 delete_after">
+                          <label for="subcategory" style="
+                          font-family: Quicksand;
+                          font-weight: bold;
+                          color: #bcbcca;
+                          ">CVV</label>
+                          <input type="text" class="form-input" id="cvv" placeholder="" style="color: #2a2a35;"
+                          pattern="\d*" maxlength="4" placeholder="xxx" required />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-12">
+                          <label for="description" style="
+                          font-family: Quicksand;
+                          font-weight: bold;
+                          color: #bcbcca;
+                          ">NOMBRE DE LA TARJETA</label>
+                          <input type="text" class="form-input" id="nameCard" style="color: #2a2a35;" required />
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-sm-12">
+                          <label for="description" style="
+                          font-family: Quicksand;
+                          font-weight: bold;
+                          color: #bcbcca;
+                          ">PAIS O REGIÓN</label>
+                          <select class="form-input" id="country" style="color: #2a2a35; padding: 0.35rem;" required>
+                            <option value="Venezuela">Venezuela</option>
+                            <option value="Estados Unidos">Estados Unidos</option>
+
+                          </select>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </form>
+                  <button class="btn btn-block btn-primary px-4 label_style-blue" data-dismiss=""
+                  style="width: 100%; margin-top: 25px;" id="reload">
+                  Recargar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- modal for wallet -->
+      <div class="modal fade" id="Modal-wallet2" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="border-radius: 20px; padding: 35px;">
+          <button style="text-align: end; outline: 0;" type="button" class="close" data-dismiss="modal"
+          aria-label="Close">
+          <span aria-hidden="true" class="px-2" id="modalClose-blue">&times;</span>
+        </button>
+        <div class="modal-header" style="margin: 0 auto; ">
+
+          <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color: #4444ff;">
+            Solicitud de retiro
+          </h4>
+        </div>
+        <div class="modal-header text-center" style="
+        margin: 10px auto;
+        border-radius: 10px;
+        border: solid 2px #4444ff;
+        "
+        >
+        <h4
+        class="modal-title"
+        id="myModalLabel"
+        style="font-weight: bold; color: #4444ff; font-size: 20px;"
+        >
+        <i
+        class="fa fa-credit-card"
+        aria-hidden="true"
+        style="font-size: 35px; width: auto !important;"
+        ></i
+        ><br />WireTransfer<br />(USD)
+      </h4>
+    </div>
+    <div class="modal-body">
+      <div class="card-body">
+        <form enctype="multipart/form-data">
+          <fieldset>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label for="title" style="
+                font-family: Quicksand;
+                font-weight: bold;
+                color: #bcbcca;
+                ">CANTIDAD</label>
+                <input type="number" class="form-input""
+                placeholder=" 200" style="color: #2a2a35;" id="amount_egress" required="true" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label for="title" style="
+                font-family: Quicksand;
+                font-weight: bold;
+                color: #bcbcca;
+                ">NOMBRE DEL TITULAR</label>
+                <input type="text" class="form-input" style="color: #2a2a35;" id="name" required="true" />
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+                <label for="title" style="
+                font-family: Quicksand;
+                font-weight: bold;
+                color: #bcbcca;
+                ">BANCO DE DESTINO</label>
+                <select name="bank" type="text" class="form-input" placeholder=""
+                style=" padding:0.35rem;color: #2a2a35;" id="bank" required="true">
+                <option value="Bank of America">Bank of America</option>
+                <option value="HSBC">HSBC</option>
+              </select>
+
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label for="description" style="
+              font-family: Quicksand;
+              font-weight: bold;
+              color: #bcbcca;
+              ">NÚMERO DE ROUTING</label>
+              <input type="tel" class="form-input" placeholder="" style="color: #2a2a35;" id="routing"
+              required="true" />
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-12">
+              <label for="description" style="
+              font-family: Quicksand;
+              font-weight: bold;
+              color: #bcbcca;
+              ">NÚMERO DE CUENTA BANCARIA</label>
+              <input type="text" class="form-input" placeholder="" style="color: #2a2a35;"
+              id="bankAccountNumber" required="true" />
+            </div>
+          </div>
+        </fieldset>
+      </form>
+      <button class="btn btn-block btn-primary px-4 label_style-blue" data-dismiss=""
+      style="width: 100%; margin-top: 25px;" id="egress">
+      Enviar solicitud
+    </button>
+  </div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin: 50px 0 0px 0;">
+  <a class="fas fa-arrow-left" style="width: auto !important; color:#4444ff" href="/client">
+    <p style="font-family: Quicksand; display: inline-block;">
+      &nbsp&nbsp Volver a inicio
+    </p>
+  </a>
+</div>
+<div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin: 0px 0 50px 0;">
+  <h1 class="h3 mb-0 text-center" id="Welcome-requeriments-refers">
+    Mi wallet
+  </h1>
+</div>
+
+<!-- Content Row -->
+
+<div class="row" id="finance_daily">
+  <!-- Area Chart -->
+  <div class="col-xl-12 col-lg-7">
+    <div class="card shadow mb-4">
+      <!-- Card Header - Dropdown -->
+      <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between"
+      id="responsive">
+      <h6 class="m-0 font-weight-bold text-primary flex-grow-1 p-2">
+        Mi Wallet
+      </h6>
+
+
+      <!-- <label
+      for="file"
+      class="label_style3"
+      type="button"
+      style="margin-right: 20px;"
+      toggle="modal"
+      data-target="#Modal-wallet2"
+      id="wallet2"
+      ><span>Solicitar retiro &nbsp;</span
+      ><i class="fas fa-arrow-up" aria-hidden="true"></i
+      ></label> -->
+
+      <button toggle="modal" data-target="#Modal-wallet2" id="wallet2" for="file"
+      class=" mr-0 mr-md-4 mb-2 mb-md-0 asilinks-btn orange-btn" style="width: 300px">
+      Solicitar Retiro<i class="fas fa-arrow-up" aria-hidden="true"></i>
+    </button>
+    <!-- <label
+    for="file"
+    class="label_style4"
+    type="button"
+    toggle="modal"
+    data-target="#Modal-wallet"
+    id="wallet"
+    ><span>Recargar wallet &nbsp;</span
+    ><i class="fas fa-arrow-down" aria-hidden="true"></i
+    ></label> -->
+
+    <button for="file" toggle="modal" data-target="#Modal-wallet" class="asilinks-btn blue-btn"
+    id="wallet" style="width: 300px;">
+    Recargar Wallet<i class="fas fa-arrow-down" aria-hidden="true"></i>
+  </button>
+</div>
+<!-- Card Body -->
+<div class="card-body">
+  <h6 class="finance_text" id="dinero">$<%=user.wallet%></h6>
+  <div class="chart-area">
+    <div class="chartjs-size-monitor">
+      <div class="chartjs-size-monitor-expand">
+        <div class=""></div>
+      </div>
+      <div class="chartjs-size-monitor-shrink">
+        <div class=""></div>
+      </div>
+    </div>
+    <canvas id="myAreaChart" style="display: block; width: 750px; height: 320px;" width="750"
+    height="320" class="chartjs-render-monitor"></canvas>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Table Moviments -->
+<div class="col-xl-12 col-lg-7">
+  <div class="card shadow mb-4">
+    <!-- Card Header - Dropdown -->
+    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+      <h6 class="m-0 font-weight-bold text-primary flex-grow-1 p-2">
+        Ultimos movimientos
+      </h6>
+    </div>
+    <!-- Card Body -->
+    <div class="card-body">
+      <div class="table-responsive" style="">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">FECHA</th>
+              <th scope="col">TIPO</th>
+              <th scope="col">DESCRIPCIÓN</th>
+              <th scope="col">MONTO</th>
+              <th scope="col">SALDO</th>
+              <th scope="col">RECIBO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i = 0; i < wallet.length; i++) { %> <% if
+              (wallet[i].status == "Aprobada") { %> <% if
+                (wallet[i].rechargeWallet.amount =
+                wallet[i].rechargeWallet.amount) { %>
+                  <tr>
+                    <th scope="row" style="color: #2a2a35;" id="date_<%=wallet[i]._id%>">
+                      <%=wallet[i].createdAt%>
+                    </th>
+                    <td>
+                      <label style="color: #00ab84; font-weight: bold;" id="type_<%=wallet[i]._id%>"><span>Ingreso
+                        &nbsp;</span><i class="fas fa-arrow-down" aria-hidden="true"></i></label>
+                      </td>
+                      <td style="color: #2a2a35; font-weight: bold;" id="date_<%=wallet[i]._id%>">
+                        ¡Ingreso del wallet!
+                      </td>
+                      <td style="color: #2a2a35; font-weight: bold;" id="change_<%=wallet[i]._id%>">
+                        +$<%= wallet[i].rechargeWallet.amount %>
+                      </td>
+                      <td style="color: #2a2a35; font-weight: bold;" id="amount_<%=wallet[i]._id%>">
+                        $<%= wallet[i].historyWallet %>
+                      </td>
+                      <td>
+                        <label class="label_style3" type="button"
+                        onclick="saveTransaction('<%=wallet[i]._id%>')"><span>Descargar</span></label>
+                      </td>
+                    </tr>
+                    <% } %> <% if (wallet[i].retirementWallet.amount =
+                    wallet[i].retirementWallet.amount) { %>
+                      <tr>
+                        <th scope="row" style="color: #2a2a35;" id="date_<%=wallet._id%>">
+                          <%=wallet[i].createdAt%>
+                        </th>
+                        <td>
+                          <label style="color: #fe5d60; font-weight: bold;" id="type_<%=wallet[i]._id%>"><span>Egreso
+                            &nbsp;</span><i class="fas fa-arrow-up" aria-hidden="true"></i></label>
+                          </td>
+                          <td style="color: #2a2a35; font-weight: bold;" id="date_<%=wallet._id%>">
+                            ¡Egreso del wallet!
+                          </td>
+                          <td style="color: #2a2a35; font-weight: bold;" id="change_<%=wallet._id%>">
+                            -$<%= wallet[i].retirementWallet.amount %>
+                          </td>
+                          <td style="color: #2a2a35; font-weight: bold;">
+                            $<%= wallet[i].historyWallet %>
+                          </td>
+                          <td>
+                            <label class="label_style3" type="button"
+                            onclick="saveTransaction('<%=wallet[i]._id%>')"><span>Descargar</span></label>
+                          </td>
+                        </tr>
+                        <% } %> <% } %> <% } %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- /.container-fluid -->
+        <span id="variableWalletGraphic" hidden>
+          <%- JSON.stringify(wallet) %>
+        </span>
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <%- include('./partials/footer'); -%>
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+    <%- include('./partials/sidebar'); -%>
+  </div>
+
+  <%- include('partials/sub-footer'); -%>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"
+  integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/"
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    $("#workerBtn2").click(function() {
+
+        // EL POST ESTA EN WALLET ROUTES PORQUE NO SE DONDE PONERLO. OBVIO NO VA AHI
+        $.post("/api/users/changeWork")
+        .done( function(data){
+
+            location.reload();
+
+        })
+        .fail( function(xhr, textStatus, errorThrown){
+
+            console.log(xhr.responseText)
+            alert("Error guardando al usuario! " + xhr.responseText)
+
+        });
+
+
+    });
+    function saveTransaction(wallet_id) {
+      var doc = new jsPDF();
+      var elementHandler = {
+        ".download-wallet-btn": function (element, renderer) {
+          return true;
+        },
+      };
+
+      var source =
+      "<b>Fecha:</b> " + $("#date_" + wallet_id).text() + "<br>";
+      source += "<b>Tipo:</b> " + $("#type_" + wallet_id).text() + "<br>";
+      source +=
+      "<b>Ingreso/Egreso:</b> " +
+      $("#change_" + wallet_id).text() +
+      "<br>";
+      source +=
+      "<b>Monto al momento:</b> " +
+      $("#amount_" + wallet_id).text() +
+      "<br>";
+
+      console.log($("#type_" + wallet._id).text());
+
+      doc.fromHTML(source, 15, 15, {
+        width: 180,
+        elementHandlers: elementHandler,
+      });
+
+      doc.save("transaccionWalletAsilinks.pdf");
+    }
+
+    function getAllInfo() {
+      var reqInfo = {
+        amount: $("#amount").val(),
+        email: $("#email").val(),
+        creditCardNumber: $("#cart_number").val(),
+        expiration_month: $("#expiration_month").val(),
+        expiration_year: $("#expiration_year").val(),
+        cvv: $("#cvv").val(),
+        nameCard: $("#nameCard").val(),
+        country: $("#country").val(),
+        status: "Aprobada",
+      };
+
+      return reqInfo;
+    }
+
+    $("#reload").on("click", function () {
+      console.log("posted");
+      var reqInfo = getAllInfo();
+      console.log(reqInfo);
+      $.post("/client/updateWallet/", reqInfo)
+      .done(function (data) {
+        console.log("added", data);
+        alert("Envio de solicitud de carga del wallet exitosa!");
+        window.location.replace("/client/wallet");
+      })
+      .fail(function (xhr, textStatus, errorThrown) {
+        console.log(xhr);
+        console.log(textStatus);
+        console.log(errorThrown);
+        alert("Error creando en cargar wallet!", textStatus, errorThrown);
+      });
+    });
+
+    function getAllInfoEgress() {
+      var reqInfo = {
+        amount: $("#amount_egress").val(),
+        name: $("#name").val(),
+        bank: $("#bank").val(),
+        routing: $("#routing").val(),
+        bankAccountNumber: $("#bankAccountNumber").val(),
+        status: "En espera",
+      };
+
+      return reqInfo;
+    }
+
+    $("#egress").on("click", function () {
+      console.log("posted");
+      var reqInfo = getAllInfoEgress();
+      console.log(reqInfo);
+      $.post("/client/egressWallet/", reqInfo)
+      .done(function (data) {
+        console.log("added", data);
+        alert("Envio de solicitud de egreso del wallet exitosa!");
+        window.location.replace("/client/wallet");
+      })
+      .fail(function (xhr, textStatus, errorThrown) {
+        console.log(xhr);
+        console.log(textStatus);
+        console.log(errorThrown);
+        alert(
+        "Error creando en egresar del wallet!",
+        textStatus,
+        errorThrown
+        );
+      });
+    });
+  </script>
+</body>

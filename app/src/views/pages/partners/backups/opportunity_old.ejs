@@ -1,0 +1,754 @@
+<%- include('../Client/partials/requirement/header'); -%>
+
+<head>
+    <link rel="stylesheet" href="../../../assets/styles/partner.css" />
+    <link rel="stylesheet" href="../../../assets/styles/maincopia.css" />
+
+
+    <style>
+        .donate-now {
+            list-style-type: none;
+            margin: 25px 0 0 0;
+            padding: 0;
+            font-size: 10px;
+        }
+
+        .donate-now li {
+            float: left;
+            margin: 0 5px 0 0;
+            width: 100px;
+            height: 40px;
+            position: relative;
+        }
+
+        .donate-now label,
+        .donate-now input {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .donate-now input[type="radio"] {
+            opacity: 0.01;
+            z-index: 100;
+        }
+
+        .donate-now input[type="radio"]:checked+label,
+        .Checked+label {
+            background: yellow;
+        }
+
+        .donate-now label {
+            padding: 5px;
+            border: 1px solid #CCC;
+            cursor: pointer;
+            z-index: 90;
+        }
+
+        .donate-now label:hover {
+            background: #DDD;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <!-- small modal for settings -->
+        <div class="modal fade" id="smallModal" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Configuración</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <a class="btn btn-block btn-primary px-4 label_style2 steps1" data-dismiss=""
+                            style="width: auto;" href="/partner/profile">Ver perfil</a>
+                        <a class="btn btn-block btn-primary px-4 label_style2 steps1" data-dismiss=""
+                            style="width: auto;" href="/login/logout">Cerrar sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End of Topbar -->
+
+        <!-- Topbar(width<1440px) -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 fixed-top shadow breakpoint_navbar2">
+            <!-- Sidebar Toggle (Topbar) -->
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+                <img class="img-profile" src="/assets/images/logocolorartboard-2.svg" style="width: 15%;" />
+            </ul>
+
+            <!-- Topbar Search -->
+
+
+            <div class="dropdown no-arrow rounded-circle mr-3 breakpoint_dropdown position-static">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLinkNav" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" style="font-weight:bold;">
+                    <!-- <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i> -->
+                    Menú
+                </a>
+                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in flag pink-bg w-100 text-center"
+                    aria-labelledby="dropdownMenuLinkNav" x-placement="bottom-end" style="
+                    position: absolute;
+                    transform: translate3d(-152px, 18px, 0px);
+                    top: 0px;
+                    left: 0px;
+                    will-change: transform;
+                  ">
+                    <div class="sidebar-brand d-flex align-items-center justify-content-center"
+                        style="padding: 25px 0 15px 0;">
+                        <div style="
+                        background-color: #fe5d60;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 42px;
+                        margin-right: 12px;
+                      ">
+                            <div class="col-md-2">
+                                <img src="/assets/images/Client/notification.svg" class="card-img" alt="..." style="
+                            width: auto;
+                            background-color: #fe5d60;
+                            height: auto;
+                            position: relative;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                            margin-left: -1px;
+                            margin-top: 8px;
+                            border-radius: 15px;
+                          " />
+                            </div>
+                        </div>
+                        <div style="
+                        background-color: #fe5d60;
+                        width: 35px;
+                        height: 35px;
+                        border-radius: 42px;
+                        margin-right: 40px;
+                      ">
+                            <div class="col-md-2">
+                                <img src="/assets/images/Client/settings.svg" class="card-img" alt="..." style="
+                            width: auto;
+                            background-color: #fe5d60;
+                            height: auto;
+                            position: relative;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                            margin-left: -3px;
+                            margin-top: 8px;
+                            border-radius: 15px;
+                          " data-toggle="modal" data-target="#smallModal" type="button" />
+                            </div>
+                        </div>
+                        <a href="/partner/profile" style="
+                        font-family: Quicksand;
+                        font-weight: bold;
+                        font-stretch: normal;
+                        font-style: normal;
+                        line-height: 1.33;
+                        color: #2a2a35;
+                        margin-right: 10px;
+                        text-decoration: none;
+                        margin-top: -20px;
+                      "><%= user.firstname %> <%= user.lastname %></a>
+                        <a href="/partner/profile"><img class="img-profile rounded-circle" src="<%= user.photo %>"
+                                style="width: 60px; height: 60px; object-fit: cover;" /></a>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <li class="nav-item active d-flex align-items-center justify-content-center">
+                        <button class="btn btn-outline-primary style_btn" style="border-radius: 10px;" id="workerBtn2">
+                            Ir a Perfil de Cliente
+                        </button>
+                    </li>
+                    <div class="dropdown-divider"></div>
+                    <div class="h5 mb-0" style="color: black;">
+                        Información
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="card mb-3 style_border" style="max-width: 335px; margin: 0 auto; padding: 0;">
+                        <div class="row no-gutters">
+                            <div class="col-md-2">
+                                <img src="/assets/images/Client/diamond.svg" class="card-img" alt="..." style="
+                            width: 51%;
+                            background-color: #fe5d60;
+                            height: 70%;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                            border-radius: 15px;
+                          " />
+                            </div>
+                            <div class="col-md-10">
+                                <div class="card-body" style="padding: 15px 0 5px 0;">
+                                    <h5 class="card-title text-center" style="
+                              font-weight: bold;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: normal;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                              font-size: 14px;
+                            ">
+                                        Tienes 0 pagos pendientes
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="card mb-3 style_border" style="max-width: 335px; margin: 0 auto; padding: 0;">
+                        <div class="row no-gutters">
+                            <div class="col-md-2">
+                                <img src="assets/images/Client/diamond.svg" class="card-img" alt="..." style="
+                            width: 51%;
+                            background-color: #fe5d60;
+                            height: 70%;
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            margin: auto;
+                            border-radius: 15px;
+                          " />
+                            </div>
+                            <div class="col-md-10">
+                                <div class="card-body" style="padding: 15px 0 5px 0;">
+                                    <h5 class="card-title text-center" style="
+                              font-weight: bold;
+                              font-stretch: normal;
+                              font-style: normal;
+                              line-height: normal;
+                              letter-spacing: normal;
+                              color: #2a2a35;
+                              font-size: 14px;
+                            ">
+                                        Desempeño de referidos: 0/10
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="card shadow mb-4" style="margin: 0 auto; max-width: 335px; display: none;">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                            <h6 class="m-0 font-weight-bold text-primary"
+                                style="font-size: 14px; color: #2a2a35 !important;">
+                                Tu socio favorito
+                            </h6>
+                            <div class="dropdown no-arrow">
+                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLinkpartner"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+                                </a>
+                                <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                        <div class="dropdown-header">Reportar:</div>
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div> -->
+                            </div>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card mb-3" style="
+                        max-width: 450px;
+                        padding: 0;
+                        box-shadow: none !important;
+                      ">
+                            <div class="row no-gutters" style="margin-top: 10px;">
+                                <div class="col-md-4">
+                                    <img src="https://source.unsplash.com/QAB-WJcbgJk/60x60" class="card-img" alt="..."
+                                        style="
+                              width: auto;
+                              height: auto;
+                              position: relative;
+                              top: 0;
+                              bottom: 0;
+                              margin: auto;
+                            " />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body" style="padding: 15px 0 5px 0;">
+                                        <h5 class="card-title text-center" style="
+                                font-weight: bold;
+                                font-stretch: normal;
+                                font-style: normal;
+                                line-height: normal;
+                                letter-spacing: normal;
+                                color: #2a2a35;
+                                font-size: 14px;
+                              ">
+                                            Eduardo Florez
+                                        </h5>
+                                        <p class="card-text text-center" style="
+                                font-weight: normal;
+                                font-stretch: normal;
+                                font-style: normal;
+                                line-height: normal;
+                                letter-spacing: normal;
+                                color: #2a2a35;
+                                font-size: 14px;
+                              ">
+                                            4 requerimientos completados
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="card shadow mb-4" style="
+                      margin: 85px auto 0 auto;
+                      background-color: #f4f4ff;
+                      box-shadow: -10px -10px 20px 0 #e0e0ff,
+                        10px 10px 20px 0 #ffffff;
+                      max-width: 335px;
+                    ">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-center"
+                            style="background-color: transparent;">
+                            <img src="/assets/images/coding.svg" alt="..."
+                                style="margin-top: -120px; width: 220px; height: 150px;" />
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body text-center">
+                            <div class="row">
+                                <div class="col-md-12 mb-2 enter-hor">
+                                    <p class="h5 my-3" style="margin-left: 20px; font-weight: bold; color: black;">
+                                        Ascenso a Plata</p>
+
+                                    <div class="col-md-12 mb-4">
+                                        <button class="asilinks-btn orange-btn w-100">
+                                            ¡Subir a plata!
+                                        </button>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <div class="row mb-3">
+                                                    <div class="col-md-12 small-title">
+                                                        <b style="color: black;">Experiencia asilinker</b>
+                                                    </div>
+                                                    <div class="col-md-12 small-title green-text">
+                                                        100/100<img src="/assets/favicon/tick.svg"
+                                                            style="padding-bottom: 5px; padding-left: 5px;" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 small-title">
+                                                        <b style="color: black;">Calificación</b>
+                                                    </div>
+                                                    <div class="col-md-12 small-title green-text">
+                                                        100/100<img src="/assets/favicon/tick.svg"
+                                                            style="padding-bottom: 5px; padding-left: 5px;" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-4 ldBar label-center" data-value="<%= value %>"
+                                                data-preset="circle"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 center-hor small-title mb-2">
+                                        <a href="/login">Ver más información</a>
+                                    </div>
+                                </div>
+                                <!-- <h6
+                        class="m-0 font-weight-bold text-primary text-center"
+                        style="
+                          margin-top: 50px !important;
+                          color: #2a2a35 !important;
+                        "
+                      >
+                        Mi calificación
+                      </h6> -->
+                                <!-- <p
+                        class="card-text text-center"
+                        style="
+                          font-weight: lighter;
+                          font-stretch: normal;
+                          font-style: normal;
+                          line-height: 1.14;
+                          letter-spacing: normal;
+                          color: #2a2a35;
+                          margin-top: 10px;
+                        "
+                      >
+                        Desempeño como cliente
+                      </p> -->
+                                <!-- <h6
+                        class="m-0 font-weight-bold text-primary text-center"
+                        style="
+                          font-weight: bold;
+                          font-stretch: normal;
+                          font-style: normal;
+                          line-height: 1.14;
+                          letter-spacing: normal;
+                          color: #009270 !important;
+                          margin-top: 50px !important;
+                          font-size: 25px;
+                        "
+                      >
+                        0 de 5
+                      </h6>
+                      <a href="/">Ver calificaciones</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </nav>
+        <div class="row">
+            <div class="col-12 col-md-12">
+                <div class="row">
+                    <div class="col-12 px-0">
+                        <%- include('../../partials/search-header.ejs'); -%>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-12 small-title red-text">
+                        <a class="fas fa-arrow-left" href="/partner" style="width: auto !important;">
+                            <div class="d-inline-block" style="font-family: Quicksand;">
+                                &nbsp&nbsp Volver al inicio
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row mb-4" id="opportunityInfo">
+                    <div class="col-md-6 " id="opportunityDescription">
+                        <div class="card shadow mb-4">
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <div class="row mb-3 ml-2 no-gutters">
+                                    <div class="col">
+                                        <img src="https://picsum.photos/500.webp" class="card-img rounded2" alt="..."
+                                            style="width: 100%; height: 100%;">
+                                    </div>
+
+                                    <div class="col-md-8 col-8 col-sm-8 ">
+                                        <div class="row mb-2">
+                                            <div class="card-body" style="padding: 1.25rem !important;">
+                                                <h5 class="card-title breakpoint_font"
+                                                    style="font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #2a2a35;">
+                                                    <%= opportunity.name %></h5>
+
+
+                                                <p class="card-text"
+                                                    style="font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: normal; color: #2a2a35;">
+                                                    Por <%= opportunity.client.firstname %>
+                                                    <%= opportunity.client.lastname %></p>
+
+                                                <a href="" class="btn btn-outline-primary style_btn mb-2 mb-md-0"
+                                                    style="font-size: .7rem;">
+                                                    <%= opportunity.subcategory.category.toLowerCase() %></a>
+                                                <a href="" class="btn btn-outline-primary style_btn"
+                                                    style="font-size: .7rem;">
+                                                    <%= opportunity.subcategory.sub_category.toLowerCase() %></a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <br><br>
+                                <div class="row mb-3">
+                                    <div class="col-6 left-hor text-14">
+                                        <div class="row mb-2">
+                                            <div class="col-12 left-hor text-14">
+                                                <!-- <b>Tiempo estimado</b><br>
+                                                <%= opportunity.development_time %> -->
+
+                                                <b style="color: #000;">Tiempo estimado</b><br>
+                                                <%= opportunity.development_time %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6 left-hor text-14">
+                                        <div class="row mb-2">
+                                            <div class="col-12 left-hor text-14">
+                                                <b style="color: #000;">Avance en el proyecto</b><br>
+                                                <%= opportunity.knowledge %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12 left-hor text-14">
+                                        <b style="color: #000;">Descripción</b><br>
+                                        <%= opportunity.description %>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-12 left-hor text-14">
+                                        <b style="color: #000;">Adjunto</b><br>
+                                        <a style="color: #858796;" href="<%= opportunity.file %>"
+                                            target="_blank"><%= opportunity.name %></a>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-5 col-md-3 left-hor text-14">
+                                        <button onclick="reject('<%= opportunity._id %>','<%= user._id %>');"
+                                            class="asilinks-btn trans-btn">
+                                            Rechazar
+                                        </button>
+                                    </div>
+                                    <div class="col-7 col-md-9 left-hor text-14">
+                                        <button data-toggle="modal" data-target="#Modal-proposal"
+                                            class="asilinks-btn orange-btn">
+                                            <% if (proposal) { %>
+                                            <% if (proposal.status =="Pending") { %>
+                                            Editar Propuesta
+                                            <% } else if (proposal.status =="Accepted") { %>
+                                            Aceptada
+                                            <% } else if (proposal.status =="Rejected")  { %>
+                                            Rechazada
+                                            <% }%>
+                                            <% } else { %>
+                                            Crear Propuesta
+                                            <% }%>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="col-12 col-md-6" id="opportunityChat">
+                        <div class="card asilinks-card white-bg black-shadow">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-2 left-hor mid-title red-text">
+                                        <img class="clickable rounded-circle" height="50" width="50" style="float:right;" src="<%= opportunity.client.photo %>">
+                                    </div>
+                                    <div class="col-10 left-hor small-title">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <b><%= opportunity.client.firstname %> <%= opportunity.client.lastname %></b>
+                                            </div>
+                                            <div class="col-12">
+                                                Última conexión
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body small-title">
+                                Aqui el chat
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col-1 red-text center-vert">
+                                        <i class="fa fa-2x fa-paperclip clickable" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="col-10">
+                                        <input class="send-message w-100" type="message" name="message" placeholder="Escribe tu mensaje...">
+                                    </div>
+                                    <div class="col-1 red-text center-vert pl-0">
+                                        <i class="fa fa-2x fa-paper-plane clickable" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+
+                </div>
+            </div>
+        </div>
+        <!-- modal for proposal -->
+        <div class="modal fade" id="Modal-proposal" tabindex="-1" role="dialog" aria-labelledby="basicModal"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+                    <div class="row ml-auto">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-header" style="margin: 0 auto;">
+
+                        <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#fe5d60">
+                            <% if (proposal) { %>
+
+                            <% if (proposal.status=="Pending") { %>
+                            Editar Propuesta
+                            <% } else { %>
+                            Propuesta Enviada
+                            <% }%>
+                            <% } else { %>
+                            Crear Propuesta
+                            <% }%>
+                        </h4>
+
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="card-body">
+                            <form id="proposal_form" enctype="multipart/form-data">
+                                <fieldset>
+                                    <div class="form-group row">
+                                        <div class="col-12 delete_after">
+                                            <label for="expiration"
+                                                style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">TIEMPO
+                                                ESTIMADO</label>
+                                            <span class="expiration">
+                                                <br>
+                                                <input type="number" name="time" class="form-input-number" style="color: #2a2a35"
+                                                    id="time" required="true"
+                                                    <% if(proposal) {%>value="<%= proposal.estimatedTime %>"
+                                                    <%}%> />
+													<select type="text" class="form-input" style="color: #2a2a35; width: 70%;" id="estimated"  name="estimated" required="true"  <% if(proposal) {%>value="<%= proposal.estimatedUnit %>"
+                                                    <%}%>>
+                                                    <option value="Dias">Días</option>
+                                                    <option value="Semanas">Semanas</option>
+                                                    <option value="Meses">Meses</option>
+                                                  </select>
+
+												</span>
+											</div>
+										</div>
+
+
+									<div class="form-group row">
+										<div class="col-sm-12">
+												<label for="title" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Fecha de entrega</label>
+												<input type="date" class="form-input" id="deadline" name="deadline" placeholder="" style="color: #2a2a35" required="true"  <% if(proposal) {%>value="<%= proposal.deadline %> <%}%>"/>
+										</div>
+									</div>
+										<div class="form-group row">
+											<div class="col-sm-12">
+													<label for="description" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Precio (USD)</label>
+                                                    <input type="number" class="form-input"
+                                                    placeholder="400" id="price" name="price" placeholder="" style="color: #2a2a35" required="true"  <% if(proposal) {%>value="
+                                                    <%= proposal.price %>" <%}%>>
+											</div>
+									</div>
+
+                                        <!-- <div class="col-12">
+                                            <label for="deliver_file" style="font-weight: bold;" class="mb-2">PROPUESTA</label><br>
+                                            <span>
+                                              <input type="file" name="deliver_file" id="deliver_file" class="inputfile form-input" style="padding:0.25rem;">
+                                              <label for="deliver_file" class="label_style" id="proposal_file_label"><span>Adjuntar archivo &nbsp</span><i class="fa fa-paperclip" aria-hidden="true"></i></label>
+                                            </span>
+                                          </div> -->
+                                        </fieldset>
+                                    </form>
+
+									<% if (proposal) { %> <% if (proposal.status=="Pending") { %> <button
+                                                    class="btn btn-block btn-primary px-4 label_style2" data-dismiss=""
+                                                    style="width: 100%; margin-top: 25px;" id="sendProposal"
+                                                    onclick="editProposal('<%= proposal._id %>');">Editar
+                                                Propuesta</button>
+                                                <% }%>
+
+                                                <% } else { %>
+                                                <button class="btn btn-block btn-primary px-4 label_style2"
+                                                    data-dismiss="" style="width: 100%; margin-top: 25px;"
+                                                    id="sendProposal"
+                                                    onclick="sendProposal('<%= opportunity._id %>','<%= user._id %>', '<%= opportunity.client._id %>');">Enviar
+                                                    Propuesta</button>
+                                                <% }%>
+                                        </div>
+                                    </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- end of modal -->
+            </div>
+
+
+</body>
+
+<script type="text/javascript">
+    function reject(opportunity, user) {
+
+        $.post("/opportunity/reject",
+            {
+                opportunity,
+                user
+            },
+            function (data, status) {
+                console.log(data)
+                console.log(status);
+                window.location.href = "/partner"
+            });
+    }
+
+    function sendProposal(opportunity, user, client) {
+
+      var form = $('#proposal_form')[0];
+
+      var data = new FormData(form);
+      data.append("opportunity", opportunity)
+      data.append("user", user)
+      data.append("client", client)
+      //
+      // var file = $("#deliver_file")[0].files[0];
+        console.log("posted");
+        var reqInfo = {
+            time: $("#time").val(),
+            estimated: $("#estimated").val(),
+            deadline: $("#deadline").val(),
+            price: $("#price").val(),
+            // deliver_file: file,
+            opportunity,
+            user,
+            client
+        }
+        $.ajax({
+           type: "POST",
+           enctype: 'multipart/form-data',
+           url: "/opportunity/proposal/create",
+           data: data,
+           processData: false,
+           contentType: false,
+           cache: false,
+           timeout: 600000,
+           success: function (data) {
+               console.log("SUCCESS : ", data);
+               window.location.reload();
+           },
+           error: function (e) {
+             console.log("ERROR : ", e);
+             alert("ocurrió un error al enviar propuesta")
+
+           }
+      });
+
+    }
+
+    function editProposal(proposal) {
+
+        console.log("posted");
+        var reqInfo = {
+            time: $("#time").val(),
+            estimated: $("#estimated").val(),
+            deadline: $("#deadline").val(),
+            price: $("#price").val(),
+            proposal
+        }
+
+        $.post("/opportunity/proposal/edit",
+            reqInfo,
+            function (data, status) {
+                console.log(data)
+                console.log(status);
+                if (data == "ok") window.location.reload();
+            });
+    }
+</script>
+
+<%- include('../../partials/sub-footer-alt'); -%>

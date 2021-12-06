@@ -1,0 +1,94 @@
+<!-- NAV BAR -->
+<section class="menu cid-qKNlndynuc">
+    <!-- Cambio de Idioma -->
+    <div class="affix-top fixed-top align-right pr-4" style="background-color:#fff;z-index: 1321; height:30px;">
+      <div class="row float-right">
+        <form class="language">
+          <div class="form-group">
+            <!-- <img class="rounded-circle" src="assets/images/es-1.svg" alt="idioma" style="height: 20px;max-height: 20px;"> <select class="form-control-sm btn-clean display-8 text-asilinks" id="seleccion-idioma" style="box-shadow:none; border:none;z-index:-1;">
+            <option value="ES">ES</option>
+            <option value="EN">EN</option>
+            </select>  -->
+            ¿Qué estás buscando?
+            <button (click)="openModal()" class=" btn-clean1 align-items-right align-right justify-content-end text-right" style="width:30px;height:25px; border-left:rgba(205, 205, 205, 0.88) 1px solid;">
+              <i style="color:#646464; font-size:0.8em;" class="fa fa-search fa-1x"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- ./Fin Cambio de Idioma -->
+    <!-- HEADER -->
+    <nav class="mt-4 navbar {{typeHeader}} navbar-fixed-top navbar-expand beta-menu navbar-dropdown align-items-center navbar-toggleable-sm sticky-top" >
+      <div class="navbar-toggler navbar-toggler-right d-flex align-items-center bg-grey  pr-4" role="navigation" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      </div>
+      <button class="navbar-toggler navbar-toggler-right " type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="hamburger align-self-center align-items-center">
+        <span></span> <span></span> <span></span> <span></span>
+      </div>
+      </button>
+      <div class="menu-logo"></div>
+      <div class="navbar-brand pt-3">
+        <span class="navbar-logo ml-md-4 ml-lg-5 ml-xl-5 ml-0">
+          <a class="d-none d-sm-block d-md-block" href="/">
+            <img src="assets/images/logocolorartboard-2.svg" alt=" " title="logo_asilinks" style="height: 3.1rem;">
+          </a>
+          <a class="d-block d-sm-none" href="/"><!-- mobile -->
+            <img src="assets/images/logocolorartboard-2.svg" alt=" " title="logo_asilinks" style="width: 20vw;">
+          </a>
+        </span>
+        <ul class="nav navbar-nav" data-app-modern-menu="true">
+          <li class="nav-item d-none d-xs-block d-sm-none d-lg-none display-4">
+            <a class="nav-link link text-section display-6" href="/login/register">
+              <u>Regístrate</u>
+            </a>
+          </li>
+        </ul>
+        </div>
+        <div class="collapse pt-5 navbar-collapse justify-content-end" id="navbarSupportedContent">
+          <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+            <!-- <li class="nav-item">
+              <a class="nav-link link text-section display-4 float-right"  routerLink="/">
+                Inicio
+              </a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link link text-warning display-4 float-right" href="/info" [routerLinkActive]="['active-header']">
+                ¿Cómo funciona?
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link text-warning display-4" href="/benefits" [routerLinkActive]="['active-header']">
+                Beneficios para ti
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link link text-warning display-4" href="/FAQ" [routerLinkActive]="['active-header']">
+                FAQ
+              </a>
+            </li>
+            <!-- <li class="nav-item blog">
+              <a class="nav-link link text-warning display-4" href="/blog" [routerLinkActive]="['active-header']">
+                Blog
+              </a>
+            </li> -->
+            <!-- <li class="nav-item">
+              <a class="nav-link link text-warning display-4" href="/contact" [routerLinkActive]="['active-header']">
+                Contáctanos
+              </a>
+            </li> -->
+            <li *ngIf="!username" class="nav-item">
+              <a class="nav-link link text-warning display-4" href="/login" [routerLinkActive]="['active-header']">
+                <u>Iniciar sesión</u>
+              </a>
+            </li>
+          </ul>
+          <div *ngIf="!username" class="navbar-buttons mbr-section-btn">
+            <a class="btn btn-color-asilinks display-4 text-dark btn-sm" style="color:white !important" href="/login/register">
+              Regístrate
+            </a>
+          </div>
+        </div><!-- collapse end -->
+    </nav>
+    <!-- ./Fin HEADER -->
+  </section>

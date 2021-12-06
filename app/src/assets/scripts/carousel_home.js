@@ -1,0 +1,31 @@
+jQuery(document).ready(function(){
+    jQuery(".owl-carousel").owlCarousel({
+        items:4,
+        autoplay:true,
+        margin:30,
+        loop:true,
+        nav:false,
+        navText:["<i class='fas fa-long-arrow-alt-left'></i>","<i class='fas fa-long-arrow-alt-right'></i>" ],
+        responsiveClass:true,
+        responsive:{
+          0:{
+              items:1,
+              nav:false,
+              loop:true,
+              autoplay:true,
+          },
+          600:{
+              items:2,
+              nav:false,
+              loop:true,
+              autoplay:true,
+          },
+          1000:{
+              items:3,
+              nav:false,
+              loop:true,
+              autoplay:true,
+          }
+      }
+    });
+  });

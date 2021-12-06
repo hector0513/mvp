@@ -1,0 +1,618 @@
+<%- include('../Client/partials/header'); -%>
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+  <link rel="stylesheet" href="../../../assets/styles/maincopia.css" />
+  <style>
+    .vertical{
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
+
+    .searchBar {
+      border-radius: 26px;
+      width: 100%
+      height: 52px;
+      background-color: #f2f2f5;
+    }
+
+    .searchInput {
+      font-family: Quicksand;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      color: #bcbcca;
+      background-color: #f2f2f5;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        font-family: Quicksand;
+        font-size: 16px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1;
+        letter-spacing: normal;
+        color: #bcbcca;
+        opacity:1;
+      }
+
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+          font-family: Quicksand;
+          font-size: 16px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1;
+          letter-spacing: normal;
+          color: #bcbcca;
+      }
+
+      ::-ms-input-placeholder { /* Microsoft Edge */
+
+          font-family: Quicksand;
+          font-size: 16px;
+          font-weight: bold;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1;
+          letter-spacing: normal;
+          color: #bcbcca;
+      }
+
+    .buttonAdd {
+      border-radius: 26px;
+        height: 52px;
+      background-image: linear-gradient(to right, #e74267, #ff5d60);
+    }
+
+    .buttonSend {
+        height: 52px;
+        border-radius: 10px;
+        background-image: linear-gradient(to right, #e74267, #ff5d60);
+    }
+
+
+    .buttonText {
+      font-family: Quicksand;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      text-align: center;
+      color: #ffffff;
+    }
+    .description {
+      font-family: Quicksand;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.38;
+      letter-spacing: normal;
+      color: #2a2a35;
+    }
+    .link-req {
+      font-family: Quicksand;
+      font-size: 14px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.43;
+      letter-spacing: normal;
+      color: #fe5d60;
+    }
+    .tag {
+    border-radius: 9px;
+    background-color: #2a2a35;
+    padding:1px 1px 1px 1px;
+  }
+  .tag-label {
+  font-family: Quicksand;
+  font-size: 12px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: normal;
+  color: #ffffff;
+}
+
+.checked {
+  opacity: 0.5;
+}
+.line{
+  text-decoration: line-through;
+}
+  .priority_2 {
+    color: #fe5d60;
+  }
+  .priority_1 {
+    color: #ffa502;
+  }
+  .priority_0 {
+    color: #1e90ff;
+  }
+
+  .date{
+ font-family: Quicksand;
+ font-size: 14px;
+ font-weight: bold;
+ font-stretch: normal;
+ font-style: normal;
+ line-height: 1.43;
+ letter-spacing: normal;
+ color: #b5c7d3;
+}
+
+.white {
+  color: #fff;
+}
+
+.empty-check {
+  padding: 0.5rem;
+  border-radius: 50%;
+  border: solid 1px #b5c7d3;
+  cursor: pointer;
+}
+.green {
+  background-color: #00ab84;
+  cursor: auto;
+}
+
+.tick {
+  object-fit: contain;
+}
+.separator {
+  height: 1px;
+  border: solid 1px #feeeef;
+}
+.draggable{
+  cursor: grab;
+}
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Entire bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.js"></script>
+  <!-- legacy bundle for older browsers (IE11) -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.bundle.legacy.js"></script>
+  <!-- Draggable only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/draggable.js"></script>
+  <!-- Sortable only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/sortable.js"></script>
+  <!-- Droppable only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/droppable.js"></script>
+  <!-- Swappable only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/swappable.js"></script>
+  <!-- Plugins only -->
+  <script src="https://cdn.jsdelivr.net/npm/@shopify/draggable@1.0.0-beta.8/lib/plugins.js"></script>
+</head>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <%- include('./partials/nav'); -%>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin: 50px 0 50px 0;">
+            <h1 class="h3 mb-0 text-center red-text" id="Welcome-requeriments-refers">
+              ¡Bienvenido <%= user.firstname %>!
+            </h1>
+
+            <!-- Tabs -->
+            <section class="tabs3 faqstyle bg-white text-center" id="tabs3-2">
+              <label>
+                <input type="radio" checked name="radio" id="radio0" />
+                <div class="btn_nav btn-sik red-text"><span>Inicio</span></div>
+              </label>
+              <label>
+                <input type="radio" name="radio" id="radio1" />
+                <div class="btn_nav btn-sik red-text">
+                  <span>Oportunidades</span>
+                </div>
+              </label>
+              <label>
+                <input type="radio" name="radio" id="radio2" />
+                <div class="btn_nav btn-sik red-text">
+                  <span>Referidos</span>
+                </div>
+              </label>
+            </section>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row" id="todo_calendar">
+
+            <!-- Pie Chart -->
+            <div class="col-xl-4 col-lg-5">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold red-text">Esta semana</h5>
+                  <div class="dropdown no-arrow">
+                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                  aria-labelledby="dropdownMenuLink">
+                  <div class="dropdown-header">Mi Calendario:</div>
+                  <!--<a class="dropdown-item" href="#">Ver mi calendario</a> -->
+                </div>
+              </div>
+            </div>
+            <!-- Card Body -->
+            <div class="card-body">
+              <section class="package-schedules">
+                <% calendar.forEach((item, i) => { %>
+                  <div class="row calendar">
+                    <div class="col-2">
+                      <span class="day"><%= item.weekday %></span> <br />
+                      <span class="date-header"><%= item.date %></span>
+                    </div>
+                    <% if (item.task) {%>
+                      <div class="col-10 Rectangle">
+                        <span class="package-stat"><%= item.task.name %></span>
+                        <br />
+                        <span class="sched-desc color1"><%= item.task.client.firstname %> <%= item.task.client.lastname %></span>
+                      </div>
+                      <%}%>
+                    </div>
+                    <% }); %>
+                  </section>
+                </div>
+              </div>
+            </div>
+
+            <!-- Area Chart -->
+            <div class="col-xl-8 col-lg-7">
+              <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                  <h5 class="m-0 font-weight-bold red-text">
+                    Lista de tareas
+                  </h5>
+                </div>
+
+                <!-- Card Body -->
+                <div class="card-body">
+                  <div class="container">
+                    <br>
+                  <div class="row">
+                    <div class="col-8 searchBar">
+                      <span class="vertical" style="margin-left:5px;">
+                      <i class="fa fa-search"></i><input type="text" id="search" name="search" class="searchInput" placeholder="Buscar..."/>
+                      </span>
+                    </div>
+                    <div class="col-4" align="right">
+                      <button id="callAdd" class="btn btn-block buttonAdd buttonText" data-toggle="modal" data-target="#Modal-task">Agregar tarea</button>
+                    </div>
+                  </div>
+                  <br>
+                  <p></p>
+
+                  <div id="todoDIV">
+                    <div class="containter" id="todo">
+                      <% todo.forEach((task, i) => { %>
+                        <div class="row draggable" id="<%=task._id%>">
+                          <div class="col-11">
+                            <i class="fa fa-circle white"></i>&nbsp;<label class="description"><%=task.description%></label>
+                            <br>
+                            <p>
+                              <i class="fa fa-circle priority_<%=task.priority%>"></i>
+                              <a class="link-req" href="/partner/opportunity/inProgress/<%=task.requirement._id%>">Oportunidad #<%=task.requirement._id %></a>&nbsp;
+                              <% task.tags.forEach((tag, t) => { %>
+                                <span class="tag"><label class="tag-label">&nbsp;<%=tag%>&nbsp;</label></span>
+                              <% }) %>
+                              <br>
+                              <i class="fa fa-circle white"></i>&nbsp;<label class="date"><%= moment(task.deadline).format("DD/MM/YYYY")%></label>
+                            </p>
+                            <p class="separator"></p>
+                            </div>
+                            <div class="col-1">
+                              <div class="row empty-check vertical" onclick="checkTask('<%= task._id%>')">
+                                <img src="/assets/images/tick.svg" class="tick">
+                              </div>
+                            </div>
+                          </div>
+                        <% }) %>
+                    </div>
+                    <div>
+                      <br>
+                      <div class="col-2 date">Completadas</div>
+                      <hr>
+                      <br>
+                    </div>
+                    <div class="containter" id="done">
+                    <% done.forEach((task, i) => { %>
+                      <div class="row">
+                        <div class="col-11">
+                          <i class="fa fa-circle white"></i>&nbsp;<label class="description checked line"><%=task.description%></label>
+                          <br>
+                          <p>
+                            <i class="fa fa-circle priority_<%=task.priority%>"></i>
+                            <a class="link-req checked" href="/partner/opportunity/inProgress/<%=task.requirement._id%>">Oportunidad #<%=task.requirement._id %></a>&nbsp;
+                            <% task.tags.forEach((tag, t) => { %>
+                            <span class="tag checked"><label class="tag-label">&nbsp;<%=tag%>&nbsp;</label></span>
+                            <% }) %>
+                            <br>
+                            <i class="fa fa-circle white"></i>&nbsp;<label class="date"><%= moment(task.deadline).format("DD/MM/YYYY")%></label>
+
+                          </p>
+                          <p class="separator"></p>
+                          </div>
+
+                          <div class="col-sm-1">
+                              <div class="row empty-check green vertical">
+                                <img src="/assets/images/tick.svg" class="tick">
+                              </div>
+                            <!-- <i class="fa fa-circle-thin vertical" ></i> -->
+                          </div>
+                        </div>
+                        <br>
+                        <% }) %>
+                    </div>
+                  </div>
+                  <div id="searchDIV">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+          <!-- modal for task -->
+          <div class="modal fade" id="Modal-task" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content" style="border-radius: 42px; padding: 35px;">
+                <div class="row ml-auto">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+                  </button>
+                </div>
+
+                <div class="modal-header" style="margin: 0 auto;">
+                  <h4 class="modal-title" id="myModalLabel" style="font-weight: bold; color:#fe5d60">Nueva tarea</h4>
+                </div>
+
+                <div class="modal-body">
+                  <div class="card-body">
+                    <form enctype="multipart/form-data">
+                      <fieldset>
+                        <div class="form-group row">
+                          <div class="col-12">
+                            <label for="description" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Descripción</label>
+                            <br>
+                              <input type="text" class="form-input" style="color: #2a2a35;" id="description" name="description" required>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <div class="col-sm-12">
+                            <label for="requirement" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Requerimiento</label>
+                            <br>
+                              <select type="text" class="form-input" style="color: #2a2a35;" id="requirement"  name="requirement" required>
+                                <% opportunities.forEach((opp, o) => { %>
+                                  <option value="<%=opp._id %>"> #<%=opp._id%> - <%= opp.client.firstname %> <%= opp.client.lastname %></option>
+                                  <% }); %>
+                                </select>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="priority"  style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Prioridad</label>
+                              <br>
+                                <select type="text" class="form-input" style="color: #2a2a35;" id="priority"  name="priority" required>
+                                  <option value=2>Alta <i class="fa fa-circle"></i></option>
+                                  <option value=1>Media <i class="fa fa-circle"></i></option>
+                                  <option value=0>Baja <i class="fa fa-circle"></i></option>
+                                </select>
+
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="deadline" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Fecha de vencimiento</label>
+                              <br>
+                              <input type="date" class="form-input" id="deadline" name="deadline" placeholder="" style="color: #2a2a35" required/>
+                            </div>
+                          </div>
+
+                          <div class="form-group row">
+                            <div class="col-sm-12">
+                              <label for="tags" style="font-family: Quicksand; font-weight: bold; color: #bcbcca;">Tags</label>
+                              <br>
+                              <input type="text" class="form-input" style="color: #2a2a35;" id="tags" name="tags" required />
+                            </div>
+                          </div>
+                        </fieldset>
+
+                      </form>
+                      <button class="btn btn-block btn-primary px-4 label_style2 buttonSend buttonText"
+                      data-dismiss="" style="width: 100%; margin-top: 25px;"
+                      id="addTask"
+                      onclick="createTask('<%= user._id %>');">
+                      Añadir Tarea
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end of modal -->
+                  <!-- Row refereds -->
+
+
+</div>
+<!-- /.container-fluid -->
+
+
+</div>
+<!-- End of Main Content -->
+
+<!-- Footer -->
+<%- include('./partials/footer'); -%>
+<!-- End of Footer -->
+</div>
+<!-- End of Content Wrapper -->
+
+<%- include('./partials/sidebar'); -%>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+<script>
+
+
+$( "#todo" ).sortable({
+  cursor: 'grabbing',
+  update: function( event, ui ) {
+    var sortedList = $( "#todo" ).sortable( "toArray" );
+    var arr = sortedList.filter(function(x){
+     return x.length>2;
+    });
+    console.log(arr);
+    postSort(arr)
+  }
+
+}).disableSelection();
+
+function postSort(sortedList){
+
+  $.post("/partner/todo/sort",
+  {
+    list:sortedList
+  },
+  function(data,status){
+      console.log(data)
+      console.log(status);
+  });
+
+}
+
+  function checkTask(task){
+
+    var reqInfo = {
+      task
+    }
+    $.post("/partner/todo/check",
+        reqInfo,
+        function (data, status) {
+            console.log(data)
+            console.log(status);
+              window.location.reload()
+        });
+  }
+
+  $("#search").on('change keydown paste input focus', function(){
+
+    var search = $("#search").val()
+    if (search.length>2){
+      $("#todoDIV").hide()
+      $("#searchDIV").show()
+      var reqInfo = {
+        search,
+        partner: "<%= user._id %>"
+      }
+      $.post("/partner/todo/search",
+      reqInfo,
+      function (data, status) {
+        loadSearch(data);
+      });
+    } else {
+      $("#todoDIV").show()
+      $("#searchDIV").hide()
+    }
+
+  })
+
+
+  function createTask(partner){
+    var description= $("#description").val()
+    var requirement = $("#requirement").val()
+    var priority= $("#priority").val()
+    var deadline = $("#deadline").val()
+    var tags_string = $("#tags").val()
+    var tags = tags_string.split(" ");
+    var reqInfo = {
+        description,
+        requirement,
+        priority,
+        deadline,
+        tags,
+        partner
+    }
+    $.post("/partner/todo/create",
+        reqInfo,
+        function (data, status) {
+            console.log(data)
+            console.log(status);
+            $("#Modal-task").hide()
+            window.location.reload()
+        });
+  }
+
+
+  function loadSearch(todo){
+
+    $("#searchDIV").html("");
+    var div_container = $("<div>").attr("class","container").appendTo('#searchDIV');
+
+    todo.forEach((task, i) => {
+      var div_row = $("<div>").attr("class","row").appendTo(div_container);
+      var div_col = $("<div>").attr("class","col-11").appendTo(div_row);
+      var white = $("<i>").attr("class","fa fa-circle white").append("&nbsp; ")
+      white.appendTo(div_col);
+      var class_description = "description"
+      if (task.status!= "Pending") {class_description += " checked line"}
+      var description = $("<label>").attr("class",class_description).append("&nbsp; "+task.description).appendTo(div_col);
+      $("<br>").appendTo(div_col)
+      var p = $("<p>").appendTo(div_col);
+      var priority_color =  "fa fa-circle priority_"+ task.priority;
+      var priority = $("<i>").attr("class",priority_color).appendTo(p);
+      var a_link = "Oportunidad #"+String(task.requirement._id)+"&nbsp; ";
+      var a = $("<a>").attr("class","link-req").attr("href","/partner/opportunity/inProgress/"+task.requirement._id).append(a_link).appendTo(p);
+
+      task.tags.forEach((tag, t) => {
+        var span =  $("<span>").attr("class","tag").appendTo(p);
+        var label = $("<label>").attr("class","tag-label").append("&nbsp; "+tag+" &nbsp;").appendTo(span);
+      })
+
+      $("<br>").appendTo(p)
+      white.appendTo(p)
+      var date = $("<label>").attr("class","date").append(moment(task.deadline).format("DD/MM/YYYY")).appendTo(p);
+      $("<p>").attr("class","separator").appendTo(div_col)
+      var div_col_1 = $("<div>").attr("class","col-1").appendTo(div_row);
+      var class_status ="row empty-check vertical";
+      if (task.status=="Done") {class_status += " green"}
+      var div_row_check = $("<div>").attr("class",class_status).appendTo(div_col_1);
+      var img = $("<img>").attr("class","tick").attr("src","/assets/images/tick.svg").appendTo(div_row_check);
+
+    })
+
+  }
+</script>
+
+
+
+</body>

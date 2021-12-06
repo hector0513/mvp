@@ -1,0 +1,197 @@
+.vertical{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.searchBar {
+  border-radius: 26px;
+  width: 100%
+  height: 52px;
+  background-color: #f2f2f5;
+}
+
+.searchInput {
+  font-family: Quicksand;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #bcbcca;
+  background-color: #f2f2f5;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    font-family: Quicksand;
+    font-size: 16px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    color: #bcbcca;
+    opacity:1;
+  }
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+      font-family: Quicksand;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      color: #bcbcca;
+  }
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+
+      font-family: Quicksand;
+      font-size: 16px;
+      font-weight: bold;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1;
+      letter-spacing: normal;
+      color: #bcbcca;
+  }
+
+.buttonAdd {
+  border-radius: 26px;
+    height: 52px;
+  background-image: linear-gradient(to right, #e74267, #ff5d60);
+}
+
+.buttonSend {
+    height: 40px;
+    border-radius: 10px;
+    background-image: linear-gradient(to right, #e74267, #ff5d60);
+}
+
+
+.buttonText {
+  font-family: Quicksand;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: center;
+  color: #ffffff;
+}
+.description {
+  font-family: Quicksand;
+  font-size: 16px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.38;
+  letter-spacing: normal;
+  color: #2a2a35;
+}
+.link-req {
+  font-family: Quicksand;
+  font-size: 14px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: normal;
+  color: #fe5d60;
+}
+.tag {
+border-radius: 9px;
+background-color: #2a2a35;
+padding:1px 1px 1px 1px;
+}
+.tag-label {
+font-family: Quicksand;
+font-size: 12px;
+font-weight: bold;
+font-stretch: normal;
+font-style: normal;
+letter-spacing: normal;
+color: #ffffff;
+}
+
+.checked {
+opacity: 0.5;
+}
+.line{
+text-decoration: line-through;
+}
+.priority_2 {
+color: #fe5d60;
+}
+.priority_1 {
+color: #ffa502;
+}
+.priority_0 {
+color: #1e90ff;
+}
+
+.date{
+font-family: Quicksand;
+font-size: 14px;
+font-weight: bold;
+font-stretch: normal;
+font-style: normal;
+line-height: 1.43;
+letter-spacing: normal;
+color: #b5c7d3;
+}
+
+.white {
+color: #fff;
+}
+
+.empty-check {
+padding: 0.5rem;
+border-radius: 50%;
+border: solid 1px #b5c7d3;
+cursor: pointer;
+}
+.green {
+background-color: #00ab84;
+cursor: auto;
+}
+
+.red {
+background-color: #ff5d60;
+cursor: auto;
+}
+
+.cursor-default {
+  cursor: default;
+}
+.tick {
+object-fit: contain;
+}
+.separator {
+height: 1px;
+border: solid 1px #feeeef;
+}
+.draggable{
+cursor: grab;
+}
+
+.done-separator{
+  height: 1px;
+  border: solid 1px #b5c7d3;
+}
+
+.done-text {
+  font-family: Quicksand;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.33;
+  letter-spacing: normal;
+  color: #b5c7d3;
+}

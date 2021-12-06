@@ -1,0 +1,56 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="deliver">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:0;">
+        <h5 class="modal-title">Entregable</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+        </button>
+      </div>
+      <form enctype='multipart/form-data' method="post" action="/opportunity/deliver" id="deliverForm">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <label for="deliver_file">PROPUESTA</label><br>
+                <span>
+                  <input type="file" name="deliver_file" id="deliver_file" class="inputfile form-input" style="padding:0.25rem;">
+                  <label for="deliver_file" class="label_style" id="proposal_file_label"><span>Adjuntar archivo &nbsp</span><i class="fa fa-paperclip" aria-hidden="true"></i></label>
+                </span>
+              </div>
+              <div class="col-12">
+                <label for="deliver_comment">COMENTARIO</label><br>
+                <input type="text" class="form-input" name="deliver_comment" id="deliver_comment">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top:0;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <button id="opportunityDeliver" type="submit" class="asilinks-btn orange-btn">Enviar preview</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+  $("#deliver_file").change(function() {
+
+    if (!this.files[0])
+      return $("#proposal_file_label").html("<span>Adjuntar archivo &nbsp</span><i class='fa fa-paperclip' aria-hidden='true'></i>")
+
+    $("#proposal_file_label").text(this.files[0].name)
+
+  });
+
+</script>

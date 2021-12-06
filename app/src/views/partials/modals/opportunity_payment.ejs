@@ -1,0 +1,89 @@
+<div class="modal fade" aria-labelledby="ratingModalLabel" tabindex="-1" role="dialog" id="payment">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:0;">
+        <h5 class="modal-title">Recibos de pago</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+        </button>
+      </div>
+      <form enctype='application/json' method="post" action="/opportunity/rating">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12 border-10 gray-border py-3" id="paymentInfo">
+                <div class="row">
+                  <div class="col-12 text-18 center-hor" style="font-weight:bold;" id="congratulations">
+                    ¡Felicidades!
+                  </div>
+                  <div class="col-12 text-14 center-hor mb-2">
+                    Hemos registrado un pago a tu nombre
+                  </div>
+                  <div class="col-8 text-14 mb-3" style="font-weight:bold;">
+                    <label class="mb-0">FECHA</label><br>
+                    Diciembre 31, 2020
+                  </div>
+                  <div class="col-4 text-14 mb-3" style="font-weight:bold;">
+                    <label class="mb-0">HORA</label><br>
+                    16:20 PM
+                  </div>
+                  <div class="col-12 text-14 mb-3" style="font-weight:bold;">
+                    <label class="mb-0">EMISOR</label><br>
+                    Fernando Del Río por concepto de: servicios profesionales a Ramón Burgos
+                  </div>
+                  <div class="col-12 text-14" style="font-weight:bold;">
+                    <label class="mb-0">MONTO</label><br>
+                    $420.69
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top:0;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-6">
+              </div>
+              <div class="col-6">
+                <button id="downloadPDF" type="button" class="asilinks-btn orange-btn">Descargar PDF</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+
+  var doc = new jsPDF();          
+  var elementHandler = {
+    '#congratulations': function (element, renderer) {
+      return true;
+    }
+  };
+
+  $("#downloadPDF").click(function() {
+      
+    var source = $('#paymentInfo')[0].outerHTML;
+    doc.fromHTML(
+      source,
+      15,
+      15,
+      {
+        'width': 180,'elementHandlers': elementHandler
+      }
+    );
+
+    doc.save("pagoAsilinks.pdf");
+  })
+
+
+</script>

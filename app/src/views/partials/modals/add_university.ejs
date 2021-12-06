@@ -1,0 +1,126 @@
+<div class="modal fade" tabindex="-1" role="dialog" id="addUni">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom:0;">
+        <h5 class="modal-title">Agregar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" class="px-2" id="modalClose">&times;</span>
+        </button>
+      </div>
+      <form enctype='application/json' method="post">
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <label for="add_university">QUE DESEA AÑADIR?</label><br>
+                <div class="row">
+                  <div class="col-12">
+                    <select name="add_university" id="add_university" class="form-input" style="padding:0.35rem;" required>
+                      <option value="Universidad" selected>Universidad</option>
+                      <option value="Carrera">Carrera</option>
+                      <option value="Categoría Laboral">Categoría Laboral</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 universityStuff">
+                <label for="university_name">UNIVERSIDAD</label><br>
+                <input type="text" class="form-input" name="university_name" id="university_name" required>
+              </div>
+              <div class="col-12 universityStuff">
+                <label for="university_country">PAÍS DE LA UNIVERSIDAD</label><br>
+                <!-- <input type="text" class="form-input" name="university_country" id="university_country" required> -->
+
+                <select name="university_country" id="university_country" class="form-input mt-2" required>
+                  <% countries.forEach(function(country){ %>
+                    <option value="<%= country %>"> <%= country %></option>
+                    <% }); %>
+                  </select>
+              </div>
+              <div class="col-12 careerStuff d-none">
+                <label for="university_career">CARRERA</label><br>
+                <input type="text" class="form-input" name="university_career" id="university_career" required>
+              </div>
+              <div class="col-12 workStuff d-none">
+                <label for="work_category">CATEGORÍA LABORAL</label><br>
+                <input type="text" class="form-input" name="work_category" id="work_category" required>
+              </div>
+              <div class="col-12 workStuff d-none">
+                <label for="work_subcategory">SUBCATEGORÍA LABORAL</label><br>
+                <input type="text" class="form-input" name="work_subcategory" id="work_subcategory">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="border-top:0;">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-12">
+                <button id="addUniversity" type="submit" class="asilinks-btn orange-btn">Enviar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" src="/assets/scripts/helpers.js"></script>
+
+<script type="text/javascript">
+
+  $("#add_university").change(function() {
+
+    var type = $(this).val();
+
+    if (type == "Universidad"){
+
+      $(".universityStuff").removeClass("d-none");
+      $(".careerStuff").addClass("d-none");
+      $(".workStuff").addClass("d-none");
+
+    } else if (type == "Carrera"){
+
+      $(".universityStuff").removeClass("d-none");
+      $(".careerStuff").removeClass("d-none");
+      $(".workStuff").addClass("d-none");
+
+    } else if (type == "Categoría Laboral"){
+
+      $(".universityStuff").addClass("d-none");
+      $(".careerStuff").addClass("d-none");
+      $(".workStuff").removeClass("d-none");
+
+    }
+
+
+  })
+
+
+  $("#addUniversity").click(function(){
+
+    var universityInfo = getFormInfo();
+    console.log(universityInfo)
+
+    $.post("/db/addUniversity",
+      universityInfo
+    )
+    .done( function(data){
+
+      alert("Solicitud envíada con éxito")
+      $('#addUni').modal("hide")
+
+    })
+    .fail( function(xhr, textStatus, errorThrown){
+
+        console.log(xhr.responseText)
+        alert("Error enviando la solicitud! " + xhr.responseText)
+
+    });
+
+    return false;
+
+  })
+
+</script>

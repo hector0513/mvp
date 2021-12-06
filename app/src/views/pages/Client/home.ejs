@@ -1,0 +1,560 @@
+<%- include('partials/header'); -%>
+
+<body id="page-top">
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <!-- Main Content -->
+      <div id="content">
+        <%- include('./partials/nav'); -%>
+
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4" style="margin: 50px 0 50px 0;">
+          <h1 class="h3 mb-0 text-center" id="Welcome-requeriments-refers">¡Bienvenido <%= user.firstname %>!</h1>
+
+          <!-- Tabs -->
+          <section class="tabs3 faqstyle bg-white text-center" id="tabs3-2">
+          <label>
+          <input type="radio" checked name="radio" id="radio0">
+          <div class="btn_nav btn-sik"><span>Inicio</span></div>
+          </label>
+          <label>
+          <input type="radio" name="radio" id="radio1">
+          <div class="btn_nav btn-sik"><span>Requerimientos</span></div>
+          </label>
+          <label>
+          <input type="radio" name="radio" id="radio2">
+          <div class="btn_nav btn-sik"><span>Referidos</span></div>
+          </label>
+          <label>
+          <input type="radio" name="radio" id="radio4">
+          <div class="btn_nav btn-sik"><span>Servicios</span></div>
+          </label>
+          </section>
+
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row" id="finance_daily">
+
+          <!-- Area Chart -->
+          <div class="col-xl-8 col-lg-7">
+          <div class="card shadow mb-4">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Mis finanzas</h6>
+          <div class="dropdown no-arrow">
+          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+          <div class="dropdown-header">Mis datos metricos:</div>
+          <!-- <a class="dropdown-item" href="/client/graphics">Contabilidad y finanzas</a> -->
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/client/wallet">Ver mi wallet</a>
+          </div>
+          </div>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+          <h6 class="finance_text">$<%=user.wallet %></h6>
+          <div class="chart-area">
+          <canvas id="myAreaChart"></canvas>
+          </div>
+          </div>
+          </div>
+          </div>
+
+          <!-- Pie Chart -->
+          <div class="col-xl-4 col-lg-5">
+          <div class="card shadow mb-4">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Esta semana</h6>
+          <!-- <div class="dropdown no-arrow">
+          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+          <div class="dropdown-header">Mi Calendario:</div>
+          <a class="dropdown-item" href="#">Ver mi calendario</a>
+          </div>
+          </div> -->
+
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+          <section class="package-schedules">
+          <% calendar.forEach((item, i) => { %>
+          <div class="row calendar">
+          <div class="col-2">
+          <span class="day"><%= item.weekday %></span> <br />
+          <span class="date-header"><%= item.date %></span>
+          </div>
+          <% if (item.task) {%>
+          <div class="col-10 Rectangle">
+          <span class="package-stat"><%= item.task.name %></span>
+          <br />
+          <span class="sched-desc color1"><%= item.task.partner.firstname %> <%= item.task.partner.lastname %></span>
+          </div>
+          <%}%>
+          </div>
+          <% }); %>
+          </section>
+          </div>
+          </div>
+          </div>
+          </div>
+
+          <!-- Row refereds -->
+
+          <div class="row" id="refereds" style="display: none">
+
+          <!-- New refers -->
+          <div class="col-12">
+          <div class="card shadow mb-4" style="background-image: linear-gradient(to right, #1d1dff, #5757ff);">
+          <!-- Card Body -->
+          <div class="card-body text-center" style="padding: 50px;">
+          <h6 class="m-0 font-weight-bold text-primary" style="color: #fff !important; font-size: 36px;">¿Conoces a alguien perfecto para Asilinks?</h6>
+          </div>
+          <div class="row" style="padding-bottom: 50px;">
+          <div class="col-12 center-hor">
+          <form id="inviteForm" class="form-inline">
+          <div class="input-group partner-input" style="margin:auto;">
+          <input style="background: transparent; color: #fff; border: solid 1px #fff;" type="email" class="form-control" id="inviteEmail"  required="">
+          <div class="input-group-append">
+          <button class="input-group-text py-1 px-4" type="button" style="font-weight: bold; color: #2a2a35;" id="inviteBtn" >Invitar</button>
+          </div>
+          </div>
+          </form>
+          </div>
+          </div>
+          </div>
+          </div>
+
+          <!-- list refers -->
+          <div class="col-12">
+          <div class="card shadow mb-4">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Mis referidos</h6>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body text-center" style="margin: 50px 0 50px 0;">
+          <div class="d-sm-flex align-items-center mb-4">
+          <!-- Tabs -->
+          <section class="radio_requeriments" id="tabs3-l" style="border-radius: 42px; height: 48px; background-color: #f4f4ff;">
+          <label>
+          <input type="radio" checked="" name="radio4" id="radio000">
+          <div class="btn_nav2 btn-sik2"><span>Todos</span></div>
+          </label>
+          <label>
+          <input type="radio" name="radio4" id="radio111">
+          <div class="btn_nav2 btn-sik2"><span>Clientes</span></div>
+          </label>
+          <label>
+          <input type="radio" name="radio4" id="radio222">
+          <div class="btn_nav2 btn-sik2"><span>Socios</span></div>
+          </label>
+          </section>
+          </div>
+          </div>
+          <!-- Responsive cards refers -->
+          <div class="row d-flex justify-content-around" style="padding: 1.25rem;" id="all_refers">
+          <% for(var i = 0; i < users.length; i++) { %>
+          <div class="col-md-auto">
+          <div class="card" style="width: 15rem; padding: 0;">
+          <img class="card-img-top" src="<%= users[i].photo %>" alt="Card image cap" style="border-radius: 42px;">
+          <div class="card-body" style="margin-top: 10px;">
+          <h5 class="card-title" style="font-weight: bold; color: #2a2a35; font-size: 14px; margin: 0;"><%= users[i].firstname %> <%= users[i].lastname %></h5>
+          <p class="card-text" style="font-weight: normal; color: #2a2a35; font-size: 14px;">Referido el <%= users[i].createdAt %></p>
+          <% if (users[i].worker == true) { %>
+          <a href="#" class="btn btn-primary" style="background-color: #5d60fe; font-size: .8rem;">Cliente</a>
+          <% } else  { %>
+          <a href="#" class="btn btn-primary" style="background-image: linear-gradient(to right, #e74267, #ff5d60); font-size: .8rem;">Socio</a>
+          <% } %>
+          </div>
+          </div>
+          </div>
+          <% } %>
+          </div>
+          <div class="row d-flex justify-content-around" style="padding: 1.25rem; display: none !important;" id="client_refers">
+          <% for(var i = 0; i < users.length; i++) { %>
+          <% if (users[i].worker == true) { %>
+          <div class="col-md-auto">
+          <div class="card" style="width: 15rem; padding: 0;">
+          <img class="card-img-top" src="<%= users[i].photo %>" alt="Card image cap" style="border-radius: 42px;">
+          <div class="card-body" style="margin-top: 10px;">
+          <h5 class="card-title" style="font-weight: bold; color: #2a2a35; font-size: 14px; margin: 0;"><%= users[i].firstname %> <%= users[i].lastname %></h5>
+          <p class="card-text" style="font-weight: normal; color: #2a2a35; font-size: 14px;">Referido el <%= users[i].createdAt %></p>
+          <a href="#" class="btn btn-primary" style="background-color: #5d60fe; font-size: .8rem;">Cliente</a>
+          </div>
+          </div>
+          </div>
+          <% } %>
+          <% } %>
+          </div>
+          <div class="row d-flex justify-content-around" style="padding: 1.25rem; display: none !important;" id="partner_refers">
+          <% for(var i = 0; i < users.length; i++) { %>
+          <% if (users[i].worker == false) { %>
+          <div class="col-md-auto">
+          <div class="card" style="width: 15rem; padding: 0;">
+          <img class="card-img-top" src="<%= users[i].photo %>" alt="Card image cap" style="border-radius: 42px;">
+          <div class="card-body" style="margin-top: 10px;">
+          <h5 class="card-title" style="font-weight: bold; color: #2a2a35; font-size: 14px; margin: 0;"><%= users[i].firstname %> <%= users[i].lastname %></h5>
+          <p class="card-text" style="font-weight: normal; color: #2a2a35; font-size: 14px;">Referido el <%= users[i].createdAt %></p>
+          <a href="#" class="btn btn-primary" style="background-image: linear-gradient(to right, #e74267, #ff5d60); font-size: .8rem;">Socio</a>
+          </div>
+          </div>
+          </div>
+          <% } %>
+          <% } %>
+          </div>
+          </div>
+          </div>
+          </div>
+
+          <!-- Content Row -->
+
+          <div class="row" id="requeriments">
+
+          <!-- Steps requeriments -->
+          <div class="col-sm">
+          <div class="card shadow mb-4">
+          <!-- Card Header -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-start">
+          <h6 class="m-0 font-weight-bold requeriments_steps_number">01</h6>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+          <h6 class="requeriments_steps_text">El cliente elabora un requerimiento siguiendo los pasos indicados. Se abre el canal de comunicación con los socios aspirantes para establecer, más allá de lo descrito, el alcance del servicio.</h6>
+          </div>
+          </div>
+          </div>
+          <!-- Steps requeriments -->
+          <div class="col-sm">
+          <div class="card shadow mb-4">
+          <!-- Card Header -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-start">
+          <h6 class="m-0 font-weight-bold requeriments_steps_number">02</h6>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+          <h6 class="requeriments_steps_text">Los socios hacen sus propuestas servicios y honorarios. Los clientes escogen la más conveniente o ajustada a sus solicitudes y pagan el 60% del monto de los honorarios pactados.</h6>
+          </div>
+          </div>
+          </div>
+          <!-- Steps requeriments -->
+          <div class="col-sm">
+          <div class="card shadow mb-4">
+          <!-- Card Header -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-start">
+          <h6 class="m-0 font-weight-bold requeriments_steps_number">03</h6>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body">
+          <h6 class="requeriments_steps_text">Se abre un canal de comunicación con el socio para el desarrollo del requerimiento y culminado éste, se anuncia su culminación teniendo el cliente que pagar el 40% restante, liberándose la entrega.</h6>
+          </div>
+          </div>
+          </div>
+          <!-- Card-Buttom Requeriment request (>width: 630px) -->
+          <div class="row " id="requirements_card">
+          <div class="col">
+          <div class="card shadow mb-4" style="background-color: #5757ff;">
+          <div class="card-horizontal">
+          <!-- Card Body -->
+          <div class="card-body text-center">
+          <i class="fas fa-briefcase" style="color: #fff; font-size: 30px; margin-top: 35px;"></i>
+          </div>
+          <div class="card-body">
+          <h6 class="card-title requeriments_steps_text" style="font-weight: bold; font-size: 25px; color: #fff; margin-bottom: 5px;">Crea tu nuevo requerimiento</h6>
+          <p class="card-text requeriments_steps_text" style="color: #fff">Con nuestro simple proceso garantizamos resultados satisfactorios</p>
+          </div>
+          <div class="card-body text-center">
+          <a href="/client/requirement" style="text-decoration: none"><button class="button_requeriment">Crear requerimiento &nbsp&nbsp<i class="fas fa-arrow-right" style="background: #f2f5f8;padding: 10px;border-radius: 10px !important;/*! margin-right: 10px; */margin: 0;width: auto !important;color: #4444ff;"></i></button></a>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+          <!-- Card-Buttom Requeriment request (<width: 630px) -->
+          <div class="row w-100" id="requirements_card_responsive">
+          <div class="col">
+          <div class="card shadow mb-4" style="background-color: #5757ff;">
+          <!-- Card Body -->
+          <div class="card-body text-center">
+          <i class="fas fa-briefcase" style="color: #fff; font-size: 30px; margin-top: 15px;"></i>
+          </div>
+          <div class="card-body">
+          <h6 class="card-title requeriments_steps_text" style="font-weight: bold; font-size: 25px; color: #fff; margin-bottom: 5px;">Crea tu nuevo requerimiento</h6>
+          <p class="card-text requeriments_steps_text" style="color: #fff">Con nuestro simple proceso garantizamos resultados satisfactorios</p>
+          </div>
+          <div class="card-body text-center">
+          <a href="/client/requirement" style="text-decoration: none"><button class="button_requeriment">Crear requerimiento</button></a>
+          </div>
+          </div>
+          </div>
+          </div>
+          </div>
+
+          <!-- Row requeriments -->
+
+          <div class="row" style="margin-top: 50px;" id="newrequirement">
+
+          <div class="col">
+          <div class="card shadow mb-4">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Mis requerimientos</h6>
+          <div class="dropdown no-arrow">
+          <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-ellipsis-h fa-sm fa-fw text-blue-400"></i>
+          </a>
+          <!-- <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+          <div class="dropdown-header">Reportar:</div>
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+          </div> -->
+          </div>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body text-center" style="margin: 50px 0 50px 0;">
+          <div class="d-sm-flex align-items-center justify-content-center mb-4">
+          <!-- Tabs -->
+          <section class="radio_requeriments" id="tabs3-l" style="border-radius: 42px; height: 48px; background-color: #f4f4ff;">
+          <label>
+          <input type="radio" checked name="radio2" id="radio00">
+          <div class="btn_nav2 btn-sik2"><span>Todos</span></div>
+          </label>
+          <label>
+            <input type="radio" name="radio2" id="radio11">
+            <div class="btn_nav2 btn-sik2"><span>Sin iniciar</span></div>
+          </label>
+          <label>
+          <input type="radio" name="radio2" id="radio22">
+          <div class="btn_nav2 btn-sik2"><span>En proceso</span></div>
+          </label>
+          <label>
+          <input type="radio" name="radio2" id="radio33">
+          <div class="btn_nav2 btn-sik2"><span>Canceladas</span></div>
+          </label>
+          <label>
+          <input type="radio" name="radio2" id="radio44">
+          <div class="btn_nav2 btn-sik2"><span>Terminadas</span></div>
+          </label>
+          <label>
+          <input type="radio" name="radio2" id="radio55">
+          <div class="btn_nav2 btn-sik2"><span>Borradores</span></div>
+          </label>
+          </section>
+          </div>
+          </div>
+          <!-- Responsive cards requeriments -->
+          <div class="card-columns">
+          <% for(var i = 0; i < requirement.length; i++) { %>
+          <div class="card no_padding all" style="max-width: 450px;" id="all">
+          <a class="stretched-link"
+
+          <% if (requirement[i].status=="Finalizado" || requirement[i].status=="Iniciado") { %>
+          href="/client/requirement/inProgress?id=<%=requirement[i]._id%>"
+          <% } else { %>
+          href="/client/requirement-description?id=<%=requirement[i]._id%>"
+          <% } %>
+
+          ></a>
+          <div class="row no-gutters">
+          <div class="col-md-3 col col-sm-2">
+          <img src="https://picsum.photos/500.webp" class="card-img rounded img-fluid" alt="...">
+          </div>
+          <div class="col-md-9 col-9 col-sm-9">
+          <div class="card-body" style="padding: 1.25rem !important;">
+          <h5 class="card-title breakpoint_font" style="font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #2a2a35;"><%= requirement[i].name %></h5>
+          <p class="card-text" style="font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: normal; color: #2a2a35;">Por <%= user.firstname %> <%= user.lastname %></p>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].category_name %></a>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].subcategory_name %></a>
+          </div>
+          </div>
+          </div>
+          </div>
+          <% } %>
+          <% for(var i = 0; i < requirement.length; i++) { %>
+          <% if (requirement[i].status == "Sin Iniciar") { %>
+          <div class="card no_padding not_inicialised" style="max-width: 450px; display: none;">
+          <a class="stretched-link" href="client/requirement-description?id=<%=requirement[i]._id%>"></a>
+          <div class="row no-gutters">
+          <div class="col-md-2 col col-sm-2">
+          <img src="https://picsum.photos/498.webp" class="card-img rounded " alt="...">
+          </div>
+          <div class="col-md-9 col-9 col-sm-9">
+          <div class="card-body" style="padding: 1.25rem !important;">
+          <h5 class="card-title breakpoint_font" style="font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #2a2a35;"><%= requirement[i].name %></h5>
+          <p class="card-text" style="font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: normal; color: #2a2a35;">Por <%= user.firstname %> <%= user.lastname %></p>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].category_name %></a>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].subcategory_name %></a>
+          </div>
+          </div>
+          </div>
+          </div>
+          <% } %>
+          <% } %>
+          <% for(var i = 0; i < requirement.length; i++) { %>
+          <% if (requirement[i].status == "Iniciado") { %>
+          <div class="card no_padding process" style="max-width: 450px; display: none;">
+          <a class="stretched-link" href="client/requirement/inProgress?id=<%=requirement[i]._id%>"></a>
+          <div class="row no-gutters">
+          <div class="col-md-2 col col-sm-2">
+          <img src="https://picsum.photos/499.webp" class="card-img rounded" alt="...">
+          </div>
+          <div class="col-md-9 col-9 col-sm-9">
+          <div class="card-body" style="padding: 1.25rem !important;">
+          <h5 class="card-title breakpoint_font" style="font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #2a2a35;"><%= requirement[i].name %></h5>
+          <p class="card-text" style="font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: normal; color: #2a2a35;">Por <%= user.firstname %> <%= user.lastname %></p>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].category_name %></a>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].subcategory_name %></a>
+          </div>
+          </div>
+          </div>
+          </div>
+          <% } %>
+          <% } %>
+          <% for(var i = 0; i < requirement.length; i++) { %>
+          <% if (requirement[i].status == "Cancelado") { %>
+          <div class="card no_padding cancel" style="max-width: 450px; display: none;">
+          <a class="stretched-link" href="client/requirement-description?id=<%=requirement[i]._id%>"></a>
+          <div class="row no-gutters">
+          <div class="col-md-2 col col-sm-2">
+          <img src="https://picsum.photos/497.webp" class="card-img rounded" alt="...">
+          </div>
+          <div class="col-md-9 col-9 col-sm-9">
+          <div class="card-body" style="padding: 1.25rem !important;">
+          <h5 class="card-title breakpoint_font" style="font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #2a2a35;"><%= requirement[i].name %></h5>
+          <p class="card-text" style="font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: normal; color: #2a2a35;">Por <%= user.firstname %> <%= user.lastname %></p>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].category_name %></a>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].subcategory_name %></a>
+          </div>
+          </div>
+          </div>
+          </div>
+          <% } %>
+          <% } %>
+          <% for(var i = 0; i < requirement.length; i++) { %>
+          <% if (requirement[i].status == "Finalizado") { %>
+          <div class="card no_padding completed" style="max-width: 450px; display: none;">
+          <a class="stretched-link" href="client/requirement/inProgress?id=<%=requirement[i]._id%>"></a>
+          <div class="row no-gutters">
+          <div class="col-md-2 col col-sm-2">
+          <img src="https://picsum.photos/496.webp" class="card-img rounded" alt="...">
+          </div>
+          <div class="col-md-9 col-9 col-sm-9">
+          <div class="card-body" style="padding: 1.25rem !important;">
+          <h5 class="card-title breakpoint_font" style="font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #2a2a35;"><%= requirement[i].name %></h5>
+          <p class="card-text" style="font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: normal; color: #2a2a35;">Por <%= user.firstname %> <%= user.lastname %></p>
+          <a href="" class="btn btn-outline-primary mb-2 mb-2 style_btn" style="font-size: 0.7rem; margin-bottom: 5px;"><%= requirement[i].category_name %></a>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].subcategory_name %></a>
+          </div>
+          </div>
+          </div>
+          </div>
+          <% } %>
+          <% } %>
+          <% for(var i = 0; i < requirement.length; i++) { %>
+          <% if (requirement[i].status == "Borradores") { %>
+          <div class="card no_padding saver" style="max-width: 450px; display: none;">
+          <a class="stretched-link" href="client/requirement-description?id=<%=requirement[i]._id%>"></a>
+          <div class="row no-gutters">
+          <div class="col-md-2 col col-sm-2">
+          <img src="https://picsum.photos/495.webp" class="card-img rounded" alt="...">
+          </div>
+          <div class="col-md-9 col-9 col-sm-9">
+          <div class="card-body" style="padding: 1.25rem !important;">
+          <h5 class="card-title breakpoint_font" style="font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #2a2a35;"><%= requirement[i].name %></h5>
+          <p class="card-text" style="font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: normal; color: #2a2a35;">Por <%= user.firstname %> <%= user.lastname %></p>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].category_name %></a>
+          <a href="" class="btn btn-outline-primary mb-2 style_btn" style="font-size: 0.7rem;"><%= requirement[i].subcategory_name %></a>
+          </div>
+          </div>
+          </div>
+          </div>
+          <% } %>
+          <% } %>
+          </div>
+
+          </div>
+          </div>
+
+          </div>
+
+
+          <!-- Row requeriments -->
+
+          <div class="row" style="margin-top: 50px; display: none;" id="notices">
+
+          <div class="col">
+          <div class="card shadow mb-4">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary">Propuestas de servicio</h6>
+
+          </div>
+          <!-- Card Body -->
+          <div class="card-body text-center" style="margin: 10px 0 10px 0;">
+          </div>
+          <!-- Responsive cards requeriments -->
+          <div class="card-columns">
+          <% for(var i = 0; i < notice.length; i++) { %>
+
+          <div class="card no_padding all" style="max-width: 450px;cursor: pointer;" id="all" onclick='window.location.href="/client/service/<%= notice[i]._id%>/<%= user._id%>"'>
+          <div class="row no-gutters">
+          <div class="col-md-2 col col-sm-2">
+          <img src="<%=notice[i].partner.photo%>" class=" rounded img-fluid" alt="...">
+          </div>
+          <div class="col-md-9 col-9 col-sm-9">
+          <div class="card-body" style="padding: 1.25rem !important;">
+          <h5 class="card-title breakpoint_font" style="font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.43; letter-spacing: normal; color: #2a2a35;"><%= notice[i].name %></h5>
+          <p class="card-text" style="font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: normal; color: #2a2a35;">Por <%= notice[i].partner.firstname %> <%= notice[i].partner.lastname %></p>
+
+          </div>
+          </div>
+          </div>
+          </div>
+          <% } %>
+
+          </div>
+
+          </div>
+          </div>
+
+          </div>
+
+
+
+
+        </div>
+        <!-- /.container-fluid -->
+        <!-- Hack pass variable backend to frontend dinamically -->
+        <span id='variableWalletGraphic' hidden>
+          <%- JSON.stringify(wallet) %>
+        </span>
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <%- include('./partials/footer'); -%>
+      <!-- End of Footer -->
+    </div>
+    <!-- End of Content Wrapper -->
+
+    <%- include('./partials/sidebar'); -%>
+  </div>
+</body>

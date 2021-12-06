@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+  	<link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- load fontawesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+	<link rel="stylesheet" href="/assets/styles/new-style-asilinks.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+	<div class="container-fluid full-height">
+		<div class="row full-height">
+			<div class="col-md-4 login-texto-pink primary-bg pink-bg">
+				<div class="text-36 m-4">
+					<img class="d-block mb-3" src="/assets/images/logocolorartboard-2.svg" alt=" " title="logo_asilinks" style="height: 1.5rem;">
+					El mundo acaba de migrar a ser 100% freelancer<br>
+					<br>
+					¡Regístrate ya!
+					<img src="/assets/images/coding.svg" class="bottom-left coding">
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="row my-3 mx-2">
+					<div class="col-md-12 text-right" id="welcomeText">
+						¿Ya estás registrado en Asilinks? <a href="/login" class="asilinks-enlace-pink">Inicia sesión aquí</a>
+					</div>
+				</div>
+				<form action="/login/register" enctype='application/json' method="post">
+					<div class="row w-75 mx-auto">
+						<% if (message) { %>
+						<div class="col-md-12 text-center mb-4">
+							<div class="alert alert-danger" role="alert">
+							  	<%= message %>
+							</div>
+						</div>
+						<% } %>
+						<!--<div class="col-md-12 center-hor mb-4">
+							 Clientes: On, true. Socios: no se envia nada, false
+							<input type="checkbox" checked data-toggle="toggle" data-style="ios" data-on="Clientes" data-off="Socios" name="worker" id="worker">
+						</div> -->
+						<div class="col-12 col-md-6 mb-3">
+							<label for="firstname">NOMBRE</label><br>
+							<input type="text" class="form-input" name="firstname" id="firstname" value="<%=body.firstname%>" onchange="stringLetters(this.value, this.id)" required>
+						</div>
+						<div class="col-12 col-md-6 mb-3">
+							<label for="lastname">APELLIDO</label><br>
+							<input type="text" class="form-input" name="lastname" id="lastname" value="<%=body.lastname%>" onchange="stringLetters(this.value, this.id)" required>
+						</div>
+						<div class="col-12 col-md-6 mb-3 as-select">
+							<label for="bornCountry">PAÍS DE NACIMIENTO</label><br>
+							<select name="bornCountry" id="bornCountry" class="form-input" required>
+								<% countries.forEach(function(country){ %>
+								<option value="<%= country %>"
+									<% if (country == 'Venezuela') { %>
+										selected
+									<% } %>>
+									<%= country %></option>
+								<% }); %>
+								<option value="Venezuela" selected>Venezuela</option>
+							</select>
+						</div>
+						<div class="col-12 col-md-6 mb-3">
+							<label for="livingCity">CIUDAD DE RESIDENCIA</label><br>
+							<input type="text" class="form-input" name="livingCity" id="livingCity" value="<%=body.livingCity%>" onchange="stringLetters(this.value, this.id)" required>
+						</div>
+						<div class="col-md-12 mb-3">
+							<label for="dob">FECHA DE NACIMIENTO</label><br>
+							<input type="date" class="form-input" name="dob" id="dob" title="Debes ser mayor de 13 años para registrarte" min="1920-01-01" placeholder="mm/dd/yyyy" value="<%=body.dob%>" required>
+						</div>
+						<div class="col-12 col-md-12 mb-3">
+							<label for="email">CORREO</label><br>
+							<input type="email" class="form-input" name="email" id="email" value="<%=body.email%>" onchange="checkEmail(this)" required>
+						</div>
+						<!--
+						<div class="col-12 col-md-6 mb-3">
+							<label for="paypalEmail">CORREO DE PAYPAL</label><br>
+							<input type="email" class="form-input" name="paypalEmail" id="paypalEmail" value="<%=body.paypalEmail%>" required>
+						</div>-->
+						<div class="col-12 col-md-6 mb-3">
+							<label for="password">CONTRASEÑA</label><br>
+							<input type="password" class="form-input" name="password" id="password" data-toggle="tooltip" data-placement="bottom" data-html="true" title="* Contener entre 8-16 caracteres<br>
+							* Una mayúscula y una minúscula<br>
+							* Un caracter no alfanumérico<br>
+							* No debe contener la palabra 'contraseña'<br>
+							* No ser vacío" onchange="check()" required>
+						</div>
+						<div class="col-12 col-md-6 mb-3">
+							<label for="confirmPassword">CONFIRMAR CONTRASEÑA</label><br>
+							<input type="password" class="form-input" name="confirmPassword" id="confirmPassword" onchange="check()" required>
+						</div>
+						<div class="col-md-12 mb-3 custom-control custom-checkbox mx-3">
+							<input type="checkbox" class="custom-control-input pointer" name="terms" id="terms" required>
+							<label for="terms" class="custom-control-label pointer" id="termsLabel">Al enviar este formulario y crear una cuenta en Asilinks significa que estás de acuerdo con los <a class="asilinks-enlace-pink" href="#">Términos y condiciones</a>, así como con el <a class="asilinks-enlace-pink" href="#">Código de conducta.</a></label>
+						</div>
+						<div class="col-md-3">
+						</div>
+						<div class="col-md-6 mb-4">
+							<button type="submit" id="createAccount" class="asilinks-btn orange-btn">Crear cuenta</button>
+						</div>
+						<div class="col-md-3">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4 login-texto-pink secondary-bg">
+				<div class="text-28 mt-4">
+					El mundo acaba de migrar a ser 100% freelancer<br>
+					¡Regístrate ya!
+					<img src="/assets/images/coding.svg" class="bottom-left coding">
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+<script type="text/javascript" src="/assets/scripts/helpers.js"></script>
+<script type="text/javascript" src="/assets/scripts/validator.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-
+	datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
+<script type="text/javascript">
+
+	$(function () {
+  		$('[data-toggle="tooltip"]').tooltip()
+	})
+
+	$('#password').focus(function() {
+
+		$('#password').tooltip('show')
+
+	})
+
+	document.addEventListener("DOMContentLoaded", function() {
+	    var elements = document.getElementsByTagName("INPUT");
+	    for (var i = 0; i < elements.length; i++) {
+	        elements[i].oninvalid = function(e) {
+	            e.target.setCustomValidity("");
+	            if (!e.target.validity.valid) {
+	                e.target.setCustomValidity("Este campo es obligatorio");
+	            }
+	        };
+	        elements[i].oninput = function(e) {
+	            e.target.setCustomValidity("");
+	        };
+	    }
+	})
+</script>
+
+<script type='text/javascript'>
+
+	$( document ).ready(function() {
+
+		// mínimo de 13 años para crearse una cuenta
+		var fullDate = getBackDate(13)
+
+		// Pone el limite al calendario
+		document.getElementById("dob").setAttribute("max", fullDate);
+/*
+		$('#toggle-password').click(function(){
+			$(this).toggleClass("fa-eye fa-eye-slash");
+			var input = $("#inputPassword");
+			if (input.attr("type") === "password") {
+				input.attr("type", "text");
+			} else {
+				input.attr("type", "password");
+			}
+		});
+*/
+
+	if ( $('#dob')[0].type != 'date' ) {
+		$('#dob').datepicker();
+
+	}
+
+
+	});
+
+	$('#firstname').keypress(function (e) {
+	    var txt = String.fromCharCode(e.which);
+	    if (!txt.match(/[[A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff ']/)) {
+	        return false;
+	    }
+	});
+	$('#lastname').keypress(function (e) {
+			var txt = String.fromCharCode(e.which);
+			if (!txt.match(/[[A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff ']/)) {
+					return false;
+			}
+	});
+	$('#livingCity').keypress(function (e) {
+			var txt = String.fromCharCode(e.which);
+			if (!txt.match(/[[A-Za-z\u00C0-\u00D6\u00D8-\u00f6\u00f8-\u00ff .']/)) {
+					return false;
+			}
+	});
+
+
+
+	$(".form-input").change(function() {
+
+	 	if ( $(".invalid-input").length > 0 ){
+
+			$('#createAccount').prop('disabled', true);
+
+	 	} else {
+
+			$('#createAccount').prop('disabled', false);
+
+	 	}
+	})
+
+	function passwordCheck(id){
+
+    	var passRegex = new RegExp("^(?=.*\\d)(?=.*[\\u0021-\\u002f\\u003c-\\u0040])(?=.*[A-Z])(?=.*[a-z])\\S{8,16}$");
+
+    	var value = document.getElementById(id).value
+
+    	if ( !passRegex.test(value) )
+    		return false;
+
+    	return true;
+
+	}
+
+	function checkEmail(email){
+
+		if ( !validator.isEmail(email.value) ) {
+
+		    $('#' + email.id).addClass("invalid-input")
+		    return false;
+
+		}
+
+	  	$('#' + email.id).removeClass("invalid-input")
+	  	return true;
+
+	}
+
+    function check() {
+
+    	if ( document.getElementById('password').value && !passwordCheck('password') ){
+
+	            $("#password").addClass("invalid-input")
+	            document.getElementById('createAccount').disabled = true;
+
+    	} else {
+
+	            $("#password").removeClass("invalid-input")
+	            document.getElementById('createAccount').disabled = false;
+
+    	}
+
+    	if ( document.getElementById('confirmPassword').value && !passwordCheck('confirmPassword') ){
+
+	            $("#confirmPassword").addClass("invalid-input")
+	            document.getElementById('createAccount').disabled = true;
+
+    	} else {
+
+	            $("#confirmPassword").removeClass("invalid-input")
+	            document.getElementById('createAccount').disabled = false;
+
+    	}
+
+    	var pass1 = document.getElementById('password').value
+    	var pass2 = document.getElementById('confirmPassword').value
+    	document.getElementById('createAccount').disabled = true;
+
+    	if (pass1 && pass2){
+
+    		if (pass1 != pass2){
+
+	            $("#password").addClass("invalid-input")
+	            $("#confirmPassword").addClass("invalid-input")
+            	Swal.fire({
+				  	title: 'Error!',
+				  	text: 'Las contraseñas no coinciden',
+				  	icon: 'error',
+				  	confirmButtonText: 'Volver'
+				})
+
+    		}
+
+            else{
+
+	            $("#password").removeClass("invalid-input")
+	            $("#confirmPassword").removeClass("invalid-input")
+    			document.getElementById('createAccount').disabled = false;
+
+            }
+    	}
+
+    }
+
+
+
+
+</script>
+
+
+</html>
