@@ -8,6 +8,7 @@ struct Project{
     address wallet;
     uint fee; 
 }
+event ProyectAdded(uint id);
 mapping(address => uint) internal ownerToProjectsCount;
 mapping(uint => address) internal projectToOwner;
 mapping(address => bool) internal allowedWallets;
@@ -22,15 +23,28 @@ modifier onlyAllowedWallets {
     }
      _;
 }
-
+function getProyectByOwner(address _owner) external view returns(uint[] memory) {
+    uint[] memory result = new uint[](ownerToProjectsCount[_owner]);
+    uint counter = 0;
+    for (uint i = 0; i < projects.length; i++) {
+      if (projectToOwner[i] == _owner) {
+        result[counter] = i;
+        counter++;
+      }
+    }
+    return result;
+  }
 function _createProyect(address _wallet,uint _fee ) private{
     projects.push(Project(_wallet,_fee));
     ownerToProjectsCount[_wallet] = ownerToProjectsCount[_wallet].add(1);
     projectToOwner[ projects.length- 1] = _wallet;
+    emit ProyectAdded(projects.length- 1);
 }
 
 function NewProject(address wallet,uint _fee) onlyAllowedWallets public {
-    _createProyect(wallet,_fee);}
+    _createProyect(wallet,_fee);
+    
+    }
 function addallowedWallet(address wallet) onlyAllowedWallets public {
     allowedWallets[wallet] = true;
     }
@@ -41,10 +55,11 @@ function addallowedWallet(address wallet) onlyAllowedWallets public {
 function depositToProject(uint _projectId,uint _amount)  public payable {
     require(_projectId < projects.length);
     require(msg.value >= _amount);
-   payable( projects[_projectId].wallet).transfer(_amount.sub(_amount*projects[_projectId].fee/100));  
+   payable( projects[_projectId].wallet).transfer(msg.value.sub(msg.value*projects[_projectId].fee/100));  
     }
 
     function withdraw(uint amount) public onlyOwner{
+        require(amount<=address(this).balance);
         payable(owner()).transfer(amount);
     }
     function getBalanceContract() public onlyOwner view returns (uint){
