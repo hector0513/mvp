@@ -52,7 +52,7 @@ module.exports = {
       host: "127.0.0.1", 
      port: 7545,             // Custom port
      network_id: "*",       // Custom network
-     gas: 10000000,           // Gas sent with each transaction (default: ~6700000)
+     gas: 5000000,           // Gas sent with each transaction (default: ~6700000)
     gasPrice: 20000000000,  // 20 gwei (in wei) (default: 100 gwei)
     // from:<address>,        // Account to send txs from (default: accounts[0])
      websocket: true        // Enable EventEmitter interface for web3 (default: false)

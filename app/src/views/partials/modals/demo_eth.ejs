@@ -1,0 +1,93 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Create proyect</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <form>
+          
+         
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Wallet for deposit</label>
+              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+             
+            </div>
+            <button  id="my-form" type="button" class="btn btn-primary">Create</button> 
+          <div class="modal-footer">
+            <div class="form-group">
+              <label for="proyect">Precto a fondear</label>
+              <input type="text" class="form-control" id="proyect" aria-describedby="emailHelp">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="amount">Eth a eviar</label>
+              <input type="text" class="form-control" id="amount" aria-describedby="emailHelp">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+              <button  id="my-form2" type="button" class="btn btn-primary">send</button>
+              <button  id="my-form3" type="button" class="btn btn-primary">view balance</button>
+
+            </div>
+        </form>
+       
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/web3/3.0.0-rc.0/web3.min.js"></script>
+  <script language="javascript" type="text/javascript" src="assets/scripts/Proyect.js"></script>
+
+
+  <script >
+      let contract 
+      let account 
+    window.addEventListener('load',async   function() {
+  // Aquí se comprueba si Web3 ha sido inyectado por el navegador (Mist/Metamask)
+  if (window.ethereum) {
+    // Usar el proveedor Mist/MetaMask
+    
+    const accounts=await window.ethereum.send('eth_requestAccounts');
+    window.web3 = new Web3(window.ethereum);
+    console.log(accounts);
+   account=accounts.result[0];
+      console.log(account,$('#exampleInputEmail1').val());
+      contract = new window.web3.eth.Contract(Proyect.abi, "0xa1dDfdF6cc051DAE3aFBF6c1498868F505d3a0CB");
+  } else {
+    // Esto se activará si el usuario no tiene instalado Mist/Metamask. Sería 
+    // recomendable avisar al usuario de que debe instalarse Misk/Metamask
+    // para poder usar nuestra DApp.
+  }
+  // Ahora ya puedes iniciar tu DApp y acceder a Web3.js libremente:
+})
+    $('#my-form').on('click', async function (event) {
+      event.preventDefault();
+    
+      contract.events.ProyectAdded().on("data",(err, result) => {
+        console.log(result);
+      });
+      console.log(await contract.methods.NewProject($('#exampleInputEmail1').val(),5).send({from:account }));
+      
+    return false;
+});
+$('#my-form2').on('click', async function (event) {
+    
+      event.preventDefault();
+    console.log(await contract.methods.depositToProject($('#proyect').val(),$('#amount').val()).send({from:account,value:web3.utils.toWei($('#amount').val(),'ether') }));
+    
+  return false;
+});
+$('#my-form3').on('click', async function (event) {
+    
+    event.preventDefault();
+  console.log(web3.utils.fromWei(await contract.methods.getBalanceContract().call( ),'ether'));
+  
+return false;
+});
+    </script>
