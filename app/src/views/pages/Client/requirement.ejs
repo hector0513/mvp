@@ -59,62 +59,14 @@
                             color: #4444ff;
                           "
                         >
-                          &nbsp&nbsp Wallet for deposit
+                          &nbsp&nbsp Proyect
                         </p></a
                       >
                     </li>
-                    <li>
-                      <a
-                        class="fas fa-book-open user_style_disallow"
-                        style="width: auto !important; margin: 20px 0;"
-                        ><p
-                          style="
-                            font-family: Quicksand;
-                            display: inline-block;
-                            color: #d8d8d8;
-                          "
-                        >
-                          &nbsp&nbsp Prospecto buscado
-                        </p></a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="fas fa-laptop user_style_disallow"
-                        style="width: auto !important; margin: 20px 0;"
-                        ><p
-                          style="
-                            font-family: Quicksand;
-                            display: inline-block;
-                            color: #d8d8d8;
-                          "
-                        >
-                          &nbsp&nbsp Información avanzada
-                        </p></a
-                      >
-                    </li>
+                   
                   </ul>
                 </div>
-                <div class="card-body text-center">
-                  <button
-                    type="submit"
-                    class="btn public publishBtn"
-                    style="font-size: 20px;"
-                    form="steps_process"
-                    id="publishBtn"
-                    value="Upload"
-                  >
-                    Publicar
-                  </button>
-                  <br />
-                  <button
-                    type="button"
-                    class="btn save_eraser"
-                    style="margin-top: 20px; font-size: 20px; display: none;"
-                  >
-                    Guardar borrador
-                  </button>
-                </div>
+                
               </div>
             </div>
 
@@ -124,16 +76,9 @@
                 <!-- Card Body -->
                 <div class="card-body">
                   <form
-                    id="steps_process"
-                    enctype="multipart/form-data"
-                    <%if(private && notice){%>
-                    action="/client/newRequirement?private=<%=private%>&notice=<%=notice%>"
-                    <% }else {%>
-                    action="/client/newRequirement"
-                    <% } %>
+         
                     method="post"
                   >
-                    <fieldset form="steps_process">
                       <div class="form-group row">
                         <div class="col-sm-12">
                           <label
@@ -157,45 +102,25 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                           <label
-                            for="category"
+                            for="wallet"
                             style="
                               font-family: Quicksand;
                               font-weight: bold;
                               color: #bcbcca;
                             "
-                            >CATEGORÍA</label
+                            >Wallet</label
                           >
-                          <select
+                          <input
+                            type="text"
                             class="form-control"
-                            id="category"
-                            name="category"
-                            onchange="loadCategories()"
+                            id="wallet"
+                            name="wallet"
+                            placeholder=""
                             style="color: #2a2a35;"
-                          >
-                            <% category.forEach(function(cat){ %>
-                            <option value="<%= cat %>"> <%= cat %> </option>
-                            <% }); %>
-                          </select>
-                        </div>
-                        <div class="col-sm-6">
-                          <label
-                            for="subcategory"
-                            style="
-                              font-family: Quicksand;
-                              font-weight: bold;
-                              color: #bcbcca;
-                            "
-                            >SUBCATEGORÍA</label
-                          >
-                          <select
-                            class="form-control"
-                            id="subcategory"
-                            name="subcategory"
-                            style="color: #2a2a35;"
-                          >
-                          </select>
+                            required
+                          />
                         </div>
                       </div>
                       <div class="form-group row">
@@ -220,280 +145,24 @@
                           ></textarea>
                         </div>
                       </div>
-                      <div class="form-group row" style="margin-bottom: 0;">
-                        <div class="col-sm-3">
-                          <span>
-                            <input
-                              type="file"
-                              name="upload"
-                              id="file"
-                              class="inputfile"
-                              data-multiple-caption="{count} archivos seleccionados"
-                              multiple
-                            />
-                            <label for="file" class="label_style"
-                              ><span>Adjuntar archivo(s) &nbsp</span
-                              ><i class="fa fa-paperclip" aria-hidden="true"></i
-                            ></label>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-sm-3">
-                          <p
-                            class="mb-0 text-center"
-                            style="font-weight: normal; white-space: nowrap;"
-                          >
-                            — Este archivo es opcional —
-                          </p>
-                        </div>
-                      </div>
+                
+                     
                       <button
                         type="button"
-                        class="btn btn-primary px-4 float-right label_style steps1"
+                        id="save"
+                        class="btn btn-primary px-4 float-right label_style"
                         style="font-weight: bold;"
                       >
-                        Siguiente
+                        Create
                       </button>
-                    </fieldset>
-                    <fieldset form="steps_process">
-                      <div class="form-group row">
-                        <div class="col-sm-6">
-                          <label
-                            for="level_english"
-                            style="
-                              font-family: Quicksand;
-                              font-weight: bold;
-                              color: #bcbcca;
-                            "
-                            >NIVEL DE INGLÉS</label
-                          >
-                          <select
-                            class="form-control"
-                            name="english_level"
-                            id="english_level"
-                            style="color: #2a2a35;"
-                          >
-                            <option>Básico</option>
-                            <option>Medio</option>
-                            <option>Bueno</option>
-                            <option>Avanzado</option>
-                          </select>
-                        </div>
-                        <div class="col-sm-6">
-                          <label
-                            for="subcategory"
-                            style="
-                              font-family: Quicksand;
-                              font-weight: bold;
-                              color: #bcbcca;
-                            "
-                            >UBICACIÓN DEL SOCIO</label
-                          >
-                          <select
-                            class="form-control"
-                            id="partner_country"
-                            name="partner_country"
-                            style="color: #2a2a35;"
-                          >
-                            <% countries.forEach(function(country){ %>
-                            <option value="<%= country %>"
-                              ><%= country %></option
-                            >
-                            <% }); %>
-                          </select>
-                        </div>
-                      </div>
-                      <button
-                        type="button"
-                        class="btn btn-primary px-4 float-right label_style steps1"
-                        style="font-weight: bold;"
-                      >
-                        Siguiente
-                      </button>
-                    </fieldset>
-                    <fieldset form="steps_process">
-                      <div class="form-group row">
-                        <div class="col-sm-12 text-center text-md-left p-2">
-                          <label
-                            for="title"
-                            style="
-                              font-family: Quicksand;
-                              font-weight: bold;
-                              color: #bcbcca;
-                            "
-                            >¿Qué tan avanzado estás?</label
-                          >
-                          <p>
-                            Se refiere a qué tan claro tienes tu requerimiento,
-                            si no lo tienes claro, recuerda que una vez que
-                            ubiques categoría, subcategoría y las habilidades
-                            específicas, al enviar tu requerimiento 12
-                            profesionales estarán dispuestos a elaborar
-                            preguntas y respuestas para determinar el alcance
-                            del requerimiento.
-                          </p>
-                          <section
-                            class="radio_requeriments2"
-                            id="tabs3-2"
-                            style=""
-                          >
-                            <label>
-                              <input
-                                type="radio"
-                                name="radio2"
-                                value="Tengo una idea"
-                                id="radio00"
-                              />
-                              <div class="btn_nav3 btn-sik3">
-                                <span>Tengo una idea</span>
-                              </div>
-                            </label>
-                            <label>
-                              <input
-                                type="radio"
-                                name="radio2"
-                                value="Tengo una página"
-                                id="radio11"
-                              />
-                              <div class="btn_nav3 btn-sik3">
-                                <span>Tengo una página</span>
-                              </div>
-                            </label>
-                            <label>
-                              <input
-                                type="radio"
-                                name="radio2"
-                                value="No sé qué quiero"
-                                id="radio22"
-                              />
-                              <div class="btn_nav3 btn-sik3">
-                                <span>No sé qué quiero</span>
-                              </div>
-                            </label>
-                          </section>
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="col-sm-12 text-center text-md-left p-2">
-                          <label
-                            for="title"
-                            style="
-                              font-family: Quicksand;
-                              font-weight: bold;
-                              color: #bcbcca;
-                            "
-                            >¿Cuánto esperas que dure tu requerimiento?</label
-                          >
-                          <p>
-                            De acuerdo con tus necesidades de respuesta
-                            oportuna, puedes indicar cuáles son tus aspiraciones
-                            temporales para satisfacer tu requerimiento, no
-                            obstante, recuerda que todo depende del alcance del
-                            mismo y la disponibilidad del socio escogido.
-                          </p>
-                          <section
-                            class="radio_requeriments2"
-                            id="tabs3-3"
-                            style=""
-                          >
-                            <label>
-                              <input
-                                type="radio"
-                                name="radio22"
-                                value="1 semana"
-                                id="radio000"
-                              />
-                              <div class="btn_nav3 btn-sik3">
-                                <span>1 semana</span>
-                              </div>
-                            </label>
-                            <label>
-                              <input
-                                type="radio"
-                                name="radio22"
-                                value="2 - 3 semanas"
-                                id="radio111"
-                              />
-                              <div class="btn_nav3 btn-sik3">
-                                <span>2 - 3 semanas</span>
-                              </div>
-                            </label>
-                            <label>
-                              <input
-                                type="radio"
-                                name="radio22"
-                                value="1 mes"
-                                id="radio222"
-                              />
-                              <div class="btn_nav3 btn-sik3">
-                                <span>1 mes</span>
-                              </div>
-                            </label>
-                            <label>
-                              <input
-                                type="radio"
-                                name="radio22"
-                                value="2 - 6 meses"
-                                id="radio333"
-                              />
-                              <div class="btn_nav3 btn-sik3">
-                                <span>2 - 6 meses</span>
-                              </div>
-                            </label>
-                            <label>
-                              <input
-                                type="radio"
-                                name="radio22"
-                                value="6 - 12 meses"
-                                id="radio444"
-                              />
-                              <div class="btn_nav3 btn-sik3">
-                                <span>6 - 12 meses</span>
-                              </div>
-                            </label>
-                            <label>
-                              <input
-                                type="radio"
-                                name="radio22"
-                                value="No sé"
-                                id="radio555"
-                              />
-                              <div class="btn_nav3 btn-sik3">
-                                <span>No sé</span>
-                              </div>
-                            </label>
-                          </section>
-                        </div>
-                      </div>
-                    </fieldset>
+                  
+                   
+                   
                   </form>
                 </div>
               </div>
             </div>
 
-            <div
-              class="card-body text-center d-block d-sm-block d-md-none d-lg-none d-xl-none"
-            >
-              <button
-                type="submit"
-                class="btn public publishBtn"
-                style="font-size: 20px;"
-                form="steps_process"
-                id="publishBtn"
-                value="Upload"
-              >
-                Publicar
-              </button>
-              <br />
-              <button
-                type="button"
-                class="btn save_eraser"
-                style="margin-top: 20px; font-size: 20px; display: none;"
-              >
-                Guardar borrador
-              </button>
-            </div>
           </div>
         </div>
         <!-- /.container-fluid -->
